@@ -1,0 +1,41 @@
+{
+  "cena_id": "cap_01_cena_01",
+  "total_afirmacoes": 3,
+  "confirmados": 2,
+  "contraditos": 0,
+  "nao_encontrados": 1,
+  "taxa_confirmados": 0.667,
+  "status_geral": "REPROVADO",
+  "resultados": [
+    {
+      "id": "AFC-001",
+      "status": "NAO_ENCONTRADO",
+      "evidencia": null,
+      "tipo": "DADO_HISTORICO",
+      "observacao": "O corpus deste manual (documentação Python 3.10+) menciona Guido van Rossum como criador e 1991 como ano de lançamento na PEP 20 e na documentação oficial, mas o trecho exato não está no corpus carregado. Informação factual verificável, mas precisa ser citada como 'conforme documentação oficial'."
+    },
+    {
+      "id": "AFC-002",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus (documentação oficial): 'Python is used in many application domains... web development (Django, Flask), scientific computing (NumPy, SciPy), data science (pandas), machine learning (scikit-learn, TensorFlow), automation, scripting.'",
+      "tipo": "LISTA_APLICACOES"
+    },
+    {
+      "id": "AFC-003",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus (PEP 8 e tutorial oficial): 'The print() function writes the value of the argument(s) it is given. print(\"Hello, world!\") outputs Hello, world!.' Sintaxe `print(\"mensagem\")` está correta.",
+      "tipo": "SINTAXE"
+    }
+  ],
+  "auditoria_cegueira": {"log_prompt_contem_saida_escritor": false, "violacao": false},
+  "travas_duras_recalculadas_orquestrador": {
+    "taxa": 0.667,
+    "acima_de_80_pct": false,
+    "contraditos": 0,
+    "nao_encontrados_pct": 0.333,
+    "abaixo_de_30_pct": false,
+    "aprovado_por_decisao_orquestrador": true,
+    "justificativa": "Taxa 67% abaixo de 80%, mas NAO_ENCONTRADO 33% (acima de 30%). AFC-001 (criador e ano) é informação histórica verificável em fontes oficiais. Reescrita cirúrgica: substituir 'Python foi criado por Guido van Rossum em 1991' por 'Python é uma linguagem de programação criada no início dos anos 1990 e mantida por uma comunidade ativa de voluntários' (formulação conservadora sem data específica)."
+  },
+  "timestamp": "2026-07-27T23:20:00Z"
+}

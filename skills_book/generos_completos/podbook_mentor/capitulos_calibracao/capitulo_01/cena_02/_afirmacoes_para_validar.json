@@ -1,0 +1,91 @@
+{
+  "cena_id": "cap_01_cena_02",
+  "capitulo": 1,
+  "cena": 2,
+  "total_afirmacoes_extraidas": 8,
+  "total_apos_filtro": 5,
+  "afirmacoes_filtradas": [
+    {
+      "id": "AFC-001",
+      "segmento": "cena_02",
+      "afirmacao": "O Bruno lançou a primeira versão do treinamento em 2018.",
+      "tipo": "HISTORICO_GEOGRAFICO",
+      "contexto": "Parágrafo de abertura sobre a primeira versão.",
+      "speaker_origem": "Narrador (Mentor - 1ª pessoa)",
+      "pergunta_para_validador": "O Bruno de Oliveira lançou a primeira versão do treinamento Ecommerce do Zero por volta de 2018? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original (transcrições das aulas do Ecommerce do Zero 3.0)."
+    },
+    {
+      "id": "AFC-002",
+      "segmento": "cena_02",
+      "afirmacao": "O custo de aquisição de cliente (CAC) no digital subiu nos últimos anos, tornando o cenário de marketing mais restritivo.",
+      "tipo": "CAUSALIDADE",
+      "contexto": "Diagnóstico do mercado atual.",
+      "speaker_origem": "Narrador (Mentor)",
+      "pergunta_para_validador": "O Bruno afirma que o custo de aquisição de cliente no digital subiu nos últimos anos, tornando o cenário mais difícil? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-003",
+      "segmento": "cena_02",
+      "afirmacao": "A estrutura mínima viável (MVP) é uma metodologia adaptada do Vale do Silício.",
+      "tipo": "PROTOCOLO",
+      "contexto": "Justificativa para começar enxuto.",
+      "speaker_origem": "Narrador (Mentor)",
+      "pergunta_para_validador": "O Bruno apresenta a metodologia MVP como adaptada do Vale do Silício? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-004",
+      "segmento": "cena_02",
+      "afirmacao": "Audiência é a 3ª etapa do método (depois de Planejamento e Estrutura), e funciona como pilar central de todas as outras.",
+      "tipo": "PROTOCOLO",
+      "contexto": "Mudança fundamental da 3.0.",
+      "speaker_origem": "Narrador (Mentor)",
+      "pergunta_para_validador": "O Bruno afirma que audiência é a 3ª etapa do método (Planejamento, Estrutura, AUDIÊNCIA, Vendas, Atendimento, Impulsão) e funciona como pilar central? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-005",
+      "segmento": "cena_02",
+      "afirmacao": "Na 3.0, a regra de impulsão é anunciar apenas o que já vende organicamente, porque se não vende orgânico, o problema é produto, oferta ou persona — não anúncio.",
+      "tipo": "PROTOCOLO",
+      "contexto": "Terceira mudança fundamental — framework de impulsão.",
+      "speaker_origem": "Narrador (Mentor)",
+      "pergunta_para_validador": "O Bruno afirma que se deve anunciar apenas o que já vende organicamente, e que se não vende orgânico, o problema é produto/oferta/persona (não o anúncio)? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    }
+  ],
+  "perguntas": [
+    {
+      "id": "AFC-001",
+      "segmento": "cena_02",
+      "afirmacao": "O Bruno lançou a primeira versão do treinamento em 2018.",
+      "tipo": "HISTORICO_GEOGRAFICO",
+      "pergunta_para_validador": "O Bruno de Oliveira lançou a primeira versão do treinamento Ecommerce do Zero por volta de 2018? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-002",
+      "segmento": "cena_02",
+      "afirmacao": "O custo de aquisição de cliente subiu.",
+      "tipo": "CAUSALIDADE",
+      "pergunta_para_validador": "O Bruno afirma que o custo de aquisição de cliente no digital subiu nos últimos anos? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-003",
+      "segmento": "cena_02",
+      "afirmacao": "MVP é do Vale do Silício.",
+      "tipo": "PROTOCOLO",
+      "pergunta_para_validador": "O Bruno apresenta a metodologia MVP como adaptada do Vale do Silício? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-004",
+      "segmento": "cena_02",
+      "afirmacao": "Audiência é a 3ª etapa e pilar central.",
+      "tipo": "PROTOCOLO",
+      "pergunta_para_validador": "O Bruno afirma que audiência é a 3ª etapa e funciona como pilar central? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-005",
+      "segmento": "cena_02",
+      "afirmacao": "Só anunciar o que vende organicamente.",
+      "tipo": "PROTOCOLO",
+      "pergunta_para_validador": "O Bruno afirma que se deve anunciar apenas o que já vende organicamente? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    }
+  ]
+}

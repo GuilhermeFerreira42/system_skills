@@ -1,0 +1,11 @@
+{
+  "cena_id": "cap_NN_cena_MM",
+  "total_verificacoes": 0,
+  "confirmados": 0,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "status_geral": "PENDENTE",
+  "resultados": [],
+  "erros": [],
+  "timestamp": "ISO_8601_AQUI"
+}

@@ -1,152 +1,194 @@
-# Skills Book — Sistema de Escrita de Livros (Greenforged Edition)
+# Pipeline Genérico Greenforge v3
 
-**Versao:** 1.0
-**Data:** 2026-07-27
-**Baseado em:** Skills Podcast 4.0.1 (Greenforged Edition) + Greenforge System
-
----
-
-## Visao Geral
-
-Sistema completo para produção de livros (ficcao, nao-ficcao, memorias, tecnico, personalizado) com:
-- **Orquestracao Greenforge-style** (worktrees isolados, state tracking granular, checkpoint atomic)
-- **Dual Validacao Cega Obrigatoria**: MARCH (fact-check vs corpus) + Continuidade (coerencia vs Bible+Estado)
-- **Generos Carregados em Runtime** (usuario escolhe/cria genero na hora)
-- **Bible Viva** (fonte da verdade atualizada a cada cena)
-- **Output:** Markdown final + EPUB/PDF opcional
+**Versão:** 3.0 (Pipeline Parametrizado)
+**Aplicação:** framework genérico de produção de livros. Copie, escolha um gênero, configure, e passe para qualquer IA.
 
 ---
 
-## Estrutura de Pastas
+## O que é isso
 
-```
-skills_book/
-├── inicializador.txt                    # Este arquivo
-├── orquestrador/                        # Coordenador mestre
-│   ├── BOOT_ORQUESTRADOR_LIVRO.md
-│   └── SKILL_ORQUESTRADOR_LIVRO.md
-├── escritor/                            # Solver: escreve prosa por cena
-│   ├── BOOT_ESCRITOR_LIVRO.md
-│   └── SKILL_ESCRITOR_LIVRO.md
-├── atomizador/                          # Proposer: extrai afirmacoes factuais
-│   ├── BOOT_ATOMIZADOR_LIVRO.md
-│   └── SKILL_ATOMIZADOR_LIVRO.md
-├── validador_march/                     # Checker: fact-check cego vs corpus
-│   ├── BOOT_VALIDADOR_MARCH_LIVRO.md
-│   └── SKILL_VALIDADOR_MARCH_LIVRO.md
-├── validador_continuidade/              # Checker: coerencia cega vs Bible+Estado (NOVO)
-│   ├── BOOT_VALIDADOR_CONTINUIDADE_LIVRO.md
-│   └── SKILL_VALIDADOR_CONTINUIDADE_LIVRO.md
-├── editor/                              # Solver opcional: polimento (voz, pacing, show-dont-tell)
-│   ├── BOOT_EDITOR_LIVRO.md
-│   └── SKILL_EDITOR_LIVRO.md
-├── consolidador/                        # Junta cenas -> livro_final.md
-│   ├── BOOT_CONSOLIDADOR_LIVRO.md
-│   └── SKILL_CONSOLIDADOR_LIVRO.md
-├── generos/                             # Carregados em runtime pelo usuario
-│   ├── GENERO_ROMANCE.md
-│   ├── GENERO_NAO_FICCAO.md
-│   ├── GENERO_MEMORIAS.md
-│   ├── GENERO_TECNICO.md
-│   └── GENERO_PERSONALIZADO.md          # Template para usuario criar o seu
-├── bible/                               # Templates da Bible da Obra
-│   ├── BIBLE_TEMPLATE.md
-│   └── BIBLE_EXEMPLO.md
-├── estado/                              # Template do Estado da Obra
-│   └── TEMPLATE_ESTADO.md
-├── esquema/                             # Documentacao estrutural
-│   └── ESTRUTURA_PROJETO_LIVRO.md
-└── exemplos/                            # Fluxo completo documentado
-    └── FLUXO_COMPLETO_LIVRO.md
+Este pacote é um **pipeline de produção de livros** baseado no framework Greenforge. Ele é **genérico** — não tem gênero embutido, não tem voz fixa, não tem extensão por cena rigidamente definida. Tudo isso vem do **arquivo de gênero** que o usuário escolhe ou cria.
+
+A ideia central é separar duas coisas que normalmente ficam misturadas: **a estrutura do pipeline** (como produzir, validar, atualizar atomicamente) e **as decisões de gênero** (que voz, que formato, que extensão). Este pacote entrega a primeira parte. O gênero é um arquivo separado que pode ser trocado, customizado, ou criado do zero.
+
+## Para quem é
+
+- Para quem quer produzir livros (não-ficção, ficção, técnico) com garantia de qualidade consistente
+- Para quem quer um pipeline que possa ser passado para qualquer IA (Claude, ChatGPT, Gemini, etc.)
+- Para quem quer reutilizar a mesma estrutura para diferentes gêneros sem reescrever as skills
+- Para quem valoriza rastreabilidade, validação contra corpus, e auditabilidade
+
+## Para quem NÃO é
+
+- Para quem quer "escrever um livro em 5 minutos" — este pipeline é lento por design (cena por cena, validação dupla)
+- Para quem não tem corpus ou fonte de verdade — sem fontes, a validação MARCH fica limitada
+- Para quem não aceita a granularidade — se você quer produzir 50 cenas numa só chamada, este pipeline vai te frustrar
+
+---
+
+## Como funciona (visão geral)
+
+O pipeline tem **7 agentes especializados** que trabalham em sequência cena por cena:
+
+1. **Orquestrador** — coordena o loop, mantém Bible e Estado
+2. **Escritor** — produz a prosa da cena seguindo o gênero
+3. **Atomizador** — extrai afirmações factuais para validação
+4. **Validador MARCH** — verifica afirmações contra o corpus (cego, não vê a prosa)
+5. **Validador de Continuidade** — verifica coerência com Bible e Estado (cego, não vê a prosa)
+6. **Editor** — faz polimento sem mudar substância
+7. **Consolidador** — junta todas as cenas finais no livro
+
+Cada cena passa por todos os 7, com salvamento atômico (Lei 3), checksum SHA256 (Lei 4), e isolada em pasta própria (Lei 5).
+
+---
+
+## Início rápido (5 passos)
+
+### 1. Copie o pacote
+
+```bash
+cp -r skills_book_v3_PIPELINE_GENERICO/ meu_livro/
+cd meu_livro/
 ```
 
----
+### 2. Escolha um gênero
 
-## Fluxo Principal (Pseudocodigo Resumido)
+Veja os gêneros disponíveis em `generos_completos/`:
 
-```
-ORQUESTRADOR
-  1. Carrega Genero (runtime) + Corpus + Foco Usuario
-  2. Cria/Le Bible + Estado
-  3. Gera Plano de Cenas (granular)
-  4. PARA CADA CENA:
-       A. ESCRITOR -> _saida_escritor.md
-       B. ATOMIZADOR -> _afirmacoes_para_validar.json
-       C. VALIDADOR_MARCH (cego) -> _resultado_march.json
-          SE REPROVADO -> REESCRITA CIRURGICA (volta A) [max 3x]
-       D. VALIDADOR_CONTINUIDADE (cego) -> _resultado_continuidade.json
-          SE REPROVADO -> REESCRITA CIRURGICA (volta A) [max 3x]
-       E. EDITOR (se genero.exige_editor) -> _saida_editor.md
-       F. ATUALIZA BIBLE + ESTADO (atomico)
-  5. CONSOLIDADOR -> livro_final.md (+ epub/pdf)
+- `podbook_mentor/` — para livros baseados em transcrições de aulas (1ª pessoa, voz de mentor)
+- `ficcao_literaria/` — para romances, contos, narrativas literárias
+- `tecnico_manual/` — para manuais how-to, livros didáticos de programação
+
+### 3. Preencha o CONFIG.md
+
+```bash
+cp CONFIG.md execucao/CONFIG.md
 ```
 
----
+Abra `execucao/CONFIG.md` e preencha:
+- Título do livro
+- Gênero escolhido (ex: `generos_completos/podbook_mentor/GENERO.md`)
+- Caminho do corpus
+- Foco do usuário
 
-## Diferencas-Chave vs Podcast
+### 4. Copie o GENERO.md e o corpus
 
-| Podcast | Livro |
-|---------|-------|
-| 2 speakers, dialogo | Voz narrativa unica / multi-POV controlado |
-| 6 segmentos fixos/ep | Cenas variaveis por genero (2-6 por capitulo) |
-| MARCH only | **MARCH + CONTINUIDADE (dupla travas)** |
-| Balanceamento speakers | POV, voz, timeline, worldbuilding, fios narrativos |
-| Audio obrigatorio | Markdown final (EPUB/PDF opcional) |
-| Episodios isolados | **Continuidade global obrigatoria** |
-| Nao ha Bible | **Bible viva** (personagens, timeline, regras, fios) |
+```bash
+cp generos_completos/podbook_mentor/GENERO.md execucao/GENERO.md
+cp -r /caminho/do/seu/corpus/* execucao/corpus/
+```
 
----
+### 5. Passe para a IA
 
-## Validacoes Obrigatorias (Travas Duras)
+Diga:
 
-### MARCH (Fact-Check)
-- 1 CONTRADITO = REPROVADO
-- Taxa CONFIRMADO < 80% = REPROVADO
-- NAO_ENCONTRADO > 30% = REPROVADO
+> "Leia primeiro o `execucao/CONFIG.md`, depois o `execucao/GENERO.md`, depois o `LEIA-ME-PRIMEIRO.md` e o `REGRAS_GREENFORGE_PIPELINE.md` e o `FLUXO_COMPLETO_PIPELINE.md`, depois a SKILL do seu papel. Comece pelo Passo 1 do BOOT do Orquestrador."
 
-### Continuidade (Coerencia Interna)
-- 1 CONTRADITO = REPROVADO
-- NAO_ENCONTRADO = ACEITAVEL (info nova legítima)
-- Verifica: personagens, timeline, locais, conceitos, regras, voz, POV, fios narrativos
+A IA vai seguir o pipeline cena por cena até o livro estar pronto.
 
 ---
 
-## Generos Suportados (Base)
+## Estrutura do pacote
 
-1. **ROMANCE** — Ficcao literaria/comercial/genero (3 atos, beats emocionais, 2 POVs tipico)
-2. **NAO_FICCAO** — Educativo, ciencia popular, business, biografia (problema->solucao, modular)
-3. **MEMORIAS** — Autobiografia, memoir literario (dual temporalidade, verdade emocional, 80% show)
-4. **TECNICO** — Manual, how-to, documentacao, cookbook (precisao, reproduzibilidade, escaneavel)
-5. **PERSONALIZADO** — Usuario cria seu genero copiando template
+```
+skills_book_v3_PIPELINE_GENERICO/
+├── README.md                                ← ESTE ARQUIVO
+├── LEIA-ME-PRIMEIRO.md                      ← Para a IA produtora
+├── REGRAS_GREENFORGE_PIPELINE.md            ← As 6 leis duras
+├── FLUXO_COMPLETO_PIPELINE.md                ← Passo a passo do loop
+├── CONFIG.md                                ← Você preenche antes
+│
+├── generos_template/
+│   └── TEMPLATE_GENERO_VAZIO.md              ← Para criar gênero novo
+│
+├── generos_completos/                       ← Repositório de gêneros
+│   ├── README.md
+│   ├── podbook_mentor/
+│   ├── ficcao_literaria/
+│   └── tecnico_manual/
+│
+├── escritor/                                 ← 7 agentes (BOOT + SKILL)
+├── atomizador/
+├── validador_march/
+├── validador_continuidade/
+├── editor/
+├── consolidador/
+├── orquestrador/
+│
+├── bible/                                    ← Templates da fonte da verdade
+├── estado/                                   ← Template do checkpoint operacional
+├── regras_negocio/                           ← Cenas proibidas + auto-auditoria
+├── templates_bible_worktree/                ← 6 templates JSON/MD
+│
+├── capitulos_exemplo/                        ← Calibração (vazio por padrão)
+│
+└── execucao/                                 ← Pasta de trabalho por projeto
+    ├── README.md
+    ├── CONFIG.md                             ← Você preenche (copia da raiz)
+    ├── GENERO.md                             ← Você copia do gênero escolhido
+    ├── corpus/                               ← Você coloca as fontes
+    ├── bible/                                ← IA cria
+    ├── estado/                               ← IA cria
+    └── capitulos/                            ← IA cria
+```
 
 ---
 
-## Como Usar
+## As 6 Leis Duras (resumo)
 
-1. Usuario fornece: `corpus/`, `genero` (nome), `foco_usuario` (texto livre)
-2. Orquestrador carrega `generos/GENERO_{genero}.md`
-3. Sistema roda loop cena a cena com checkpoints
-3. Output final: `livro_final.md` (validado MARCH + Continuidade em TODAS cenas)
+1. **Cena por cena, sempre.** Nunca produza o livro inteiro em uma chamada. Uma cena = uma unidade de produção.
+2. **Validação dupla cega, sempre.** MARCH (corpus) + Continuidade (Bible/Estado). Ambos cegos para a prosa.
+3. **Atualização atômica, sempre.** Bible e Estado via `os.replace`, nunca `write` direto.
+4. **Checksum e round-trip, sempre.** SHA256 (8 primeiros chars) + verificação contra o disco.
+5. **Isolamento por worktree, sempre.** Cada cena em pasta isolada, nada vaza entre cenas.
+6. **Zero material de marketing, sempre.** O livro é didático, não página de venda.
 
----
-
-## Arquivos de Estado (Checkpoints)
-
-- `estado/estado_da_obra.md` — Progresso granular por cena, retries, foco, plano
-- `bible/bible_da_obra.md` — Fonte da verdade viva (personagens, timeline, regras, fios)
-- `capitulos/capitulo_NN/` — Worktree isolado por cena (arquivos de validacao dentro)
-
-**Retomada exata:** Se cair no meio, proxima execucao comeca EXATAMENTE na cena/checkpoint parado.
+Detalhes em `REGRAS_GREENFORGE_PIPELINE.md`.
 
 ---
 
-## Regras de Ouro (Greenforge)
+## Adicionando um gênero novo
 
-1. **Orquestrador NAO escreve, NAO valida. So COORDENA.**
-2. **Cada agente recebe SO o insumo necessario. Nunca o projeto inteiro.**
-3. **Validacao MARCH + Continuidade SAO OBRIGATORIAS. Sem elas, cena nao existe.**
-4. **CEGUEIRA ABSOLUTA:** Validadores NAO veem prosa do escritor.
-5. **MAX 3 RETRIES por cena. Depois: REPROVADO + segue (flag para humano).**
-6. **CHECKSUM ROUND-TRIP:** Orquestrador relê arquivo do disco e confere checksum.
-7. **SALVAMENTO ATOMICO:** .tmp -> rename. Crash no meio nao corrompe estado/bible.
-8. **BIBLE + ESTADO = CHECKPOINTS UNICOS. Leia e escreva sempre.**
+Se você quer produzir livros em um gênero que não está nos 3 exemplos:
+
+1. Copie `generos_template/TEMPLATE_GENERO_VAZIO.md` para `generos_completos/[nome]/GENERO.md`
+2. Preencha todas as 11 seções (nenhuma pode ter "[definir]")
+3. Crie uma Bible exemplo em `generos_completos/[nome]/BIBLE_EXEMPLO.md`
+4. Produza 1-2 capítulos de calibração usando o pipeline
+5. Valide que funciona
+6. Adicione uma entrada no `generos_completos/README.md`
+
+Sugestão de gêneros para criar:
+- **Acadêmico/Didático** — textbooks, livros de curso universitário
+- **Biografia/Memórias** — narrativas de vida, em 1ª pessoa
+- **Autoajuda prática** — livros de produtividade, hábitos, carreira
+- **Relato de viagem** — narrativas de lugares, culturas, experiências
+- **HQ/Roteiro** — adaptações do pipeline para roteiros visuais
+
+---
+
+## Limitações conhecidas
+
+- **Custo:** como cada cena passa por validação dupla, o custo de produção é mais alto que "escrever tudo de uma vez". É um trade-off explícito: pagar mais por garantia de qualidade.
+- **Tempo:** a granularidade cena por cena é intencionalmente lenta. Para um livro de 30 cenas, espere uma produção que leva algumas horas (dependendo da IA).
+- **Dependência de corpus:** o pipeline funciona melhor com corpus robusto. Para ficção sem corpus, a Bible precisa ser muito bem feita antes de começar.
+- **Modelo com ferramentas:** a IA produtora precisa ter acesso a ferramentas de leitura/escrita de arquivos. Modelos só-texto não conseguem executar este pipeline.
+
+---
+
+## Origem
+
+Este pacote é a v3 do projeto Greenforge de produção de livros. A v2 era específica para Podbook (livro baseado em transcrições com voz de mentor). A v3 generalizou o pipeline para qualquer gênero, com a v2 virando o perfil `podbook_mentor` em `generos_completos/`.
+
+A v1 não existe publicamente — era a fase de exploração onde o framework Greenforge foi definido.
+
+---
+
+## Próximos passos
+
+1. Leia `LEIA-ME-PRIMEIRO.md` (orientado para a IA, mas útil para você também)
+2. Escolha um gênero em `generos_completos/`
+3. Leia o `GENERO.md` e o `BIBLE_EXEMPLO.md` do gênero escolhido
+4. Se for criar gênero novo, leia `generos_template/TEMPLATE_GENERO_VAZIO.md`
+5. Prepare `execucao/` com CONFIG, GENERO, e corpus
+6. Passe para a IA e acompanhe cena por cena
