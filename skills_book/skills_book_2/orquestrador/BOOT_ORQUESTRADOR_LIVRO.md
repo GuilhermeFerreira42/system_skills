@@ -145,20 +145,182 @@ Qual o genero do livro?
 8. Personalizado — voce descreve a estrutura e voz
 ```
 
-## 3.2 Capture o Foco do Usuario
+## 3.2 Nivelamento Editorial (OBRIGATORIO)
 
-Pergunte ao usuario:
+**POR QUE EXISTE:** o diagnostico do Episodio 03 mostrou que a versao antiga da skill (v1.0) produziu um capitulo da Agua muito melhor que a versao nova (v3.0), porque a antiga tinha um `foco_usuario` muito mais detalhado e especifico. A solucao eh institucionalizar essa captura de preferencias na propria skill: o Orquestrador faz 4 perguntas de multipla escolha ANTES de comecar qualquer projeto novo, e as respostas viram o `perfil_editorial` da Bible.
+
+**REGRA:** este passo eh OBRIGATORIO (definido em `utils/constantes.py` como `NIVELAMENTO_OBRIGATORIO = True`). O Orquestrador NAO passa pro Passo 4 enquanto as 4 respostas nao estiverem registradas. Se o usuario disser "nao sei" ou pular, use o `NIVELAMENTO_DEFAULT` (4A's do Bruno) — mas registre explicitamente que o default foi usado, nao finja que o usuario respondeu.
+
+**COMO FAZER:** faca 1 pergunta por mensagem. Espere a resposta (letra unica A, B ou C). So faca a proxima depois de receber a resposta. A ordem dos 4 eixos eh fixa: abertura → densidade → analogias → voz.
+
+**PROMPT DA PERGUNTA 1 — Estilo de Abertura:**
 
 ```
-Em quais aspectos o narrador deve se concentrar neste livro?
-(Texto livre. Ex: 'Foque na tensao psicologica do protagonista. 
-Evite descricoes longas de cenario. O leitor deve sentir a paranoia 
-crescente a cada capitulo. Priorize dialogos rapidos e acao interna.')
+Antes de comecar, preciso alinhar 4 preferencias editoriais contigo. 
+Sao rapidas (multipla escolha) e vao definir o tom de TODAS as cenas 
+do livro, entao pensa com calma. Voce pode mudar depois se quiser, 
+mas o ideal eh travar agora pra nao ficar recalibrando cena a cena.
 
-Registre a resposta no campo `foco_usuario` do estado e passe para o Escritor.
+Pergunta 1 de 4 — ESTILO DE ABERTURA das cenas:
+
+A) IMERSAO + PERGUNTA RETORICA — cada capitulo comeca com uma cena 
+   mental que coloca o leitor no contexto (ex: "Se voce passasse seis 
+   anos na faculdade de medicina, dissecando cadaveres..."), e so 
+   depois revela a informacao. Mais lento, mais envolvente, 
+   lembra aula boa de professor apaixonado.
+
+B) DIRETO AO PONTO — afirma a tese ou a informacao principal logo na 
+   primeira frase. Eficiente, respeita o tempo do leitor que quer 
+   informacao rapida, mas pode soar frio.
+
+C) CASO CONCRETO ANTES — comeca com um caso real, uma vinheta de 
+   paciente, um exemplo vivido, e so depois generaliza. Bom pra 
+   livros de saude, financas, historia.
+
+Responde com a letra (A, B ou C).
 ```
 
-## 3.3 Carregue o Genero
+**PROMPT DA PERGUNTA 2 — Densidade do Livro:**
+
+```
+Pergunta 2 de 4 — DENSIDADE DO LIVRO (quantas palavras no total 
+e por cena):
+
+A) DENSO — livro grande, ~250 mil palavras, com cenas longas 
+   (800-1500 palavras cada). Prosfundidade total, multiplas 
+   camadas por cena, analogias, exemplos, contra-argumentos. 
+   Pra quem quer o "livro de referencia" definitivo.
+
+B) MEDIO — livro de ~120 mil palavras, cenas de 500-900 palavras. 
+   Equilibra profundidade com agilidade. Leitor termina em 
+   2-3 semanas se ler 1h por dia.
+
+C) ENXUTO — livro curto, ~60 mil palavras, cenas de 300-600 
+   palavras. Objetivo, pouca repeticao, vai direto ao que 
+   importa. Pra quem quer um "resumo denso" ou um guia pratico.
+
+Responde com a letra (A, B ou C).
+```
+
+**PROMPT DA PERGUNTA 3 — Densidade de Analogias:**
+
+```
+Pergunta 3 de 4 — DENSIDADE DE ANALOGIAS (quantas metaforas 
+visuais ou casos analogos por cena):
+
+A) ALTA — 1 a 2 analogias por cena, sempre. Pra cada conceito 
+   cientifico ou abstrato, uma metafora visual forte (tipo 
+   "aquaporina = porta de entrada da agua na celula" ou 
+   "painel do carro com luzes acesas"). Excelente pra nao-ficcao 
+   educativa, porque o leitor leigo "vê" o conceito.
+
+B) MEDIA — 0 a 1 analogia por cena. Usa quando faz sentido, 
+   nao forca. Bom pra publico que ja tem alguma familiaridade 
+   com o tema.
+
+C) BAIXA — nenhuma analogia obrigatoria. O texto assume que 
+   o leitor sabe do que esta falando. Mais comum em livros 
+   tecnicos, academicos, manuais.
+
+Responde com a letra (A, B ou C).
+```
+
+**PROMPT DA PERGUNTA 4 — Voz do Autor:**
+
+```
+Pergunta 4 de 4 — VOZ DO AUTOR (como o narrador se posiciona):
+
+A) OPINATIVA COM HUMOR — narrador com opiniao forte, humor acido 
+   as vezes, polemicas leves quando faz sentido, posicionamentos 
+   claros ("o problema de tratar com agua e sal eh que se ganha 
+   menos dinheiro"). Esta eh a voz da versao ANTIGA da skill, que 
+   o Bruno curtiu mais. Lembra um bom professor universitario 
+   que nao tem medo de se posicionar.
+
+B) NEUTRA ENGAJADA — narrador invisivel (voz de terceira pessoa 
+   classica), mas preocupado com clareza e ritmo. Nao polemiza, 
+   nao da opiniao, mas tambem nao eh frio. E o "default" da 
+   maioria dos livros de nao-ficcao bestseller.
+
+C) ACADEMICA DISTANTE — narrador onisciente, formal, sem opiniao, 
+   tom de paper ou tratado. Pra livros universitarios, manuais 
+   tecnicos, literatura de referencia. Soberano, porem distante.
+
+Responde com a letra (A, B ou C).
+```
+
+**REGISTRO DAS RESPOSTAS:**
+
+Apos receber as 4 letras, construa o dicionario `perfil_editorial`:
+
+```python
+perfil_editorial = {
+    "estilo_abertura": <A|B|C>,        # resposta 1
+    "densidade_livro": <A|B|C>,        # resposta 2
+    "densidade_analogias": <A|B|C>,    # resposta 3
+    "voz_autor": <A|B|C>,              # resposta 4
+    "preenchido_em": "<ISO8601>",
+    "fonte": "nivelamento_inicial",    # ou "nivelamento_padrao" se usou default
+}
+```
+
+Passe esse dicionario pro Passo 4 (que grava na Bible) E pro Passo 3.3 em diante (que usa como input do Escritor).
+
+**SE O USUARIO NAO SOUBER RESPONDER:**
+
+Use o `NIVELAMENTO_DEFAULT` (definido em `utils/constantes.py`): todas as 4 respostas = "A" (4A's do Bruno). Mas ANTES de aplicar o default, faca UMA pergunta confirmando:
+
+```
+Nao tem problema se voce nao sabe agora. Posso usar o "perfil padrao 
+Bruno" (4A's: imersao + pergunta retorica, denso, alta analogia, voz 
+opinativa com humor) como ponto de partida? Voce pode ajustar depois, 
+cena a cena, se quiser. Confirma com "sim" pra eu seguir.
+```
+
+Se o usuario confirmar, registre `"fonte": "nivelamento_padrao"`. Se o usuario preferir customizar, refaca as 4 perguntas.
+
+**SE O USUARIO PEDIR PRA PULAR:**
+
+Recuse. O nivelamento eh obrigatorio. Diga:
+
+```
+O nivelamento editorial eh obrigatorio porque sem ele o livro fica 
+generico e perde a tua voz. Leva 2 minutos, sao 4 perguntas de 
+multipla escolha. Bora?
+```
+
+So pule se o usuario for EXPLICITO ("pula o nivelamento, eu sei o que quero" — esse caso registra `"fonte": "nivelamento_pulado_usuario_explicito"` e usa o default de qualquer jeito, pra garantir que o Escritor tenha pelo menos alguma direcao).
+
+## 3.3 Capture o Foco do Usuario (COMPLEMENTAR ao Nivelamento)
+
+**IMPORTANTE:** o `foco_usuario` continua existindo. Ele eh COMPLEMENTAR ao `perfil_editorial`, nao substituto. O perfil_editorial captura o "padrao recorrente" (voz, densidade, estilo); o foco_usuario captura os "ajustes finos desta obra especifica" (ex: "neste livro quero focar em saude feminina" ou "capitulo 5 precisa ser polemico").
+
+Apos o nivelamento estar registrado, pergunte:
+
+```
+Em quais aspectos especificos desta obra o narrador deve se 
+concentrar? (Texto livre. Ex: 'Foque na tensao psicologica do 
+protagonista. Evite descricoes longas de cenario. O leitor deve 
+sentir a paranoia crescente a cada capitulo. Priorize dialogos 
+rapidos e acao interna.')
+
+Se nao houver nada especifico desta obra alem do nivelamento, 
+responde "nada" e seguimos com o padrao.
+```
+
+**REGRA:** o `foco_usuario` NUNCA sobrescreve o `perfil_editorial`. Se o usuario escrever no foco_usuario algo que contradiz o nivelamento (ex: escolheu voz opinativa no nivelamento mas pede "voz neutra e academica" no foco_usuario), o Escritor prioriza o nivelamento. O Orquestrador deve avisar:
+
+```
+Percebi que o foco_usuario desta obra ("voz neutra e academica") 
+contradiz o perfil_editorial que tu escolheu no nivelamento 
+(voz opinativa com humor). Vou priorizar o perfil_editorial, 
+porque ele eh a "voz padrao da tua marca". Se quer mudar a voz 
+pra ESTA obra especifica, refaz o nivelamento no Passo 3.2.
+```
+
+Registre a resposta do foco_usuario no campo `foco_usuario` do estado E no `perfil_editorial.foco_usuario_adicional` da Bible (pra ficar tudo num lugar so).
+
+## 3.4 Carregue o Genero
 
 Conforme a escolha, carregue o arquivo da pasta `generos/`:
 - Romance -> `generos/GENERO_ROMANCE.md`
@@ -193,8 +355,20 @@ Em ambos os casos, identifique:
 - Arcos, conflitos, questoes centrais
 - Evidencias, dados, citacoes (para MARCH)
 
-**SE Bible nao existe:** Crie `bible/bible_da_obra.md` usando o template (incluindo o campo `mapa_corpus_capitulos` se o corpus for modular).
-**SE Bible existe:** Atualize com novas informacoes do corpus (personagens novos, locais, cronologia) e ajuste o `mapa_corpus_capitulos` se necessario.
+**SE Bible nao existe:** Crie `bible/bible_da_obra.md` usando o template (incluindo o campo `mapa_corpus_capitulos` se o corpus for modular E o campo `perfil_editorial` se o nivelamento editorial foi feito no Passo 3.2).
+**SE Bible existe:** Atualize com novas informacoes do corpus (personagens novos, locais, cronologia) e ajuste o `mapa_corpus_capitulos` se necessario. **NUNCA sobrescreva o campo `perfil_editorial` existente** — esse campo so muda se o usuario explicitamente responder o nivelamento de novo (Passo 3.2). Se a Bible foi criada antes do Nivelamento ser instituido (Acao 6 do Episodio 03), o Orquestrador roda o nivelamento retroativamente antes de comecar a escrever, pra garantir que o Escritor tenha as 4 respostas.
+
+**4.0.1 — Persistencia do Nivelamento Editorial (Acao 6 do Episodio 03)**
+
+Ao criar ou atualizar a Bible, o Orquestrador DEVE garantir que o campo `perfil_editorial` esteja preenchido com as 4 respostas do Passo 3.2. O fluxo:
+
+1. Apos o Passo 3.2 ter capturado as 4 letras (A/B/C de cada eixo), o Orquestrador monta o dicionario `perfil_editorial` e grava em:
+   - `bible/bible_da_obra.md` → secao "Perfil Editorial (NIVELAMENTO)" (template em `BIBLE_TEMPLATE.md`)
+   - `estado/estado_da_obra.md` → espelhado no campo `perfil_editorial` (pra o Escritor poder consultar sem precisar abrir a Bible)
+2. Se a Bible ja existe e o `perfil_editorial` ja esta preenchido, o Orquestrador PRESERVA os valores (so sobrescreve se o usuario rodar o nivelamento de novo explicitamente).
+3. Se a Bible existe mas o `perfil_editorial` NAO esta preenchido (Bible antiga, pre-Acao 6), o Orquestrador PARA e pede pro usuario rodar o Passo 3.2 antes de continuar. NAO invente valores, NAO use o default silenciosamente — pergunte.
+
+O Escritor (`BOOT_ESCRITOR_CAPITULO.md`) consulta o `perfil_editorial` no inicio de cada cena e usa os 4 valores pra calibrar: estilo de abertura da cena 1 do capitulo, palavras-alvo da cena (densidade_livro), numero de analogias (densidade_analogias), voz do narrador (voz_autor).
 
 ## 4.1 — Checksum da Bible (registrar no estado)
 

@@ -588,3 +588,121 @@ SKILL_EDITING = "Greenforged Edition"
 SKILL_DATA_CRIACAO = "2026-07-27"
 SKILL_DATA_ULTIMA_REVISAO = "2026-08-05"
 SKILL_BASEADA_EM = "Skills Podcast 4.0.1 (Greenforged Edition) + Greenforge System"
+
+
+# ============================================================================
+# 19. NIVELAMENTO EDITORIAL (Acao 6 do Episodio 03)
+# ============================================================================
+# O Nivelamento Editorial captura, via 4 perguntas de multipla escolha, as
+# preferencias editoriais do usuario ANTES de comecar qualquer projeto novo.
+# Surgiu do diagnostico: a versao antiga (skill v1.0) produziu um capitulo
+# da Agua muito melhor que a versao nova (v3.0) porque a antiga tinha um
+# `foco_usuario` muito mais detalhado e especifico. A solucao eh
+# institucionalizar essa captura de preferencias na propria skill, em vez de
+# depender de o usuario fornecer instrucoes ricas manualmente.
+#
+# O Orquestrador (Passo 3.2 do BOOT) faz as 4 perguntas no inicio de todo
+# projeto novo. As respostas sao salvas no campo `perfil_editorial` da Bible
+# (e espelhadas no Estado) e ficam disponiveis pro Escritor em todas as cenas.
+#
+# Cada eixo tem 3 opcoes (A, B, C) e o sistema aceita resposta unica por eixo.
+# Se o usuario nao souber responder, o Orquestrador usa o DEFAULT abaixo
+# (que sao as 4 respostas "A" do Bruno, validadas no Episodio 03).
+#
+# **IMPORTANTE:** o Nivelamento NAO substitui o `foco_usuario` livre. O
+# usuario SEMPRE pode adicionar instrucoes extras depois do nivelamento.
+# O nivelamento captura o "perfil padrao"; o foco_usuario captura os
+# "ajustes finos deste projeto especifico".
+
+# Chaves dos 4 eixos do nivelamento (usadas no JSON do perfil_editorial)
+NIVELAMENTO_CHAVE_ABERTURA = "estilo_abertura"
+NIVELAMENTO_CHAVE_DENSIDADE = "densidade_livro"
+NIVELAMENTO_CHAVE_ANALOGIAS = "densidade_analogias"
+NIVELAMENTO_CHAVE_VOZ = "voz_autor"
+
+# Letras das opcoes (padrao multipla escolha A/B/C)
+NIVELAMENTO_OPCAO_A = "A"
+NIVELAMENTO_OPCAO_B = "B"
+NIVELAMENTO_OPCAO_C = "C"
+NIVELAMENTO_OPCOES_VALIDAS = [NIVELAMENTO_OPCAO_A, NIVELAMENTO_OPCAO_B, NIVELAMENTO_OPCAO_C]
+
+# --- EIXO 1: ESTILO DE ABERTURA ---
+# Como a cena de abertura de cada capitulo deve comecar.
+NIVELAMENTO_ABERTURA_OPCOES = {
+    NIVELAMENTO_OPCAO_A: "imersao_pergunta_retorica",  # sempre comecar com cena mental + pergunta
+    NIVELAMENTO_OPCAO_B: "direto_ao_ponto",            # afirma a tese logo na primeira linha
+    NIVELAMENTO_OPCAO_C: "caso_concreto_antes",        # caso real/vinheta antes de explicar
+}
+
+# --- EIXO 2: DENSIDADE DO LIVRO ---
+# Quantas palavras o livro deve ter no total e por cena.
+NIVELAMENTO_DENSIDADE_OPCOES = {
+    NIVELAMENTO_OPCAO_A: {
+        "nome": "denso",
+        "palavras_total_alvo": 250000,
+        "palavras_por_cena_min": 800,
+        "palavras_por_cena_max": 1500,
+    },
+    NIVELAMENTO_OPCAO_B: {
+        "nome": "medio",
+        "palavras_total_alvo": 120000,
+        "palavras_por_cena_min": 500,
+        "palavras_por_cena_max": 900,
+    },
+    NIVELAMENTO_OPCAO_C: {
+        "nome": "enxuto",
+        "palavras_total_alvo": 60000,
+        "palavras_por_cena_min": 300,
+        "palavras_por_cena_max": 600,
+    },
+}
+
+# --- EIXO 3: DENSIDADE DE ANALOGIAS ---
+# Quantas analogias/metaforas visuais por cena.
+NIVELAMENTO_ANALOGIAS_OPCOES = {
+    NIVELAMENTO_OPCAO_A: {
+        "nome": "alta",
+        "analogias_por_cena_min": 1,
+        "analogias_por_cena_max": 2,
+    },
+    NIVELAMENTO_OPCAO_B: {
+        "nome": "media",
+        "analogias_por_cena_min": 0,
+        "analogias_por_cena_max": 1,
+    },
+    NIVELAMENTO_OPCAO_C: {
+        "nome": "baixa",
+        "analogias_por_cena_min": 0,
+        "analogias_por_cena_max": 0,
+    },
+}
+
+# --- EIXO 4: VOZ DO AUTOR ---
+# Como o narrador se posiciona no texto.
+NIVELAMENTO_VOZ_OPCOES = {
+    NIVELAMENTO_OPCAO_A: "opinativa_humor_posicionamentos",  # narrador comopiniao, humor, polemicas leves
+    NIVELAMENTO_OPCAO_B: "neutra_engajada",                  # narrador invisivel mas preocupado com clareza
+    NIVELAMENTO_OPCAO_C: "academica_distante",               # narrador onisciente, formal, sem opiniao
+}
+
+# Default do nivelamento (4A's do Bruno, validadas em 2026-08-06)
+# Quando o usuario nao souber responder, o Orquestrador usa estes valores.
+NIVELAMENTO_DEFAULT = {
+    NIVELAMENTO_CHAVE_ABERTURA: NIVELAMENTO_OPCAO_A,
+    NIVELAMENTO_CHAVE_DENSIDADE: NIVELAMENTO_OPCAO_A,
+    NIVELAMENTO_CHAVE_ANALOGIAS: NIVELAMENTO_OPCAO_A,
+    NIVELAMENTO_CHAVE_VOZ: NIVELAMENTO_OPCAO_A,
+}
+
+# Comportamento do nivelamento
+NIVELAMENTO_OBRIGATORIO = True  # se True, Orquestrador NAO comeca o projeto sem as 4 respostas
+NIVELAMENTO_QUANTOS_EIXOS = 4
+NIVELAMENTO_PERGUNTAS_POR_VEZ = 1  # faz 1 pergunta por mensagem, espera resposta, faz a proxima
+
+# Onde o nivelamento eh persistido (ver Decisao 2 do Bruno: "bble" = Bible + espelho no Estado)
+NIVELAMENTO_PERSISTIR_BIBLE = True
+NIVELAMENTO_PERSISTIR_ESTADO = True
+
+# Caminho do campo na Bible (sob Metadados Gerais)
+NIVELAMENTO_BIBLE_CAMPO = "perfil_editorial"
+NIVELAMENTO_ESTADO_CAMPO = "perfil_editorial"

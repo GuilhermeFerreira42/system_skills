@@ -24,6 +24,50 @@ O Orquestrador atualiza automaticamente a cada cena aprovada.
 - **Checksum:** [auto-preenchido pelo orquestrador]
 - **Ultima_atualizacao:** [ISO8601]
 
+## Perfil Editorial (NIVELAMENTO — preenchido pelo Orquestrador no Passo 3.2)
+
+Este campo captura as 4 respostas de nivelamento editorial que o Orquestrador coleta do usuario no inicio de todo projeto novo. Os 4 eixos sao institucionais: garantem que a voz, densidade e estilo sejam consistentes com o que o usuario quer, mesmo quando o `foco_usuario` livre desta obra especifica for generico.
+
+**Quando preencher:** no Passo 4 do BOOT, ao criar/atualizar a Bible a partir do corpus. Se a Bible ja existe, o Orquestrador PRESERVA o perfil existente (so sobrescreve se o usuario responder o nivelamento de novo explicitamente).
+
+**Onde consultar:** o Escritor le este campo no `BOOT_ESCRITOR_CAPITULO.md` e injeta os valores nas instrucoes de cada cena (estilo de abertura, densidade de analogias, voz do autor, palavras-alvo por cena).
+
+**Os 4 eixos (resposta unica por eixo, letra A/B/C):**
+
+- **estilo_abertura:** [A | B | C]
+  - A = imersao_pergunta_retorica (cena mental + pergunta antes de revelar a informacao)
+  - B = direto_ao_ponto (afirma a tese logo na primeira linha)
+  - C = caso_concreto_antes (caso real ou vinheta antes de explicar o conceito)
+- **densidade_livro:** [A | B | C]
+  - A = denso (~250k palavras, 800-1500/cena)
+  - B = medio (~120k palavras, 500-900/cena)
+  - C = enxuto (~60k palavras, 300-600/cena)
+- **densidade_analogias:** [A | B | C]
+  - A = alta (1-2 analogias por cena, sempre)
+  - B = media (0-1 analogia por cena)
+  - C = baixa (sem analogias obrigatorias)
+- **voz_autor:** [A | B | C]
+  - A = opinativa_humor_posicionamentos (narrador com opiniao, humor acido, polemicas leves)
+  - B = neutra_engajada (narrador invisivel mas preocupado com clareza)
+  - C = academica_distante (narrador onisciente, formal, sem opiniao)
+
+**Exemplo preenchido (defaults do Bruno):**
+
+```
+perfil_editorial:
+  estilo_abertura: A
+  densidade_livro: A
+  densidade_analogias: A
+  voz_autor: A
+  preenchido_em: 2026-08-06
+  fonte: nivelamento_inicial
+```
+
+**Regras:**
+- O Orquestrador NAO comeca a escrever se este campo estiver vazio (NIVELAMENTO_OBRIGATORIO).
+- O `foco_usuario` (campo separado) complementa este perfil com instrucoes especificas desta obra. Os dois coexistem.
+- O `foco_usuario` NUNCA sobrescreve o nivelamento — ele apenas adiciona granularidade.
+
 ---
 
 ## Premissa & Estrutura

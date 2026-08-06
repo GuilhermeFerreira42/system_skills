@@ -133,10 +133,12 @@ ORQUESTRADOR
 
 ## Como Usar
 
-1. Usuario fornece: `corpus/`, `genero` (nome), `foco_usuario` (texto livre)
-2. Orquestrador carrega `generos/GENERO_{genero}.md`
-3. Sistema roda loop cena a cena com checkpoints
-3. Output final: `livro_final.md` (validado MARCH + Continuidade em TODAS cenas)
+1. Usuario fornece: `corpus/`, `genero` (nome)
+2. Orquestrador faz o **NIVELAMENTO EDITORIAL** (Passo 3.2 do BOOT, obrigatorio): 4 perguntas de multipla escolha que capturam estilo de abertura, densidade do livro, densidade de analogias e voz do autor. As respostas viram o `perfil_editorial` da Bible. Default = 4A's do Bruno (imersao+pergunta retorica, denso 250k, alta analogia, voz opinativa com humor). Ver secao 19 de `utils/constantes.py`.
+3. Usuario fornece o `foco_usuario` (Passo 3.3, complementar ao nivelamento): instrucao livre sobre o que priorizar NESTA obra especifica. NAO sobrescreve o perfil_editorial.
+4. Orquestrador carrega `generos/GENERO_{genero}.md`
+5. Sistema roda loop cena a cena com checkpoints
+6. Output final: `livro_final.md` (validado MARCH + Continuidade em TODAS cenas)
 
 ---
 
@@ -170,3 +172,4 @@ ORQUESTRADOR
 | **Acao 3** — Criar `utils/checksum.py` com deteccao de drift | ✅ FEITA + TESTADA | `utils/checksum.py` (587 linhas) com 14 funcoes: calculo basico, hash etiquetado com versao, verificacao com deteccao de drift, baseline de pasta, comparacao, persistencia JSON, CLI. Substitui o `sha256sum | cut -c1-8` manual com retrocompatibilidade (hash sem etiqueta continua funcionando). |
 | **Acao 4** — Criar agente `Revisor Cego Editorial` | ✅ FEITA | Pasta `revisor_cego_editorial/` com SKILL (~12KB) e BOOT (~4.6KB). 3 categorias de problemas (estrutura, clareza, ritmo), 18 tipos de problemas, 3 gravidades. Pluga no Orquestrador depois do Editor, opcional pra TECNICO e capitulos 1-3. Constantes adicionadas em `utils/constantes.py`. |
 | **Acao 5** — Criar `utils/constantes.py` | ✅ FEITA | `utils/constantes.py` com 133 constantes (nomes de arquivo, paths, status, chaves JSON, generos, mensagens de erro, funcoes de formatacao). 6 SKILLs refatoradas (escritor, atomizador, editor, validador_march, validador_continuidade, consolidador, orquestrador). Reducao de 152 hardcoded pra 16 (todas em prosa explicativa). |
+| **Acao 6** — Nivelamento Editorial institucional | ✅ FEITA | Surgiu do diagnostico: a versao antiga (skill v1.0) produziu um Cap 1 da Agua muito melhor que a nova (v3.0), porque a antiga tinha `foco_usuario` rico. Solucao: 4 perguntas de multipla escolha no Passo 3.2 do BOOT (estilo de abertura, densidade do livro, densidade de analogias, voz do autor), com default = 4A's do Bruno. Modificados: `utils/constantes.py` (+19 constantes, secao 19), `bible/BIBLE_TEMPLATE.md` (campo `perfil_editorial`), `orquestrador/BOOT_ORQUESTRADOR_LIVRO.md` (Passos 3.2 expandido, 3.3 agora complementar, 4.0.1 persistencia), `inicializador.txt` (secao de nivelamento), `README.md` (atualizado). Nivelamento eh OBRIGATORIO e persiste em Bible + Estado. |

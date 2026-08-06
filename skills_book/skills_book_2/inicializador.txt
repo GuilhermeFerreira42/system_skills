@@ -10,14 +10,27 @@
 1. O usuario fornece:
    - Caminho do corpus (livro fonte, notas, transcrições, pesquisa)
    - Genero desejado (arquivo em `generos/GENERO_*.md`)
-   - Foco do usuario (instrução livre sobre o que priorizar)
 
-2. O Orquestrador:
+2. O Orquestrador faz o **NIVELAMENTO EDITORIAL** (Passo 3.2 do BOOT, obrigatorio):
+   - 4 perguntas de multipla escolha, 1 por vez, nessa ordem:
+     1. Estilo de abertura (A = imersao+pergunta retorica, B = direto, C = caso concreto antes)
+     2. Densidade do livro (A = denso 250k, B = medio 120k, C = enxuto 60k)
+     3. Densidade de analogias (A = alta 1-2/cena, B = media, C = baixa)
+     4. Voz do autor (A = opinativa com humor, B = neutra engajada, C = academica distante)
+   - As 4 respostas viram o campo `perfil_editorial` da Bible (e espelho no Estado)
+   - Se o usuario nao souber responder, usa o `NIVELAMENTO_DEFAULT` (4A's do Bruno)
+   - Constantes e defaults em `utils/constantes.py`, secao 19
+
+3. O usuario fornece o `foco_usuario` (Passo 3.3, complementar ao nivelamento):
+   - Instrucao livre sobre o que priorizar NESTA obra especifica
+   - NAO sobrescreve o `perfil_editorial` — so adiciona granularidade
+
+4. O Orquestrador:
    - Le o corpus completo
    - Carrega o genero em runtime
-   - Cria/le a Bible da Obra (`bible/bible_da_obra.md`)
-   - Cria/le o Estado da Obra (`estado/estado_da_obra.md`)
-   - Gera o Plano de Capítulos baseado no genero + corpus + foco
+   - Cria/le a Bible da Obra (`bible/bible_da_obra.md`) incluindo o `perfil_editorial`
+   - Cria/le o Estado da Obra (`estado/estado_da_obra.md`) com espelho do `perfil_editorial`
+   - Gera o Plano de Capítulos baseado no genero + corpus + foco + perfil_editorial
    - Inicia o loop de produção capítulo a capítulo
 
 ---
