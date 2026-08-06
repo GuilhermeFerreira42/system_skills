@@ -52,6 +52,31 @@ Se o corpus do projeto esta organizado em `corpus/modulo_NN_*/` (um modulo por t
 
 **Se o corpus for MONOLITICO** (`corpus_novo.md` unico arquivo), deixe esta secao vazia ou escreva "NAO APLICAVEL — corpus monolitico".
 
+## Alocacao de Cenas por Capítulo (OPCIONAL, OVERRIDE MANUAL)
+
+Por padrao, o Orquestrador calcula quantas cenas cada capitulo merece automaticamente, usando densidade do corpus + arquetipo do genero (definido em `utils/constantes.py`, secoes `CONFIGURACAO_ALOCACAO_CENAS` e `CONFIGURACAO_CENAS_POR_ARQUETIPO`).
+
+Se voce quiser forçar uma cadencia especifica pra este projeto (ex: capitulo de abertura com 1 cena, capitulo de virada com 5), preencha o dicionario abaixo. O Orquestrador usa esses valores em vez do calculo automatico.
+
+**Formato:** YAML-like, com ID do capitulo e numero de cenas.
+
+```
+alocacao_cenas_por_capitulo:
+  cap_01: 1     # abertura, so contexto
+  cap_02: 3     # agua (denso, requer 3 cenas)
+  cap_03: 4     # cancer (muito denso, controverso, 4 cenas)
+  cap_04: 2     # vitamina D3 (intermediario, 2 cenas)
+  cap_05: 1     # oleo de coco (direto, 1 cena)
+```
+
+**Quando usar override:**
+- Capitulo de abertura/fechamento que precisa de cadencia especial
+- Capitulo que mistura 2 modulos e voce quer garantir que ambos sejam bem cobertos
+- Capitulo de "respiro" entre capitulos densos
+- Quando o calculo automatico erra (raro, mas acontece em corpus nao-padronizado)
+
+**Quando NAO usar override:** na duvida, deixe o sistema calcular. A heuristica de densidade funciona bem em 90% dos casos.
+
 ---
 
 ## Personagens Principais (Ficcao/Memoir) OU Conceitos-Chave (Nao-Ficcao/Tecnico)

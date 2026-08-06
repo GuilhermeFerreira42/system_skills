@@ -218,7 +218,29 @@ Gere um plano de capitulos baseado em:
 
 O plano deve ter granularidade de **CENA** (nao so capitulo), pois a validacao continua acontece por cena.
 
-Salve o plano no `estado_da_obra.md` (secao "Plano de Capítulos").
+**Alocacao de cenas por capitulo (DINAMICA, nao fixa):**
+
+A quantidade de cenas por capitulo NAO e fixa. Ela e calculada automaticamente pelo Orquestrador usando DOIS fatores:
+
+1. **Densidade do corpus do capitulo** (palavras / numero-de-subtopicos):
+   - **Direto** (menos de 3.000 palavras por subtopico) → 1 cena
+   - **Medio** (3.000-6.000 palavras por subtopico) → 2 cenas
+   - **Denso** (mais de 6.000 palavras por subtopico) → 4 cenas
+
+2. **Arquetipo do genero** (alguns arquetipos tem cadencia rigida):
+   - Misterio/Detetive: 4 cenas (crime, pistas, red herring, resolucao)
+   - Receita/COOKBOOK: 1 cena por receita
+   - Monografia academica: 4 argumentos
+   - Guia de campo: 1 procedimento por cena
+   - (Lista completa em `utils/constantes.py`, secao CONFIGURACAO_CENAS_POR_ARQUETIPO)
+
+**Combinacao:** o sistema usa o MAIOR valor entre o fixo do arquetipo e o da densidade. Ou seja, se o arquetipo pede 4 cenas mas o material e direto (1 cena), o sistema usa 4 (cadencia do genero). Se o arquetipo pede 1 cena mas o material e denso (4 cenas), o sistema usa 4 (respeita a riqueza do conteudo).
+
+**Limites de seguranca:** minimo 1 cena por capitulo, maximo 6 (anti-monstro). Configuraveis em `utils/constantes.py`.
+
+**Override manual:** se a Bible tem o campo `alocacao_cenas_por_capitulo` preenchido (ex: `{1: 3, 2: 2, 3: 4}`), esse mapeamento sobrescreve o calculo automatico. Use quando quiser forcar uma cadencia especifica (ex: capitulo de fechamento com 1 cena, capitulo de virada com 5).
+
+Salve o plano no `estado_da_obra.md` (secao "Plano de Capítulos"), com a quantidade de cenas calculada pra cada capitulo.
 
 ---
 

@@ -412,7 +412,89 @@ FUNCAO CRIAR_PLANO_CAPITULOS(corpus, genero, foco_usuario, bible):
     // Retorna lista de cenas com: id, capitulo, cena, titulo, pov, tamanho_estimado, objetivo
     // Se corpus e MODULAR, o plano leva em conta o mapa_corpus_capitulos
     // pra agrupar cenas que usam o mesmo modulo de corpus
-    RETORNAR plano
+
+    // Se o usuario definiu alocacao manual na Bible (alocacao_cenas_por_capitulo),
+    // usa ela. Se nao, calcula automaticamente com base em densidade do corpus
+    // E no arquetipo do genero.
+    alocacao_manual = bible.alocacao_cenas_por_capitulo  // {cap_id: n_cenas} ou None
+
+    // Determina quantas cenas cada capitulo merece
+    plano_capitulos = []
+    PARA CADA capitulo EM DIVIDIR_POR_CAPITULO(corpus, genero):
+        SE alocacao_manual TEM capitulo.id:
+            // Usuario definiu manualmente, respeita
+            n_cenas = alocacao_manual[capitulo.id]
+        SENAO:
+            // Calcula automaticamente
+            n_cenas = ALOCAR_CENAS_POR_DENSIDADE(
+                capitulo.corpus_modulo,  // modulo do corpus deste capitulo
+                genero.arquetipo,        // "PROBLEMA_SOLUCAO", "MISTERIO_DETETIVE", etc
+                CONFIGURACAO_ALOCACAO_CENAS,  // thresholds em constantes.py
+                CONFIGURACAO_CENAS_POR_ARQUETIPO  // numero fixo por arquetipo
+            )
+        // Garante limites de seguranca
+        n_cenas = CLAMP(n_cenas, CONFIGURACAO_ALOCACAO_CENAS.cenas_minimo_absoluto,
+                                     CONFIGURACAO_ALOCACAO_CENAS.cenas_maximo_absoluto)
+
+        // Cria as cenas dentro do capitulo
+        PARA n DE 1 ATE n_cenas:
+            cena = CRIAR_CENA(capitulo, n, genero, corpus)
+            plano_capitulos.ADICIONAR(cena)
+
+    RETORNAR plano_capitulos
+
+FUNCAO ALOCAR_CENAS_POR_DENSIDADE(modulo_corpus, arquetipo, config_densidade, config_arquetipo):
+    // Decide quantas cenas um capitulo merece, considerando DOIS fatores:
+    // 1. Densidade do material (palavras-por-subtopico)
+    // 2. Arquetipo do genero (alguns arquetipos tem cadencia rigida)
+
+    // Primeiro: tamanho fixo do arquetipo (se mapeado)
+    n_cenas_por_arquetipo = config_arquetipo.get(arquetipo, config_arquetipo_DEFAULT)
+    // Ex: "MISTERIO_DETETIVE" retorna 4 (crime, pistas, red herring, resolucao)
+
+    // Segundo: heuristica de densidade
+    n_palavras = CONTAR_PALAVRAS(modulo_corpus)
+    n_subtopicos = IDENTIFICAR_SUBTOPICOS(modulo_corpus)
+    palavras_por_subtopico = n_palavras / max(n_subtopicos, 1)
+
+    SE palavras_por_subtopico < config_densidade.direto_palavras_por_subtopico_max:
+        densidade_cenas = config_densidade.direto_cenas_recomendadas  // 1
+    SENAO SE palavras_por_subtopico < config_densidade.medio_palavras_por_subtopico_max:
+        densidade_cenas = config_densidade.medio_cenas_recomendadas  // 2
+    SENAO:
+        densidade_cenas = config_densidade.denso_cenas_recomendadas  // 4
+
+    // Combinacao: usa o MAIOR entre o fixo do arquetipo e o da densidade
+    // (porque denso precisa de mais cenas, e o arquetipo ja define um minimo)
+    n_cenas_final = MAX(n_cenas_por_arquetipo, densidade_cenas)
+
+    // Retorna dentro dos limites de seguranca (CLAMP no chamador)
+    RETORNAR n_cenas_final
+
+FUNCAO IDENTIFICAR_SUBTOPICOS(modulo_corpus):
+    // Conta quantos "subtopicos" o material tem, pra medir densidade.
+    // Subtopico = quebra logica: header markdown (## ou ###), ou
+    // quebra de contexto detectada por duplas quebras de linha, ou
+    // marcador explicito (numeracao, topicos).
+    //
+    // Algoritmo simples (proxy razoavel):
+    // 1. Conta headers markdown de nivel 2 (##)
+    // 2. Conta headers de nivel 3 (###)
+    // 3. Conta listas numeradas (1., 2., 3.)
+    // 4. Se nao tem nenhum, usa o total de paragrafos dividido por 10
+    //
+    // N_limitado: o algoritmo e um PROXY. Em caso de duvida, o Orquestrador
+    // pode chamar um agente classificador mais robusto, mas pra projetos tipicos
+    // esse algoritmo simples ja da uma boa aproximacao.
+    n = 0
+    n += len(RE.FINDALL(r"^## ", modulo_corpus, re.MULTILINE))  // headers nivel 2
+    n += len(RE.FINDALL(r"^### ", modulo_corpus, re.MULTILINE))  // headers nivel 3
+    n += len(RE.FINDALL(r"^\d+\.\s", modulo_corpus, re.MULTILINE))  // listas numeradas
+    SE n == 0:
+        // Fallback: paragrafos / 10 (densidade media de topico por paragrafo)
+        paragrafos = len(RE.FINDALL(r"\n\n", modulo_corpus)) + 1
+        n = max(paragrafos / 10, 1)
+    RETORNAR max(int(n), 1)
 
 FUNCAO EXTRAIR_CORPUS_PARA_CENA(cena, corpus, bible):
     // Decide qual parte do corpus passar pro pipeline desta cena.

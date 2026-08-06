@@ -398,6 +398,66 @@ MAX_RETRIES_POR_CENA = 3  # teto de tentativas de reescrita cirurgica
 MAX_CHAMADAS_POR_PROJETO = 200  # limite soft de chamadas de API
 TAXA_DISFLUENCIA_MINIMA_PODCAST = 0.30  # 30% das falas devem ter disfluencia
 
+# Alocacao dinamica de cenas por densidade do corpus (Acao da discussao de 2026-08-06)
+# O Orquestrador mede o tamanho do modulo de corpus por capitulo e decide quantas
+# cenas ele merece. Quanto mais denso o material, mais cenas (ate 4). Quanto mais
+# direto, menos cenas (ate 1). Os thresholds e numeros sao configuraveis aqui.
+CONFIGURACAO_ALOCACAO_CENAS = {
+    # Thresholds de densidade, medidos em palavras-por-subtopico
+    # (onde "subtopico" = quebra logica do material: header, topico, conceito distinto)
+    "direto_palavras_por_subtopico_max": 3000,   # abaixo disso = direto
+    "medio_palavras_por_subtopico_max": 6000,   # entre direto e medio = medio
+    # acima de medio_palavras_por_subtopico_max = denso
+
+    # Quantidade de cenas recomendada por densidade
+    "direto_cenas_recomendadas": 1,
+    "medio_cenas_recomendadas": 2,
+    "denso_cenas_recomendadas": 4,
+
+    # Limites maximos e minimos (tetos de seguranca, mesmo que a heuristica erre)
+    "cenas_minimo_absoluto": 1,    # nenhum capitulo pode ter 0 cenas
+    "cenas_maximo_absoluto": 6,    # nenhum capitulo pode ter mais que 6 (anti-monstro)
+}
+
+# Padroes de cenas por arquetipo de genero (sobreposicao opcional acima da densidade)
+# Se o genero definir cenas_fixas_por_capitulo, a alocacao usa esse numero
+# em vez do calculado por densidade. Util pra livros com cadencia rigida
+# (ex: Cookbook com 5 receitas por capitulo, Academia com 3 secoes por cap).
+CONFIGURACAO_CENAS_POR_ARQUETIPO = {
+    "TRES_ATOS": 4,                  # romance classico: setup, complic, turno, resolucao
+    "JORNADA_HEROI": 5,             # epico: 12 estagios divididos em 5 cenas
+    "PROBLEMA_SOLUCAO": 3,          # nao-ficcao: problema, causa, solucao (default)
+    "GRANDE_IDEIA": 3,              # ciencia popular: paradigma, insight, implicacao
+    "BIOGRAFIA": 4,                 # biografia: 4 atos da vida
+    "INVESTIGATIVO": 3,             # jornalismo: 3 camadas de investigacao
+    "SABEDORIA_ACUMULADA": 2,       # filosofia: 2 angulos (premissa, reflexao)
+    "TUTORIAL_PROGRESSIVO": 3,      # tecnico: 3 niveis (basico, intermediario, avancado)
+    "REFERENCIA_TOPICO": 1,         # tecnico: 1 topico por secao
+    "COOKBOOK_RECEITAS": 1,         # cookbook: 1 receita = 1 cena
+    "GUIA_CAMPO": 1,                # guia de campo: 1 procedimento/sintoma = 1 cena
+    "DOCUMENTACAO_API": 1,          # doc tecnica: 1 endpoint = 1 cena
+    "TEMATICO": 3,                  # memoir: 3 memorias por capitulo
+    "CRONOLOGICO": 2,               # memoir: 2 eventos por capitulo
+    "FRAGMENTADO": 5,               # memoir experimental: 5 vignettes
+    "MONOGRAFIA": 4,                # academia: 4 argumentos centrais
+    "LIVRO_TEXTO": 3,              # academia: 3 conceitos por capitulo
+    "PAPER_DERIVADO": 2,            # academia: 2 papers por capitulo
+    "TRATADO_TECNICO": 1,          # academia: 1 topico enciclopedico
+    "ENSAIO_HUMANITIES": 2,         # academia: 2 angulos de argumento
+    "MISTERIO_DETETIVE": 4,         # thriller: crime, pistas, red herring, resolucao
+    "PSICOLOGICO": 3,              # thriller: setup, rachadura, confronto
+    "ESPIONAGEM": 3,               # thriller: missao, complicacao, confronto
+    "TERROR": 4,                    # thriller: evento catalisador, escalada, confronto, ambiguidade
+    "INGREDIENTE_ESTRELA": 4,      # cookbook: 4 tecnicas por ingrediente
+    "TECNICA": 4,                   # cookbook: 4 receitas por tecnica
+    "REFEICAO_OCASIAO": 3,         # cookbook: entrada, principal, sobremesa
+    "SAZONAL": 3,                   # cookbook: 3 receitas por estacao
+    "COZINHA_CULTURA": 4,           # cookbook: entrada, principal, acompanhamento, sobremesa
+}
+
+# Default usado quando o arquetipo nao esta mapeado acima
+CONFIGURACAO_CENAS_POR_ARQUETIPO_DEFAULT = 3
+
 
 # ============================================================================
 # 14. EXTENSOES DE ARQUIVO POR TIPO
