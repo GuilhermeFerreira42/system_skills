@@ -17,23 +17,88 @@ Identifique:
 
 Se nao houver arquivo de genero, pergunte ao usuario qual genero deseja (liste os disponiveis em `generos/`).
 
-## 1.1 — Pré-Consolidação do Corpus (ETAPA OBRIGATÓRIA ANTES DE TUDO)
+## 1.1 — Estrategia de Corpus: Modular OU Monolitico (DECISAO POR PROJETO)
 
-**REGRA DE OURO:** o pipeline espera encontrar o corpus em **um unico arquivo canonico** chamado `corpus_novo.md` na raiz do projeto (ou na pasta `corpus/` se preferir).
+**REGRA:** o pipeline NAO assume formato fixo de corpus. A escolha entre **corpus modular** (pastas separadas por tema) e **corpus monolitico** (arquivo unico) depende do **tamanho e da estrutura** do material fornecido.
 
-Se o usuario forneceu o corpus de forma fragmentada (multiplos arquivos `.txt`, `.md`, transcricoes soltas, mistura de formatos), **Voce DEVE consolidar tudo num unico `corpus_novo.md` antes de prosseguir**.
+### Como decidir
+
+Pergunte-se: o corpus total tem **mais de 1MB** OU cobre **mais de 3 temas distintos**?
+
+- **SIM** → use **MODULAR** (default recomendado)
+- **NAO** → use **MONOLITICO** (consolide em `corpus_novo.md`)
+
+### Opcao A — Corpus MODULAR (recomendado para projetos grandes ou multi-tema)
+
+Estrutura esperada:
+
+```
+projeto_livro/
+├── corpus/
+│   ├── README.md                       # INDICE do corpus (obrigatorio)
+│   ├── modulo_01_[tema_a]/             # pasta do primeiro tema
+│   │   ├── fonte_1.txt
+│   │   ├── fonte_2.md
+│   │   └── ...
+│   ├── modulo_02_[tema_b]/
+│   │   └── ...
+│   └── modulo_03_[tema_c]/
+│       └── ...
+```
+
+**O que fazer:**
+
+1. Se o usuario ja forneceu o corpus nessa estrutura (com `corpus/README.md` indice), pule esta etapa e va direto pro Passo 2.
+2. Se o usuario forneceu arquivos soltos (na raiz, em pastas sem indice, com formatos misturados), **organize em modulos**:
+   a. Identifique os **temas distintos** no material (ex: "agua", "hormonios", "cancer").
+   b. Crie uma pasta `corpus/modulo_NN_[tema]/` para cada tema.
+   c. Mova os arquivos relacionados pra dentro da pasta do tema correspondente.
+   d. Crie `corpus/README.md` com o indice, no formato:
+      ```markdown
+      # Indice do Corpus
+
+      ## Modulo 01: [tema_a]
+      - caminho: corpus/modulo_01_[tema_a]/
+      - arquivos: fonte_1.txt (12MB), fonte_2.md (3MB)
+      - capitulos que usam: 1, 2, 3
+
+      ## Modulo 02: [tema_b]
+      - caminho: corpus/modulo_02_[tema_b]/
+      - arquivos: fonte_3.pdf (8MB)
+      - capitulos que usam: 4, 5
+      ```
+3. O Orquestrador usara o `corpus/README.md` + o campo `mapa_corpus_capitulos` da Bible para carregar **so o modulo relevante** em cada cena (ver Passo 6, funcao `EXTRAIR_CORPUS_PARA_CENA`).
+
+**Por que modular e melhor para projetos grandes:**
+- Cada chamada de API recebe so os arquivos relevantes (1-2MB em vez de 7MB+).
+- A IA nao se confunde com informacao de outros temas.
+- Custos de token caem 70-90% em projetos grandes.
+- Validacao MARCH fica mais precisa (cruza com fonte certa, nao com fonte parecida de outro tema).
+
+### Opcao B — Corpus MONOLITICO (para projetos pequenos e coesos)
+
+Se o corpus tem **menos de 1MB** e cobre **1-2 temas relacionados**, consolide em arquivo unico:
+
+```
+projeto_livro/
+├── corpus_novo.md                       # tudo num arquivo so
+```
 
 **Como consolidar:**
-1. Identifique todos os arquivos do corpus na pasta do projeto (raiz, subpastas, formatos variados).
+1. Identifique todos os arquivos do corpus na pasta do projeto.
 2. Leia cada arquivo completamente.
-3. Crie (ou sobrescreva) `corpus_novo.md` na raiz do projeto, com o conteudo de todos os arquivos concatenados.
+3. Crie (ou sobrescreva) `corpus_novo.md` com o conteudo de todos concatenados.
 4. **Preserve** a formatacao markdown (titulos, paragrafos, listas).
-5. **Adicione separadores claros** entre fontes diferentes (ex: `## Fonte 1: <nome_do_arquivo>`).
-6. **Mantenha fidelidade**: nao resuma, nao omita, nao corrija o conteudo. E trabalho de copy-paste estruturado.
-
-**Por que isso e obrigatorio:** o `validador_march` precisa de um caminho unificado pra cruzar com as afirmacoes do escritor. Se o corpus estiver espalhado em 5 arquivos, o MARCH nao sabe qual ler, e o pipeline trava com `ERRO_CORPUS_NAO_ENCONTRADO`. A consolidacao preventiva elimina esse risco.
+5. **Adicione separadores claros** entre fontes (ex: `## Fonte 1: <nome_do_arquivo>`).
+6. **Mantenha fidelidade**: nao resuma, nao omita, nao corrija. E copy-paste estruturado.
 
 **Excecao:** se o usuario ja forneceu um unico arquivo `corpus_novo.md` (ou similar), pule esta etapa e va direto pro Passo 2.
+
+### Regra absoluta independente da escolha
+
+- **NUNCA** invente conteudo de corpus. Se o material fornecido nao cobre um topico, a cena sobre esse topico nao pode ser produzida (ou sera produzida sem validacao MARCH).
+- **SEMPRE** preserve a fonte original. Se o usuario deu transcricoes, nao resuma, nao corrija gramatica, nao omita partes.
+- **SEMPRE** registre o caminho do corpus no campo `corpus_origem` do estado, pra saber depois de onde veio cada informacao.
 
 ---
 
@@ -117,15 +182,19 @@ Conforme a escolha, carregue o arquivo da pasta `generos/`:
 
 # Passo 4 — Analise o Corpus e Crie/Atualize a Bible
 
-Leia TODO o corpus fornecido. Identifique:
+**Se o corpus e MODULAR** (veja Passo 1.1): para cada modulo em `corpus/modulo_NN_*/`, leia os arquivos daquele modulo e extraia os temas, conceitos, citacoes relevantes. Monte um **mapa_corpus_capitulos** que diz qual modulo alimenta qual capitulo do plano (ex: "Capitulo 1-3 → modulo_01_agua, Capitulo 4-5 → modulo_02_hormonios, ..."). Esse mapa vai na Bible e e consultado pelo Orquestrador a cada cena pra carregar so o modulo relevante.
+
+**Se o corpus e MONOLITICO** (`corpus_novo.md`): leia o arquivo inteiro e faca a extracao normalmente.
+
+Em ambos os casos, identifique:
 - Temas centrais
 - Personagens (se ficcao) / Conceitos (se nao-ficcao)
 - Estrutura narrativa sugerida pelo material
 - Arcos, conflitos, questoes centrais
 - Evidencias, dados, citacoes (para MARCH)
 
-**SE Bible nao existe:** Crie `bible/bible_da_obra.md` usando o template.
-**SE Bible existe:** Atualize com novas informacoes do corpus (personagens novos, locais, cronologia).
+**SE Bible nao existe:** Crie `bible/bible_da_obra.md` usando o template (incluindo o campo `mapa_corpus_capitulos` se o corpus for modular).
+**SE Bible existe:** Atualize com novas informacoes do corpus (personagens novos, locais, cronologia) e ajuste o `mapa_corpus_capitulos` se necessario.
 
 ## 4.1 — Checksum da Bible (registrar no estado)
 

@@ -35,6 +35,23 @@ O Orquestrador atualiza automaticamente a cada cena aprovada.
 - **Numero_estimado_cenas:** 
 - **Palavras_estimadas_total:** 
 
+## Mapa Corpus-Capítulos (PREENCHER SE O CORPUS FOR MODULAR)
+
+Se o corpus do projeto esta organizado em `corpus/modulo_NN_*/` (um modulo por tema), preencha esta tabela pra dizer qual modulo alimenta qual capitulo. O Orquestrador consulta isso a cada cena pra carregar so o corpus relevante (reduz custo de tokens e melhora precisao da validacao MARCH).
+
+**Exemplo:**
+
+| Capitulo | Modulo(s) do Corpus | Tamanho Aprox | Notas |
+|----------|----------------------|---------------|-------|
+| Cap 1 | `corpus/modulo_01_agua/` | 2 MB | Material do Dr. Lair Ribeiro sobre agua |
+| Cap 2 | `corpus/modulo_01_agua/` | 2 MB | Continua no tema agua |
+| Cap 3 | `corpus/modulo_02_hormonios/` | 3 MB | Muda tema |
+| Cap 4-5 | `corpus/modulo_03_cancer/` | 5 MB | Tema cancer, requer conhecimento previo de agua |
+
+**Regra:** se uma cena cair em capitulo nao mapeado, o Orquestrador usa `INFERIR_MODULOS` (fuzzy match por palavras-chave do titulo da cena com titulos dos modulos) como fallback.
+
+**Se o corpus for MONOLITICO** (`corpus_novo.md` unico arquivo), deixe esta secao vazia ou escreva "NAO APLICAVEL — corpus monolitico".
+
 ---
 
 ## Personagens Principais (Ficcao/Memoir) OU Conceitos-Chave (Nao-Ficcao/Tecnico)

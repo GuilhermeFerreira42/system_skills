@@ -78,13 +78,27 @@ FUNCAO orquestrar_livro(tarefa_do_usuario):
     estado = LER(caminho_estado(projeto_path))
     bible = LER(caminho_bible(projeto_path))
     genero = LER(f"{PASTA_GENEROS}/GENERO_" + estado.genero + ".md")
-    corpus = LER_TUDO("corpus/")
+
+    // Carregar corpus: detecta se e modular (corpus/README.md presente)
+    // ou monolitico (corpus_novo.md). Em ambos os casos, o corpus
+    // completo fica disponivel em disco, mas o pipeline so carrega o
+    // modulo relevante por cena (ver funcao EXTRAIR_CORPUS_PARA_CENA).
+    SE ARQUIVO_EXISTE(f"{projeto_path}/{PASTA_CORPUS}/corpus_README.md OU corpus/index.md"):
+        // CORPUS MODULAR: corpus estruturado em pastas por tema
+        corpus = CARREGAR_CORPUS_MODULAR(f"{projeto_path}/{PASTA_CORPUS}/")
+        corpus.tipo = "MODULAR"
+    SENAO:
+        // CORPUS MONOLITICO: arquivo unico
+        corpus = LER(f"{projeto_path}/corpus_novo.md")
+        corpus.tipo = "MONOLITICO"
 
     SE estado.eh_vazio:
         // Primeira execucao: inicializar tudo
         estado.criar(tarefa_do_usuario, genero)
         bible.criar_do_corpus(corpus, genero)
         estado.plano = CRIAR_PLANO_CAPITULOS(corpus, genero, estado.foco_usuario, bible)
+        // Se o corpus for modular, o mapa_corpus_capitulos ja foi extraido
+        // no Passo 4 e salvo na Bible. O Orquestrador usa ele abaixo.
         SALVAR_ATOMICO(caminho_estado(projeto_path), estado)
         SALVAR_ATOMICO(caminho_bible(projeto_path), bible)
 
@@ -103,13 +117,22 @@ FUNCAO orquestrar_livro(tarefa_do_usuario):
 
         worktree = CRIAR_PASTA_ISOLADA(cena.id)  // capitulos/capitulo_NN/cena_MM/ (subpasta por cena!)
 
+        // EXTRAIR CORPUS ESPECIFICO DESTA CENA (modular OU monolitico)
+        // Se o corpus e modular, esta funcao retorna so o modulo do mapa_corpus_capitulos
+        // que contem os arquivos relevantes. Se e monolitico, retorna o corpus inteiro
+        // (custo maior, mas funciona). Ver funcao EXTRAIR_CORPUS_PARA_CENA no final.
+        corpus_cena = EXTRAIR_CORPUS_PARA_CENA(cena, corpus, bible)
+        // corpus_cena tem o mesmo formato de corpus (MODULAR com subset, ou MONOLITICO completo)
+        // Esse corpus_cena e o que vai ser passado pro Escritor, Atomizador, e MARCH
+
         // ETAPA A: ESCRITOR
         INVOCAR(escritor, {
             cena: cena,
             genero: genero,
             bible: bible,
             estado_anterior: EXTRAIR_CONTEXTO_ANTERIOR(estado, cena),
-            foco_usuario: estado.foco_usuario
+            foco_usuario: estado.foco_usuario,
+            corpus: corpus_cena
         }, worktree)
         VERIFICAR_SE_ARQUIVO_EXISTE(f"{worktree}/{SAIDA_ESCRITOR_ARQ}")
         SE NAO: PARAR(f"Escritor nao executou. Arquivo {SAIDA_ESCRITOR_ARQ} nao criado.")
@@ -387,7 +410,55 @@ FUNCAO ATUALIZAR_ESTADO_ATOMICO(cena):
 FUNCAO CRIAR_PLANO_CAPITULOS(corpus, genero, foco_usuario, bible):
     // Usa a estrutura definida no genero + material do corpus + foco
     // Retorna lista de cenas com: id, capitulo, cena, titulo, pov, tamanho_estimado, objetivo
+    // Se corpus e MODULAR, o plano leva em conta o mapa_corpus_capitulos
+    // pra agrupar cenas que usam o mesmo modulo de corpus
     RETORNAR plano
+
+FUNCAO EXTRAIR_CORPUS_PARA_CENA(cena, corpus, bible):
+    // Decide qual parte do corpus passar pro pipeline desta cena.
+    // Dois casos: corpus MODULAR (pastas por tema) ou MONOLITICO (arquivo unico).
+
+    SE corpus.tipo == "MONOLITICO":
+        // Corpus pequeno e coeso, retorna o arquivo inteiro
+        RETORNAR corpus
+
+    SE corpus.tipo == "MODULAR":
+        // Corpus dividido em pastas por tema.
+        // Consulta o mapa_corpus_capitulos da Bible pra saber qual(is) modulo(s)
+        // alimenta(m) o capitulo desta cena.
+        mapa = bible.mapa_corpus_capitulos  // {capitulo_id: [lista_de_modulos]}
+        // Se a cena nao tem mapeamento explicito, tenta inferir por palavras-chave
+        // do titulo da cena vs titulos dos modulos (fuzzy match simples).
+        modulos_relevantes = mapa.get(cena.capitulo, INFERIR_MODULOS(cena, corpus))
+
+        // Constroi um corpus_cena com apenas os arquivos dos modulos relevantes
+        corpus_cena = {tipo: "MODULAR", arquivos: []}
+        PARA CADA modulo EM modulos_relevantes:
+            PARA CADA arquivo EM corpus.modulos[modulo].arquivos:
+                corpus_cena.arquivos.ADICIONAR(arquivo)
+
+        // Registra no log qual subset foi usado (auditoria)
+        LOG("Cena {cena.id} usou corpus: {modulos_relevantes}")
+        RETORNAR corpus_cena
+
+    // Fallback: se o tipo nao foi detectado, retorna corpus inteiro (modo seguro)
+    RETORNAR corpus
+
+FUNCAO INFERIR_MODULOS(cena, corpus):
+    // Inferencia de fallback quando o mapa_corpus_capitulos nao cobre a cena.
+    // Faz match simples: se o titulo da cena menciona palavra do titulo do modulo,
+    // esse modulo e considerado relevante.
+    modulos_match = []
+    titulo_cena_normalizado = normalizar(cena.titulo)
+    PARA CADA modulo EM corpus.modulos:
+        titulo_modulo_normalizado = normalizar(modulo.titulo)
+        SE tem_palavra_em_comum(titulo_cena_normalizado, titulo_modulo_normalizado):
+            modulos_match.ADICIONAR(modulo.id)
+    SE modulos_match.VAZIO:
+        // Se nao achou nada, retorna o primeiro modulo como fallback
+        // (ainda melhor que o corpus inteiro)
+        modulos_match.ADICIONAR(corpus.modulos[0].id)
+    RETORNAR modulos_match
 
 FUNCAO DEVE_INVOCAR_REVISOR_CEGO(genero, cena, n_palavras):
     // Decide se o Revisor Cego deve rodar pra essa cena.

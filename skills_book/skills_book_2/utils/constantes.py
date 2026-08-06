@@ -39,6 +39,8 @@ arquivo.
 
 PASTA_RAIZ_NOME = ""  # raiz do projeto, usada como prefixo
 PASTA_CORPUS = "corpus"
+CORPUS_README_ARQ = "README.md"  # indice do corpus modular (dentro de PASTA_CORPUS)
+CORPUS_NOVO_ARQ = "corpus_novo.md"  # corpus monolitico (raiz do projeto)
 PASTA_BIBLE = "bible"
 PASTA_ESTADO = "estado"
 PASTA_CAPITULOS = "capitulos"
