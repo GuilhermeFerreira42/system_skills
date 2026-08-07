@@ -356,7 +356,12 @@ GENERO_PERSONALIZADO = "PERSONALIZADO"
 GENERO_THRILLER = "THRILLER"          # v1.0 (Acao 2 do Episodio 02)
 GENERO_COOKBOOK = "COOKBOOK"          # v1.0 (Acao 2 do Episodio 02)
 GENERO_ACADEMICO = "ACADEMICO"        # v1.0 (Acao 2 do Episodio 02)
-GENERO_PODBOOK_BRUNO = "PODBOOK_BRUNO"  # ESPECIFICO do Ecommerce do Bruno, nao deve ser usado em outros livros. Herda de NAO_FICCAO v1.0 (legacy).
+GENERO_PODBOOK_LEGACY = "PODBOOK_LEGACY"  # Genero legacy herdado de NAO_FICCAO v1.0, modelo especifico do projeto de Ecommerce ja produzido. NAO deve ser usado em novos livros.
+
+# Alias deprecated: mantido por retrocompatibilidade. O nome canônico é
+# GENERO_PODBOOK_LEGACY. Projetos antigos que referenciam "PODBOOK_BRUNO"
+# continuam funcionando porque ambas as constantes resolvem pro mesmo valor.
+GENERO_PODBOOK_BRUNO = "PODBOOK_LEGACY"  # DEPRECATED: use GENERO_PODBOOK_LEGACY
 
 GENEROS_BASE_VALIDOS = [
     GENERO_ROMANCE,
@@ -367,6 +372,15 @@ GENEROS_BASE_VALIDOS = [
     GENERO_COOKBOOK,
     GENERO_ACADEMICO,
     GENERO_PERSONALIZADO,
+]
+
+# Genero legacy listado separadamente: nao entra em GENEROS_BASE_VALIDOS
+# porque nao deve aparecer como opcao na escolha inicial. Só eh carregado
+# se o usuario explicitamente pedir o genero legacy pelo nome canonico
+# (PODBOOK_LEGACY) ou pelo alias (PODBOOK_BRUNO).
+GENEROS_LEGACY_VALIDOS = [
+    GENERO_PODBOOK_LEGACY,
+    GENERO_PODBOOK_BRUNO,  # alias
 ]
 
 
@@ -595,11 +609,11 @@ SKILL_BASEADA_EM = "Skills Podcast 4.0.1 (Greenforged Edition) + Greenforge Syst
 # ============================================================================
 # O Nivelamento Editorial captura, via 4 perguntas de multipla escolha, as
 # preferencias editoriais do usuario ANTES de comecar qualquer projeto novo.
-# Surgiu do diagnostico: a versao antiga (skill v1.0) produziu um capitulo
-# da Agua muito melhor que a versao nova (v3.0) porque a antiga tinha um
-# `foco_usuario` muito mais detalhado e especifico. A solucao eh
-# institucionalizar essa captura de preferencias na propria skill, em vez de
-# depender de o usuario fornecer instrucoes ricas manualmente.
+# Surgiu do diagnostico: a versao antiga da skill produziu um capitulo da Agua
+# muito melhor que a versao nova porque a antiga tinha um `foco_usuario` muito
+# mais detalhado e especifico. A solucao eh institucionalizar essa captura de
+# preferencias na propria skill, em vez de depender de o usuario fornecer
+# instrucoes ricas manualmente.
 #
 # O Orquestrador (Passo 3.2 do BOOT) faz as 4 perguntas no inicio de todo
 # projeto novo. As respostas sao salvas no campo `perfil_editorial` da Bible
@@ -607,7 +621,8 @@ SKILL_BASEADA_EM = "Skills Podcast 4.0.1 (Greenforged Edition) + Greenforge Syst
 #
 # Cada eixo tem 3 opcoes (A, B, C) e o sistema aceita resposta unica por eixo.
 # Se o usuario nao souber responder, o Orquestrador usa o DEFAULT abaixo
-# (que sao as 4 respostas "A" do Bruno, validadas no Episodio 03).
+# (4 respostas "A", validadas como o "perfil mais consistente" no diagnostico
+# editorial do projeto).
 #
 # **IMPORTANTE:** o Nivelamento NAO substitui o `foco_usuario` livre. O
 # usuario SEMPRE pode adicionar instrucoes extras depois do nivelamento.
@@ -685,7 +700,8 @@ NIVELAMENTO_VOZ_OPCOES = {
     NIVELAMENTO_OPCAO_C: "academica_distante",               # narrador onisciente, formal, sem opiniao
 }
 
-# Default do nivelamento (4A's do Bruno, validadas em 2026-08-06)
+# Default do nivelamento (4 respostas "A", validadas em 2026-08-06 como o
+# "perfil editorial consistente" usado como padrao da skill)
 # Quando o usuario nao souber responder, o Orquestrador usa estes valores.
 NIVELAMENTO_DEFAULT = {
     NIVELAMENTO_CHAVE_ABERTURA: NIVELAMENTO_OPCAO_A,
@@ -699,7 +715,7 @@ NIVELAMENTO_OBRIGATORIO = True  # se True, Orquestrador NAO comeca o projeto sem
 NIVELAMENTO_QUANTOS_EIXOS = 4
 NIVELAMENTO_PERGUNTAS_POR_VEZ = 1  # faz 1 pergunta por mensagem, espera resposta, faz a proxima
 
-# Onde o nivelamento eh persistido (ver Decisao 2 do Bruno: "bble" = Bible + espelho no Estado)
+# Onde o nivelamento eh persistido (decisao: "Bible + espelho no Estado" = redundancia controlada)
 NIVELAMENTO_PERSISTIR_BIBLE = True
 NIVELAMENTO_PERSISTIR_ESTADO = True
 

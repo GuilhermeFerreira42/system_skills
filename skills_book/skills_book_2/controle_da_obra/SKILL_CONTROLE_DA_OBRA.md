@@ -116,7 +116,7 @@ Se o controle diz uma coisa e o disco diz outra, **o disco vence**. O controle p
 
 **Quem NAO invoca:** o Escritor, Atomizador, Validadores, Editor. Eles mexem nos arquivos da cena, mas nao no controle.
 
-**Quem pode invocar manualmente:** o usuario (Bruno) pode pedir "atualiza o controle", "quantas cenas faltam", "mostra o progresso". A intencao vai cair em `ATUALIZAR_CONTROLE` ou `CONSULTAR_CONTROLE`.
+**Quem pode invocar manualmente:** o usuario pode pedir "atualiza o controle", "quantas cenas faltam", "mostra o progresso". A intencao vai cair em `ATUALIZAR_CONTROLE` ou `CONSULTAR_CONTROLE`.
 
 ---
 

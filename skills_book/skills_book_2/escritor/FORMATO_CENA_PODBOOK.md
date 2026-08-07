@@ -1,36 +1,11 @@
-# FORMATO DA CENA — Podbook Bruno (v1.0)
+# FORMATO DA CENA — Podbook (v1.0) — ALIAS DEPRECATED
 
-**Substitui o "### Metadados da Cena (JSON)" no final de cada cena.**
+**STATUS:** DEPRECATED. Este arquivo existe apenas como alias retrocompatível. O nome canônico deste formato é `FORMATO_CENA_PODBOOK_LEGACY.md` (arquivo) e a constante de gênero é `GENERO_PODBOOK_LEGACY` (em `utils/constantes.py`).
 
-## Estrutura obrigatória do final de cada cena:
+**Por que este alias existe:** projetos antigos podem referenciar `FORMATO_CENA_PODBOOK.md` diretamente. O alias garante que essas referências continuem funcionando.
 
-```markdown
----
+**O que fazer:**
+- Para NOVOS livros: use `escritor/FORMATO_CENA_PODBOOK_LEGACY.md`.
+- Para PROJETOS ANTIGOS que já referenciam `FORMATO_CENA_PODBOOK.md`: continue usando, funciona. Considere migrar para o nome canônico na próxima atualização.
 
-## Resumo da cena
-
-[3-5 frases em primeira pessoa do mentor, recapitulando o que foi apresentado.
-Tom: "olha, o que a gente viu aqui foi..." — conversacional, não formal.]
-
----
-
-## Seu checklist desta cena
-
-Antes de ir para a próxima cena, você precisa ter feito ou decidido:
-
-- [ ] [Ação 1 — concreta, executável hoje]
-- [ ] [Ação 2 — concreta, executável hoje]
-- [ ] [Ação 3 — concreta, executável hoje]
-- [ ] [Decisão mental ou posicionamento interno]
-
----
-
-**Próxima cena:** [título + gancho curto de uma frase]
-```
-
-## Princípios
-
-1. **Resumo não é repetição.** É o mentor dizendo "o que isso significa para você".
-2. **Checklist não é decoreba.** São ações reais que o leitor/ouvinte faz HOJE.
-3. **Próxima cena tem gancho próprio** — não é só título, é provocação.
-4. **Zero JSON.** O leitor/ouvinte não vai ver código. Vai ver instruções humanas.
+**Definição completa do formato:** ver `escritor/FORMATO_CENA_PODBOOK_LEGACY.md`.

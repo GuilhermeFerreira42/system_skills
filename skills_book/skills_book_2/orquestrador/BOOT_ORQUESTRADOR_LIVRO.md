@@ -149,7 +149,7 @@ Qual o genero do livro?
 
 **POR QUE EXISTE:** o diagnostico do Episodio 03 mostrou que a versao antiga da skill (v1.0) produziu um capitulo da Agua muito melhor que a versao nova (v3.0), porque a antiga tinha um `foco_usuario` muito mais detalhado e especifico. A solucao eh institucionalizar essa captura de preferencias na propria skill: o Orquestrador faz 4 perguntas de multipla escolha ANTES de comecar qualquer projeto novo, e as respostas viram o `perfil_editorial` da Bible.
 
-**REGRA:** este passo eh OBRIGATORIO (definido em `utils/constantes.py` como `NIVELAMENTO_OBRIGATORIO = True`). O Orquestrador NAO passa pro Passo 4 enquanto as 4 respostas nao estiverem registradas. Se o usuario disser "nao sei" ou pular, use o `NIVELAMENTO_DEFAULT` (4A's do Bruno) — mas registre explicitamente que o default foi usado, nao finja que o usuario respondeu.
+**REGRA:** este passo eh OBRIGATORIO (definido em `utils/constantes.py` como `NIVELAMENTO_OBRIGATORIO = True`). O Orquestrador NAO passa pro Passo 4 enquanto as 4 respostas nao estiverem registradas. Se o usuario disser "nao sei" ou pular, use o `NIVELAMENTO_DEFAULT` (4 respostas "A" validadas como o perfil editorial padrão) — mas registre explicitamente que o default foi usado, nao finja que o usuario respondeu.
 
 **COMO FAZER:** faca 1 pergunta por mensagem. Espere a resposta (letra unica A, B ou C). So faca a proxima depois de receber a resposta. A ordem dos 4 eixos eh fixa: abertura → densidade → analogias → voz.
 
@@ -234,7 +234,7 @@ A) OPINATIVA COM HUMOR — narrador com opiniao forte, humor acido
    as vezes, polemicas leves quando faz sentido, posicionamentos 
    claros ("o problema de tratar com agua e sal eh que se ganha 
    menos dinheiro"). Esta eh a voz da versao ANTIGA da skill, que 
-   o Bruno curtiu mais. Lembra um bom professor universitario 
+   o autor original curtiu mais. Lembra um bom professor universitario 
    que nao tem medo de se posicionar.
 
 B) NEUTRA ENGAJADA — narrador invisivel (voz de terceira pessoa 
@@ -268,11 +268,11 @@ Passe esse dicionario pro Passo 4 (que grava na Bible) E pro Passo 3.3 em diante
 
 **SE O USUARIO NAO SOUBER RESPONDER:**
 
-Use o `NIVELAMENTO_DEFAULT` (definido em `utils/constantes.py`): todas as 4 respostas = "A" (4A's do Bruno). Mas ANTES de aplicar o default, faca UMA pergunta confirmando:
+Use o `NIVELAMENTO_DEFAULT` (definido em `utils/constantes.py`): todas as 4 respostas = "A" (4 respostas "A" validadas como o perfil editorial padrão da skill). Mas ANTES de aplicar o default, faca UMA pergunta confirmando:
 
 ```
 Nao tem problema se voce nao sabe agora. Posso usar o "perfil padrao 
-Bruno" (4A's: imersao + pergunta retorica, denso, alta analogia, voz 
+padrao da skill" (4 respostas A: imersao + pergunta retorica, denso, alta analogia, voz 
 opinativa com humor) como ponto de partida? Voce pode ajustar depois, 
 cena a cena, se quiser. Confirma com "sim" pra eu seguir.
 ```
@@ -332,7 +332,7 @@ Conforme a escolha, carregue o arquivo da pasta `generos/`:
 - Academico -> `generos/GENERO_ACADEMICO.md` (v1.0 - monografia, livro-texto, paper-derivado, tratado, ensaio de humanities)
 - Personalizado -> crie `generos/GENERO_PERSONALIZADO.md` com a descricao do usuario
 
-**NOTA SOBRE GENERO LEGACY:** `generos/GENERO_PODBOOK_BRUNO.md` e um genero ESPECIFICO do projeto Ecommerce do Bruno de Oliveira. Ele herda de NAO_FICCAO v1.0 (antes da refatoracao) e NAO deve ser usado como modelo pra outros livros. Continua funcionando pra o projeto Ecommerce ja produzido, mas se o Bruno quiser refazer o livro do zero usando a skill v2.0, ele precisara criar um GENERO_PODBOOK_V3.md atualizado.
+**NOTA SOBRE GENERO LEGACY:** `generos/GENERO_PODBOOK_LEGACY.md` (nome canônico) ou `generos/GENERO_PODBOOK_BRUNO.md` (alias retrocompatível) é um gênero ESPECÍFICO do projeto de Ecommerce já produzido. Ele herda de NAO_FICCAO v1.0 (antes da refatoração) e NÃO deve ser usado como modelo para novos livros. Continua funcionando para o projeto já produzido. Para novos livros de Ecommerce ou negócios, use NAO_FICCAO v2.0 (agnóstico) e crie um gênero personalizado herdando da v2.0.
 
 **O genero define:**
 - Estrutura narrativa (capitulos, cenas, atos)

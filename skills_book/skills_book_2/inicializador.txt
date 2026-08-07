@@ -18,7 +18,7 @@
      3. Densidade de analogias (A = alta 1-2/cena, B = media, C = baixa)
      4. Voz do autor (A = opinativa com humor, B = neutra engajada, C = academica distante)
    - As 4 respostas viram o campo `perfil_editorial` da Bible (e espelho no Estado)
-   - Se o usuario nao souber responder, usa o `NIVELAMENTO_DEFAULT` (4A's do Bruno)
+   - Se o usuario nao souber responder, usa o `NIVELAMENTO_DEFAULT` (4 respostas "A" validadas como o perfil editorial padrão da skill)
    - Constantes e defaults em `utils/constantes.py`, secao 19
 
 3. O usuario fornece o `foco_usuario` (Passo 3.3, complementar ao nivelamento):

@@ -51,7 +51,7 @@ Este campo captura as 4 respostas de nivelamento editorial que o Orquestrador co
   - B = neutra_engajada (narrador invisivel mas preocupado com clareza)
   - C = academica_distante (narrador onisciente, formal, sem opiniao)
 
-**Exemplo preenchido (defaults do Bruno):**
+**Exemplo preenchido (defaults padrão da skill):**
 
 ```
 perfil_editorial:
