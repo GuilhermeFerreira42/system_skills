@@ -420,6 +420,15 @@ Salve o plano no `estado_da_obra.md` (secao "Plano de Capítulos"), com a quanti
 
 # Passo 6 — Execute o Loop de Producao
 
+## INVARIANTE DE LINHAGEM (REGRA DE OURO DO PIPELINE — revisao 2026-08-08)
+
+1. **Toda alteracao em `_saida_escritor.md` ou `_saida_editor.md` INVALIDA todas as validacoes ja feitas na cena** (MARCH, Continuidade, Editor, Revisor Cego, Vigia), porque o `input_checksum` de cada uma deixa de corresponder ao texto atual. Nao existe "reescrita pequena": mudou o texto, mudou o checksum, caiu a linhagem.
+2. **Apos QUALQUER reescrita cirurgica, o pipeline recomeca na ETAPA B (Atomizador)** sobre a NOVA versao — MARCH, Continuidade, Editor (que gera novo `_saida_editor.md` e novo `_saida_final.md`) e Revisor Cego (sobre o novo `_saida_final.md`). No pseudocodigo abaixo, onde se le "REPETIR ETAPA A", entenda: **a reescrita cirurgica SUBSTITUI a execucao da Etapa A; o fluxo recomeça na Etapa B.** NUNCA invoque o Escritor duas vezes seguidas e NUNCA deixe validacoes da versao antiga valerem para a versao nova. (Foi exatamente isso que quebrou a linhagem e fez o Vigia sair com exit 1 no teste de 2026-08-08.)
+3. **O Estado DEVE ser atualizado a cada transicao de status** — inclusive em cada retry (preencher o Historico de Retries com: tentativa, validador, motivo_falha, acao_corretiva). Um retry sem registro no Estado e um retry que nao aconteceu.
+4. **Checksums SOMENTE via script:** `python3 skills_book_2/utils/checksum.py calcular <arquivo>` — saida no formato canonico `v1.0:xxxxxxxx` (8 hex). Nunca digite ou invente o hash manualmente. Se `utils/` nao existir na raiz do projeto, o caminho real e `skills_book_2/utils/`: confira com `ls` antes de executar.
+5. **Vigia da Fabrica:** `python3 skills_book_2/utils/vigia_integridade.py <pasta_da_cena>` — a cena so vale com **exit 0**. O script grava `_log_vigia.md` na propria pasta da cena a cada execucao (nao depende de redirecionamento de shell).
+6. **Cena CONCLUIDA exige pacote fechado:** MARCH aprovado + Continuidade aprovado + Editor executado (quando exigido) + Revisor Cego APROVADO + Vigia exit 0 — **todos sobre a MESMA versao do texto** (linhagem fechada).
+
 Siga **RIGOROSAMENTE** o pseudocodigo da `SKILL_ORQUESTRADOR_LIVRO.md` (versao 1.0).
 
 **FLUXO POR CENA/CAPITULO:**

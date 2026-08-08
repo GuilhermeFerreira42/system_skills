@@ -148,7 +148,7 @@ Checks executados:
 |-------|---------------|------------------|
 | `VERIFICAR_VARIACAO_FRASES` | Texto com todas as frases do mesmo comprimento. Cria monotonia. | MEDIA. |
 | `VERIFICAR_DENSIDADE_DIALOGO` | Cena sem nenhum dialogo (pode ser intencional) OU cena 100% dialogo sem acao narrativa. | BAIXA. |
-| `DETECTAR_PAREDES_DE_TEXTO` | Paragrafos com mais de 8 linhas corridas sem quebra. Cansa o leitor. | MEDIA. |
+| `DETECTAR_PAREDES_DE_TEXTO` | **REDEFINIDO em 2026-08-08** — parede = paragrafo com mais de 100 palavras E cena com desvio-padrao de paragrafo <40 (bloco longo SEM respiro ao redor). Paragrafo longo em cena com contraste NUNCA e parede (o texto de excelencia tem paragrafos de ~170 palavras). Detalhes na secao "REGRA DE RITMO — ESPECIFICACAO A PROVA DE INVERSAO". | MEDIA. |
 | `DETECTAR_FRASES_LONGAS_EXCESSIVAS` | Frases com mais de 60 palavras. Difícil de processar. | MEDIA. |
 | `DETECTAR_LISTAS_EXPLICATIVAS` | "Primeiro, isso. Segundo, aquilo. Terceiro, aquilo outro." Em prosa literaria, deve ser menos esquematico. | BAIXA. |
 
@@ -294,6 +294,8 @@ A trindade **MARCH + Continuidade + Revisor Cego** fecha o cerco: MARCH garante 
 
 # 10. Limites Padrao (CRITERIOS_PADRAO)
 
+> **NOTA (2026-08-08):** para os criterios do contrato de ritmo (media de palavras por frase, frases curtas, paragrafos densos, desvio, janela de abertura, parede), a fonte canonica e o bloco `RITMO_*` de `utils/constantes.py`, que SUBSTITUI os valores de frase/paragrafo desta tabela legada.
+
 ```python
 CRITERIOS_PADRAO = {
     "min_palavras": 500,            # abaixo disso, cena suspeita
@@ -316,10 +318,37 @@ Estes valores podem ser sobrescritos via parametro `criterios_minimos` passado p
 ```
 FUNCAO CLASSIFICAR_GRAVIDADE(problema, criterios):
     // Cada tipo de problema tem gravidade padrao.
-    // Mas o Orquestrador pode subir a gravidade se o problema for reiterado na cena.
-    SE problema.tipo EM ["mudanca_estado_ausente", "obstaculo_ausente", "jump_logico"]:
+    // Problemas ALTA reprovam automaticamente a cena (1 ALTO = REPROVADO).
+    SE problema.tipo EM [
+        "mudanca_estado_ausente",
+        "obstaculo_ausente",
+        "jump_logico",
+        "critica_conspiratoria",
+        "abertura_mentira",
+        "abertura_responde_cedo",
+        "seq_frases_curtas",
+        "fecho_repetido"
+    ]:
         RETORNAR REVISAO_GRAVIDADE_ALTA
-    SENAO SE problema.tipo EM ["abertura_fraca", "fecho_resolutivo", "ambiguidade", "termo_sem_antecedente", "tell_excessivo", "variacao_baixa", "frase_longa", "parede_texto"]:
+    SENAO SE problema.tipo EM [
+        "abertura_fraca",
+        "fecho_resolutivo",
+        "fecho_resumo",
+        "fecho_teaser",
+        "ambiguidade",
+        "termo_sem_antecedente",
+        "tell_excessivo",
+        "variacao_baixa",
+        "frase_longa_excessiva",
+        "parede_texto",
+        "lista_explicativa",
+        "sem_paragrafo_denso",
+        "ritmo_uniforme",
+        "abertura_nao_imersiva",
+        "analogia_sem_3_movimentos",
+        "fecho_sem_eco",
+        "voz_imperativa"
+    ]:
         RETORNAR REVISAO_GRAVIDADE_MEDIA
     SENAO:
         RETORNAR REVISAO_GRAVIDADE_BAIXA
@@ -351,7 +380,7 @@ A licao aprendida: **quem valida precisa NAO conhecer o que esta validando**. E 
 
 # NOVO — CONTRATO DE VOZ (categorias extras de revisao) — OBRIGATORIO p/ NAO_FICCAO
 
-Alem de estrutura, clareza e ritmo, o Revisor Cego avalia o **contrato de voz** ("Revelacao Respeitosa") quando `genero.contrato_voz_ativado = true` (default para NAO_FICCAO). Adicione a categoria `voz` aos problemas:
+Alem de estrutura, clareza e ritmo, o Revisor Cego avalia o **contrato de voz** ("Revelacao Respeitosa") quando `genero.contrato_voz_ativado = true` (default para NAO_FICCAO). Adicione as categorias `voz` e `ritmo` aos problemas:
 
 | Tipo (categoria voz) | Exemplo de problema | Gravidade |
 |---|---|---|
@@ -361,9 +390,73 @@ Alem de estrutura, clareza e ritmo, o Revisor Cego avalia o **contrato de voz** 
 | critica_conspiratoria | Acusa lucro/ocultacao/patente; "eles escondem" | ALTA |
 | abertura_mentira | "Mentira." como abertura de desmistificacao | ALTA |
 | fecho_sem_eco | Ultima frase nao ressoa a abertura | MEDIA |
+| fecho_repetido | Fecho identico ou muleta reutilizada de outra cena | ALTA |
 | voz_imperativa | "Entenda que..." como voz dominante | MEDIA |
 
-Qualquer problema ALTA em `voz` reprova a cena (regra existente: 1 problema ALTA = REPROVADO).
+| tipo (categoria ritmo) | Exemplo de problema | Gravidade |
+|---|---|---|
+| seq_frases_curtas | 3+ frases seguidas com <8 palavras (texto martelado) | ALTA |
+| abertura_responde_cedo | A pergunta da abertura é respondida no 1º ou 2º parágrafo (sem expectativa) | ALTA |
+| sem_paragrafo_denso | Menos de 70% de parágrafos densos (≥40 palavras) ou falta de tessitura | MEDIA |
+| fecho_teaser | Última frase é imperativo seco/teaser curto, sem eco reflexivo redondo | MEDIA |
+| ritmo_uniforme | Toda a cena com o mesmo comprimento de frase (desvio-padrão <40) | MEDIA |
+| lista_explicativa | Enumeração seca (1., 2., 3., "primeiro, segundo") em vez de prosa integrada | MEDIA |
+
+## REGRA DE RITMO (7ª e 8ª regras do DNA) — ESPECIFICACAO A PROVA DE INVERSAO
+
+### ETAPA 0 — MEDICAO OBRIGATORIA (deterministica, NAO PULE)
+
+**ANTES de julgar qualquer coisa, execute o medidor e cole a saida no campo `metricas_ritmo` do seu JSON:**
+
+```bash
+python3 skills_book_2/utils/medir_ritmo.py {worktree}/_saida_final.md --json
+```
+
+Regras duras:
+1. **PROIBIDO aprovar sem o bloco `metricas_ritmo`** preenchido com a saida REAL do script (o Vigia recalcula e compara — metrica inventada ou desatualizada reprova a cena).
+2. **PROIBIDO "PULADO" / "avaliacao manual"** quando `genero.contrato_voz_ativado = true` (NAO_FICCAO e afins): com contrato de voz, voce roda desde o capitulo 1, sem excecao.
+3. O `veredito_ritmo` do script e vinculante para os tres pilares numericos (sequencia de curtas, densidade, desvio): se o script reprova algum pilar, registre o problema correspondente (`seq_frases_curtas` = ALTA; `sem_paragrafo_denso` / `ritmo_uniforme` = MEDIA voce DEVE registrar). Os checks qualitativos (voz, clareza, estrutura, abertura, fecho, lista) continuam sendo seu julgamento — mas os tres pilares numericos vem do script, nao da sua impressao.
+4. Medicao declarada que nao bate com o texto atual = linhagem de ritmo quebrada = REPROVADO pelo Vigia.
+
+**COMO MEDIR (para os checks qualitativos):**
+- **Frase** = trecho terminado em `.`, `!`, `?` ou `...`. Conte as palavras de cada frase na ordem em que aparecem.
+- **Paragrafo** = bloco separado por linha em branco. Conte as palavras de cada um.
+- Anote a lista de comprimentos ANTES de julgar. Cite os numeros de cada frase/paragrafo problematico no campo `trecho` do JSON.
+
+### seq_frases_curtas — gravidade ALTA
+- **REPROVE SE:** existir pelo menos 1 sequencia de **3 ou mais frases CONSECUTIVAS com menos de 8 palavras cada** (ex.: "Voce acorda. A boca cola. A cabeca pulsa."). Uma basta.
+- **NAO REPROVE SE:** a cena tiver ZERO sequencias de 3+ curtas — **essa e a situacao APROVADA e IDEAL**. Frases curtas isoladas ou em pares sao permitidas (climax eventual). **JAMAIS exija "batidas", "punch", "ritmo curto" ou sequencias de frases curtas; o contrato pune o EXCESSO delas, nunca a AUSENCIA.**
+
+### sem_paragrafo_denso — gravidade MEDIA
+- **REPROVE SE:** **menos de 70%** dos paragrafos tiverem **40 ou mais palavras**.
+- **NAO REPROVE SE:** 70% ou mais forem densos — mesmo que alguns paragrafos ultrapassem 100 palavras. **Paragrafo longo NAO e defeito; e a assinatura do contrato** (o texto de excelencia usado como referencia tem paragrafos de ~170 palavras). Nunca chame paragrafo denso de "parede de texto" — parede tem definicao propria, abaixo.
+
+### ritmo_uniforme — gravidade MEDIA
+- **REPROVE SE:** o **desvio-padrao do comprimento (palavras) dos paragrafos** for **menor que 40** (todos os paragrafos do mesmo tamanho = monotonia).
+- **NAO REPROVE SE:** o desvio for ≥ 40 — contraste presente, cena aprovada neste item.
+
+### parede_texto (check legado REDEFINIDO) — gravidade MEDIA
+- **REPROVE SE — somente com as DUAS condicoes simultaneas:** existir paragrafo com **mais de 100 palavras** E o desvio-padrao dos paragrafos da cena ser **menor que 40** (ou seja: bloco longo sem nenhum respiro ao redor).
+- **NAO REPROVE SE:** o paragrafo longo vier acompanhado de paragrafos leves (desvio ≥ 40). **Com desvio ≥ 40, NENHUM paragrafo e parede, nao importa o comprimento.**
+
+### abertura — janela de resposta (DOIS checks distintos)
+- **abertura_responde_cedo — gravidade ALTA. REPROVE SE:** a pergunta/gancho da abertura for **respondido no paragrafo 1 ou no paragrafo 2** (virada entregue sem construcao de expectativa).
+- **abertura_sem_resposta — gravidade MEDIA. REPROVE SE:** a pergunta da abertura **permanecer sem nenhuma resposta ao final do paragrafo 6** (expectativa abandonada).
+- **NAO REPROVE SE:** a resposta chegar **entre o paragrafo 3 e o paragrafo 6** — essa e a janela ideal. Responder "cedo" e responder "tarde" sao checks separados; um texto so pode falhar em UM deles, nunca nos dois.
+
+### fecho (DOIS checks distintos)
+- **fecho_teaser — MEDIA. REPROVE SE:** a ultima frase for um imperativo seco ou teaser curto (menos de 15 palavras, sem eco reflexivo da abertura).
+- **fecho_repetido — ALTA. REPROVE SE:** o fecho repetir literalmente ou por muleta o fecho de OUTRA cena da obra.
+- **NAO REPROVE SE:** o fecho tiver 15–25 palavras, ecoar a imagem da PROPRIA abertura e for original em relacao as outras cenas.
+
+### lista_explicativa — gravidade MEDIA
+- **REPROVE SE:** passos, mitos ou propriedades aparecerem como enumeracao seca (1., 2., 3. / "primeiro, segundo, terceiro") em vez de prosa integrada.
+- **NAO REPROVE SE:** os itens estiverem fluidos na narrativa ("o primeiro mito tem cara de verdade...").
+
+### Media de palavras por frase — informativo (NAO reprova sozinho)
+- Banda canonica: **12 a 22 palavras por frase em media**. Registre o valor medido no JSON. Se estiver fora da banda, sinalize como BAIXA — a reprovacao por ritmo curto ocorre via `seq_frases_curtas`, nao pela media isolada.
+
+Qualquer problema ALTA em `voz` ou `ritmo` reprova a cena imediatamente (regra existente: 1 problema ALTA = REPROVADO). Problemas MEDIOS de ritmo contam na regra de 3+ MEDIOS = REPROVADO.
 
 # NOVO — PROVA DE LINHAGEM (input_checksum)
 

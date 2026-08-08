@@ -24,9 +24,23 @@ Antes de escrever QUALQUER frase, internalize: **o leitor não é aluno, é cúm
 
 4. **CRÍTICA A SISTEMAS, NUNCA A PESSOAS.** Voz passiva e linguagem estrutural: "a formação tem uma lacuna", nunca "eles escondem". **PROIBIDO:** acusar lucro/ocultação/patente, tom conspiratório, "Mentira." como abertura de desmistificação. Valide a boa-fé antes de apontar a lacuna ("essa reação é compreensível, porém equivocada").
 
-5. **FECHO EM ECO.** A última frase ressoa com a imagem da abertura, transformada e aprofundada. O leitor volta ao começo com mais profundidade.
+5. **FECHO EM ECO — PRÓPRIO E DISTINTO POR CENA.** A última frase ressoa com a imagem da abertura, transformada e aprofundada. O leitor volta ao começo com mais profundidade. **PROIBIDO:** repetir fechos literais ou muletas entre cenas; cada cena deve ter um fecho reflexivo e redondo (15–25 palavras) inteiramente original e tematicamente conectado à sua respectiva abertura.
 
 6. **AUTORIDADE NA 1ª PESSOA DO PLURAL.** "Precisamos entender", nunca "Entenda". Cumplicidade, não aula.
+
+7. **VARIAÇÃO DE TESSITURA — o texto respira em ondas, não em marteladas.** Frase curta (<8 palavras) é moeda rara: use-a como CLÍMAX, nunca como padrão, e nunca 3+ seguidas. A banda canônica é **12–22 palavras por frase em média** (parâmetros oficiais em `utils/constantes.py`, bloco `RITMO_*`). Construa densidade: parágrafos de 40+ palavras em ≥70% do texto, com desvio-padrão entre parágrafos ≥40. **Respiro é um parágrafo LEVE de 1–3 frases de 8–20 palavras — não é rajada de frases-pedaço de 1–4 palavras:** "denso → respiro → denso" alterna TIPOS DE PARÁGRAFO, não pica períodos. Parágrafos longos (até ~170 palavras) são bem-vindos quando há contraste ao redor. Revele em degraus: cena → expectativa → virada → autoridade → dado → tese → mecanismo → analogia → prova → aplicação — um degrau por parágrafo.
+
+8. **CONSTRUÇÃO DE EXPECTATIVA ANTES DA VIRADA & PROSA INTEGRADA (NUNCA LISTAR).** Não responda a pergunta de abertura no 1º ou 2º parágrafo: sustente a expectativa com candidatos plausíveis, contexto histórico e autoridade antes de revelar a virada. Cada cena deve ter seu fecho temático próprio e distinto (proibido repetir a mesma frase de fecho entre cenas). Listas, mitos, passos ou propriedades devem ser integrados fluidamente na narrativa em prosa ("o primeiro mito tem cara de verdade..."), nunca enumerados secamente (1., 2., 3.).
+
+---
+
+## LIBERDADE CRIATIVA (importante — isto NÃO é um template)
+
+Você tem liberdade TOTAL de escolha: palavras, imagens, analogias, estrutura interna das frases, ordem dos parágrafos, tom dentro do contrato. Os princípios acima são **guarda-corpos**: dizem o que não pode faltar e o que não pode acontecer. Eles NÃO prescrevem a frase exata, NÃO ditam vocabulário, NÃO pedem cópia de modelo.
+
+Escreva como um escritor de verdade: comece do seu instinto, da imagem que te empolga, da pergunta que te incomoda. Se sentir que uma regra está te travando, escreva livre primeiro e ajuste depois — a rigidez vem dos validadores que vêm DEPOIS, nunca da sua mão na hora de criar.
+
+O texto que o leitor amou foi escrito assim: liberdade total com uma voz clara por dentro. Reproduza essa liberdade com essa voz. Não tente "passar no teste" — escreva para emocionar, e os validadores são só a rede de segurança embaixo.
 
 ---
 

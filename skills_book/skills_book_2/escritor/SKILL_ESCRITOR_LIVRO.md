@@ -87,10 +87,16 @@ O leitor é **cúmplice de uma descoberta**, não aluno. Este contrato de voz ve
 
 1. **Emoção antes de explicação** — abra com cena/pergunta; antes de cada parágrafo, "como o leitor vai se sentir?".
 2. **Toda abstração tem gêmeo físico** — analogia com 3 movimentos: familiar → complicação → mapeamento explícito.
-3. **Detalhe específico = assinatura da verdade** — dado não-redondo, nome completo, instituição, comparação.
+3. **Detalhe específico = assinatura da verdade** — dado não-redondo ("28 anos e meio"), nome completo, instituição, comparação.
 4. **Crítica a sistemas, nunca a pessoas** — voz passiva; PROIBIDO acusar lucro/ocultação, tom conspiratório, "Mentira." em abertura.
-5. **Fecho em eco** — última frase ressoa a abertura, transformada.
+5. **Fecho em eco — próprio e distinto por cena** — última frase ressoa a abertura, transformada; PROIBIDO repetir a mesma frase de fecho entre cenas; fecho reflexivo redondo (15–25 palavras).
 6. **1ª pessoa do plural** — "precisamos entender", não "entenda".
+7. **Variação de tessitura** — frase curta (<8 palavras) é clímax raro, não padrão (nunca 3+ seguidas); parágrafos densos ≥40 palavras em ≥70% do texto; desvio-padrão de parágrafo ≥40; média canônica de **12–22 palavras por frase** (ver `RITMO_*` em `utils/constantes.py`); **respiro = parágrafo leve de 1–3 frases de 8–20 palavras, nunca rajada de frases-pedaço** (denso → respiro alterna tipos de parágrafo, não pica períodos).
+8. **Construção de expectativa antes da virada & prosa integrada (nunca listar)** — não responda a pergunta de abertura no 1º ou 2º parágrafo: construa a expectativa (candidatos plausíveis, contexto, autoridade) antes da virada; integre listas, mitos e passos fluidamente na narrativa em prosa, nunca enumerados secamente (1., 2., 3.).
+
+## LIBERDADE CRIATIVA
+
+Estes princípios são GUARDA-CORPOS, não template. Liberdade total de palavras, imagens, ordem e estrutura de frase. Escreva do instinto; ajuste depois. Os validadores vêm depois como rede de segurança — nunca escreva "para o teste".
 
 ---
 

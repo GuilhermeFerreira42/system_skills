@@ -52,9 +52,11 @@ Antes de qualquer coisa, confirme mentalmente:
 
 | Gravidade | Significado | Exemplo |
 |-----------|-------------|---------|
-| **ALTA** | Bloqueia compreensao | "Ele pegou o livro e levou para ele." (quem pegou? quem recebeu?) — em cena onde o leitor nao sabe quem e quem. |
-| **MEDIA** | Prejudica experiencia | "A abertura descreve o clima por 4 paragrafos antes de entrar na acao." |
-| **BAIXA** | Polemique, mas toleravel | "A palavra 'entao' aparece 3 vezes em paragrafos consecutivos." |
+| **ALTA** | Bloqueia compreensao ou quebra regras duras de voz/ritmo (1 ALTO = REPROVADO) | Mudança de estado ausente; pulo lógico; crítica conspiratória/acusação de lucro; "Mentira." na abertura; abertura que responde a pergunta no 1º ou 2º parágrafo (`abertura_responde_cedo`); sequência de 3+ frases com <8 palavras (`seq_frases_curtas`); fecho repetido entre cenas (`fecho_repetido`). |
+| **MEDIA** | Prejudica experiencia do leitor (3+ MÉDIOS = REPROVADO) | Menos de 70% de parágrafos densos com ≥40 palavras (`sem_paragrafo_denso`); fecho teaser seco sem eco reflexivo (`fecho_teaser`); ritmo uniforme/desvio <40 (`ritmo_uniforme`); listas ou enumerações secas na prosa (`lista_explicativa`); abertura fraca; ambiguidade; tell excessivo; analogia sem os 3 movimentos; voz imperativa dominante. |
+
+> **REGRA ANTI-INVERSAO E ANTI-CARIMBO (OBRIGATORIA — leia antes de julgar ritmo):** cada check detecta uma **CONDICAO DE FALHA**. Se a condicao nao existe no texto, o item esta **APROVADO** — voce NUNCA deve: (a) exigir "batidas" ou sequencias de frases curtas (o contrato pune o EXCESSO delas, nunca a AUSENCIA); (b) chamar paragrafo denso (40+ palavras) de "parede de texto" — paragrafo longo so e parede quando a cena inteira nao respira (desvio <40); (c) punir a resposta gancho por chegar "tarde" se ela chega entre o 3o e o 6o paragrafo (essa e a janela ideal; o check `abertura_responde_cedo` pune APENAS resposta no 1o ou 2o paragrafo). Em 2026-08-08 um revisor inverteu os checks e reprovou uma cena conforme — destroi a prosa. E alem de nao inverter, voce NAO PODE aprovar sem medir: execute `python3 skills_book_2/utils/medir_ritmo.py <_saida_final.md> --json` e cole o resultado no campo `metricas_ritmo`; aprovacao "por nota" (ou "PULADO") e reprovada pelo Vigia, que refaz a medicao. Especificacao completa na SKILL, secao "REGRA DE RITMO — ETAPA 0 + A PROVA DE INVERSAO". Os numeros canonicos estao em `utils/constantes.py` (bloco `RITMO_*`): media 12–22 palavras/frase.
+| **BAIXA** | Polemica, mas toleravel | Detalhe arredondado em vez de assinatura exata (`detalhe_redondo`); duplicidade leve em parágrafos próximos. |
 
 Consulte a tabela completa na secao 2 da SKILL.
 
@@ -83,12 +85,14 @@ Salve o resultado em `{caminho_cena}/{RESULTADO_REVISOR_CEGO_ARQ}` no formato de
 
 O JSON deve ter:
 - `cena_id` (extraido do caminho)
+- `input_checksum` (checksum etiquetado v1.0:xxxxxxxx do _saida_final.md lido)
 - `total_problemas`
 - `problemas_alta`, `problemas_media`, `problemas_baixa` (contadores)
 - `status_geral` (APROVADO ou REPROVADO)
 - `problemas_estrutura` (array)
 - `problemas_clareza` (array)
 - `problemas_ritmo` (array)
+- `problemas_voz` (array, quando contrato de voz ativo)
 - `timestamp` (ISO8601)
 
 ---

@@ -323,13 +323,30 @@ REVISAO_TIPOS_RITMO = [
     "dialogo_exclusivo",           # 100% dialogo sem acao narrativa
     "parede_texto",                # paragrafo com mais de 8 linhas
     "frase_longa_excessiva",       # frase com mais de 60 palavras
-    "lista_explicativa",           # "primeiro, isso. segundo, aquilo."
+    "lista_explicativa",           # "primeiro, isso. segundo, aquilo." enumeração seca
+    "seq_frases_curtas",           # 3+ frases seguidas com <8 palavras (texto martelado) — ALTA
+    "sem_paragrafo_denso",         # menos de 70% de paragrafos densos (>=40 palavras)
+    "abertura_responde_cedo",      # pergunta da abertura respondida no 1o/2o paragrafo — ALTA
+    "fecho_teaser",                # ultima frase e imperativo seco/teaser sem eco reflexivo
+    "fecho_repetido",              # fecho identico ou muleta repetida entre cenas — ALTA
+    "ritmo_uniforme",              # desvio-padrao de paragrafo <40 ou falta de contraste
+]
+
+REVISAO_TIPOS_VOZ = [
+    "abertura_nao_imersiva",       # abre com definicao/estatistica fria em vez de cena/pergunta
+    "analogia_sem_3_movimentos",   # analogia sem mapeamento explicito em 3 movimentos
+    "detalhe_redondo",             # numero arredondado em vez de assinatura exata
+    "critica_conspiratoria",       # acusa lucro/ocultacao/patente — ALTA
+    "abertura_mentira",            # 'Mentira.' como recurso de abertura — ALTA
+    "fecho_sem_eco",               # ultima frase nao ressoa com a abertura
+    "voz_imperativa",              # voz professoral imperativa dominante
 ]
 
 REVISAO_TIPOS_PROBLEMAS_VALIDOS = (
     REVISAO_TIPOS_ESTRUTURA
     + REVISAO_TIPOS_CLAREZA
     + REVISAO_TIPOS_RITMO
+    + REVISAO_TIPOS_VOZ
 )
 
 # Criterios padrao de aceitacao (podem ser sobrescritos por GENERO_*.md)
@@ -597,10 +614,17 @@ ACOES_DA_SKILL = [
 # ============================================================================
 
 SKILL_NOME = "skills_book"
-SKILL_VERSAO = "1.0"
+SKILL_VERSAO = "1.1-rc2"
 SKILL_EDITING = "Greenforged Edition"
 SKILL_DATA_CRIACAO = "2026-07-27"
-SKILL_DATA_ULTIMA_REVISAO = "2026-08-05"
+SKILL_DATA_ULTIMA_REVISAO = "2026-08-08"
+# v1.1-rc1 (2026-08-08): correcoes do incidente do teste_04 — bloco RITMO_*
+# canonico (secao 21), vigia com baseline correto do Revisor Cego e formato de
+# checksum validado, checks de ritmo a prova de inversao, invariante de
+# linhagem no loop de reescrita.
+# v1.1-rc2 (2026-08-08): medidor de ritmo deterministico (utils/medir_ritmo.py)
+# e checagem anti-carimbo no vigia: o Revisor Cego so aprova com o bloco
+# metricas_ritmo real do script; aprovacao "por nota" e reprovada.
 SKILL_BASEADA_EM = "Skills Podcast 4.0.1 (Greenforged Edition) + Greenforge System"
 
 
@@ -735,3 +759,41 @@ CAMPO_INPUT_CHECKSUM = "input_checksum"          # campo de linhagem exigido dos
 # Contrato de voz (Revelacao Respeitosa) — quando ativo, o Revisor Cego
 # roda desde o capitulo 1 e avalia a categoria "voz".
 CONTRATO_VOZ_ATIVADO_GENEROS = ("NAO_FICCAO", "MEMORIAS", "PERSONALIZADO")
+
+
+# ============================================================================
+# 21. CONTRATO DE RITMO — NUMEROS CANONICOS (fonte unica — Acao do diagnostico
+# 2026-08-08, incidente do teste_04)
+# ============================================================================
+# Estes valores sao a UNICA fonte de verdade para o contrato de ritmo
+# ("prosa de rio"). Escritor, Editor e Revisor Cego referenciam estes nomes;
+# nenhum arquivo de que definha skill deve hardcodar outros numeros para os
+# mesmos criterios. A banda 12-22 foi a validada na rubrica do teste externo
+# (validacao_teste_01.md); o texto de referencia de excelencia tem media 20.
+#
+# COMO MEDIR (qualquer agente, inclusive o Revisor Cego):
+# - FRASE: trecho terminado por . ! ? ou ... seguido de espaco/quebra.
+# - PARAGRAFO: bloco de texto separado por linha em branco.
+# - "curtas seguidas": sequencia ininterrupta de frases com menos de
+#   RITMO_FRASE_CURTA_PALAVRAS palavras.
+# - desvio-padrao do paragrafo: desvio (populacional) do numero de palavras
+#   de cada paragrafo da cena.
+
+RITMO_MEDIA_FRASE_MIN = 12            # media de palavras por frase: banda canonica 12-22
+RITMO_MEDIA_FRASE_MAX = 22
+RITMO_FRASE_CURTA_PALAVRAS = 8        # frase "curta" = menos de 8 palavras
+RITMO_MAX_SEQ_FRASES_CURTAS = 2       # nunca 3+ frases curtas consecutivas (climax raro)
+RITMO_PARAGRAFO_DENSO_PALAVRAS = 40   # paragrafo "denso" = 40+ palavras
+RITMO_PCT_PARAGRAFOS_DENSOS_MIN = 70  # >=70% dos paragrafos devem ser densos
+RITMO_DESVIO_PARAGRAFO_MIN = 40       # contraste entre paragrafos (rio, nao monotonia)
+RITMO_RESPOSTA_ABERTURA_JANELA = (3, 6)  # a pergunta-gancho deve ser respondida entre o P3 e o P6
+RITMO_FECHO_MIN_PALAVRAS = 15         # fecho reflexivo e redondo
+RITMO_FECHO_MAX_PALAVRAS = 25
+RITMO_PAREDE_PALAVRAS = 100           # PARAGRAFO longo so conta como "parede" se tiver
+                                      # mais de 100 palavras E a cena tiver desvio < RITMO_DESVIO_PARAGRAFO_MIN
+                                      # (paragrafo longo em cena com contraste NUNCA e parede;
+                                      #  o texto-ouro tem paragrafos de ~170 palavras)
+
+# Respiro = paragrafo LEVE de 1 a 3 frases com 8 a 20 palavras cada.
+# Respiro NAO e sequencia de frases-pedaco de 1 a 4 palavras — isso e martelada,
+# exatamente o que RITMO_MAX_SEQ_FRASES_CURTAS proibe.
