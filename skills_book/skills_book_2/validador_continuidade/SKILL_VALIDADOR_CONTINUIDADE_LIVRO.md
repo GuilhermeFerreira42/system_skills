@@ -289,3 +289,15 @@ FUNCAO ORQUESTRADOR_GERAR_PERGUNTAS_CONTINUIDADE(saida_escritor, bible, estado_a
 - Tempo alvo: < 20 segundos por cena
 - Bible e Estado Anterior sao pequenos (indexaveis em memoria)
 - Paralelize verificacoes independentes
+---
+
+# NOVO — PROVA DE LINHAGEM (input_checksum) — OBRIGATORIO
+
+No JSON de saida (`_resultado_continuidade.json`), registre **obrigatoriamente**:
+
+```json
+"input_checksum": "<checksum etiquetado do _saida_escritor.md que VOCE validou>"
+```
+
+- Calcule com: `python3 utils/checksum.py calcular {worktree}/_saida_escritor.md` (formato `v1.0:xxxxxxxx`).
+- Sem esse campo, o Vigia da Fabrica reprova a cena (validador sem registro de qual texto leu).

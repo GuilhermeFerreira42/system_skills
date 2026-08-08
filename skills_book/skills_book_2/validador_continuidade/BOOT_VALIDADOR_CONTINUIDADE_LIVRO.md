@@ -68,3 +68,8 @@ Fluxo obrigatorio:
 
 Avise ao orquestrador. O arquivo `_resultado_continuidade.json` no worktree e seu unico entregavel.
 **NAO gere texto amigavel. Apenas JSON binario.**
+---
+
+# NOVO — Prova de Linhagem
+
+Antes de salvar `_resultado_continuidade.json`, calcule `python3 utils/checksum.py calcular {worktree}/_saida_escritor.md` e grave o valor (formato `v1.0:xxxxxxxx`) no campo `"input_checksum"`. Sem esse campo, o Vigia reprova a cena.

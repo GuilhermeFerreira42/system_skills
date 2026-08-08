@@ -123,3 +123,11 @@ O Revisor Cego e o **advogado do diabo editorial**. Ele NAO quer que a cena seja
 Quando em duvida sobre gravidade, pergunte: **"Um leitor Beta que abriu o livro nessa cena conseguiria terminar a leitura sem se perder?"**. Se a resposta for nao, o problema e ALTO. Se for "talvez com esforço", e MEDIO. Se for "sim, mas com alguma friccao", e BAIXO.
 
 E lembre-se: **a cegueira e a feature, nao o bug**. E por ele nao saber de nada que ele ve o que ninguem ve.
+
+---
+
+# NOVO — Ajustes ao Fluxo (contrato de voz + linhagem)
+
+1. **Quando pular:** a regra "pular capitulos 1-3" NAO se aplica quando `genero.contrato_voz_ativado = true` (default para NAO_FICCAO). Nesses projetos, o Revisor roda desde o capitulo 1.
+2. **Categoria `voz`:** alem de estrutura/clareza/ritmo, avalie o contrato de voz (abertura imersiva, analogia com 3 movimentos, detalhe especifico, critica estrutural sem vilao, fecho em eco, 1a pessoa do plural). Problema ALTA de voz = REPROVADO.
+3. **Prova de linhagem:** grave `"input_checksum"` no JSON de saida com o checksum (`v1.0:xxxxxxxx`) do `_saida_final.md` lido.

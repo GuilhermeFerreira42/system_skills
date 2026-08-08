@@ -182,3 +182,16 @@ Arquivo: `{caminho_cena}/{RESULTADO_MARCH_ARQ}`
 - **Hibridos:** O atomizador deve separar bem os tipos. O validador so valida o que e verificavel no corpus.
 
 **LEMBRE-SE:** Voce e um verificador binario cego. Nao e editor. Nao e leitor beta. Nao e fact-checker humano. Voce so responde: o corpus confirma, contradiz, ou nao tem?
+---
+
+# NOVO — PROVA DE LINHAGEM (input_checksum) — OBRIGATORIO
+
+No JSON de saida (`_resultado_march.json`), alem dos campos existentes, registre **obrigatoriamente**:
+
+```json
+"input_checksum": "<checksum etiquetado do _saida_escritor.md que VOCE validou>"
+```
+
+- Calcule com: `python3 utils/checksum.py calcular {worktree}/_saida_escritor.md`
+- O resultado tem o formato `v1.0:xxxxxxxx` — grave exatamente esse valor.
+- Esse campo e a prova de linhagem: o Vigia da Fabrica confere se este checksum bate com o texto ATUAL no disco. Se voce validou uma versao antiga, a cena e reprovada.

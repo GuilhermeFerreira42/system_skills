@@ -695,7 +695,7 @@ NIVELAMENTO_ANALOGIAS_OPCOES = {
 # --- EIXO 4: VOZ DO AUTOR ---
 # Como o narrador se posiciona no texto.
 NIVELAMENTO_VOZ_OPCOES = {
-    NIVELAMENTO_OPCAO_A: "opinativa_humor_posicionamentos",  # narrador comopiniao, humor, polemicas leves
+    NIVELAMENTO_OPCAO_A: "revelacao_respeitosa",  # cumplice, critica ao sistema, nunca a pessoas (DNA da marca)
     NIVELAMENTO_OPCAO_B: "neutra_engajada",                  # narrador invisivel mas preocupado com clareza
     NIVELAMENTO_OPCAO_C: "academica_distante",               # narrador onisciente, formal, sem opiniao
 }
@@ -722,3 +722,16 @@ NIVELAMENTO_PERSISTIR_ESTADO = True
 # Caminho do campo na Bible (sob Metadados Gerais)
 NIVELAMENTO_BIBLE_CAMPO = "perfil_editorial"
 NIVELAMENTO_ESTADO_CAMPO = "perfil_editorial"
+
+
+# ============================================================================
+# 20. VIGIA DA FABRICA (Camada A — integridade e linhagem)
+# ============================================================================
+LOG_VIGIA_ARQ = "_log_vigia.md"                  # relatorio do vigia por cena
+STATUS_CENA_REPROVADO_VIGIA = "REPROVADO_VIGIA"  # vigia reprovou a cena
+VIGIA_SCRIPT = "utils/vigia_integridade.py"      # caminho do script (CLI)
+CAMPO_INPUT_CHECKSUM = "input_checksum"          # campo de linhagem exigido dos validadores
+
+# Contrato de voz (Revelacao Respeitosa) — quando ativo, o Revisor Cego
+# roda desde o capitulo 1 e avalia a categoria "voz".
+CONTRATO_VOZ_ATIVADO_GENEROS = ("NAO_FICCAO", "MEMORIAS", "PERSONALIZADO")

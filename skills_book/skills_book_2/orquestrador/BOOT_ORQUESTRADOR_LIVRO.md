@@ -230,12 +230,12 @@ Responde com a letra (A, B ou C).
 ```
 Pergunta 4 de 4 — VOZ DO AUTOR (como o narrador se posiciona):
 
-A) OPINATIVA COM HUMOR — narrador com opiniao forte, humor acido 
-   as vezes, polemicas leves quando faz sentido, posicionamentos 
-   claros ("o problema de tratar com agua e sal eh que se ganha 
-   menos dinheiro"). Esta eh a voz da versao ANTIGA da skill, que 
-   o autor original curtiu mais. Lembra um bom professor universitario 
-   que nao tem medo de se posicionar.
+A) REVELACAO RESPEITOSA — voz cumplice, precisa e respeitosa. O narrador 
+   descobre junto com o leitor ("precisamos entender"), critica o SISTEMA 
+   de forma estrutural ("a formacao tem uma lacuna"), nunca pessoas, nunca 
+   ocultacao/lucro. Humor leve quando natural, nunca acido nem ataque. Fecho 
+   em eco com a abertura. Esta e a voz que produziu o melhor resultado da 
+   skill na versao antiga ("Revelacao Respeitosa").
 
 B) NEUTRA ENGAJADA — narrador invisivel (voz de terceira pessoa 
    classica), mas preocupado com clareza e ritmo. Nao polemiza, 
@@ -518,6 +518,33 @@ PARA CADA cena EM plano.cenas:
         saida_final = LER(f"{worktree}/_saida_editor.md")
     SENAO:
         saida_final = LER(f"{worktree}/_saida_escritor.md")
+
+    // ETAPA F.5: REVISOR CEGO EDITORIAL (obrigatorio p/ NAO_FICCAO com contrato de voz)
+    // NAO pula capitulos 1-3 quando genero.contrato_voz_ativado = true
+    SE DEVE_INVOCAR_REVISOR_CEGO(genero, cena, len(saida_final)):
+        INVOCAR(revisor_cego_editorial, {cena: worktree, criterios: genero.criterios_revisor OU REVISAO_CRITERIOS_PADRAO})
+        VERIFICAR_SE_ARQUIVO_EXISTE(f"{worktree}/_resultado_revisor_cego.json")
+        SE NAO: PARAR("Revisor Cego nao executou")
+        resultado_revisor = LER(f"{worktree}/_resultado_revisor_cego.json")
+        SE resultado_revisor.status_geral != "APROVADO":
+            cena.status = "REPROVADO_REVISOR"
+            cena.erros = resultado_revisor.problemas_alta + resultado_revisor.problemas_media
+            cena.retries = cena.retries + 1
+            ATUALIZAR_ESTADO_ATOMICO(cena)
+            INVOCAR(escritor, {cena, worktree, falhas: cena.erros, modo: "REESCRITA_CIRURGICA"})
+            REPETIR ETAPA A
+
+    // ETAPA H: VIGIA DA FABRICA (Camada A — script, 0 tokens)
+    resultado_vigia = EXECUTAR_CLI("python3 utils/vigia_integridade.py " + worktree)
+    SALVAR(f"{worktree}/_log_vigia.md", resultado_vigia.saida)
+    SE resultado_vigia.exit_code != 0:
+        cena.status = "REPROVADO_VIGIA"
+        cena.erros = resultado_vigia.saida
+        cena.retries = cena.retries + 1
+        ATUALIZAR_ESTADO_ATOMICO(cena)
+        INVOCAR(escritor, {cena, worktree, falhas: cena.erros, modo: "REESCRITA_CIRURGICA"})
+        REPETIR ETAPA A
+    cena.validacao_vigia = "APROVADO"
 
     // ETAPA G: Atualizar Bible + Estado (ATOMICAMENTE)
     bible = ATUALIZAR_BIBLE(bible, saida_final, cena)

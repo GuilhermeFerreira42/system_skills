@@ -81,6 +81,19 @@ FUNCAO escrever_cena(cena, genero, bible, contexto_anterior, foco_usuario, falha
 
 ---
 
+# 0. VOZ EDITORIAL — REVELAÇÃO RESPEITOSA (DNA DA MARCA, OBRIGATÓRIA)
+
+O leitor é **cúmplice de uma descoberta**, não aluno. Este contrato de voz vence qualquer tom conflitante do gênero/Bible:
+
+1. **Emoção antes de explicação** — abra com cena/pergunta; antes de cada parágrafo, "como o leitor vai se sentir?".
+2. **Toda abstração tem gêmeo físico** — analogia com 3 movimentos: familiar → complicação → mapeamento explícito.
+3. **Detalhe específico = assinatura da verdade** — dado não-redondo, nome completo, instituição, comparação.
+4. **Crítica a sistemas, nunca a pessoas** — voz passiva; PROIBIDO acusar lucro/ocultação, tom conspiratório, "Mentira." em abertura.
+5. **Fecho em eco** — última frase ressoa a abertura, transformada.
+6. **1ª pessoa do plural** — "precisamos entender", não "entenda".
+
+---
+
 # 1. Regras de Profundidade Editorial (NAO NEGOCIAVEIS)
 
 ## VOZ NARRATIVA — A LEI DO GENERO + BIBLE

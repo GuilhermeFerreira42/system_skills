@@ -238,6 +238,23 @@ FUNCAO orquestrar_livro(tarefa_do_usuario):
                 INVOCAR(escritor, {cena, worktree, falhas: cena.erros, modo: "REESCRITA_CIRURGICA"})
                 REPETIR ETAPA A  // Loop: reescrita -> atomizador -> march -> continuidade -> editor -> revisor
 
+        // ETAPA H: VIGIA DA FABRICA (Camada A — deterministica, 0 tokens)
+        // Roda SEMPRE, depois do Editor/Revisor e ANTES de marcar CONCLUIDO.
+        // Verifica presenca, ordem, linhagem (input_checksum) e igualdade
+        // final/editor. Se reprovar, a cena volta pro Escritor (cirurgica).
+        comando_vigia = "python3 utils/vigia_integridade.py " + worktree
+        resultado_vigia = EXECUTAR_CLI(comando_vigia)
+        SALVAR(f"{worktree}/{LOG_VIGIA_ARQ}", resultado_vigia.saida)
+        SE resultado_vigia.exit_code != 0:
+            cena.status = STATUS_CENA_REPROVADO_VIGIA
+            cena.erros = resultado_vigia.saida
+            cena.retries = cena.retries + 1
+            ATUALIZAR_ESTADO_ATOMICO(cena)
+            INVOCAR(escritor, {cena, worktree, falhas: cena.erros, modo: "REESCRITA_CIRURGICA"})
+            REPETIR ETAPA A  // Loop completo ate o Vigia aprovar
+
+        cena.validacao_vigia = "APROVADO"
+
         // ETAPA G: Atualizar Bible + Estado (ATOMICAMENTE)
         bible = ATUALIZAR_BIBLE(bible, saida_final, cena)
         SALVAR_ATOMICO(caminho_bible(projeto_path), bible)

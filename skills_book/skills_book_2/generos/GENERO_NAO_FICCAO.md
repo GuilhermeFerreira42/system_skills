@@ -72,11 +72,13 @@ Em não-ficção, "cena" = **seção conceitual** ou **módulo de aprendizado**.
 
 | Arquétipo | Beats da cena |
 |-----------|---------------|
-| **Problema → Solução** (self-help, business, saúde) | gancho_dor, paradigma_atual, causa_raiz, solucao_revelada, evidencia, aplicacao_acao, resumo |
-| **Grande Ideia** (ciência popular, filosofia) | paradigma_atual, descoberta_insight, mecanismo, implicacao, evidencia, faq_mitos |
+| **Problema → Solução** (self-help, business, saúde) | gancho_dor, paradigma_atual, causa_raiz, solucao_revelada, **ANALOGIA**, evidencia, aplicacao_acao, resumo |
+| **Grande Ideia** (ciência popular, filosofia) | **gancho_conceitual**, descoberta_insight, mecanismo, **ANALOGIA**, evidencia, implicacao, resumo_ponte |
 | **Biografia** (história de vida, memoir não-ficção) | cenario_epoca, personagem_em_jogo, virada_dramatica, licao_extraida, ponte_tematica |
 | **Investigativo** (jornalismo de longa forma) | gancho_humano, investigacao_camada_1, revelacao_parcial, escalada, virada_final, impacto |
 | **Sabedoria Acumulada** (filosofia prática, ensaio) | observacao_cotidiana, pergunta_filosofica, argumento_principal, contraargumento, exemplo, reflexao_pessoal |
+
+**REGRA DE OURO (contrato de voz):** todo conceito técnico/abstrato exige **analogia obrigatória** com 3 movimentos (familiar → complicação → mapeamento explícito). O beat `ANALOGIA` é obrigatório e não pode ser omitido por "economia de espaço".
 
 ## Estrutura de Capítulo
 

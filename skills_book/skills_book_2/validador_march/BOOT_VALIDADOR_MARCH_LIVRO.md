@@ -71,3 +71,8 @@ Use o campo `tipo` da pergunta para buscar melhor:
 
 Avise ao orquestrador que a validacao MARCH esta pronta.
 **Seu unico entregavel: `{worktree}/_resultado_march.json`**
+---
+
+# NOVO — Prova de Linhagem
+
+Antes de salvar `_resultado_march.json`, calcule `python3 utils/checksum.py calcular {worktree}/_saida_escritor.md` e grave o valor retornado (formato `v1.0:xxxxxxxx`) no campo `"input_checksum"` do JSON. Sem esse campo, o Vigia da Fabrica reprova a cena.

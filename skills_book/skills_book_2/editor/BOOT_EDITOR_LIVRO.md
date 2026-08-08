@@ -57,3 +57,9 @@ Salve em `_saida_editor.md` + `_metadados_editor.json`
 # Passo 4 — Ao terminar
 
 Avise ao orquestrador. Arquivos `_saida_editor.md` e `_metadados_editor.json` sao seus entregaveis.
+---
+
+# NOVO — Gate de Voz e Prova de Linhagem
+
+1. **Gate de voz (contrato "Revelacao Respeitosa"):** reprove a cena se houver tom conspiratorio/acusacao de lucro, "Mentira." em abertura, fecho sem eco, voz professoral imperativa dominante, ou conceito tecnico sem analogia. Encaminhe a reescrita cirurgica.
+2. **Prova de linhagem:** antes de salvar `_metadados_editor.json`, calcule `python3 utils/checksum.py calcular {worktree}/_saida_escritor.md` e grave o valor (formato `v1.0:xxxxxxxx`) no campo `"input_checksum"`.

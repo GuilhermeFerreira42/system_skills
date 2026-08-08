@@ -201,3 +201,24 @@ Arquivo: `{caminho_cena}/{METADADOS_EDITOR_ARQ}` (log de mudancas)
 Se o Editor introduzir erro que quebre MARCH ou Continuidade (raro, mas possivel):
 - Orquestrador roda MARCH + Continuidade DE NOVO apos Editor
 - Se falhar -> volta para Escritor (nao para Editor)
+---
+
+# NOVO — GATE DE VOZ (contrato "Revelacao Respeitosa") — OBRIGATORIO
+
+Alem das regras editoriais existentes, o Editor REPROVA a cena (REPROVADO — reescrita cirurgica) se detectar:
+
+1. **Tom conspiratorio / acusacao de lucro ou ocultacao** — ex.: "nao pagam a parcela do consultorio", "nao da para patentear", "eles escondem". A critica deve ser estrutural: "a formacao tem uma lacuna".
+2. **"Mentira." como abertura de desmistificacao** — usar "isso e um equivoco", "esse e um dos mitos", nunca o ataque direto em abertura de paragrafo.
+3. **Fecho sem eco** — a ultima frase deve ressoar com a imagem da abertura. Se o texto terminar em tese declarada ou imperativo seco, reescrever o fecho.
+4. **Voz professoral imperativa dominante** — "Entenda que...", "Saiba que..." como voz principal. Substituir por 1a pessoa do plural ("precisamos entender").
+5. **Conceito tecnico sem analogia** — onde o genero exige beat `ANALOGIA` e o conceito apareceu sem analogia com 3 movimentos.
+
+# NOVO — PROVA DE LINHAGEM (input_checksum)
+
+No `_metadados_editor.json`, registre **obrigatoriamente** o campo:
+
+```json
+"input_checksum": "<checksum etiquetado do _saida_escritor.md que VOCE editou>"
+```
+
+Calcule com `python3 utils/checksum.py calcular {worktree}/_saida_escritor.md` (formato `v1.0:xxxxxxxx`). Sem esse campo, o Vigia reprova a cena.

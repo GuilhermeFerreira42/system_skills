@@ -346,3 +346,25 @@ FUNCAO EXTRAIR_ESTRUTURA(texto):
 O Episodio 02 do podcast diagnosticou que a skill original tinha 5 problemas, e o Problema 4 era exatamente a falta do Revisor Cego. A razao historica e simples: **o Editor ja cobre boa parte do trabalho**, e a tendencia e tratar o Editor como "suficiente". Mas o Editor opera **com informacao privilegiada** (conhece a Bible, o genero, o estado anterior), e por isso tende a ser **simpatico** ao texto — ele "sabe" o que o autor quis dizer, entao nao pega ambiguidades. O Revisor Cego e o **advogado do diabo editorial**: ve o texto como se fosse a primeira vez, e por isso pega coisas que ninguem mais pega.
 
 A licao aprendida: **quem valida precisa NAO conhecer o que esta validando**. E isso vale pra todos os checkers, mas e especialmente importante pro revisao editorial, porque a forma como a gente conta historias tem armadilhas que so aparecem quando a gente finge nao saber nada.
+
+---
+
+# NOVO — CONTRATO DE VOZ (categorias extras de revisao) — OBRIGATORIO p/ NAO_FICCAO
+
+Alem de estrutura, clareza e ritmo, o Revisor Cego avalia o **contrato de voz** ("Revelacao Respeitosa") quando `genero.contrato_voz_ativado = true` (default para NAO_FICCAO). Adicione a categoria `voz` aos problemas:
+
+| Tipo (categoria voz) | Exemplo de problema | Gravidade |
+|---|---|---|
+| abertura_nao_imersiva | Abre com definicao/estatistica fria em vez de cena/pergunta | MEDIA |
+| analogia_sem_3_movimentos | Analogia sem mapeamento explicito (faltou o "X e o Y") | MEDIA |
+| detalhe_redondo | "28 anos" em vez de "28 anos e meio" em evidencia real | BAIXA |
+| critica_conspiratoria | Acusa lucro/ocultacao/patente; "eles escondem" | ALTA |
+| abertura_mentira | "Mentira." como abertura de desmistificacao | ALTA |
+| fecho_sem_eco | Ultima frase nao ressoa a abertura | MEDIA |
+| voz_imperativa | "Entenda que..." como voz dominante | MEDIA |
+
+Qualquer problema ALTA em `voz` reprova a cena (regra existente: 1 problema ALTA = REPROVADO).
+
+# NOVO — PROVA DE LINHAGEM (input_checksum)
+
+No `_resultado_revisor_cego.json`, registre **obrigatoriamente** o campo `"input_checksum"` com o checksum etiquetado (`v1.0:xxxxxxxx`) do `_saida_final.md` que voce leu. Calcule com `python3 utils/checksum.py calcular {worktree}/_saida_final.md`.
