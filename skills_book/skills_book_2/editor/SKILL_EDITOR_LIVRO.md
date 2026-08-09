@@ -196,6 +196,19 @@ Arquivo: `{caminho_cena}/{METADADOS_EDITOR_ARQ}` (log de mudancas)
 
 ---
 
+# REGRAS DE PRESERVAÇÃO (O EDITOR NUNCA AMACIA O TEXTO)
+
+O Editor foi criado para polir, mas o polimento excessivo remove a "mordida" que faz o texto ser memorável. Portanto, o Editor **NUNCA** deve fazer as seguintes alterações, a menos que o usuário peça explicitamente:
+
+1. **NUNCA ARREDONDE DADOS ESPECÍFICOS** — ❌ "28 anos" (se o original é "28 anos e meio"); ❌ "mais de 20 mil" (se o original traz a fração específica). Mantenha a assimetria do dado: a assimetria é a assinatura da verdade.
+2. **NUNCA REMOVA A COMPARAÇÃO CONTEXTUALIZADA** — se o original compara a duracao da lâmpada (1 ano) com os 70 anos da casa, mantenha: a comparação é o que faz o leitor sentir a magnitude.
+3. **NUNCA SUAVIZE UMA CRÍTICA ESTRUTURAL** — se o original diz "a escola foi treinada para enxergar o erro como falha", não mude para "o erro aparece distribuído entre metodologias". A primeira é crítica afiada; a segunda é descrição burocrática. **Mantenha a afiação** (dentro do contrato: sistema, nunca pessoas).
+4. **NUNCA REMOVA O CONFLITO DE UMA ANALOGIA** — analogia sem conflito é comparação morta. Se o original tem "de nada adiantará comprar móveis caros para uma casa com o alicerce rachado", mantenha a tensão entre "móveis caros" e "alicerce rachado".
+5. **NUNCA TRANSFORME A FRASE CURTA DE CLÍMAX EM FRASE LONGA** — se o original tem "A resposta é outra: o sono.", não expanda. A frase curta após um parágrafo denso é o alívio da tensão. Mantenha-a.
+6. **NUNCA APAGUE ESPECIFICIDADE QUE ESTÁ NO CORPUS** — se o corpus traz nome completo, ano, instituição e circunstância (ex.: Marie Curie, Nobel 1911, Sorbonne, "anotava cada medida à mão"), e o texto os usou corretamente, não os remova por "economia". E o inverso: não ADICIONE cautela extra que o corpus não pede — calibre dentro da voz da obra.
+
+---
+
 # 10. Gatilho de Rejeicao (Orquestrador -> Reescrita)
 
 Se o Editor introduzir erro que quebre MARCH ou Continuidade (raro, mas possivel):
@@ -212,18 +225,19 @@ Alem das regras editoriais existentes, o Editor REPROVA a cena (REPROVADO — re
 3. **Fecho sem eco ou repetido entre cenas** — a ultima frase deve ressoar com a imagem da abertura; cada cena deve ter um fecho tematico proprio e original (proibido repetir fechos literais como muletas).
 4. **Voz professoral imperativa dominante** — "Entenda que...", "Saiba que..." como voz principal. Substituir por 1a pessoa do plural ("precisamos entender").
 5. **Conceito tecnico sem analogia** — onde o genero exige beat `ANALOGIA` e o conceito apareceu sem analogia com 3 movimentos (familiar -> complicacao -> mapeamento explicito).
+6. **Narrador-relator ou jargao de pipeline na prosa** — "O corpus afirma/insiste/repete", "a transcricao", ou as palavras *corpus*, *transcrição*, *beat*, *movimento familiar*, *complicacao*, *mapeamento* aparecendo como metalanguage (narrador relatando a fonte ou legendando a analogia). Reescrever com voz integrada ("Precisamos entender...", "Segundo a palestra do Dr. Fulano..."), mantendo a cautela dentro da frase, nao como meta-comentario.
 
 ## NOVO — GATE DE RITMO (tessitura)
 
 O Editor também polimenta o RITMO, aplicando a 7ª e 8ª regras do DNA:
 - **Frase curta é clímax raro:** se houver 3+ frases curtas (<8 palavras) seguidas, funda algumas em uma frase mais longa e fluida. Máximo de 2 frases curtas seguidas.
-- **Parágrafos densos obrigatórios (≥40 palavras representando ≥70% dos parágrafos):** cada parágrafo denso (40–100+ palavras) deve ser seguido de um respiro (parágrafo leve/frase curta) e vice-versa. Desvio-padrão de comprimento do parágrafo ≥40. Se a cena estiver toda picotada, reconstrua parágrafos densos.
+- **Parágrafos densos obrigatórios (≥40 palavras representando ≥65% dos parágrafos):** cada parágrafo denso (40–100+ palavras) deve ser seguido de um respiro (parágrafo leve/frase curta) e vice-versa. Desvio-padrão de comprimento do parágrafo ≥36. Se a cena estiver toda picotada, reconstrua parágrafos densos.
 - **Não responda a pergunta da abertura no 1º ou 2º parágrafo**: construa a expectativa (candidatos plausíveis, contexto histórico, autoridade) antes da virada.
 - **Fecho reflexivo e redondo (15–25 palavras) ecoando a abertura** — **PROIBIDO fechos literais repetidos ou genéricos entre cenas**; cada cena deve ter um fecho próprio, original e tematicamente conectado à sua respectiva abertura.
 - **Prosa integrada (sem listas secas):** nunca transformar passos, mitos ou propriedades em enumerações (1., 2., 3.); integrá-los na prosa narrativa fluida.
 - **Janela de resposta:** a pergunta-gancho da abertura deve ser respondida entre o ¶3 e o ¶6 (antes disso é virada estragada; sem resposta até o ¶6 é expectativa abandonada).
 - **Respiro ≠ rajada:** respiro é parágrafo leve de 1–3 frases de 8–20 palavras. Nunca crie nem exija sequências de frases-pedaço de 1–4 palavras ("Toda digestão. Toda síntese.") — isso é martelada, e o Revisor Cego reprova (3+ curtas seguidas = ALTA).
-- Meta canônica (`RITMO_*` em `utils/constantes.py`): média de **12–22 palavras por frase**, parágrafos densos (≥40 palavras) ≥70%, desvio-padrão ≥40, máximo de 2 frases curtas seguidas.
+- Meta canônica (`RITMO_*` em `utils/constantes.py`): média de **12–22 palavras por frase**, parágrafos densos (≥40 palavras) ≥65%, desvio-padrão ≥36, máximo de 2 frases curtas seguidas.
 
 # NOVO — PROVA DE LINHAGEM (input_checksum)
 

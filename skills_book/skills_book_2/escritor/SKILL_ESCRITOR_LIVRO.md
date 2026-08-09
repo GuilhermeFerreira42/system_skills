@@ -85,18 +85,22 @@ FUNCAO escrever_cena(cena, genero, bible, contexto_anterior, foco_usuario, falha
 
 O leitor é **cúmplice de uma descoberta**, não aluno. Este contrato de voz vence qualquer tom conflitante do gênero/Bible:
 
-1. **Emoção antes de explicação** — abra com cena/pergunta; antes de cada parágrafo, "como o leitor vai se sentir?".
+1. **Emoção antes de explicação — coloque o leitor DENTRO da cena.** A abertura nunca começa com o tema ("O sono é...", "O problema do plástico é..."); comece com **"Se você..."** ou uma situação hipotética na **2ª pessoa** — experiência vivida, não diagrama ("Se você passasse seis anos esperando este momento, o que faria nos próximos dez minutos?"). Construa a expectativa: a pergunta-gancho só é respondida entre o **¶3 e o ¶6**; antes disso, sustente candidatos plausíveis. Antes de cada parágrafo, "como o leitor vai se sentir?".
 2. **Toda abstração tem gêmeo físico** — analogia com 3 movimentos: familiar → complicação → mapeamento explícito.
 3. **Detalhe específico = assinatura da verdade** — dado não-redondo ("28 anos e meio"), nome completo, instituição, comparação.
 4. **Crítica a sistemas, nunca a pessoas** — voz passiva; PROIBIDO acusar lucro/ocultação, tom conspiratório, "Mentira." em abertura.
-5. **Fecho em eco — próprio e distinto por cena** — última frase ressoa a abertura, transformada; PROIBIDO repetir a mesma frase de fecho entre cenas; fecho reflexivo redondo (15–25 palavras).
+5. **Fecho em eco — pessoal, dual e de ação.** A última frase ecoa a imagem da abertura com uma virada prática, traz **pelo menos uma palavra que conecta o leitor ("seu", "você")** e **dualidade** (científico + humano / conceito + ação). Exemplo canônico: *"O primeiro passo não exige equipamentos complexos, mas sim o reconhecimento de que as páginas que você lê hoje estão moldando o repertório que definirá as suas decisões de amanhã."* PROIBIDO repetir a mesma frase de fecho entre cenas; fecho reflexivo redondo (15–25 palavras); PROIBIDO fecho genérico de "consciência/enxergar" sem dizer o que o leitor faz com isso amanhã.
 6. **1ª pessoa do plural** — "precisamos entender", não "entenda".
-7. **Variação de tessitura** — frase curta (<8 palavras) é clímax raro, não padrão (nunca 3+ seguidas); parágrafos densos ≥40 palavras em ≥70% do texto; desvio-padrão de parágrafo ≥40; média canônica de **12–22 palavras por frase** (ver `RITMO_*` em `utils/constantes.py`); **respiro = parágrafo leve de 1–3 frases de 8–20 palavras, nunca rajada de frases-pedaço** (denso → respiro alterna tipos de parágrafo, não pica períodos).
-8. **Construção de expectativa antes da virada & prosa integrada (nunca listar)** — não responda a pergunta de abertura no 1º ou 2º parágrafo: construa a expectativa (candidatos plausíveis, contexto, autoridade) antes da virada; integre listas, mitos e passos fluidamente na narrativa em prosa, nunca enumerados secamente (1., 2., 3.).
+7. **Variação de tessitura** — frase curta (<8 palavras) é clímax raro, não padrão (nunca 3+ seguidas); parágrafos densos ≥40 palavras em ≥65% do texto; desvio-padrão de parágrafo ≥36; média canônica de **12–22 palavras por frase** (ver `RITMO_*` em `utils/constantes.py`); **respiro = parágrafo leve de 1–3 frases de 8–20 palavras, nunca rajada de frases-pedaço** (denso → respiro alterna tipos de parágrafo, não pica períodos).
+8. **Construção de expectativa — a resposta é uma recompensa, não uma abertura.** A pergunta-gancho NUNCA é respondida no 1º ou 2º parágrafo; use os primeiros parágrafos para (a) aprofundar a cena, (b) dar contexto histórico ou institucional, (c) levantar hipóteses que serão derrubadas. A frase da virada ("A resposta é outra: o silêncio.") deve ser **curta, seca e vir depois de um parágrafo denso** — é o clímax da introdução e a recompensa do leitor. Prosa integrada: integre listas, mitos e passos fluidamente na narrativa ("O primeiro mito tem cara de verdade...", "O segundo, mais perigoso, é..."), nunca enumerados secamente (1., 2., 3.).
 
 ## LIBERDADE CRIATIVA
 
 Estes princípios são GUARDA-CORPOS, não template. Liberdade total de palavras, imagens, ordem e estrutura de frase. Escreva do instinto; ajuste depois. Os validadores vêm depois como rede de segurança — nunca escreva "para o teste".
+
+## O NARRADOR NUNCA É UM RELATOR DO CORPUS
+
+PROIBIDO como voz principal: "O corpus afirma/insiste/repete...", "A transcrição registra...", "A palestra sugere...". OBRIGATÓRIO: "Precisamos entender", "Descobrimos que", "É assim que funciona". Jargão de pipeline proibido na prosa (*corpus*, *transcrição*, *beat*, *movimento familiar*, *complicação*, *mapeamento*). A fonte, quando nomeada, usa o **`fonte_nomeada`** registrado na **Bible** — nunca "o corpus" — e com **voz integrada**: ❌ "O corpus afirma que a dopamina causa vício." → ✅ "Segundo a fonte, a dopamina entraria nessa história como um alarme. Precisamos de cautela: alarme não é diagnóstico."
 
 ---
 

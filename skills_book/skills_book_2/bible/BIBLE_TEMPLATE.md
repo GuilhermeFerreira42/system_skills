@@ -19,6 +19,7 @@ O Orquestrador atualiza automaticamente a cada cena aprovada.
 - **Tempo_verbal:** [passado | presente | misto_controlado]
 - **Distancia_narrativa:** [intima | proxima | media | ampla | cinematografica | mentor | instrutora]
 - **Vocabulario_nivel:** [simples | medio | rico | tecnico | construido | pessoal | acessivel]
+- **Fonte_nomeada:** [como a prosa deve chamar a fonte do corpus — ex.: "a palestra do Dr. Fulano" | "o relatorio anual" | "as cartas do fundador"; NUNCA "o corpus" nem "a transcricao"]
 - **Ritmo_padrao:** [lento | variado | rapido | acelerado | modular | ondulatorio | linear]
 - **Versao_bible:** v1.0
 - **Checksum:** [auto-preenchido pelo orquestrador]
@@ -87,10 +88,10 @@ Se o corpus do projeto esta organizado em `corpus/modulo_NN_*/` (um modulo por t
 
 | Capitulo | Modulo(s) do Corpus | Tamanho Aprox | Notas |
 |----------|----------------------|---------------|-------|
-| Cap 1 | `corpus/modulo_01_agua/` | 2 MB | Material do Dr. Lair Ribeiro sobre agua |
-| Cap 2 | `corpus/modulo_01_agua/` | 2 MB | Continua no tema agua |
-| Cap 3 | `corpus/modulo_02_hormonios/` | 3 MB | Muda tema |
-| Cap 4-5 | `corpus/modulo_03_cancer/` | 5 MB | Tema cancer, requer conhecimento previo de agua |
+| Cap 1 | `corpus/modulo_01_fundamentos/` | 2 MB | Material-base do tema principal |
+| Cap 2 | `corpus/modulo_01_fundamentos/` | 2 MB | Continua no mesmo tema |
+| Cap 3 | `corpus/modulo_02_aplicacoes/` | 3 MB | Muda de tema |
+| Cap 4-5 | `corpus/modulo_03_avancado/` | 5 MB | Tema avancado, requer conhecimento previo do tema base |
 
 **Regra:** se uma cena cair em capitulo nao mapeado, o Orquestrador usa `INFERIR_MODULOS` (fuzzy match por palavras-chave do titulo da cena com titulos dos modulos) como fallback.
 
@@ -107,7 +108,7 @@ Se voce quiser forçar uma cadencia especifica pra este projeto (ex: capitulo de
 ```
 alocacao_cenas_por_capitulo:
   cap_01: 1     # abertura, so contexto
-  cap_02: 3     # agua (denso, requer 3 cenas)
+  cap_02: 3     # tema denso, requer 3 cenas
   cap_03: 4     # cancer (muito denso, controverso, 4 cenas)
   cap_04: 2     # vitamina D3 (intermediario, 2 cenas)
   cap_05: 1     # oleo de coco (direto, 1 cena)

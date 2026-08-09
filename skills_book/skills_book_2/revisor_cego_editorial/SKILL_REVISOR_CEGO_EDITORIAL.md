@@ -148,7 +148,7 @@ Checks executados:
 |-------|---------------|------------------|
 | `VERIFICAR_VARIACAO_FRASES` | Texto com todas as frases do mesmo comprimento. Cria monotonia. | MEDIA. |
 | `VERIFICAR_DENSIDADE_DIALOGO` | Cena sem nenhum dialogo (pode ser intencional) OU cena 100% dialogo sem acao narrativa. | BAIXA. |
-| `DETECTAR_PAREDES_DE_TEXTO` | **REDEFINIDO em 2026-08-08** — parede = paragrafo com mais de 100 palavras E cena com desvio-padrao de paragrafo <40 (bloco longo SEM respiro ao redor). Paragrafo longo em cena com contraste NUNCA e parede (o texto de excelencia tem paragrafos de ~170 palavras). Detalhes na secao "REGRA DE RITMO — ESPECIFICACAO A PROVA DE INVERSAO". | MEDIA. |
+| `DETECTAR_PAREDES_DE_TEXTO` | **REDEFINIDO em 2026-08-08** — parede = paragrafo com mais de 100 palavras E cena com desvio-padrao de paragrafo <36 (bloco longo SEM respiro ao redor). Paragrafo longo em cena com contraste NUNCA e parede (o texto de excelencia tem paragrafos de ~170 palavras). Detalhes na secao "REGRA DE RITMO — ESPECIFICACAO A PROVA DE INVERSAO". | MEDIA. |
 | `DETECTAR_FRASES_LONGAS_EXCESSIVAS` | Frases com mais de 60 palavras. Difícil de processar. | MEDIA. |
 | `DETECTAR_LISTAS_EXPLICATIVAS` | "Primeiro, isso. Segundo, aquilo. Terceiro, aquilo outro." Em prosa literaria, deve ser menos esquematico. | BAIXA. |
 
@@ -397,10 +397,11 @@ Alem de estrutura, clareza e ritmo, o Revisor Cego avalia o **contrato de voz** 
 |---|---|---|
 | seq_frases_curtas | 3+ frases seguidas com <8 palavras (texto martelado) | ALTA |
 | abertura_responde_cedo | A pergunta da abertura é respondida no 1º ou 2º parágrafo (sem expectativa) | ALTA |
-| sem_paragrafo_denso | Menos de 70% de parágrafos densos (≥40 palavras) ou falta de tessitura | MEDIA |
+| sem_paragrafo_denso | Menos de 65% de parágrafos densos (≥40 palavras) ou falta de tessitura | MEDIA |
 | fecho_teaser | Última frase é imperativo seco/teaser curto, sem eco reflexivo redondo | MEDIA |
-| ritmo_uniforme | Toda a cena com o mesmo comprimento de frase (desvio-padrão <40) | MEDIA |
+| ritmo_uniforme | Toda a cena com o mesmo comprimento de frase (desvio-padrão <36) | MEDIA |
 | lista_explicativa | Enumeração seca (1., 2., 3., "primeiro, segundo") em vez de prosa integrada | MEDIA |
+| narrador_relator | Narrador relata a fonte ("O corpus afirma") ou legenda a mecânica da analogia (corpus/transcrição/beat/movimentos) | ALTA |
 
 ## REGRA DE RITMO (7ª e 8ª regras do DNA) — ESPECIFICACAO A PROVA DE INVERSAO
 
@@ -410,6 +411,8 @@ Alem de estrutura, clareza e ritmo, o Revisor Cego avalia o **contrato de voz** 
 
 ```bash
 python3 skills_book_2/utils/medir_ritmo.py {worktree}/_saida_final.md --json
+
+> **NOTA DE ESCOPO (v1.1):** os pisos numéricos de ritmo (densidade/desvio) foram calibrados sob **prosa de não-ficção narrativa**. Para gêneros com diálogo pesado (ROMANCE, THRILLER), onde frases curtas são orgânicas, o Orquestrador DEVE sobrescrever os pisos via `criterios_minimos` — frase curta de diálogo não é violação.
 ```
 
 Regras duras:
@@ -428,16 +431,16 @@ Regras duras:
 - **NAO REPROVE SE:** a cena tiver ZERO sequencias de 3+ curtas — **essa e a situacao APROVADA e IDEAL**. Frases curtas isoladas ou em pares sao permitidas (climax eventual). **JAMAIS exija "batidas", "punch", "ritmo curto" ou sequencias de frases curtas; o contrato pune o EXCESSO delas, nunca a AUSENCIA.**
 
 ### sem_paragrafo_denso — gravidade MEDIA
-- **REPROVE SE:** **menos de 70%** dos paragrafos tiverem **40 ou mais palavras**.
-- **NAO REPROVE SE:** 70% ou mais forem densos — mesmo que alguns paragrafos ultrapassem 100 palavras. **Paragrafo longo NAO e defeito; e a assinatura do contrato** (o texto de excelencia usado como referencia tem paragrafos de ~170 palavras). Nunca chame paragrafo denso de "parede de texto" — parede tem definicao propria, abaixo.
+- **REPROVE SE:** **menos de 65%** dos paragrafos tiverem **40 ou mais palavras**.
+- **NAO REPROVE SE:** 65% ou mais forem densos — mesmo que alguns paragrafos ultrapassem 100 palavras. **Paragrafo longo NAO e defeito; e a assinatura do contrato** (o texto de excelencia usado como referencia tem paragrafos de ~170 palavras). Nunca chame paragrafo denso de "parede de texto" — parede tem definicao propria, abaixo.
 
 ### ritmo_uniforme — gravidade MEDIA
-- **REPROVE SE:** o **desvio-padrao do comprimento (palavras) dos paragrafos** for **menor que 40** (todos os paragrafos do mesmo tamanho = monotonia).
-- **NAO REPROVE SE:** o desvio for ≥ 40 — contraste presente, cena aprovada neste item.
+- **REPROVE SE:** o **desvio-padrao do comprimento (palavras) dos paragrafos** for **menor que 36** (todos os paragrafos do mesmo tamanho = monotonia).
+- **NAO REPROVE SE:** o desvio for ≥ 36 — contraste presente, cena aprovada neste item.
 
 ### parede_texto (check legado REDEFINIDO) — gravidade MEDIA
-- **REPROVE SE — somente com as DUAS condicoes simultaneas:** existir paragrafo com **mais de 100 palavras** E o desvio-padrao dos paragrafos da cena ser **menor que 40** (ou seja: bloco longo sem nenhum respiro ao redor).
-- **NAO REPROVE SE:** o paragrafo longo vier acompanhado de paragrafos leves (desvio ≥ 40). **Com desvio ≥ 40, NENHUM paragrafo e parede, nao importa o comprimento.**
+- **REPROVE SE — somente com as DUAS condicoes simultaneas:** existir paragrafo com **mais de 100 palavras** E o desvio-padrao dos paragrafos da cena ser **menor que 36** (ou seja: bloco longo sem nenhum respiro ao redor).
+- **NAO REPROVE SE:** o paragrafo longo vier acompanhado de paragrafos leves (desvio ≥ 36). **Com desvio ≥ 36, NENHUM paragrafo e parede, nao importa o comprimento.**
 
 ### abertura — janela de resposta (DOIS checks distintos)
 - **abertura_responde_cedo — gravidade ALTA. REPROVE SE:** a pergunta/gancho da abertura for **respondido no paragrafo 1 ou no paragrafo 2** (virada entregue sem construcao de expectativa).
@@ -452,6 +455,11 @@ Regras duras:
 ### lista_explicativa — gravidade MEDIA
 - **REPROVE SE:** passos, mitos ou propriedades aparecerem como enumeracao seca (1., 2., 3. / "primeiro, segundo, terceiro") em vez de prosa integrada.
 - **NAO REPROVE SE:** os itens estiverem fluidos na narrativa ("o primeiro mito tem cara de verdade...").
+
+### narrador_relator — gravidade ALTA
+- **REPROVE SE (qualquer uma basta):** (a) a prosa usar o narrador como relator da fonte — "O corpus afirma", "o corpus insiste/repete/convoca", "a transcrição diz", "a palestra sugere" como voz principal; (b) aparecer jargao de pipeline na prosa — as palavras *corpus*, *transcrição*, *beat*, *tessitura*, *movimento familiar*, *complicação* ou *mapeamento* nomeando a mecanica (legendar a analogia em vez de vive-la); (c) a fonte ser citada com outro nome que nao o `fonte_nomeada` registrado na Bible (ex.: o projeto chama a fonte de "a palestra do Dr. Fulano" e a prosa diz "o documento").
+- **NAO REPROVE SE:** a fonte aparecer com voz integrada e cautela embutida ("Segundo a fonte, a dopamina entraria como um alarme — e alarme nao e diagnostico") ou o raciocinio estiver embutido em 1a pessoa do plural ("precisamos entender").
+- **NAO CONFUNDA** narrador_relator com o check anti-conspiratorio: aqui o defeito e a DISTANCIA institucional (voz de relatorio escolar), nao o tom de acusacao.
 
 ### Media de palavras por frase — informativo (NAO reprova sozinho)
 - Banda canonica: **12 a 22 palavras por frase em media**. Registre o valor medido no JSON. Se estiver fora da banda, sinalize como BAIXA — a reprovacao por ritmo curto ocorre via `seq_frases_curtas`, nao pela media isolada.

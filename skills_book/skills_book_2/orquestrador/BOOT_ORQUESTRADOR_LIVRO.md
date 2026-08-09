@@ -50,7 +50,7 @@ projeto_livro/
 
 1. Se o usuario ja forneceu o corpus nessa estrutura (com `corpus/README.md` indice), pule esta etapa e va direto pro Passo 2.
 2. Se o usuario forneceu arquivos soltos (na raiz, em pastas sem indice, com formatos misturados), **organize em modulos**:
-   a. Identifique os **temas distintos** no material (ex: "agua", "hormonios", "cancer").
+   a. Identifique os **temas distintos** no material (ex: "financas", "historia", "metodo").
    b. Crie uma pasta `corpus/modulo_NN_[tema]/` para cada tema.
    c. Mova os arquivos relacionados pra dentro da pasta do tema correspondente.
    d. Crie `corpus/README.md` com o indice, no formato:
@@ -147,7 +147,7 @@ Qual o genero do livro?
 
 ## 3.2 Nivelamento Editorial (OBRIGATORIO)
 
-**POR QUE EXISTE:** o diagnostico do Episodio 03 mostrou que a versao antiga da skill (v1.0) produziu um capitulo da Agua muito melhor que a versao nova (v3.0), porque a antiga tinha um `foco_usuario` muito mais detalhado e especifico. A solucao eh institucionalizar essa captura de preferencias na propria skill: o Orquestrador faz 4 perguntas de multipla escolha ANTES de comecar qualquer projeto novo, e as respostas viram o `perfil_editorial` da Bible.
+**POR QUE EXISTE:** o diagnostico do Episodio 03 mostrou que a versao antiga da skill (v1.0) produziu um capitulo-bancada muito melhor que a versao nova (v3.0), porque a antiga tinha um `foco_usuario` muito mais detalhado e especifico. A solucao eh institucionalizar essa captura de preferencias na propria skill: o Orquestrador faz 4 perguntas de multipla escolha ANTES de comecar qualquer projeto novo, e as respostas viram o `perfil_editorial` da Bible.
 
 **REGRA:** este passo eh OBRIGATORIO (definido em `utils/constantes.py` como `NIVELAMENTO_OBRIGATORIO = True`). O Orquestrador NAO passa pro Passo 4 enquanto as 4 respostas nao estiverem registradas. Se o usuario disser "nao sei" ou pular, use o `NIVELAMENTO_DEFAULT` (4 respostas "A" validadas como o perfil editorial padrão) — mas registre explicitamente que o default foi usado, nao finja que o usuario respondeu.
 
@@ -210,7 +210,7 @@ visuais ou casos analogos por cena):
 
 A) ALTA — 1 a 2 analogias por cena, sempre. Pra cada conceito 
    cientifico ou abstrato, uma metafora visual forte (tipo 
-   "aquaporina = porta de entrada da agua na celula" ou 
+   "juros compostos = bola de neve descendo a ladeira" ou 
    "painel do carro com luzes acesas"). Excelente pra nao-ficcao 
    educativa, porque o leitor leigo "vê" o conceito.
 
@@ -344,7 +344,7 @@ Conforme a escolha, carregue o arquivo da pasta `generos/`:
 
 # Passo 4 — Analise o Corpus e Crie/Atualize a Bible
 
-**Se o corpus e MODULAR** (veja Passo 1.1): para cada modulo em `corpus/modulo_NN_*/`, leia os arquivos daquele modulo e extraia os temas, conceitos, citacoes relevantes. Monte um **mapa_corpus_capitulos** que diz qual modulo alimenta qual capitulo do plano (ex: "Capitulo 1-3 → modulo_01_agua, Capitulo 4-5 → modulo_02_hormonios, ..."). Esse mapa vai na Bible e e consultado pelo Orquestrador a cada cena pra carregar so o modulo relevante.
+**Se o corpus e MODULAR** (veja Passo 1.1): para cada modulo em `corpus/modulo_NN_*/`, leia os arquivos daquele modulo e extraia os temas, conceitos, citacoes relevantes. Monte um **mapa_corpus_capitulos** que diz qual modulo alimenta qual capitulo do plano (ex: "Capitulo 1-3 → modulo_01_fundamentos, Capitulo 4-5 → modulo_02_aplicacoes, ..."). Esse mapa vai na Bible e e consultado pelo Orquestrador a cada cena pra carregar so o modulo relevante.
 
 **Se o corpus e MONOLITICO** (`corpus_novo.md`): leia o arquivo inteiro e faca a extracao normalmente.
 

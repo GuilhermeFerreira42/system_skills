@@ -44,8 +44,8 @@ except Exception:  # noqa: BLE001 - fallback de sobrevivencia (nao deveria ocorr
     RITMO_FRASE_CURTA_PALAVRAS = 8
     RITMO_MAX_SEQ_FRASES_CURTAS = 2
     RITMO_PARAGRAFO_DENSO_PALAVRAS = 40
-    RITMO_PCT_PARAGRAFOS_DENSOS_MIN = 70
-    RITMO_DESVIO_PARAGRAFO_MIN = 40
+    RITMO_PCT_PARAGRAFOS_DENSOS_MIN = 65
+    RITMO_DESVIO_PARAGRAFO_MIN = 36
 
 
 def _limpar_prosa(texto: str) -> str:

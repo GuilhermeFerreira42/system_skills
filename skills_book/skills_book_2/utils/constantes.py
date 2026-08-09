@@ -614,10 +614,10 @@ ACOES_DA_SKILL = [
 # ============================================================================
 
 SKILL_NOME = "skills_book"
-SKILL_VERSAO = "1.1-rc2"
+SKILL_VERSAO = "1.1"
 SKILL_EDITING = "Greenforged Edition"
 SKILL_DATA_CRIACAO = "2026-07-27"
-SKILL_DATA_ULTIMA_REVISAO = "2026-08-08"
+SKILL_DATA_ULTIMA_REVISAO = "2026-08-09"
 # v1.1-rc1 (2026-08-08): correcoes do incidente do teste_04 — bloco RITMO_*
 # canonico (secao 21), vigia com baseline correto do Revisor Cego e formato de
 # checksum validado, checks de ritmo a prova de inversao, invariante de
@@ -625,6 +625,32 @@ SKILL_DATA_ULTIMA_REVISAO = "2026-08-08"
 # v1.1-rc2 (2026-08-08): medidor de ritmo deterministico (utils/medir_ritmo.py)
 # e checagem anti-carimbo no vigia: o Revisor Cego so aprova com o bloco
 # metricas_ritmo real do script; aprovacao "por nota" e reprovada.
+# v1.1-rc3 (2026-08-08): cura da PERSONALIDADE (analise texto-a-texto do
+# teste_06 vs referencia padrao-ouro): Escritor com "Alma da Escrita" antes
+# das regras + regra anti-relator ("o corpus" PROIBIDO na prosa); itens 1/5/8
+# cirurgicos (abertura "Se voce", fecho pessoal-dual-acao, virada curta);
+# Editor com Regras de Preservacao (nao amacia mordida, nao arredonda dado,
+# nao remove conflito/comparacao do corpus); Revisor ganha check ALTA
+# narrador_relator; NIVELAMENTO_VOZ_DESCRICOES detalha a revelacao_respeitosa.
+# INVARIANTES DURAS MANTIDAS: medidor, vigia, MARCH (80/30/0), linhagem.
+# v1.1-rc4 (2026-08-09): CALIBRACAO da regua no envelope real do padrao-ouro.
+# O texto-ouro original foi medido com o proprio medir_ritmo.py (livro_final:
+# 21,0 pal/frase, 75% densos, desvio 41,2; cenas-ouro individuais chegam a
+# 67% densos e desvio 38,6). Pisos ajustados: RITMO_PCT_PARAGRAFOS_DENSOS_MIN
+# 70->65 e RITMO_DESVIO_PARAGRAFO_MIN 40->36 (folga honesta sob o piso real
+# do ouro). Textos dependentes alinhados: Revisor SKILL/BOOT, Editor
+# SKILL/BOOT, INPUT_ORQUESTRADOR, README_TESTE. INTACTOS: medidor, vigia,
+# MARCH (80/30/0), linhagem, banda 12-22, definicao de paragrafo denso (40+
+# palavras), regra de parede, anti-carimbo. REGISTRADO: lacuna anti-
+# reciclagem — a linhagem prova coesao, NAO originalidade; auditoria externa
+# (diff contra o material de referencia) e passo obrigatorio fora da skill.
+# v1.1 (2026-08-09): RELEASE PUBLICA — "banho de loja": skill generalizada pra
+# qualquer genero/projeto. Exemplos do livro-bancada (saude/agua) trocados por
+# exemplos neutros em Escritor BOOT/SKILL, Editor SKILL, Revisor SKILL,
+# Orquestrador BOOT, BIBLE_TEMPLATE; fonte nomeada deixa de ser cravada e passa
+# a vir do campo fonte_nomeada da Bible; regua de ritmo declarada contrato de
+# NAO-FICCAO narrativa (override por genero via criterios_minimos). ZERO mudanca
+# numerica/funcional: pisos rc4 (65%/36), medidor, vigia, MARCH, linhagem intactos.
 SKILL_BASEADA_EM = "Skills Podcast 4.0.1 (Greenforged Edition) + Greenforge System"
 
 
@@ -633,7 +659,7 @@ SKILL_BASEADA_EM = "Skills Podcast 4.0.1 (Greenforged Edition) + Greenforge Syst
 # ============================================================================
 # O Nivelamento Editorial captura, via 4 perguntas de multipla escolha, as
 # preferencias editoriais do usuario ANTES de comecar qualquer projeto novo.
-# Surgiu do diagnostico: a versao antiga da skill produziu um capitulo da Agua
+# Surgiu do diagnostico: a versao antiga da skill produziu um capitulo-bancada
 # muito melhor que a versao nova porque a antiga tinha um `foco_usuario` muito
 # mais detalhado e especifico. A solucao eh institucionalizar essa captura de
 # preferencias na propria skill, em vez de depender de o usuario fornecer
@@ -724,6 +750,27 @@ NIVELAMENTO_VOZ_OPCOES = {
     NIVELAMENTO_OPCAO_C: "academica_distante",               # narrador onisciente, formal, sem opiniao
 }
 
+# Descricao operacional das vozes (gravada no perfil_editorial da Bible e lida
+# pelo Escritor). rc3: a opcao A ganha a descricao detalhada do texto de
+# referencia (padrao-ouro) aprovado pelo usuario — conviccao, especificidade,
+# mordida — sem remover as travas de seguranca (sistema, nunca pessoas).
+NIVELAMENTO_VOZ_DESCRICOES = {
+    NIVELAMENTO_OPCAO_A: (
+        "Voz cumplice, precisa, respeitosa e corajosa. O narrador descobre JUNTO com o "
+        "leitor ('precisamos entender', 'descobrimos') — nunca relata a fonte ('o corpus "
+        "afirma' e PROIBIDO; a fonte nomeada vem do campo fonte_nomeada da Bible, "
+        "ex.: 'a palestra do Dr. Fulano'). Critica "
+        "o SISTEMA de forma estrutural e afiada ('a escola foi treinada para...'), nunca "
+        "pessoas, nunca ocultacao/lucro. Mantem a assimetria dos dados ('sete anos e meio'), "
+        "a comparacao que da magnitude ('uma formiga carrega 50 vezes o proprio peso') e o "
+        "conflito das analogias ('podar as folhas em vez de regar a raiz'). Fecho em eco "
+        "pessoal, dual "
+        "e de acao. Cautela vem EMBUTIDA na frase (voz integrada), nunca como meta-comentario."
+    ),
+    NIVELAMENTO_OPCAO_B: "Narrador invisivel, preocupado com clareza e ritmo; sem opiniao explicita.",
+    NIVELAMENTO_OPCAO_C: "Narrador onisciente e formal; distancia academica; sem opinao.",
+}
+
 # Default do nivelamento (4 respostas "A", validadas em 2026-08-06 como o
 # "perfil editorial consistente" usado como padrao da skill)
 # Quando o usuario nao souber responder, o Orquestrador usa estes valores.
@@ -784,8 +831,10 @@ RITMO_MEDIA_FRASE_MAX = 22
 RITMO_FRASE_CURTA_PALAVRAS = 8        # frase "curta" = menos de 8 palavras
 RITMO_MAX_SEQ_FRASES_CURTAS = 2       # nunca 3+ frases curtas consecutivas (climax raro)
 RITMO_PARAGRAFO_DENSO_PALAVRAS = 40   # paragrafo "denso" = 40+ palavras
-RITMO_PCT_PARAGRAFOS_DENSOS_MIN = 70  # >=70% dos paragrafos devem ser densos
-RITMO_DESVIO_PARAGRAFO_MIN = 40       # contraste entre paragrafos (rio, nao monotonia)
+RITMO_PCT_PARAGRAFOS_DENSOS_MIN = 65  # >=65% dos paragrafos devem ser densos
+# (rc4: envelope real do ouro medido em 2026-08-09: cenas-ouro chegam a 67%)
+RITMO_DESVIO_PARAGRAFO_MIN = 36       # contraste entre paragrafos (rio, nao monotonia)
+# (rc4: envelope real do ouro medido em 2026-08-09: cenas-ouro chegam a 38,6)
 RITMO_RESPOSTA_ABERTURA_JANELA = (3, 6)  # a pergunta-gancho deve ser respondida entre o P3 e o P6
 RITMO_FECHO_MIN_PALAVRAS = 15         # fecho reflexivo e redondo
 RITMO_FECHO_MAX_PALAVRAS = 25

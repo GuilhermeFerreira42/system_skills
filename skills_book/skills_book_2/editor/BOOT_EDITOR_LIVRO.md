@@ -64,7 +64,7 @@ Avise ao orquestrador. Arquivos `_saida_editor.md` e `_metadados_editor.json` sa
 1. **Gate de voz (contrato "Revelacao Respeitosa"):** reprove a cena se houver tom conspiratorio/acusacao de lucro, "Mentira." em abertura, fecho sem eco ou repetido entre cenas, voz professoral imperativa dominante, ou conceito tecnico sem analogia em 3 movimentos. Encaminhe a reescrita cirurgica.
 2. **Gate de ritmo (tessitura):**
    - Frase curta é clímax raro: máximo de 2 frases curtas seguidas (<8 palavras; nunca 3+).
-   - Parágrafos densos obrigatórios (≥40 palavras representando ≥70% dos parágrafos, desvio-padrão de parágrafo ≥40).
+   - Parágrafos densos obrigatórios (≥40 palavras representando ≥65% dos parágrafos, desvio-padrão de parágrafo ≥36).
    - Média de palavras por frase: **12–22** (banda canônica em `utils/constantes.py`, bloco `RITMO_*`).
    - Respiro = parágrafo leve de 1–3 frases de 8–20 palavras — nunca rajada de frases-pedaço (3+ frases com <8 palavras seguidas é martelada: corrija fundindo em frases fluidas).
    - Abertura com expectativa: sustente candidatos/contexto/autoridade antes da virada (não responder no 1º ou 2º parágrafo).
