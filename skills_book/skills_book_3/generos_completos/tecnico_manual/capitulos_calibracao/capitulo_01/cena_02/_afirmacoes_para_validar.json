@@ -1,0 +1,30 @@
+{
+  "cena_id": "cap_01_cena_02",
+  "capitulo": 1,
+  "cena": 2,
+  "total_afirmacoes_extraidas": 4,
+  "total_apos_filtro": 3,
+  "afirmacoes_filtradas": [
+    {
+      "id": "AFC-001",
+      "segmento": "cena_02",
+      "afirmacao": "O site oficial para baixar Python é https://www.python.org/downloads/",
+      "tipo": "REFERENCIA_URL",
+      "pergunta_para_validador": "O corpus confirma que o site oficial para download do Python é https://www.python.org/downloads/? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus."
+    },
+    {
+      "id": "AFC-002",
+      "segmento": "cena_02",
+      "afirmacao": "No Windows, é preciso marcar 'Add Python to PATH' durante a instalação",
+      "tipo": "PROTOCOLO",
+      "pergunta_para_validador": "O corpus confirma que no Windows é preciso marcar a opção 'Add Python to PATH' no instalador? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus."
+    },
+    {
+      "id": "AFC-003",
+      "segmento": "cena_02",
+      "afirmacao": "O comando para verificar a versão do Python é `python --version`",
+      "tipo": "SINTAXE",
+      "pergunta_para_validador": "O corpus confirma que o comando `python --version` (ou `python3 --version` em macOS/Linux) exibe a versão do Python instalada? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus."
+    }
+  ]
+}

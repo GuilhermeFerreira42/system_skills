@@ -1,0 +1,9 @@
+[
+  {
+    "id": "CONT-001",
+    "categoria": "VOZ_NARRATIVA",
+    "afirmacao": "A cena segue o padrão de voz definido no GENERO.md",
+    "pergunta": "Bible define voz conforme GENERO.md. A cena está coerente? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS na Bible + Estado Anterior.",
+    "fonte_esperada": "Bible seção metadados > voz/POV"
+  }
+]

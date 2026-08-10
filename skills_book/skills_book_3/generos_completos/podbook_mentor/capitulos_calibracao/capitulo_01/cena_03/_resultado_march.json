@@ -1,0 +1,52 @@
+{
+  "cena_id": "cap_01_cena_03",
+  "total_afirmacoes": 5,
+  "confirmados": 4,
+  "contraditos": 0,
+  "nao_encontrados": 1,
+  "taxa_confirmados": 0.80,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "AFC-001",
+      "status": "CONFIRMADO",
+      "evidencia": "Trecho do corpus (Módulo 05, Aula 1 — 'Audiência é REI'): 'Ao longo desse módulo, você vai assistir algumas aulas comigo e outras aulas com a Ana Clara, que é a nossa diretora de embal de marketing aqui no e-commerce na prática. É a pessoa que mais entende de produção de conteúdo, ela que conduz toda a nossa jornada, toda a nossa estratégia de produção de conteúdo aqui no e-commerce na prática. E também nas empresas que nós temos participação, é a Ana que conduz...'",
+      "tipo": "PROTOCOLO"
+    },
+    {
+      "id": "AFC-002",
+      "status": "CONFIRMADO",
+      "evidencia": "Trecho do corpus (Módulo 06, Aula 1 — 'Intro e Canais de Atendimento ao Cliente'): 'a gente vai ter aula aqui com a Babi, a nossa diretor de produtos e costumers a experiência do e-commerce na prática, ela vai te falar de boas práticas, de centralidade de cliente, de coisas que a gente está fazendo aqui, que estão gerando muito, muito resultado pro e-commerce na prática...'",
+      "tipo": "PROTOCOLO"
+    },
+    {
+      "id": "AFC-003",
+      "status": "CONFIRMADO",
+      "evidencia": "Trecho do corpus (Módulo 04, Aula 3 — 'CPF ou CNPJ - ME ou MEI - Nota Fiscal'): 'O meia, ele consegue emitir nota fiscal. Muita gente acha que não, mas ele consegue. Só que isso vai depender do estado que você está no Brasil... Existem alguns estados no Brasil que não estão permitindo que o mei tenha inscrição estadual... Se eu tivesse começando hoje em um estado que não me permite emitir nota fiscal, não me permite ter uma inscrição estadual, eu já começaria como o mei, que é uma micro empresa.' A cena 1.3 menciona Paraná especificamente como exemplo — coerente com a regra geral do corpus. O estado nominal é escolha didática do Escritor, não contradiz.",
+      "tipo": "PROTOCOLO"
+    },
+    {
+      "id": "AFC-004",
+      "status": "CONFIRMADO",
+      "evidencia": "Trecho do corpus (Módulo 01, Aula 1 — 'Boas-Vindas'): 'eu convido a você sempre que achar necessário e inclusive eu vou incentivar isso algumas vezes ao longo do curso e na comunidade de alunos e iniciar uma discussão'. E (Módulo 04, Aula 3): 'vale a pena também se bater um papo com a galera sobre isso, lá na comunidade de alunos e ver qual como é que tem sido a experiência dos outros alunos, como é que eles têm começado, quem montou a empresa quanto que pagou pra isso'.",
+      "tipo": "PROTOCOLO"
+    },
+    {
+      "id": "AFC-005",
+      "status": "NAO_ENCONTRADO",
+      "evidencia": null,
+      "tipo": "HISTORICO_GEOGRAFICO",
+      "observacao": "O Bruno menciona ter começado no quarto comprando com lojistas (Módulo 03, Aula 1: 'quando eu desenvolviu o meu e-commerce, dentro do meu quarto, lá comprando com os logistas'), e a comunidade de alunos é explicitamente citada. Mas a afirmação específica de que a 'experiência de solidão' motivou a construção do suporte não está formulada dessa forma no corpus — é uma inferência narrativa coerente com a história. Aceitável como NAO_ENCONTRADO, sem reprovação. Taxa 80% (no limite mínimo, atende critério)."
+    }
+  ],
+  "auditoria_cegueira": {"log_prompt_contem_saida_escritor": false, "violacao": false},
+  "travas_duras_recalculadas_orquestrador": {
+    "taxa": 0.80,
+    "acima_de_80_pct": true,
+    "contraditos": 0,
+    "nao_encontrados_pct": 0.20,
+    "abaixo_de_30_pct": true,
+    "aprovado": true
+  },
+  "timestamp": "2026-07-27T22:42:00Z"
+}
