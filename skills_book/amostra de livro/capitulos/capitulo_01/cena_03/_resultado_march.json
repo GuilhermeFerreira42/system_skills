@@ -1,0 +1,48 @@
+{
+  "cena_id": "cap_01_cena_03",
+  "total_afirmacoes": 6,
+  "confirmados": 6,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "taxa_confirmados": 1.0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "AFC-301",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'no seu sal de cozinha que você tem na sua mesa tem o sódio e o cloreto... enquanto que o outro tem mais de 80'",
+      "tipo": "CONCEITO_TECNICO"
+    },
+    {
+      "id": "AFC-302",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'para cada litro de água que você toma você colocar meia colher de café de sal integral... aí não correria o problema [de espoliação]'",
+      "tipo": "PROTOCOLO"
+    },
+    {
+      "id": "AFC-303",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'sal de cozinha foi para 6... sal integral foi para 6.8... 800% de discrepância'",
+      "tipo": "CITACAO_ESTUDO"
+    },
+    {
+      "id": "AFC-304",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'Peter Agre ele ganhou o Prêmio Nobel de química em 2003 porque ele descobriu as aquaporinas'",
+      "tipo": "HISTORICO_GEOGRAFICO"
+    },
+    {
+      "id": "AFC-305",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'tem um canal específico só para entrar e sair água esse canal específico chama-se aquaporinas'",
+      "tipo": "MECANISMO"
+    },
+    {
+      "id": "AFC-306",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'propriedades... pureza... pH... redox... condutividade... tensão superficial'",
+      "tipo": "CONCEITO_TECNICO"
+    }
+  ],
+  "timestamp": "2026-08-06T00:06:00Z"
+}

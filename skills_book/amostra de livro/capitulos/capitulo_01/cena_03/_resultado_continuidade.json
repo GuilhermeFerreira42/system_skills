@@ -1,0 +1,30 @@
+{
+  "cena_id": "cap_01_cena_03",
+  "total_verificacoes": 3,
+  "confirmados": 3,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "CONT-301",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible: Metadados Gerais > POV_padrao e Tom_de_voz mantidos",
+      "categoria": "VOZ_NARRATIVA"
+    },
+    {
+      "id": "CONT-302",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible: Conceitos-Chave > Aquaporinas e Sal Integral definidos com exatidão",
+      "categoria": "CONCEITO_DEFINICAO"
+    },
+    {
+      "id": "CONT-303",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible: Cronologia Mestre > Cap 1 Cena 3 encerra o plano do Capítulo 1",
+      "categoria": "TIMELINE_CRONOLOGIA"
+    }
+  ],
+  "erros": [],
+  "timestamp": "2026-08-06T00:07:00Z"
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "AFC-101",
+    "segmento": "cena_01",
+    "afirmacao": "O corpo humano adulto é composto em média por cerca de 70% de água",
+    "tipo": "DADO_NUMERICO",
+    "contexto": "Parágrafo 3",
+    "pergunta_para_validador": "O corpo humano é composto em média por 70% de água segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-102",
+    "segmento": "cena_01",
+    "afirmacao": "O cérebro humano é composto por cerca de 85% de água",
+    "tipo": "DADO_NUMERICO",
+    "contexto": "Parágrafo 3",
+    "pergunta_para_validador": "O cérebro humano é composto por cerca de 85% de água segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-103",
+    "segmento": "cena_01",
+    "afirmacao": "A água realiza reação de hidrólise separando compostos químicos e doando grupos funcionais, atuando como nutriente",
+    "tipo": "MECANISMO",
+    "contexto": "Parágrafo 5",
+    "pergunta_para_validador": "A água realiza hidrólise no corpo atuando como nutriente segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-104",
+    "segmento": "cena_01",
+    "afirmacao": "Alexis Carrel ganhou o Prêmio Nobel de Medicina em 1912 por pesquisas com suturas vasculares",
+    "tipo": "HISTORICO_GEOGRAFICO",
+    "contexto": "Parágrafo 7",
+    "pergunta_para_validador": "Alexis Carrel ganhou o Prêmio Nobel de Medicina em 1912 segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-105",
+    "segmento": "cena_01",
+    "afirmacao": "Alexis Carrel manteve um coração de embrião de galinha batendo por 28 anos e meio trocando a água e o fluido fisiológico diariamente",
+    "tipo": "CITACAO_ESTUDO",
+    "contexto": "Parágrafo 7",
+    "pergunta_para_validador": "Alexis Carrel manteve um coração de embrião de galinha por 28 anos e meio trocando a água diariamente segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-106",
+    "segmento": "cena_01",
+    "afirmacao": "A desidratação altera o meio intracelular aumentando a viscosidade e prejudicando a função enzimática que depende de pH e temperatura",
+    "tipo": "MECANISMO",
+    "contexto": "Parágrafo 9",
+    "pergunta_para_validador": "As enzimas dependem de pH e diluição e a desidratação prejudica o funcionamento enzimático segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  }
+]

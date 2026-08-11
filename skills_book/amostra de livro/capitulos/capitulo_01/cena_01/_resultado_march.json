@@ -1,0 +1,48 @@
+{
+  "cena_id": "cap_01_cena_01",
+  "total_afirmacoes": 6,
+  "confirmados": 6,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "taxa_confirmados": 1.0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "AFC-101",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'o nosso corpo em torno de 70% na média é feito de água'",
+      "tipo": "DADO_NUMERICO"
+    },
+    {
+      "id": "AFC-102",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: '85% do seu cérebro é água'",
+      "tipo": "DADO_NUMERICO"
+    },
+    {
+      "id": "AFC-103",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'a água não é só um hidratante... ela também faz hidrólise e como ela faz hidrólise... passou a ser um nutriente'",
+      "tipo": "MECANISMO"
+    },
+    {
+      "id": "AFC-104",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'O Alex Carrel ganhou o Prêmio Nobel de Medicina em 1912'",
+      "tipo": "HISTORICO_GEOGRAFICO"
+    },
+    {
+      "id": "AFC-105",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'pegou um embrião de um coração de uma galinha... o coração bateu por 28 anos e meio seguidos... trocava a água todo dia'",
+      "tipo": "CITACAO_ESTUDO"
+    },
+    {
+      "id": "AFC-106",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'as enzimas que é pH dependente, temperatura dependente, diluição dependente... quando fica mais concentrado as enzimas funcionam menos'",
+      "tipo": "MECANISMO"
+    }
+  ],
+  "timestamp": "2026-08-05T23:46:00Z"
+}

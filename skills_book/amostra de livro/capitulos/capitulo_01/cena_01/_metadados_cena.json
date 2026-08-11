@@ -1,0 +1,16 @@
+{
+  "capitulo": 1,
+  "cena": 1,
+  "titulo": "A Primeira Aula que Faltou na Faculdade",
+  "pov": "Autoridade_Acessivel",
+  "tempo_verbal": "presente",
+  "pessoa": "2a / 3a_autoral",
+  "palavras_estimadas": 820,
+  "foco_usuario_aplicado": "Abordou o papel fisiológico da água como nutriente ativo através da reação de hidrólise, citou a frase de Sócrates, citou o experimento do Nobel Alexis Carrel e a porcentagem de água no corpo/cérebro, mantendo um tom claro, didático e científico.",
+  "bible_versao_usada": "v1.0",
+  "mudanca_estado": "O leitor passa de uma visão passiva da água (mero solvente) para a compreensão ativa da água como nutriente bioquímico indispensável à vida e à enzimologia.",
+  "gancho_abertura": "Se você passasse seis longos anos nos bancos de uma faculdade de medicina, dissecando cadáveres...",
+  "fecho_propulsor": "O primeiro passo para reestruturar a sua vitalidade não exige prescrições complexas, mas sim o reconhecimento humilde e científico de que a água que você ingere hoje está moldando a química celular que definirá o seu amanhã.",
+  "objetivo_cena": "Apresentar a água como o nutriente mais abundante e ativo do corpo humano via hidrólise",
+  "obstaculo_principal": "O preconceito médico de enxergar a água apenas como solvente passivo"
+}

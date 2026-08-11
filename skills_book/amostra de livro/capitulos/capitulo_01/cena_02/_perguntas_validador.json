@@ -1,0 +1,50 @@
+[
+  {
+    "id": "AFC-201",
+    "segmento": "cena_02",
+    "afirmacao": "Dr. Batmanghelidj cumpriu 31 meses de prisão ideológica e tratou mais de 3000 prisioneiros com água e sal",
+    "tipo": "HISTORICO_GEOGRAFICO",
+    "contexto": "Parágrafo 2",
+    "pergunta_para_validador": "Dr. Batmanghelidj cumpriu 31 meses de prisão e tratou 3000 prisioneiros com água e sal segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-202",
+    "segmento": "cena_02",
+    "afirmacao": "Cerca de 40% dos brasileiros vivem desidratados cronicamente sem sentir boca seca",
+    "tipo": "DADO_NUMERICO",
+    "contexto": "Parágrafo 3",
+    "pergunta_para_validador": "40% dos brasileiros estão desidratados cronicamente sem sentir sede segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-203",
+    "segmento": "cena_02",
+    "afirmacao": "A sensação de sede reduz com o passar dos anos e o envelhecimento",
+    "tipo": "MECANISMO",
+    "contexto": "Parágrafo 4",
+    "pergunta_para_validador": "A sensação de sede diminui com a idade segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-204",
+    "segmento": "cena_02",
+    "afirmacao": "Um copo de refrigerante com pH 2.5 exige cerca de 32 copos de água de pH 10 para equilibrar o pH corporal em 40L de água",
+    "tipo": "DADO_NUMERICO",
+    "contexto": "Parágrafo 6",
+    "pergunta_para_validador": "1 copo de refrigerante exige 32 copos de água pH 10 para equilibrar o pH em 40 litros de fluidos corporais segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-205",
+    "segmento": "cena_02",
+    "afirmacao": "A desidratação ocorre 66% no compartimento intracelular, 26% no intersticial e 8% no sangue",
+    "tipo": "DADO_NUMERICO",
+    "contexto": "Parágrafo 8",
+    "pergunta_para_validador": "A desidratação ocorre 66% na célula, 26% no interstício e 8% no sangue segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-206",
+    "segmento": "cena_02",
+    "afirmacao": "A desidratação aumenta a histamina provocando dores crônicas, asma e redução de serotonina",
+    "tipo": "CAUSALIDADE",
+    "contexto": "Parágrafo 10",
+    "pergunta_para_validador": "A desidratação estimula a liberação de histamina causando dores, asma e reduzindo a serotonina segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  }
+]

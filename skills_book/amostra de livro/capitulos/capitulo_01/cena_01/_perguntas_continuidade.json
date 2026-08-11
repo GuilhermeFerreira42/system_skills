@@ -1,0 +1,23 @@
+[
+  {
+    "id": "CONT-101",
+    "categoria": "VOZ_NARRATIVA",
+    "afirmacao": "A cena utiliza voz de autoridade acessivel, tempo presente e tom didático embasado",
+    "pergunta": "A voz narrativa condiz com o definido na Bible para o gênero NÃO_FICÇÃO? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO.",
+    "fonte_esperada": "Bible: Metadados Gerais > Tom_de_voz / POV_padrao"
+  },
+  {
+    "id": "CONT-102",
+    "categoria": "CONCEITO_DEFINICAO",
+    "afirmacao": "A hidrólise é apresentada como a reação fundamental na qual a água atua como nutriente ativo",
+    "pergunta": "O conceito de hidrólise condiz com a definição canônica na Bible da Obra? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO.",
+    "fonte_esperada": "Bible: Conceitos-Chave > Hidrólise Celular"
+  },
+  {
+    "id": "CONT-103",
+    "categoria": "TIMELINE_CRONOLOGIA",
+    "afirmacao": "A cena 1.1 inicia a obra sem dependência de eventos anteriores",
+    "pergunta": "A ordem cronológica está consistente para o início da obra? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO.",
+    "fonte_esperada": "Bible: Cronologia Mestre"
+  }
+]

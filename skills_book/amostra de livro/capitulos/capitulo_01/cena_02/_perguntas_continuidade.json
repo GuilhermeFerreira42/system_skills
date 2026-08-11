@@ -1,0 +1,23 @@
+[
+  {
+    "id": "CONT-201",
+    "categoria": "VOZ_NARRATIVA",
+    "afirmacao": "A cena 1.2 mantém a voz de autoridade acessível no presente, em tom instrutivo e encorajador",
+    "pergunta": "A voz narrativa condiz com o padrão definido na Bible da Obra e na Cena 1.1? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO.",
+    "fonte_esperada": "Bible: Metadados Gerais > Tom_de_voz / POV_padrao"
+  },
+  {
+    "id": "CONT-202",
+    "categoria": "CONCEITO_DEFINICAO",
+    "afirmacao": "A desidratação intracelular é apontada como a detentora de 66% da perda hídrica total",
+    "pergunta": "O conceito de desidratação intracelular condiz com a definição na Bible? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO.",
+    "fonte_esperada": "Bible: Conceitos-Chave > Desidratação Intracelular"
+  },
+  {
+    "id": "CONT-203",
+    "categoria": "TIMELINE_CRONOLOGIA",
+    "afirmacao": "A cena 1.2 sucede logicamente a cena 1.1 na desconstrução dos mitos da hidratação",
+    "pergunta": "A sequência cronológico-conceitual está alinhada com a Bible? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO.",
+    "fonte_esperada": "Bible: Cronologia Mestre > Cap 1 Cena 2"
+  }
+]

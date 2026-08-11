@@ -1,0 +1,30 @@
+{
+  "cena_id": "cap_01_cena_01",
+  "total_verificacoes": 3,
+  "confirmados": 3,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "CONT-101",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible: Metadados Gerais > POV_padrao '2a / 3a_autoral' e Tom_de_voz 'didatico, embasado em evidencia'",
+      "categoria": "VOZ_NARRATIVA"
+    },
+    {
+      "id": "CONT-102",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible: Conceitos-Chave > Hidrólise Celular definida como 'Reacao quimica na qual a agua quebra ligacoes moleculares'",
+      "categoria": "CONCEITO_DEFINICAO"
+    },
+    {
+      "id": "CONT-103",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible: Cronologia Mestre > Cap 1 Cena 1 alinhada como cena inicial planejada",
+      "categoria": "TIMELINE_CRONOLOGIA"
+    }
+  ],
+  "erros": [],
+  "timestamp": "2026-08-05T23:47:00Z"
+}

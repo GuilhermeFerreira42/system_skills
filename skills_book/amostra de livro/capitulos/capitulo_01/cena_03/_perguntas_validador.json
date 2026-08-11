@@ -1,0 +1,50 @@
+[
+  {
+    "id": "AFC-301",
+    "segmento": "cena_03",
+    "afirmacao": "O sal refinado é apenas cloreto de sódio enquanto o sal integral possui mais de 80 minerais",
+    "tipo": "CONCEITO_TECNICO",
+    "contexto": "Parágrafo 2 e 3",
+    "pergunta_para_validador": "O sal de cozinha refinado tem apenas cloreto de sódio e o sal integral tem mais de 80 minerais segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-302",
+    "segmento": "cena_03",
+    "afirmacao": "A dosagem recomendada de sal integral é meia colher de café por litro de água para evitar espoliação mineral",
+    "tipo": "PROTOCOLO",
+    "contexto": "Parágrafo 3",
+    "pergunta_para_validador": "A dosagem de meia colher de café de sal integral por litro de água previne espoliação mineral segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-303",
+    "segmento": "cena_03",
+    "afirmacao": "No experimento da filha do Dr. Brownstein o sal de mesa reduziu o pH para 6.0 e o sal integral elevou para 6.8 representando 800% de diferença em hidroxila",
+    "tipo": "CITACAO_ESTUDO",
+    "contexto": "Parágrafo 4",
+    "pergunta_para_validador": "O sal de mesa reduziu o pH para 6.0 e o sal integral elevou para 6.8 no experimento de Brownstein segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-304",
+    "segmento": "cena_03",
+    "afirmacao": "Dr. Peter Agre ganhou o Prêmio Nobel de Química em 2003 pela descoberta das aquaporinas",
+    "tipo": "HISTORICO_GEOGRAFICO",
+    "contexto": "Parágrafo 6",
+    "pergunta_para_validador": "Peter Agre ganhou o Prêmio Nobel de Química em 2003 pelas aquaporinas segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-305",
+    "segmento": "cena_03",
+    "afirmacao": "As aquaporinas são canais proteicos específicos na membrana para entrada e saída de água",
+    "tipo": "MECANISMO",
+    "contexto": "Parágrafo 7",
+    "pergunta_para_validador": "As aquaporinas são canais específicos para água nas células segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  },
+  {
+    "id": "AFC-306",
+    "segmento": "cena_03",
+    "afirmacao": "A água ideal deve ter pureza, pH alcalino, redox negativo, condutividade e baixa tensão superficial",
+    "tipo": "CONCEITO_TECNICO",
+    "contexto": "Parágrafo 8",
+    "pergunta_para_validador": "A água ideal deve ter pureza, pH alcalino, redox negativo, condutividade e baixa tensão superficial segundo o corpus? Responda com CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "CONT-301",
+    "categoria": "VOZ_NARRATIVA",
+    "afirmacao": "A cena 1.3 mantém voz de autoridade acessível, tempo presente e tom instrutivo e encorajador",
+    "pergunta": "A voz narrativa condiz com o padrão definido na Bible e nas Cenas 1.1 e 1.2? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO.",
+    "fonte_esperada": "Bible: Metadados Gerais > Tom_de_voz / POV_padrao"
+  },
+  {
+    "id": "CONT-302",
+    "categoria": "CONCEITO_DEFINICAO",
+    "afirmacao": "As aquaporinas e o sal integral são detalhados conforme os conceitos da Bible",
+    "pergunta": "Os conceitos de Aquaporinas e Sal Integral condizem com as definições da Bible? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO.",
+    "fonte_esperada": "Bible: Conceitos-Chave > Aquaporinas e Sal Integral"
+  },
+  {
+    "id": "CONT-303",
+    "categoria": "TIMELINE_CRONOLOGIA",
+    "afirmacao": "A cena 1.3 encerra o primeiro ciclo conceitual do Capítulo 1",
+    "pergunta": "A sequência cronológico-conceitual está alinhada com a Bible? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO.",
+    "fonte_esperada": "Bible: Cronologia Mestre > Cap 1 Cena 3"
+  }
+]

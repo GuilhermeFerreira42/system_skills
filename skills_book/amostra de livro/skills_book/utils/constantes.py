@@ -1,0 +1,522 @@
+# -*- coding: utf-8 -*-
+"""
+utils/constantes.py
+===================
+
+Constantes centralizadas da skill `skills_book`.
+
+Este arquivo existe pra eliminar a duplicacao de strings hardcoded que apareceva
+em 19 arquivos da skill (152 ocorrenoes de nomes de arquivo, caminhos de pasta,
+status, chaves JSON, etc). Quando a gente precisar renomear um arquivo, mudar um
+caminho, ou ajustar um status, a gente muda AQUI e todas as skills que importam
+estas constantes sao atualizadas de uma vez.
+
+**REGRA DE OURO:** nenhum agente da skill (orquestrador, escritor, atomizador,
+validador_march, validador_continuidade, editor, consolidador, controle_da_obra)
+hardcoda nome de arquivo, caminho, ou chave de negocio. Todos importam deste
+arquivo.
+
+**Convencoes de nomenclatura:**
+- Pastas e arquivos do projeto: CAIXA_ALTA_COM_UNDERSCORE
+- Caminhos completos (com pasta): CAIXA_ALTA_COM_UNDERSCORE
+- Status e enums: CAIXA_ALTA_COM_UNDERSCORE
+- Chaves JSON: snake_case (igual ao que aparece no JSON)
+- Sufixo `_DIR` = pasta
+- Sufixo `_ARQ` ou `_PATH` = arquivo
+- Sufixo `_STATUS` = valor de status
+- Sufixo `_CHAVE` = chave de dicionario JSON
+
+**Versao:** 1.0
+**Data:** 2026-08-05
+**Acao do diagnostico do Episodio 02:** Acao 5 (Criar utils/constantes.py)
+"""
+
+# ============================================================================
+# 1. ESTRUTURA DE PASTAS DO PROJETO DE LIVRO
+# ============================================================================
+# Estas constantes definem a estrutura canonica de pastas que todo projeto de
+# livro criado pela skill deve seguir.
+
+PASTA_RAIZ_NOME = ""  # raiz do projeto, usada como prefixo
+PASTA_CORPUS = "corpus"
+PASTA_BIBLE = "bible"
+PASTA_ESTADO = "estado"
+PASTA_CAPITULOS = "capitulos"
+PASTA_GENEROS = "generos"
+PASTA_UTILS = "utils"
+PASTA_CONTROLE_DA_OBRA = "controle_da_obra"
+PASTA_OUTPUT = "output"  # saida final do livro (livro_final.md, .epub, .pdf)
+PASTA_BACKUP = ".bak"  # sufixo de backup (usado para gerar .bak em arquivos criticos)
+PASTA_RASCUNHOS = "rascunhos"  # rascunhos intermediarios por cena/capitulo
+
+
+# ============================================================================
+# 2. ARQUIVOS GLOBAIS DO PROJETO (fora de capitulos/)
+# ============================================================================
+# Arquivos de controle e contexto que existem na raiz do projeto.
+
+BIBLE_DA_OBRA_ARQ = "bible_da_obra.md"
+ESTADO_DA_OBRA_ARQ = "estado_da_obra.md"
+CONTROLE_DA_OBRA_ARQ = "CONTROLE_DA_OBRA.md"
+LIVRO_FINAL_ARQ = "livro_final.md"
+LIVRO_FINAL_EPUB_ARQ = "livro_final.epub"
+LIVRO_FINAL_PDF_ARQ = "livro_final.pdf"
+LIVRO_COMPLETO_ARQ = "livro_completo.md"
+
+# Backups canonicos
+BIBLE_DA_OBRA_BAK_SUFIXO = ".bak"  # gera bible_da_obra.md.bak
+ESTADO_DA_OBRA_BAK_SUFIXO = ".bak"  # gera estado_da_obra.md.bak
+CONTROLE_DA_OBRA_BAK_SUFIXO = ".bak"  # gera CONTROLE_DA_OBRA.md.bak
+
+
+# ============================================================================
+# 3. ARQUIVOS DO WORKTREE DE CENA (dentro de capitulos/capitulo_NN/cena_MM/)
+# ============================================================================
+# Estes sao os arquivos que cada agente produz ou consome dentro do worktree
+# isolado de uma cena. O padrao eh: arquivo comeca com "_" pra ficar visivel
+# em listagens de diretorio.
+
+# --- Saidas principais (cada agente produz 1 destes) ---
+SAIDA_ESCRITOR_ARQ = "_saida_escritor.md"          # prosa bruta do Escritor
+SAIDA_EDITOR_ARQ = "_saida_editor.md"              # prosa polida do Editor (opcional)
+SAIDA_FINAL_ARQ = "_saida_final.md"                # copia canonica da saida final (editor ou escritor)
+
+# --- Metadados por agente ---
+METADADOS_CENA_ARQ = "_metadados_cena.json"        # metadados da cena produzida pelo Escritor
+TRABALHO_ESCRITOR_ARQ = "_trabalho_escritor.json"  # log de trabalho do Escritor (reescrita cirurgica etc)
+
+# --- Entregas de agentes de validacao ---
+AFIRMACOES_PARA_VALIDAR_ARQ = "_afirmacoes_para_validar.json"  # saida do Atomizador
+PERGUNTAS_VALIDADOR_ARQ = "_perguntas_validador.json"          # saida secundaria do Atomizador
+PERGUNTAS_CONTINUIDADE_ARQ = "_perguntas_continuidade.json"    # perguntas de continuidade (geradas pelo Orquestrador)
+RESULTADO_MARCH_ARQ = "_resultado_march.json"                  # saida do Validador MARCH
+RESULTADO_CONTINUIDADE_ARQ = "_resultado_continuidade.json"    # saida do Validador Continuidade
+RESULTADO_REVISOR_CEGO_ARQ = "_resultado_revisor_cego.json"    # saida do Revisor Cego Editorial (Acao 4)
+LOG_PROMPT_CHECKER_ARQ = "_log_prompt_checker.md"              # auditoria do prompt do Validador
+
+# --- Entregas do Editor ---
+METADADOS_EDITOR_ARQ = "_metadados_editor.json"  # metadados da edicao (opcional)
+
+# --- Livros consolidados por capitulo (gerados pelo Consolidador) ---
+LIVRO_CAPITULO_PREFIXO = "livro_capitulo_"  # gera livro_capitulo_NN.md
+LIVRO_CAPITULO_EXTENSAO = ".md"
+
+
+# ============================================================================
+# 4. PADROES DE NOMENCLATURA DE CAPITULOS E CENAS
+# ============================================================================
+# Como nomear pastas e arquivos de capitulo/cena no filesystem.
+
+CAPITULO_PREFIXO_PASTA = "capitulo_"  # gera capitulo_01, capitulo_02, ...
+CAPITULO_NUMERO_DIGITOS = 2           # zero-padded: 01, 02, ..., 12, 13
+CENA_PREFIXO_PASTA = "cena_"          # gera cena_01, cena_02, ...
+CENA_NUMERO_DIGITOS = 2               # zero-padded: 01, 02, ...
+
+# Funcao utilitaria pra formatar caminho
+def formatar_pasta_capitulo(numero):
+    """Retorna 'capitulo_NN' com zero-padding."""
+    return f"{CAPITULO_PREFIXO_PASTA}{str(numero).zfill(CAPITULO_NUMERO_DIGITOS)}"
+
+
+def formatar_pasta_cena(numero):
+    """Retorna 'cena_NN' com zero-padding."""
+    return f"{CENA_PREFIXO_PASTA}{str(numero).zfill(CENA_NUMERO_DIGITOS)}"
+
+
+def formatar_livro_capitulo(numero):
+    """Retorna 'livro_capitulo_NN.md'."""
+    return f"{LIVRO_CAPITULO_PREFIXO}{str(numero).zfill(CAPITULO_NUMERO_DIGITOS)}{LIVRO_CAPITULO_EXTENSAO}"
+
+
+# ============================================================================
+# 5. VALORES DE STATUS DE CENA
+# ============================================================================
+# Status possiveis de uma cena no estado_da_obra.md.
+
+STATUS_CENA_PENDENTE = "PENDENTE"
+STATUS_CENA_ESCREVENDO = "ESCREVENDO"
+STATUS_CENA_REVISAO_MARCH = "REVISAO_MARCH"
+STATUS_CENA_REVISAO_CONT = "REVISAO_CONT"
+STATUS_CENA_CONCLUIDO = "CONCLUIDO"
+STATUS_CENA_REPROVADO = "REPROVADO"
+STATUS_CENA_REPROVADO_MARCH = "REPROVADO_MARCH"
+STATUS_CENA_REPROVADO_CONTINUIDADE = "REPROVADO_CONTINUIDADE"
+STATUS_CENA_REPROVADO_REVISOR = "REPROVADO_REVISOR"  # novo: Acao 4 (Revisor Cego reprovou)
+STATUS_CENA_INCONSISTENTE = "INCONSISTENTE"
+
+STATUS_CENA_VALIDOS = [
+    STATUS_CENA_PENDENTE,
+    STATUS_CENA_ESCREVENDO,
+    STATUS_CENA_REVISAO_MARCH,
+    STATUS_CENA_REVISAO_CONT,
+    STATUS_CENA_CONCLUIDO,
+    STATUS_CENA_REPROVADO,
+    STATUS_CENA_REPROVADO_MARCH,
+    STATUS_CENA_REPROVADO_CONTINUIDADE,
+    STATUS_CENA_REPROVADO_REVISOR,
+    STATUS_CENA_INCONSISTENTE,
+]
+
+# Status agregados da obra
+STATUS_OBRA_EM_ANDAMENTO = "EM_ANDAMENTO"
+STATUS_OBRA_CONCLUIDO = "CONCLUIDO"
+STATUS_OBRA_INTERROMPIDO = "INTERROMPIDO"
+
+# Status do agente Controle da Obra
+STATUS_DESCO_FINALIZADA = "FINALIZADA"
+STATUS_DESCO_ESCRITA_VALIDADA = "ESCRITA_VALIDADA"
+STATUS_DESCO_ESCRITA_SEM_VALIDACAO = "ESCRITA_SEM_VALIDACAO"
+STATUS_DESCO_NAO_INICIADA = "NAO_INICIADA"
+
+
+# ============================================================================
+# 6. VALORES DE VALIDACAO (MARCH e Continuidade)
+# ============================================================================
+# Status possiveis nas validacoes.
+
+VALIDACAO_APROVADO = "APROVADO"
+VALIDACAO_REPROVADO = "REPROVADO"
+VALIDACAO_PENDENTE = "PENDENTE"
+
+# Status das afirmacoes no MARCH
+MARCH_CONFIRMADO = "CONFIRMADO"
+MARCH_CONTRADITO = "CONTRADITO"
+MARCH_NAO_ENCONTRADO = "NAO_ENCONTRADO"
+MARCH_PARCIAL = "PARCIAL"  # confirmacao parcial, ainda conta como problematico
+
+# Thresholds do MARCH (recalculados pelo orquestrador, NAO confia no agregado)
+MARCH_TAXA_CONFIRMACAO_MINIMA = 0.80  # 80% das afirmacoes devem ser CONFIRMADO
+MARCH_TAXA_NAO_ENCONTRADO_MAXIMA = 0.30  # maximo 30% de NAO_ENCONTRADO
+MARCH_TOLERANCIA_CONTRADITO = 0  # ZERO tolerancia para CONTRADITO
+
+
+# ============================================================================
+# 7. CHAVES DO JSON DE AFIRMACOES (Atomizador)
+# ============================================================================
+
+CHAVE_AFIRMACOES_ID = "id"
+CHAVE_AFIRMACOES_TEXTO = "texto"
+CHAVE_AFIRMACOES_CATEGORIA = "categoria"
+CHAVE_AFIRMACOES_CONTEXTO = "contexto"
+CHAVE_AFIRMACOES_CAPITULO = "capitulo"
+CHAVE_AFIRMACOES_CENA = "cena"
+
+CATEGORIAS_AFIRMACAO_VALIDAS = [
+    "fato_historico",
+    "dado_numerico",
+    "citacao_literal",
+    "conceito_tecnico",
+    "referencia_pessoa",
+    "evento_cronologico",
+    "localizacao_geografica",
+    "relacao_pessoal",
+    "regra_negocio",
+    "procedimento",
+]
+
+
+# ============================================================================
+# 8. CHAVES DO JSON DE RESULTADO MARCH
+# ============================================================================
+
+CHAVE_MARCH_RESULTADOS = "resultados"
+CHAVE_MARCH_STATUS_GERAL = "status_geral"
+CHAVE_MARCH_TAXA_CONFIRMADOS = "taxa_confirmados"
+CHAVE_MARCH_AFIRMACAO_ID = "afirmacao_id"
+CHAVE_MARCH_AFIRMACAO_TEXTO = "afirmacao_texto"
+CHAVE_MARCH_STATUS = "status"
+CHAVE_MARCH_EVIDENCIA = "evidencia"
+CHAVE_MARCH_TRECHO_CORPUS = "trecho_corpus"
+CHAVE_MARCH_JUSTIFICATIVA = "justificativa"
+
+
+# ============================================================================
+# 9. CHAVES DO JSON DE RESULTADO CONTINUIDADE
+# ============================================================================
+
+CHAVE_CONT_STATUS_GERAL = "status_geral"
+CHAVE_CONT_ERROS = "erros"
+CHAVE_CONT_TIPO_ERRO = "tipo_erro"
+CHAVE_CONT_DESCRICAO = "descricao"
+CHAVE_CONT_GRAVIDADE = "gravidade"
+CHAVE_CONT_SUGESTAO = "sugestao"
+
+TIPOS_ERRO_CONTINUIDADE_VALIDOS = [
+    "personagem_inconsistente",
+    "localizacao_errada",
+    "timeline_quebrada",
+    "conceito_mal_usado",
+    "regra_violada",
+    "voz_narrativa_diferente",
+    "pov_inconsistente",
+    "fio_narrativo_abandonado",
+    "informacao_contradita",
+]
+
+
+# ============================================================================
+# 10. CHAVES DO JSON DE METADADOS DO EDITOR
+# ============================================================================
+
+CHAVE_EDITOR_TIPO_EDICAO = "tipo_edicao"
+CHAVE_EDITOR_ALTERACOES = "alteracoes"
+CHAVE_EDITOR_PALAVRAS_ORIGINAIS = "palavras_originais"
+CHAVE_EDITOR_PALAVRAS_FINAIS = "palavras_finais"
+CHAVE_EDITOR_OBSERVACOES = "observacoes"
+CHAVE_EDITOR_CHECKSUM_ORIGINAL = "checksum_original"
+CHAVE_EDITOR_CHECKSUM_FINAL = "checksum_final"
+
+TIPOS_EDICAO_VALIDOS = [
+    "polimento_leve",       # troca de palavras, sem mexer em estrutura
+    "reescrita_estrutural", # reescreve paragrafos inteiros
+    "reescrita_completa",   # reescreve a cena inteira mantendo o sentido
+]
+
+
+# ============================================================================
+# 10.5. REVISOR CEGO EDITORIAL (Acao 4)
+# ============================================================================
+# Constantes do agente Revisor Cego Editorial. Ele produz 3 categorias de
+# problemas e classifica por gravidade.
+
+REVISAO_PROBLEMAS_ESTRUTURA = "estrutura"     # tem forma de cena?
+REVISAO_PROBLEMAS_CLAREZA = "clareza"         # texto se entende?
+REVISAO_PROBLEMAS_RITMO = "ritmo"             # texto "respira" bem?
+
+REVISAO_GRAVIDADE_BAIXA = "BAIXA"             # polemique, toleravel
+REVISAO_GRAVIDADE_MEDIA = "MEDIA"             # prejudica experiencia
+REVISAO_GRAVIDADE_ALTA = "ALTA"               # bloqueia compreensao
+
+REVISAO_LIMITE_PROBLEMAS_ALTO = 1             # 1+ ALTO = REPROVADO
+REVISAO_LIMITE_PROBLEMAS_MEDIO = 3            # 3+ MEDIOS = REPROVADO
+
+REVISAO_GRAVIDADES_VALIDAS = [
+    REVISAO_GRAVIDADE_BAIXA,
+    REVISAO_GRAVIDADE_MEDIA,
+    REVISAO_GRAVIDADE_ALTA,
+]
+
+# Tipos de problemas detectados em cada categoria
+REVISAO_TIPOS_ESTRUTURA = [
+    "abertura_fraca",              # cliche, acordando, descrevendo tempo
+    "objetivo_pov_ausente",        # leitor sai sem saber o que o personagem quer
+    "obstaculo_ausente",           # cena morna, nada impede
+    "mudanca_estado_ausente",      # nada muda entre inicio e fim
+    "fecho_resolutivo",            # resolve tudo, "e foram felizes"
+    "fecho_resumo",                # resume demais em vez de abrir loop
+    "proporcao_inadequada",        # muito curta ou muito longa
+]
+
+REVISAO_TIPOS_CLAREZA = [
+    "ambiguidade",                 # sujeito ambiguo, "ele ligou para ele"
+    "termo_sem_antecedente",       # pronome sem referente claro
+    "jump_logico",                 # mudanca de cenario/tempo sem marcador
+    "tell_excessivo",              # "ele estava com raiva" sem show
+    "duplicidade",                 # mesma informacao repetida
+]
+
+REVISAO_TIPOS_RITMO = [
+    "variacao_baixa",              # todas as frases do mesmo comprimento
+    "ausencia_dialogo",            # cena sem nenhum dialogo (pode ser intencional)
+    "dialogo_exclusivo",           # 100% dialogo sem acao narrativa
+    "parede_texto",                # paragrafo com mais de 8 linhas
+    "frase_longa_excessiva",       # frase com mais de 60 palavras
+    "lista_explicativa",           # "primeiro, isso. segundo, aquilo."
+]
+
+REVISAO_TIPOS_PROBLEMAS_VALIDOS = (
+    REVISAO_TIPOS_ESTRUTURA
+    + REVISAO_TIPOS_CLAREZA
+    + REVISAO_TIPOS_RITMO
+)
+
+# Criterios padrao de aceitacao (podem ser sobrescritos por GENERO_*.md)
+REVISAO_CRITERIOS_PADRAO = {
+    "min_palavras": 500,            # abaixo disso, cena suspeita
+    "max_palavras": 6000,           # acima disso, cena muito longa
+    "max_frase_palavras": 60,       # frases acima disso sao excessivas
+    "max_paragrafo_linhas": 8,      # paragrafos acima disso sao paredes
+    "min_variacao_frases": 0.3,     # desvio padrao relativo do comprimento
+    "max_tell_ratio": 0.6,          # ate 60% de tell e toleravel por cena
+}
+
+
+# ============================================================================
+# 11. GENEROS BASE SUPORTADOS
+# ============================================================================
+# Lista dos generos que a skill oferece como base.
+
+GENERO_ROMANCE = "ROMANCE"
+GENERO_NAO_FICCAO = "NAO_FICCAO"
+GENERO_MEMORIAS = "MEMORIAS"
+GENERO_TECNICO = "TECNICO"
+GENERO_PERSONALIZADO = "PERSONALIZADO"
+GENERO_PODBOOK_BRUNO = "PODBOOK_BRUNO"  # especifico do Ecommerce do Bruno, nao deve ser usado em outros livros
+
+GENEROS_BASE_VALIDOS = [
+    GENERO_ROMANCE,
+    GENERO_NAO_FICCAO,
+    GENERO_MEMORIAS,
+    GENERO_TECNICO,
+    GENERO_PERSONALIZADO,
+]
+
+
+# ============================================================================
+# 12. METADADOS DO CHECKSUM
+# ============================================================================
+# Configuracao do calculo de checksum.
+
+CHECKSUM_ALGORITMO = "sha256"
+CHECKSUM_TAMANHO = 8  # primeiros 8 caracteres do hash
+CHECKSUM_VERSAO_ALGORITMO = "1.0"  # usado pra detectar drift de versao
+CHECKSUM_SEPARADOR = ":"  # separador entre checksum e nome do arquivo (formato sha256sum)
+CHECKSUM_TAMANHO_DEFAULT = 8  # alias de CHECKSUM_TAMANHO, usado como default em funcoes
+FORMATO_HASH_ETIQUETADO = "v{versao}:{hash}"  # formato do hash com etiqueta de versao
+FORMATO_BASELINE_JSON = {
+    "versao_algoritmo": str,
+    "algoritmo": str,
+    "tamanho_hash": int,
+    "total_arquivos": int,
+    "checksums": dict,
+}
+
+
+# ============================================================================
+# 13. LIMITES E GATES DA SKILL
+# ============================================================================
+
+MAX_RETRIES_POR_CENA = 3  # teto de tentativas de reescrita cirurgica
+MAX_CHAMADAS_POR_PROJETO = 200  # limite soft de chamadas de API
+TAXA_DISFLUENCIA_MINIMA_PODCAST = 0.30  # 30% das falas devem ter disfluencia
+
+
+# ============================================================================
+# 14. EXTENSOES DE ARQUIVO POR TIPO
+# ============================================================================
+
+EXTENSAO_MD = ".md"
+EXTENSAO_JSON = ".json"
+EXTENSAO_EPUB = ".epub"
+EXTENSAO_PDF = ".pdf"
+EXTENSAO_TXT = ".txt"
+EXTENSAO_BAK = ".bak"
+EXTENSAO_TMP = ".tmp"
+
+
+# ============================================================================
+# 15. MENSAGENS PADRAO DE ERRO
+# ============================================================================
+# Mensagens canonicas que aparecem em logs e relatorios.
+
+ERRO_ARQUIVO_NAO_ENCONTRADO = "Arquivo nao encontrado"
+ERRO_CHECKSUM_INCONSISTENTE = "CHECKSUM INCONSISTENTE: o arquivo no disco nao corresponde ao que foi registrado no estado. A cena precisa ser revista."
+ERRO_CEGUEIRA_VIOLADA_MARCH = "VIOLACAO: prompt do Validador MARCH continha a saida do Escritor. Cegueira violada."
+ERRO_RETRIES_EXCEDIDOS = "Excedeu 3 tentativas de reescrita cirurgica"
+ERRO_GENERO_NAO_ENCONTRADO = "Genero nao encontrado. Verifique o nome ou crie um personalizado."
+ERRO_CORPUS_NAO_ENCONTRADO = "Corpus nao encontrado no caminho especificado."
+ERRO_PIPELINE_INCOMPLETO = "Pipeline incompleto. Arquivos do worktree estao faltando."
+
+
+# ============================================================================
+# 16. FUNCOES UTILITARIAS DE CAMINHO
+# ============================================================================
+# Helpers que operam sobre as constantes acima.
+
+def caminho_raiz(projeto_path):
+    """Retorna o caminho raiz do projeto."""
+    return projeto_path
+
+
+def caminho_capitulos(projeto_path):
+    """Retorna o caminho completo da pasta capitulos/."""
+    return f"{projeto_path}/{PASTA_CAPITULOS}"
+
+
+def caminho_capitulo(projeto_path, numero_capitulo):
+    """Retorna o caminho completo de um capitulo especifico."""
+    return f"{caminho_capitulos(projeto_path)}/{formatar_pasta_capitulo(numero_capitulo)}"
+
+
+def caminho_cena(projeto_path, numero_capitulo, numero_cena):
+    """Retorna o caminho completo de uma cena especifica."""
+    return f"{caminho_capitulo(projeto_path, numero_capitulo)}/{formatar_pasta_cena(numero_cena)}"
+
+
+def caminho_arquivo_cena(projeto_path, numero_capitulo, numero_cena, nome_arquivo):
+    """Retorna o caminho completo de um arquivo dentro do worktree de uma cena."""
+    return f"{caminho_cena(projeto_path, numero_capitulo, numero_cena)}/{nome_arquivo}"
+
+
+def caminho_bible(projeto_path):
+    """Retorna o caminho completo do arquivo bible_da_obra.md."""
+    return f"{projeto_path}/{PASTA_BIBLE}/{BIBLE_DA_OBRA_ARQ}"
+
+
+def caminho_estado(projeto_path):
+    """Retorna o caminho completo do arquivo estado_da_obra.md."""
+    return f"{projeto_path}/{PASTA_ESTADO}/{ESTADO_DA_OBRA_ARQ}"
+
+
+def caminho_controle(projeto_path):
+    """Retorna o caminho completo do arquivo CONTROLE_DA_OBRA.md."""
+    return f"{projeto_path}/{CONTROLE_DA_OBRA_ARQ}"
+
+
+def caminho_livro_capitulo(projeto_path, numero_capitulo):
+    """Retorna o caminho completo do livro_capitulo_NN.md."""
+    return f"{projeto_path}/{PASTA_CAPITULOS}/{formatar_livro_capitulo(numero_capitulo)}"
+
+
+def caminho_livro_final(projeto_path):
+    """Retorna o caminho completo do livro_final.md."""
+    return f"{projeto_path}/{LIVRO_FINAL_ARQ}"
+
+
+def caminho_backup(caminho_original):
+    """Retorna o caminho do backup de um arquivo (sufixo .bak)."""
+    return f"{caminho_original}.bak"
+
+
+def caminho_tmp(caminho_original):
+    """Retorna o caminho temporario de um arquivo (sufixo .tmp) pra salvamento atomico."""
+    return f"{caminho_original}.tmp"
+
+
+# ============================================================================
+# 17. MAPA DE ISOLAMENTO (Acao 5 / Eixo 2 do Episodio 03)
+# ============================================================================
+# Define quais arquivos cada acao pode tocar, pra suportar paralelismo seguro.
+# Usado quando a gente for implementar o trabalho paralelo entre agentes.
+
+AGENTES_DA_SKILL = [
+    "orquestrador",
+    "escritor",
+    "atomizador",
+    "validador_march",
+    "validador_continuidade",
+    "editor",
+    "consolidador",
+    "controle_da_obra",
+    "revisor_cego_editorial",  # novo ator da Acao 4
+]
+
+ACOES_DA_SKILL = [
+    "acao_1_controle_da_obra",        # ja feita
+    "acao_2_reescrever_generos",      # pendente
+    "acao_3_utils_checksum",          # pendente
+    "acao_4_revisor_cego_editorial",  # pendente
+    "acao_5_utils_constantes",        # esta acao
+]
+
+
+# ============================================================================
+# 18. METADADOS DA PROPRIA SKILL
+# ============================================================================
+
+SKILL_NOME = "skills_book"
+SKILL_VERSAO = "1.0"
+SKILL_EDITING = "Greenforged Edition"
+SKILL_DATA_CRIACAO = "2026-07-27"
+SKILL_DATA_ULTIMA_REVISAO = "2026-08-05"
+SKILL_BASEADA_EM = "Skills Podcast 4.0.1 (Greenforged Edition) + Greenforge System"

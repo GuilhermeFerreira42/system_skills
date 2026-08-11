@@ -1,0 +1,16 @@
+{
+  "capitulo": 1,
+  "cena": 2,
+  "titulo": "Os Quatro Mitos da Desidratação",
+  "pov": "Autoridade_Acessivel",
+  "tempo_verbal": "presente",
+  "pessoa": "2a / 3a_autoral",
+  "palavras_estimadas": 910,
+  "foco_usuario_aplicado": "Explorou os 4 mitos da água segundo o Dr. Batmanghelidj, detalhou a proporção da desidratação (66% intracelular, 26% intersticial, 8% sanguínea), explicou o papel da histamina nas dores/asma e desmontou o mito do refrigerante (pH 2.5 exigindo 32 copos de água pH 10 para neutralizar).",
+  "bible_versao_usada": "v1.1",
+  "mudanca_estado": "O leitor compreende por que exames de sangue normais escondem desidratação intracelular e por que refrigerantes e café não substituem água pura.",
+  "gancho_abertura": "Imagine que o painel de instrumentos do seu carro acendesse a luz vermelha do óleo...",
+  "fecho_propulsor": "Compreender esses quatro mitos é a chave para desligar os alarmes falsos da sua fisiologia e devolver às suas células a água pura de que tanto necessitam para funcionar em plena harmonia.",
+  "objetivo_cena": "Desconstruir os mitos da hidratação e explicar o mecanismo da desidratação intracelular e histamínica",
+  "obstaculo_principal": "A dependência de bebidas industrializadas e o hábito de só beber água com a boca seca"
+}

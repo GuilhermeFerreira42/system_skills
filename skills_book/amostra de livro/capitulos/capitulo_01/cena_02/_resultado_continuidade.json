@@ -1,0 +1,30 @@
+{
+  "cena_id": "cap_01_cena_02",
+  "total_verificacoes": 3,
+  "confirmados": 3,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "CONT-201",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible: Metadados Gerais > POV_padrao '2a / 3a_autoral' e Tom_de_voz mantidos",
+      "categoria": "VOZ_NARRATIVA"
+    },
+    {
+      "id": "CONT-202",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible: Conceitos-Chave > Desidratação Intracelular (66% da perda hídrica total)",
+      "categoria": "CONCEITO_DEFINICAO"
+    },
+    {
+      "id": "CONT-203",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible: Cronologia Mestre > Cap 1 Cena 2 em sequência exata",
+      "categoria": "TIMELINE_CRONOLOGIA"
+    }
+  ],
+  "erros": [],
+  "timestamp": "2026-08-05T23:57:00Z"
+}

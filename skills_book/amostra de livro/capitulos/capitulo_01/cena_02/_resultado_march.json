@@ -1,0 +1,48 @@
+{
+  "cena_id": "cap_01_cena_02",
+  "total_afirmacoes": 6,
+  "confirmados": 6,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "taxa_confirmados": 1.0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "AFC-201",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'foi condenado a 31 meses de prisão... tinha mais de 3 mil prisioneiros... começou a curar doenças com água e sal'",
+      "tipo": "HISTORICO_GEOGRAFICO"
+    },
+    {
+      "id": "AFC-202",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: '40% dos brasileiros estão desidratados constantemente 24 horas por dia e estão desidratados e não sentem sede'",
+      "tipo": "DADO_NUMERICO"
+    },
+    {
+      "id": "AFC-203",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'quanto mais velho vai ficando menos sede vai sentindo'",
+      "tipo": "MECANISMO"
+    },
+    {
+      "id": "AFC-204",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'despeja um copo de refrigerantes com pH 2 e meio... você tem que tomar em torno de 32 copos de água com pH 10 para equilibrar... 40 litros de água no corpo'",
+      "tipo": "DADO_NUMERICO"
+    },
+    {
+      "id": "AFC-205",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: '66% da desidratação ocorre na célula, 26% ocorre no interstício e só 8% no sangue'",
+      "tipo": "DADO_NUMERICO"
+    },
+    {
+      "id": "AFC-206",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus: 'quando desidratado estimula a produção de histamina... responsável pela dor... responsável pela asma... a histamina diminui a serotonina'",
+      "tipo": "CAUSALIDADE"
+    }
+  ],
+  "timestamp": "2026-08-05T23:56:00Z"
+}
