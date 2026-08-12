@@ -141,9 +141,3 @@ Esta obra é Ficção pura, sem corpus de referência. O Atomizador e o Validado
 - [x] POV 3ª limitada alternando
 - [x] Sem corpus factual (Ficção pura)
 
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.json (caminho: skills_book_3/generos_completos/ficcao_literaria/capitulos_calibracao/capitulo_01/cena_01/_afirmacoes_para_validar.json) [enc: utf-8]:
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.json (caminho: skills_book_3/generos_completos/ficcao_literaria/capitulos_calibracao/capitulo_01/cena_01/_afirmacoes_para_validar.json) [enc: utf-8]:

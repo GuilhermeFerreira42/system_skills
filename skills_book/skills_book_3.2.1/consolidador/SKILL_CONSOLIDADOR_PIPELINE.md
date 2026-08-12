@@ -34,9 +34,3 @@ Não use tolerância de contagem de palavras como prova de integridade. O checks
 
 O Consolidador não corrige uma cena. Se uma cena estiver errada, devolva ao Orquestrador com seu ID e motivo.
 
-
-==========================================
-Conteúdo de BOOT_CONTROLE_DA_OBRA.md (caminho: skills_book_3/controle_da_obra/BOOT_CONTROLE_DA_OBRA.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BOOT_CONTROLE_DA_OBRA.md (caminho: skills_book_3/controle_da_obra/BOOT_CONTROLE_DA_OBRA.md) [enc: utf-8]:

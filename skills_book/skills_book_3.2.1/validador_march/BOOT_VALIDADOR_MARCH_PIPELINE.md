@@ -10,9 +10,3 @@ Não aceite `_saida_escritor.md`, `_saida_editor.md` ou `_saida_candidato.md`. S
 
 Entregue somente `_resultado_march.json`.
 
-
-==========================================
-Conteúdo de SKILL_VALIDADOR_MARCH_PIPELINE.md (caminho: skills_book_3/validador_march/SKILL_VALIDADOR_MARCH_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de SKILL_VALIDADOR_MARCH_PIPELINE.md (caminho: skills_book_3/validador_march/SKILL_VALIDADOR_MARCH_PIPELINE.md) [enc: utf-8]:

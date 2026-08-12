@@ -174,9 +174,3 @@ O corpus inclui tutoriais oficiais, exemplos validados, e referências a bibliot
 - [x] Decisões travadas
 - [x] Sem material de marketing
 
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.json (caminho: skills_book_3/generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01/_afirmacoes_para_validar.json) [enc: utf-8]:
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.json (caminho: skills_book_3/generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01/_afirmacoes_para_validar.json) [enc: utf-8]:

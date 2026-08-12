@@ -51,9 +51,3 @@ O metadado deve registrar mudanças por direção, não uma justificativa matem�
 }
 ```
 
-
-==========================================
-Conteúdo de BOOT_ESCRITOR_PIPELINE.md (caminho: skills_book_3/escritor/BOOT_ESCRITOR_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BOOT_ESCRITOR_PIPELINE.md (caminho: skills_book_3/escritor/BOOT_ESCRITOR_PIPELINE.md) [enc: utf-8]:

@@ -81,9 +81,3 @@ Registre somente decisões humanas ou derivadas explicitamente do nivelamento. N
 - [ ] Backup realizado antes da alteração
 - [ ] Checksum registrado no Estado
 
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/capitulos_exemplo/README.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/capitulos_exemplo/README.md) [enc: utf-8]:

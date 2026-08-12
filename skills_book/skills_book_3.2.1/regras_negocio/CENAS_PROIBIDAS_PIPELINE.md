@@ -27,9 +27,3 @@
 - edição manual autorizada;
 - cena parcial sinalizada para revisão humana.
 
-
-==========================================
-Conteúdo de BOOT_REVISOR_CEGO_EDITORIAL.md (caminho: skills_book_3/revisor_cego_editorial/BOOT_REVISOR_CEGO_EDITORIAL.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BOOT_REVISOR_CEGO_EDITORIAL.md (caminho: skills_book_3/revisor_cego_editorial/BOOT_REVISOR_CEGO_EDITORIAL.md) [enc: utf-8]:

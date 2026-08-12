@@ -9,9 +9,3 @@ Não leia corpus, Bible, Estado, metadados de planejamento, resultados MARCH/Con
 
 Entregue somente `_resultado_revisor_cego.json`. Não reescreva a cena.
 
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/revisor_cego_editorial/README.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/revisor_cego_editorial/README.md) [enc: utf-8]:

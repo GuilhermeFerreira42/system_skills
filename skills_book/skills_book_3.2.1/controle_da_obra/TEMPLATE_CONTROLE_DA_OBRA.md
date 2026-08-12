@@ -18,9 +18,3 @@
 
 O Controle observa e registra. Não modifica conteúdo sem ordem explícita do Orquestrador e do usuário.
 
-
-==========================================
-Conteúdo de BOOT_EDITOR_PIPELINE.md (caminho: skills_book_3/editor/BOOT_EDITOR_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BOOT_EDITOR_PIPELINE.md (caminho: skills_book_3/editor/BOOT_EDITOR_PIPELINE.md) [enc: utf-8]:

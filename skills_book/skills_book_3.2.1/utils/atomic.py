@@ -47,9 +47,3 @@ def backup(path: str | Path) -> Path | None:
     shutil.copy2(source, target)
     return target
 
-
-==========================================
-Conteúdo de checksum.py (caminho: skills_book_3/utils/checksum.py) [enc: utf-8]:
-
-==========================================
-Conteúdo de checksum.py (caminho: skills_book_3/utils/checksum.py) [enc: utf-8]:

@@ -83,9 +83,3 @@ def main(argv: list[str] | None = None) -> int:
 if __name__ == "__main__":
     raise SystemExit(main())
 
-
-==========================================
-Conteúdo de vigia_integridade.py (caminho: skills_book_3/utils/vigia_integridade.py) [enc: utf-8]:
-
-==========================================
-Conteúdo de vigia_integridade.py (caminho: skills_book_3/utils/vigia_integridade.py) [enc: utf-8]:

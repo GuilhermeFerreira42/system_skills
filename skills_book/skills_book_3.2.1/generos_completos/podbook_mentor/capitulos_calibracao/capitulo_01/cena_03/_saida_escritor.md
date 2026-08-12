@@ -49,9 +49,3 @@ No próximo capítulo, a gente vai olhar para o mercado de e-commerce como ele �
 }
 ```
 
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_04/_afirmacoes_para_validar.json) [enc: utf-8]:
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_04/_afirmacoes_para_validar.json) [enc: utf-8]:

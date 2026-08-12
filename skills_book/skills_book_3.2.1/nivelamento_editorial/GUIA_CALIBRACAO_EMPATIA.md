@@ -104,9 +104,3 @@ Durante o boot, apresente ao Escritor dois ou três exemplos curtos de calibraç
 
 O importante não é o domínio dos exemplos. É a sensação. Se o Escritor conseguir identificar a diferença entre performar e revelar em um exemplo de finanças, ele conseguirá aplicar a mesma intuição em qualquer outro domínio.
 
-
-==========================================
-Conteúdo de PERGUNTAS_NIVELAMENTO.md (caminho: skills_book_3/nivelamento_editorial/PERGUNTAS_NIVELAMENTO.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de PERGUNTAS_NIVELAMENTO.md (caminho: skills_book_3/nivelamento_editorial/PERGUNTAS_NIVELAMENTO.md) [enc: utf-8]:

@@ -204,9 +204,3 @@ Este framework é fornecido como está, sem garantias de qualquer kind. O usuár
 
 **Skill 3 — Onde a tecnologia é o palco invisível, e o Escritor é o bailarino de elite.**
 
-
-==========================================
-Conteúdo de REGRAS_GREENFORGE_PIPELINE.md (caminho: skills_book_3/REGRAS_GREENFORGE_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de REGRAS_GREENFORGE_PIPELINE.md (caminho: skills_book_3/REGRAS_GREENFORGE_PIPELINE.md) [enc: utf-8]:

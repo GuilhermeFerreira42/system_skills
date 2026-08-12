@@ -158,9 +158,3 @@ Antes de seguir para o próximo capítulo, confirme que você:
 - Referências externas (documentação oficial, papers) são bem-vindas e incentivadas.
 - Se o manual cobrir uma tecnologia que muda rápido (ex: framework JS), mencione a data de referência.
 
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/generos_completos/tecnico_manual/README.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/generos_completos/tecnico_manual/README.md) [enc: utf-8]:

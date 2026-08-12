@@ -142,9 +142,3 @@ def main(argv: list[str] | None = None) -> int:
 if __name__ == "__main__":
     raise SystemExit(main())
 
-
-==========================================
-Conteúdo de BOOT_VALIDADOR_CONTINUIDADE_PIPELINE.md (caminho: skills_book_3/validador_continuidade/BOOT_VALIDADOR_CONTINUIDADE_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BOOT_VALIDADOR_CONTINUIDADE_PIPELINE.md (caminho: skills_book_3/validador_continuidade/BOOT_VALIDADOR_CONTINUIDADE_PIPELINE.md) [enc: utf-8]:

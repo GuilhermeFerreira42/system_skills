@@ -66,9 +66,3 @@ Use este perfil quando:
 
 O `capitulos_calibracao/capitulo_01/` contém **2 cenas** de exemplo, mostrando como um capítulo técnico termina — com Resumo, Checklist, e a progressão de pré-requisitos. Serve para a IA produtora entender o formato.
 
-
-==========================================
-Conteúdo de TEMPLATE_GENERO_VAZIO.md (caminho: skills_book_3/generos_template/TEMPLATE_GENERO_VAZIO.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de TEMPLATE_GENERO_VAZIO.md (caminho: skills_book_3/generos_template/TEMPLATE_GENERO_VAZIO.md) [enc: utf-8]:

@@ -41,9 +41,3 @@ Não use contagem de palavras, média de frases, porcentagens, desvio-padrão ou
 
 Cada problema deve citar um trecho curto e indicar direção, nunca reescrever a cena. O status não depende da quantidade de observações; depende de elas bloquearem ou não a experiência de leitura.
 
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.template.json (caminho: skills_book_3/templates_bible_worktree/_afirmacoes_para_validar.template.json) [enc: utf-8]:
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.template.json (caminho: skills_book_3/templates_bible_worktree/_afirmacoes_para_validar.template.json) [enc: utf-8]:

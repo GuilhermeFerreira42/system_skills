@@ -66,9 +66,3 @@ A reconciliação não corrige arquivos. Ela produz um relatório de divergênci
 
 Não copie resultados de uma tentativa anterior para uma nova versão. Não rode o Vigia para aprovar estilo. Não use o checksum como motivo para apagar uma edição humana. Não declare livro concluído com cenas bloqueadas.
 
-
-==========================================
-Conteúdo de LEIA-ME-PRIMEIRO.md (caminho: skills_book_3/LEIA-ME-PRIMEIRO.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de LEIA-ME-PRIMEIRO.md (caminho: skills_book_3/LEIA-ME-PRIMEIRO.md) [enc: utf-8]:

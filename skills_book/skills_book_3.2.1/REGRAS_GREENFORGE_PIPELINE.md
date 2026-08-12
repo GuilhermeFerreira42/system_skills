@@ -81,9 +81,3 @@ BLOQUEADA_REVISAO_HUMANA
 
 A consolidação pode produzir um relatório parcial, mas não pode declarar `CONCLUIDO` enquanto houver qualquer cena bloqueada, reprovada ou pendente.
 
-
-==========================================
-Conteúdo de AUTO_AUDITORIA_PIPELINE.md (caminho: skills_book_3/regras_negocio/AUTO_AUDITORIA_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de AUTO_AUDITORIA_PIPELINE.md (caminho: skills_book_3/regras_negocio/AUTO_AUDITORIA_PIPELINE.md) [enc: utf-8]:

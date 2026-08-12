@@ -35,9 +35,3 @@ Use ritmo, extensão, frases curtas, parágrafos desenvolvidos e transições co
 
 Em uma reescrita cirúrgica, preserve tudo que não foi apontado. Corrija o trecho e a causa do problema. Nunca recomece o livro inteiro por uma falha local.
 
-
-==========================================
-Conteúdo de DNA_REVELACAO_RESPEITOSA.md (caminho: skills_book_3/escritor/DNA_REVELACAO_RESPEITOSA.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de DNA_REVELACAO_RESPEITOSA.md (caminho: skills_book_3/escritor/DNA_REVELACAO_RESPEITOSA.md) [enc: utf-8]:

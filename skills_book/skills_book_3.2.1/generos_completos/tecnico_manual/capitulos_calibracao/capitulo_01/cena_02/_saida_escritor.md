@@ -113,9 +113,3 @@ Antes de seguir para o próximo capítulo, confirme que você:
 - [ ] Sei abrir o terminal (cmd no Windows, Terminal no macOS/Linux)
 - [ ] Estou pronto para escrever meu primeiro "Olá, mundo!" em Python
 
-
-==========================================
-Conteúdo de GENERO.md (caminho: skills_book_3/generos_completos/tecnico_manual/GENERO.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de GENERO.md (caminho: skills_book_3/generos_completos/tecnico_manual/GENERO.md) [enc: utf-8]:

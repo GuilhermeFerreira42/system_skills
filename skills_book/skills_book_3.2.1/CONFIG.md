@@ -49,9 +49,3 @@ O contrato de voz nasce das respostas do nivelamento e é salvo na Bible.
 O piso de densidade acima é uma rede de segurança operacional (evita cena
 subdesenvolvida), não uma fórmula de parágrafo nem uma meta de enchimento artificial.
 
-
-==========================================
-Conteúdo de SKILL_CONSOLIDADOR_PIPELINE.md (caminho: skills_book_3/consolidador/SKILL_CONSOLIDADOR_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de SKILL_CONSOLIDADOR_PIPELINE.md (caminho: skills_book_3/consolidador/SKILL_CONSOLIDADOR_PIPELINE.md) [enc: utf-8]:

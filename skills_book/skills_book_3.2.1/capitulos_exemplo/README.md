@@ -39,9 +39,3 @@ Exemplos:
 
 Essas calibrações são mais úteis porque mostram à IA produtora como o pipeline funciona NO CONTEXTO de cada gênero.
 
-
-==========================================
-Conteúdo de CHANGELOG_V3.md (caminho: skills_book_3/CHANGELOG_V3.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de CHANGELOG_V3.md (caminho: skills_book_3/CHANGELOG_V3.md) [enc: utf-8]:

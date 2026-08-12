@@ -40,9 +40,3 @@ Antes de alterar Bible ou Estado, crie `.bak`. Atualize o status da cena atomica
 
 Siga exatamente o fluxo documentado em `SKILL_ORQUESTRADOR_PIPELINE.md`. A ordem crítica é: Editor antes das validações finais, porque qualquer mutação posterior invalida a linhagem.
 
-
-==========================================
-Conteúdo de SKILL_ORQUESTRADOR_PIPELINE.md (caminho: skills_book_3/orquestrador/SKILL_ORQUESTRADOR_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de SKILL_ORQUESTRADOR_PIPELINE.md (caminho: skills_book_3/orquestrador/SKILL_ORQUESTRADOR_PIPELINE.md) [enc: utf-8]:

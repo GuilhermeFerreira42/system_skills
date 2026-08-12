@@ -7,9 +7,3 @@
 
 Não existe `medir_ritmo.py` no caminho crítico da Skill 3. A fluidez é avaliada qualitativamente pelo Escritor, Editor e Revisor.
 
-
-==========================================
-Conteúdo de reconciliar_controle.py (caminho: skills_book_3/utils/reconciliar_controle.py) [enc: utf-8]:
-
-==========================================
-Conteúdo de reconciliar_controle.py (caminho: skills_book_3/utils/reconciliar_controle.py) [enc: utf-8]:

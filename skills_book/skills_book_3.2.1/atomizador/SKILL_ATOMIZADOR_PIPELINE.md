@@ -31,9 +31,3 @@ Extrair do candidato apenas afirmações que precisam de lastro factual. Não ju
 
 O Orquestrador recalcula agregados no resultado MARCH. O Atomizador não aprova a cena.
 
-
-==========================================
-Conteúdo de BIBLE_ESQUELETO_VAZIO.md (caminho: skills_book_3/bible/BIBLE_ESQUELETO_VAZIO.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BIBLE_ESQUELETO_VAZIO.md (caminho: skills_book_3/bible/BIBLE_ESQUELETO_VAZIO.md) [enc: utf-8]:

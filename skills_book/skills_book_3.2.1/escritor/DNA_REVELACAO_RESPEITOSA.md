@@ -123,9 +123,3 @@ Observe o contraste entre a escrita burocrática/performática e a **Elegância 
 
 A meta da v3.2 é produzir páginas onde a técnica se torna absolutamente invisível e o leitor é conquistado pela força pura da verdade revelada.
 
-
-==========================================
-Conteúdo de SKILL_ESCRITOR_PIPELINE.md (caminho: skills_book_3/escritor/SKILL_ESCRITOR_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de SKILL_ESCRITOR_PIPELINE.md (caminho: skills_book_3/escritor/SKILL_ESCRITOR_PIPELINE.md) [enc: utf-8]:

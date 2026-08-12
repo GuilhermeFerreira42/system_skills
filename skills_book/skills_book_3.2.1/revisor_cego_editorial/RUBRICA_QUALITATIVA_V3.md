@@ -106,9 +106,3 @@ Ao apontar um problema, o Revisor Cego **nunca reescreve a cena**. Ele atua como
 - **Desvio de Falsa Analogia:** *"A metáfora da engrenagem no meio do texto soou forçada e legendada ('imagine uma engrenagem...'). Remova a legenda e mostre o atrito do sistema em tamanho natural."*
 - **Desvio de Relato Burocrático:** *"O texto usa 'conforme demonstrado no documento X'. Elimine a postura de relator e afirme a descoberta com convicção ativa."*
 
-
-==========================================
-Conteúdo de SKILL_REVISOR_CEGO_EDITORIAL.md (caminho: skills_book_3/revisor_cego_editorial/SKILL_REVISOR_CEGO_EDITORIAL.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de SKILL_REVISOR_CEGO_EDITORIAL.md (caminho: skills_book_3/revisor_cego_editorial/SKILL_REVISOR_CEGO_EDITORIAL.md) [enc: utf-8]:

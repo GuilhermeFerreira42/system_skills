@@ -40,9 +40,3 @@ Verificar se as afirmações de continuidade extraídas pelo Orquestrador são c
 
 Um `CONTRADITO` reprova a cena. Não use métricas de ritmo, tamanho ou estilo.
 
-
-==========================================
-Conteúdo de BOOT_VALIDADOR_MARCH_PIPELINE.md (caminho: skills_book_3/validador_march/BOOT_VALIDADOR_MARCH_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BOOT_VALIDADOR_MARCH_PIPELINE.md (caminho: skills_book_3/validador_march/BOOT_VALIDADOR_MARCH_PIPELINE.md) [enc: utf-8]:

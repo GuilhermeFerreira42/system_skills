@@ -26,9 +26,3 @@ Para cada cena:
 
 Uma divergência de bytes não é uma falha literária. Ela não convoca o Escritor sozinha. Primeiro preserve o arquivo, registre a origem da mudança e solicite revalidação.
 
-
-==========================================
-Conteúdo de TEMPLATE_CONTROLE_DA_OBRA.md (caminho: skills_book_3/controle_da_obra/TEMPLATE_CONTROLE_DA_OBRA.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de TEMPLATE_CONTROLE_DA_OBRA.md (caminho: skills_book_3/controle_da_obra/TEMPLATE_CONTROLE_DA_OBRA.md) [enc: utf-8]:

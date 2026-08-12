@@ -95,9 +95,3 @@ Se uma cena sair abaixo da faixa, o Escritor deve perguntar a si mesmo: *o objet
 
 Metadados são para o Orquestrador. Nunca os inclua no texto destinado ao leitor.
 
-
-==========================================
-Conteúdo de ESTADO_TEMPLATE_PIPELINE.md (caminho: skills_book_3/estado/ESTADO_TEMPLATE_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de ESTADO_TEMPLATE_PIPELINE.md (caminho: skills_book_3/estado/ESTADO_TEMPLATE_PIPELINE.md) [enc: utf-8]:

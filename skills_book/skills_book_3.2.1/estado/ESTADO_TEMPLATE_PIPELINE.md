@@ -41,9 +41,3 @@
 
 O Estado não deve afirmar `CONCLUIDO` sem o manifesto e o relatório do Vigia correspondentes ao arquivo físico atual. Em caso de divergência, preserve o arquivo e marque revalidação.
 
-
-==========================================
-Conteúdo de bible_da_obra.md (caminho: skills_book_3/execucao/bible/bible_da_obra.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de bible_da_obra.md (caminho: skills_book_3/execucao/bible/bible_da_obra.md) [enc: utf-8]:

@@ -23,9 +23,3 @@ _metadados_editor.json
 
 O Orquestrador copiará o Editor para `_saida_candidato.md` depois de verificar a saída.
 
-
-==========================================
-Conteúdo de SKILL_EDITOR_PIPELINE.md (caminho: skills_book_3/editor/SKILL_EDITOR_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de SKILL_EDITOR_PIPELINE.md (caminho: skills_book_3/editor/SKILL_EDITOR_PIPELINE.md) [enc: utf-8]:

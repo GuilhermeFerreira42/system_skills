@@ -11,9 +11,3 @@ As respostas não são métricas nem metas de produção. Elas são vetores qual
 
 O resultado é salvo em `Bible > Perfil Editorial` e espelhado no Estado.
 
-
-==========================================
-Conteúdo de BOOT_ORQUESTRADOR_PIPELINE.md (caminho: skills_book_3/orquestrador/BOOT_ORQUESTRADOR_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BOOT_ORQUESTRADOR_PIPELINE.md (caminho: skills_book_3/orquestrador/BOOT_ORQUESTRADOR_PIPELINE.md) [enc: utf-8]:

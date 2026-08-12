@@ -169,9 +169,3 @@ O Consolidador inclui apenas cenas com pacote fechado. Ele verifica:
 
 Se alguma cena estiver pendente, gere `livro_parcial.md` com aviso explícito ou pare a consolidação, conforme o CONFIG.
 
-
-==========================================
-Conteúdo de BIBLE_EXEMPLO.md (caminho: skills_book_3/generos_completos/ficcao_literaria/BIBLE_EXEMPLO.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BIBLE_EXEMPLO.md (caminho: skills_book_3/generos_completos/ficcao_literaria/BIBLE_EXEMPLO.md) [enc: utf-8]:

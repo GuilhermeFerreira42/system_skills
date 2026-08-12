@@ -73,9 +73,3 @@ A segurança não é removida; ela muda de lugar:
 
 A Skill 3 deve ser exigente com a verdade e leve com a arte.
 
-
-==========================================
-Conteúdo de livro_final.md (caminho: skills_book_3/livro_final.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de GUIA_CALIBRACAO_EMPATIA.md (caminho: skills_book_3/nivelamento_editorial/GUIA_CALIBRACAO_EMPATIA.md) [enc: utf-8]:

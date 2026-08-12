@@ -34,9 +34,3 @@ Antes de ir para a próxima cena, você precisa ter feito ou decidido:
 
 **Próxima cena:** "A meta de validação: R$ 10 mil, 100 pedidos, 90 dias" — porque a história da Carla é o caminho, mas a régua é o que mede se você está no caminho certo.
 
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_05/_afirmacoes_para_validar.json) [enc: utf-8]:
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_05/_afirmacoes_para_validar.json) [enc: utf-8]:

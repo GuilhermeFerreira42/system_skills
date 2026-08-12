@@ -158,9 +158,3 @@ Antes de ir para a próxima cena, você precisa ter feito ou decidido:
 - Se o corpus tiver mistura de transcrições e material de marketing, use SÓ as transcrições
 - O checklist no fim é concreto e executável HOJE (não "compreender o conceito")
 
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/generos_completos/podbook_mentor/README.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/generos_completos/podbook_mentor/README.md) [enc: utf-8]:

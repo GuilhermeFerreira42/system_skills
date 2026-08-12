@@ -139,9 +139,3 @@
 - O arco do personagem é o coração da ficção. A cena sem mudança interna é cena morta.
 - Referências factuais (datas, eventos, locais reais) são permitidas mas devem ser validadas se quantitativas.
 
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/generos_completos/ficcao_literaria/README.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/generos_completos/ficcao_literaria/README.md) [enc: utf-8]:

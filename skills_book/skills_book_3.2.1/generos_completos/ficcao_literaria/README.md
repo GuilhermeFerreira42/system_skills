@@ -66,9 +66,3 @@ Use este perfil quando:
 
 O `capitulos_calibracao/capitulo_01/` contém **1 cena** de exemplo, mostrando como a prosa literária termina — sem Resumo, sem Checklist, sem heading visível. Serve para a IA produtora entender o formato.
 
-
-==========================================
-Conteúdo de BIBLE_EXEMPLO.md (caminho: skills_book_3/generos_completos/podbook_mentor/BIBLE_EXEMPLO.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BIBLE_EXEMPLO.md (caminho: skills_book_3/generos_completos/podbook_mentor/BIBLE_EXEMPLO.md) [enc: utf-8]:

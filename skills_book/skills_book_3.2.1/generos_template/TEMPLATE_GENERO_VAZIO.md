@@ -34,9 +34,3 @@ Este arquivo é uma referência de domínio, não o contrato principal da escrit
 
 Inclua uma ou duas cenas de exemplo. Elas são referências de voz, não moldes de frases ou números.
 
-
-==========================================
-Conteúdo de GUIA_DE_USO.md (caminho: skills_book_3/GUIA_DE_USO.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de GUIA_DE_USO.md (caminho: skills_book_3/GUIA_DE_USO.md) [enc: utf-8]:

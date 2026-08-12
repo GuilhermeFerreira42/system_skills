@@ -69,9 +69,3 @@ Antes de seguir para o próximo capítulo, confirme que você:
 - [ ] Entendi que este manual é sequencial e que pular capítulos não é recomendado
 - [ ] Estou pronto para instalar Python e escrever o primeiro código
 
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.json (caminho: skills_book_3/generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_02/_afirmacoes_para_validar.json) [enc: utf-8]:
-
-==========================================
-Conteúdo de _afirmacoes_para_validar.json (caminho: skills_book_3/generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_02/_afirmacoes_para_validar.json) [enc: utf-8]:

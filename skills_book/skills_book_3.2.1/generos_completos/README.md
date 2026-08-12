@@ -16,9 +16,3 @@ Nenhum perfil desta pasta pode impor ao Escritor:
 
 Quando um perfil antigo contiver esse tipo de instrução, ela é histórica e não faz parte do contrato Skill 3.
 
-
-==========================================
-Conteúdo de BIBLE_EXEMPLO.md (caminho: skills_book_3/generos_completos/tecnico_manual/BIBLE_EXEMPLO.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BIBLE_EXEMPLO.md (caminho: skills_book_3/generos_completos/tecnico_manual/BIBLE_EXEMPLO.md) [enc: utf-8]:

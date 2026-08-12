@@ -132,9 +132,3 @@ O Consolidador só pode emitir `CONCLUIDO` quando:
 
 Caso contrário, emita relatório parcial com pendências explícitas.
 
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/README.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/README.md) [enc: utf-8]:

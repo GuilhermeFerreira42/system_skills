@@ -66,9 +66,3 @@ def main(argv: list[str] | None = None) -> int:
 if __name__ == "__main__":
     raise SystemExit(main())
 
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/utils/README.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/utils/README.md) [enc: utf-8]:

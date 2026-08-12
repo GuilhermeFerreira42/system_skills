@@ -87,9 +87,3 @@ Ao final da sessão de boot, o Orquestrador consolida as escolhas no arquivo de 
 }
 ```
 
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/nivelamento_editorial/README.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de README.md (caminho: skills_book_3/nivelamento_editorial/README.md) [enc: utf-8]:

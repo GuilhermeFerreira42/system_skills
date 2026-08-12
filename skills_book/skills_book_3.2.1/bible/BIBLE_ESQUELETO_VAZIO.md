@@ -30,9 +30,3 @@
 ## Mapa do corpus
 [preencher]
 
-
-==========================================
-Conteúdo de BIBLE_TEMPLATE_PIPELINE.md (caminho: skills_book_3/bible/BIBLE_TEMPLATE_PIPELINE.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de BIBLE_TEMPLATE_PIPELINE.md (caminho: skills_book_3/bible/BIBLE_TEMPLATE_PIPELINE.md) [enc: utf-8]:

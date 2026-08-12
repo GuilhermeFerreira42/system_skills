@@ -64,9 +64,3 @@ Esta versão refatora a Skill 3 para ser um framework genérico, livre de refer�
 
 **Skill 3 v3.2 — Elegância Orgânica — Framework genérico de escrita com intencionalidade.**
 
-
-==========================================
-Conteúdo de CONFIG.md (caminho: skills_book_3/CONFIG.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de CONFIG.md (caminho: skills_book_3/CONFIG.md) [enc: utf-8]:

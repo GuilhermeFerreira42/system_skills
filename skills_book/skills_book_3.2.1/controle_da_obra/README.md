@@ -19,9 +19,3 @@ execucao/controle/
 
 Uma divergência não é corrigida pelo Controle. Ela vira `MODIFICADO_MANUALMENTE`, `DRIFT_DE_CHECKPOINT` ou `REVALIDACAO_NECESSARIA`.
 
-
-==========================================
-Conteúdo de SKILL_CONTROLE_DA_OBRA.md (caminho: skills_book_3/controle_da_obra/SKILL_CONTROLE_DA_OBRA.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de SKILL_CONTROLE_DA_OBRA.md (caminho: skills_book_3/controle_da_obra/SKILL_CONTROLE_DA_OBRA.md) [enc: utf-8]:

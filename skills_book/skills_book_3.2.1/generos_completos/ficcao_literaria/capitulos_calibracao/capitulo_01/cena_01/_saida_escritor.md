@@ -27,9 +27,3 @@ Helena sentou-se. Abriu a carta. E leu.
 
 [Nota para a IA produtora: a cena termina aqui, no momento exato em que Helena começa a ler a carta da avó. NÃO adicionar ## Resumo, ## Seu checklist, **Próxima cena:** ou qualquer heading visível ao leitor. A próxima cena começa com nova heading `# Capítulo 1 — A Volta` / `## Cena 2: A carta` e prosa narrativa.]
 
-
-==========================================
-Conteúdo de GENERO.md (caminho: skills_book_3/generos_completos/ficcao_literaria/GENERO.md) [enc: utf-8]:
-
-==========================================
-Conteúdo de GENERO.md (caminho: skills_book_3/generos_completos/ficcao_literaria/GENERO.md) [enc: utf-8]:
