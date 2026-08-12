@@ -1,0 +1,23 @@
+{
+  "cena_id": "cap_01_cena_05",
+  "total_verificacoes": 4,
+  "confirmados": 4,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {"id": "CONT-001", "status": "CONFIRMADO", "evidencia": "Cena usa 'eu te contei', 'eu preciso que você entenda' (1ª do mentor) e 'quando você vier vontade' (2ª pontual). Coerente.", "categoria": "VOZ_NARRATIVA"},
+    {"id": "CONT-002", "status": "CONFIRMADO", "evidencia": "Cena apresenta 'testar antes de investir' como caminho. Coerente com Bible (MVP, validação).", "categoria": "CONCEITO_REGRA"},
+    {"id": "CONT-003", "status": "CONFIRMADO", "evidencia": "Cena termina com 'a próxima cena: a meta de validação' — fio central do livro. Coerente.", "categoria": "FIO_NARRATIVO_SETUP"},
+    {"id": "CONT-004", "status": "CONFIRMADO", "evidencia": "Bible lista Carla com 5k/4 meses e 15k/8 meses. Cena cita os mesmos números. Coerente.", "categoria": "CASE_REFERENCIADO"}
+  ],
+  "erros": [],
+  "timestamp": "2026-07-27T23:05:00Z"
+}
+
+
+==========================================
+Conteúdo de _resultado_march.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_05/_resultado_march.json) [enc: utf-8]:
+
+==========================================
+Conteúdo de _resultado_march.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_05/_resultado_march.json) [enc: utf-8]:

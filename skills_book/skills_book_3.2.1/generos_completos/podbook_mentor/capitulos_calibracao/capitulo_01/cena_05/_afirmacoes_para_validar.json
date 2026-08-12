@@ -1,0 +1,37 @@
+{
+  "cena_id": "cap_01_cena_05",
+  "capitulo": 1,
+  "cena": 5,
+  "total_afirmacoes_extraidas": 3,
+  "total_apos_filtro": 3,
+  "afirmacoes_filtradas": [
+    {
+      "id": "AFC-001",
+      "segmento": "cena_05",
+      "afirmacao": "A aluna Carla foi reestruturada com marketplace + audiência orgânica, e evoluiu para 5 mil/mês em 4 meses e 15 mil/mês em 8 meses.",
+      "tipo": "CITACAO_CASE",
+      "pergunta_para_validador": "O Bruno cita o caso da aluna Carla que foi reestruturada com marketplace + audiência orgânica, chegando a 5 mil/mês em 4 meses e 15 mil/mês em 8 meses? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-002",
+      "segmento": "cena_05",
+      "afirmacao": "Carla começou o e-commerce com pouco dinheiro e testou antes de investir em estrutura cara.",
+      "tipo": "CONCEITO_REGRA",
+      "pergunta_para_validador": "O Bruno ensina que se deve testar antes de investir em estrutura cara? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-003",
+      "segmento": "cena_05",
+      "afirmacao": "Carla reinvestiu lucro, abriu CNPJ, contratou contador, cadastrou mais produtos e começou audiência no Instagram.",
+      "tipo": "PROTOCOLO",
+      "pergunta_para_validador": "O Bruno ensina que, após validação, se deve reinvestir lucro, abrir CNPJ, cadastrar mais produtos e construir audiência? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    }
+  ]
+}
+
+
+==========================================
+Conteúdo de _perguntas_continuidade.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_05/_perguntas_continuidade.json) [enc: utf-8]:
+
+==========================================
+Conteúdo de _perguntas_continuidade.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_05/_perguntas_continuidade.json) [enc: utf-8]:

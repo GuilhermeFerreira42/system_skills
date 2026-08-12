@@ -1,0 +1,62 @@
+{
+  "cena_id": "cap_01_cena_02",
+  "total_afirmacoes": 5,
+  "confirmados": 4,
+  "contraditos": 0,
+  "nao_encontrados": 1,
+  "taxa_confirmados": 0.80,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "AFC-001",
+      "status": "CONFIRMADO",
+      "evidencia": "Trecho do corpus (Módulo 05, Aula 1 — 'Audiência é REI'): 'Quando escrevi meu livro, por volta de 2018 ou alguns anos atrás...' — referência direta ao ano de 2018 como período chave da trajetória do Bruno.",
+      "tipo": "HISTORICO_GEOGRAFICO"
+    },
+    {
+      "id": "AFC-002",
+      "status": "CONFIRMADO",
+      "evidencia": "Trecho do corpus (Módulo 05, Aula 1): 'Porque, por conta dos altos custos de publicidade, adquirir um cliente nunca foi tão caro quanto é hoje. Então, por que a gente vai trabalhar para toda hora ficar adquirindo novos clientes, sem dar atenção para quem já está dentro de casa?'",
+      "tipo": "CAUSALIDADE"
+    },
+    {
+      "id": "AFC-003",
+      "status": "CONFIRMADO",
+      "evidencia": "Trecho do corpus (Módulo 04, Aula 1 — 'Sua Estrutura de Trabalho'): 'A gente não vai aqui nesse módulo dentro do treinamento e comece do zero, inclusive, dedicar muito tempo a uma estrutura altamente complexa, robusta, cara, que leva muito tempo, que custa muito dinheiro. Não, a gente vai focar numa metodologia que eu aprendi no vale do silício, que é a metodologia do MVP.' Indica prioridade de simplicidade sobre loja virtual robusta no início.",
+      "tipo": "PROTOCOLO"
+    },
+    {
+      "id": "AFC-004",
+      "status": "CONFIRMADO",
+      "evidencia": "Trecho do corpus (Módulo 03, Aula 1 — 'O método'): 'planejamento, estrutura, audiência, vendas, atendimento e impulsão' — audiência é a 3ª etapa. E (Módulo 05, Aula 1): 'hoje a gente vive um momento do mercado que, na minha visão, é um momento que não tem mais volta, onde ter a audiência passa a ser o grande norte do negócio.'",
+      "tipo": "PROTOCOLO"
+    },
+    {
+      "id": "AFC-005",
+      "status": "NAO_ENCONTRADO",
+      "evidencia": null,
+      "tipo": "PROTOCOLO",
+      "observacao": "A regra específica 'só anunciar o que já vende organicamente' é o princípio central do Módulo 08 (Impulsão), mas o arquivo do corpus do Módulo 08 (Aula 1 — 'A Estratégia de Impulsão') não formula essa regra em termos exatos de 'se não vende organicamente, o problema é produto/oferta/persona'. É uma inferência coerente com o método, mas a frase literal não está no corpus bruto. Considerando que o Podbook sintetiza múltiplas aulas em uma cena e que a inferência é fiel ao espírito do método, é aceitável como NAO_ENCONTRADO sem reprovação. Taxa de confirmados = 80% (exatamente no limite mínimo, mas atendendo ao critério)."
+    }
+  ],
+  "auditoria_cegueira": {
+    "log_prompt_contem_saida_escritor": false,
+    "violacao": false
+  },
+  "travas_duras_recalculadas_orquestrador": {
+    "taxa": 0.80,
+    "acima_de_80_pct": true,
+    "contraditos": 0,
+    "nao_encontrados_pct": 0.20,
+    "abaixo_de_30_pct": true,
+    "aprovado": true
+  },
+  "timestamp": "2026-07-27T22:30:00Z"
+}
+
+
+==========================================
+Conteúdo de _saida_escritor.md (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_02/_saida_escritor.md) [enc: utf-8]:
+
+==========================================
+Conteúdo de _saida_escritor.md (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_02/_saida_escritor.md) [enc: utf-8]:

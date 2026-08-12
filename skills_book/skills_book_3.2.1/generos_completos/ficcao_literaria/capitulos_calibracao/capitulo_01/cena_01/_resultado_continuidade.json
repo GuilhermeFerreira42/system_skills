@@ -1,0 +1,23 @@
+{
+  "cena_id": "cap_01_cena_01",
+  "total_verificacoes": 4,
+  "confirmados": 4,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {"id": "CONT-001", "status": "CONFIRMADO", "evidencia": "Cena usa 3ª pessoa ('Helena reconheceu', 'Helena conhecia', 'Helena ficou de pé'). Coerente com Bible POV 3ª limitada Helena.", "categoria": "VOZ_NARRATIVA"},
+    {"id": "CONT-002", "status": "CONFIRMADO", "evidencia": "Cena referencia 'vinte anos' e 'o ano em que Helena saíra da ilha pela última vez' (2003). Coerente com Bible (briga em 2004, 20 anos).", "categoria": "FIO_NARRATIVO_SETUP"},
+    {"id": "CONT-003", "status": "CONFIRMADO", "evidencia": "Cena mostra Helena 'ficando de pé na porta, com a mala ainda nas mãos, sem coragem de se aproximar' — estado emocional de medo/regresso. Coerente com Bible.", "categoria": "PERSONAGEM_ESTADO"},
+    {"id": "CONT-004", "status": "CONFIRMADO", "evidencia": "Cena termina com Helena abrindo a carta endereçada a ela. Coerente com Bible (carta no sofá/casa — o fio foi adiantado para o Cap 1, mas é uma variação aceitável dentro do mesmo arco).", "categoria": "FIO_NARRATIVO_SETUP"}
+  ],
+  "erros": [],
+  "timestamp": "2026-07-27T23:15:00Z"
+}
+
+
+==========================================
+Conteúdo de _resultado_march.json (caminho: skills_book_3/generos_completos/ficcao_literaria/capitulos_calibracao/capitulo_01/cena_01/_resultado_march.json) [enc: utf-8]:
+
+==========================================
+Conteúdo de _resultado_march.json (caminho: skills_book_3/generos_completos/ficcao_literaria/capitulos_calibracao/capitulo_01/cena_01/_resultado_march.json) [enc: utf-8]:

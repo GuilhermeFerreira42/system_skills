@@ -1,0 +1,71 @@
+{
+  "cena_id": "cap_01_cena_01",
+  "total_verificacoes": 8,
+  "confirmados": 8,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "CONT-001",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible, Metadados Gerais: POV_padrao = '2ª pessoa (você) com alternância controlada para 1ª pessoa do mentor (eu) em histórias e casos reais'. Cena usa 1ª do mentor ('Eu sou Bruno', 'Eu não vou te prometter', 'Eu já ouvi isso') e alterna para 2ª ('você vai definir', 'antes de você gastar', 'você pode investir mais').",
+      "categoria": "PERSONAGEM_ACAO"
+    },
+    {
+      "id": "CONT-002",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible, Conceitos-Chave do Método: 6 etapas listadas na ordem exata: 'Planejamento → Estrutura → Audiência → Vendas → Atendimento → Impulsão'. Cena reproduz: 'Primeira: Planejamento... Segunda: Estrutura... Terceira: Audiência... Quarta: Vendas... Quinta: Atendimento... sexta: Impulsão'.",
+      "categoria": "CONCEITO_REGRA"
+    },
+    {
+      "id": "CONT-003",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible, Conceitos-Chave: 'Validação (R$ 10K / 100 pedidos / 90 dias)'. Cena apresenta: 'dez mil reais em vendas... cem pedidos... noventa dias' — coincide exatamente.",
+      "categoria": "CONCEITO_REGRA"
+    },
+    {
+      "id": "CONT-004",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible, Glossário Técnico: 'MVP (Mínimo Produto Viável) = Metodologia adaptada pelo Bruno do Vale do Silício'. Cena: 'o que se chama de MVP — Mínimo Produto Viável... Esse é o princípio... A Zappos fez isso com sapatos nos Estados Unidos. Eu fiz isso com cristais, dentro do meu quarto, no Rio de Janeiro.' Coincide.",
+      "categoria": "CONCEITO_DEFINICAO"
+    },
+    {
+      "id": "CONT-005",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible: tempo_verbal='presente', tom='pragmático, transformador, pé no chão, encorajador', ritmo='modular e ondulatório (Teoria → Analogia → Campo de Batalha/Ação)'. Cena está inteiramente no presente, usa 'Eu vou te contar a verdade, com os números no papel e o suor na testa' (encorajador), e segue o ritmo modular: teoria (método 6 etapas) → analogia (food truck / Zappos) → campo de batalha (caso Patacori/cristais).",
+      "categoria": "VOZ_NARRATIVA"
+    },
+    {
+      "id": "CONT-006",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible, Fios Narrativos: 'A Validação (R$ 10K / 100 pedidos / 90 dias)' como Tema Central, introduzido no Cap. 3. Cena 1.1 instala essa régua como 'sua bússola', referência que acompanhará o leitor por todo o livro. Antecipa a introdução formal (que será no Cap. 3) com a promessa de revisitá-la.",
+      "categoria": "FIO_NARRATIVO_SETUP"
+    },
+    {
+      "id": "CONT-007",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible, Fios Narrativos: 'Patacori — A Loja Real' como Prova Social. Cena 1.1 menciona: 'Eu fiz isso com cristais, dentro do meu quarto, no Rio de Janeiro.' — referência indireta à Patacori, sem detalhes operacionais (que virão no Cap. 4 e Cap. 8).",
+      "categoria": "FIO_NARRATIVO_SETUP"
+    },
+    {
+      "id": "CONT-008",
+      "status": "CONFIRMADO",
+      "evidencia": "Bible, Plano de Cenas: objetivo da cena 1.1 = 'Receber o leitor, apresentar a promessa do método, eliminar a fantasia do ficar rico rápido'. Cena cumpre: 'Eu não vou te prometer que você vai ficar rico em trinta dias... A maioria dos negócios de e-commerce que fracassam... fracassa porque o empreendedor pulou uma etapa.' Mudança de estado documentada nos metadados.",
+      "categoria": "OBJETIVO_CENA"
+    }
+  ],
+  "erros": [],
+  "auditoria_cegueira": {
+    "validador_viu_saida_escritor": false,
+    "violacao": false
+  },
+  "timestamp": "2026-07-27T22:18:00Z"
+}
+
+
+==========================================
+Conteúdo de _resultado_march.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_01/_resultado_march.json) [enc: utf-8]:
+
+==========================================
+Conteúdo de _resultado_march.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_01/_resultado_march.json) [enc: utf-8]:

@@ -1,0 +1,23 @@
+{
+  "cena_id": "cap_01_cena_01",
+  "total_verificacoes": 4,
+  "confirmados": 4,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {"id": "CONT-001", "status": "CONFIRMADO", "evidencia": "Cena usa 2ª pessoa ('você vai aprender', 'você instala') e tom técnico impessoal. Coerente.", "categoria": "VOZ_NARRATIVA"},
+    {"id": "CONT-002", "status": "CONFIRMADO", "evidencia": "Cena define Python como 'linguagem de alto nível' e 'linguagem de propósito geral'. Coerente com Bible.", "categoria": "CONCEITO_DEFINICAO"},
+    {"id": "CONT-003", "status": "CONFIRMADO", "evidencia": "Cena declara: 'Este manual é sequencial. Cada capítulo constrói sobre o anterior.' Coerente.", "categoria": "TIMELINE_CRONOLOGIA"},
+    {"id": "CONT-004", "status": "CONFIRMADO", "evidencia": "Sintaxe `print(\"Olá, mundo!\")` está corretamente descrita (com aspas duplas, parênteses, ponto-e-vírgula ausente — que é correto em Python). Coerente.", "categoria": "REFERENCIA_FACTUAL"}
+  ],
+  "erros": [],
+  "timestamp": "2026-07-27T23:25:00Z"
+}
+
+
+==========================================
+Conteúdo de _resultado_march.json (caminho: skills_book_3/generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01/_resultado_march.json) [enc: utf-8]:
+
+==========================================
+Conteúdo de _resultado_march.json (caminho: skills_book_3/generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01/_resultado_march.json) [enc: utf-8]:

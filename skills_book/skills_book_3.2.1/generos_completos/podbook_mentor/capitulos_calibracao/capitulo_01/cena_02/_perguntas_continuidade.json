@@ -1,0 +1,45 @@
+[
+  {
+    "id": "CONT-001",
+    "categoria": "PERSONAGEM_ACAO",
+    "afirmacao": "Bruno narra em 1ª pessoa, com alternância pontual para 2ª pessoa.",
+    "pergunta": "A Bible define POV_padrao como '1ª pessoa do mentor como base, 2ª pessoa pontual'. A cena mantém esse padrão? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS na Bible + Estado Anterior."
+  },
+  {
+    "id": "CONT-002",
+    "categoria": "CONCEITO_REGRA",
+    "afirmacao": "A versão 3.0 introduz 3 mudanças: audiência como pilar central, estrutura mais enxuta (marketplace > loja própria), impulsão baseada em dados.",
+    "pergunta": "A Bible documenta, em 'Conceitos-Chave do Método', as 3 mudanças da 3.0 (audiência como pilar, MVP marketplace-first, impulsão data-driven). A cena apresenta essas 3 mudanças com fidelidade? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS na Bible + Estado Anterior."
+  },
+  {
+    "id": "CONT-003",
+    "categoria": "FIO_NARRATIVO_SETUP",
+    "afirmacao": "A cena instala o fio 'Por que 3.0 é diferente' — esse fio prepara o leitor para confiar no método.",
+    "pergunta": "A Bible declara o fio 'Por que 3.0 é diferente' como Tema de Confiança, introduzido no Cap. 1 e conectado ao Cap. 4 (Estrutura) e Cap. 8 (Impulsão). A cena 1.2 cumpre o setup desse fio? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS na Bible + Estado Anterior."
+  },
+  {
+    "id": "CONT-004",
+    "categoria": "VOZ_NARRATIVA",
+    "afirmacao": "A cena mantém o tom pragmático/encorajador e o ritmo modular.",
+    "pergunta": "A Bible define tom='pragmático, transformador, pé no chão, encorajador' e ritmo='modular e ondulatório (Teoria → Analogia → Campo de Batalha/Ação)'. A cena 1.2 mantém esse tom e ritmo? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS na Bible + Estado Anterior."
+  },
+  {
+    "id": "CONT-005",
+    "categoria": "OBJETIVO_CENA",
+    "afirmacao": "A cena tem mudança de estado: leitor sai do ceticismo e entra na confiança no método 3.0.",
+    "pergunta": "A cena 1.2 tem mudança de estado documentada (ceticismo → confiança no método 3.0)? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS na Bible + Estado Anterior."
+  },
+  {
+    "id": "CONT-006",
+    "categoria": "REFERENCIA_FACTUAL",
+    "afirmacao": "A aluna Carla (caso anonimizado) ilustra a diferença entre o método 1.0 e 2.0 — começou com loja virtual, perdeu dinheiro, migrou para marketplace e validou.",
+    "pergunta": "A Bible documenta 'Carla' como caso anonimizado de validação no Cap. 1, demonstrando a transição 1.0 → 2.0/3.0? A cena preserva os números (8 mil investidos, 2 mil vendidos, 5 mil/mês em 4 meses, 15 mil/mês em 8 meses)? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS na Bible + Estado Anterior."
+  }
+]
+
+
+==========================================
+Conteúdo de _resultado_continuidade.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_02/_resultado_continuidade.json) [enc: utf-8]:
+
+==========================================
+Conteúdo de _resultado_continuidade.json (caminho: skills_book_3/generos_completos/podbook_mentor/capitulos_calibracao/capitulo_01/cena_02/_resultado_continuidade.json) [enc: utf-8]:

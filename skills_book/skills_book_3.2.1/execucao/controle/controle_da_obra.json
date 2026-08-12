@@ -1,0 +1,21 @@
+{
+  "titulo": "[TÍTULO]",
+  "versao": "1.0",
+  "ultima_reconciliacao": "ISO-8601",
+  "status_fisico": "AUSENTE",
+  "cenas": [
+    {
+      "id": "cap_01_cena_01",
+      "worktree": "capitulos/capitulo_01/cena_01",
+      "status_fisico": "AUSENTE",
+      "checksum_final": null,
+      "checksum_no_estado": null,
+      "acao": "PRODUZIR"
+    }
+  ],
+  "divergencias": []
+}
+
+
+==========================================
+Conteúdo de README.md (caminho: skills_book_3/execucao/controle/README.md) [enc: utf-8]:

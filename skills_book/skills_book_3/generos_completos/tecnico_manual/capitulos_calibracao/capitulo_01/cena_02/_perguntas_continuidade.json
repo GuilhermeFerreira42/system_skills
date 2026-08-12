@@ -1,6 +1,0 @@
-[
-  {"id": "CONT-001", "categoria": "VOZ_NARRATIVA", "afirmacao": "A cena usa 2ª pessoa e tom técnico procedural", "pergunta": "Bible define POV = 2ª pessoa + tom técnico procedural. A cena está coerente? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
-  {"id": "CONT-002", "categoria": "PROTOCOLO", "afirmacao": "A cena apresenta procedimento de instalação para Windows, macOS e Linux", "pergunta": "Bible lista 3 sistemas (Windows, macOS, Linux) como pré-requisito. A cena cobre os 3? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
-  {"id": "CONT-003", "categoria": "CONCEITO_DEFINICAO", "afirmacao": "O comando `python --version` é definido como verificador de instalação", "pergunta": "Bible define o procedimento de verificação de instalação. A cena explica corretamente? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
-  {"id": "CONT-004", "categoria": "TIMELINE_CRONOLOGIA", "afirmacao": "A cena prepara o leitor para o próximo capítulo (primeiro código)", "pergunta": "Bible declara que o Cap 2 (próximo) cobre 'Hello World'. A cena aponta para isso? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."}
-]

@@ -1,0 +1,46 @@
+{
+  "cena_id": "cap_01_cena_02",
+  "total_afirmacoes": 3,
+  "confirmados": 3,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "taxa_confirmados": 1.0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "AFC-001",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus (documentação oficial): 'The Python source distribution is available for download from https://www.python.org/downloads/.' URL oficial confirmada.",
+      "tipo": "REFERENCIA_URL"
+    },
+    {
+      "id": "AFC-002",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus (tutorial oficial Windows): 'On the first screen, you have the option to "Add Python to PATH". Make sure to check this box before clicking Install Now, as this will make Python accessible from the command line.' Confirma o protocolo.",
+      "tipo": "PROTOCOLO"
+    },
+    {
+      "id": "AFC-003",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus (documentação oficial): 'To check that Python is installed, open a terminal and run: python --version (or python3 --version on some systems). The output should display the Python version.' Sintaxe e comando confirmados.",
+      "tipo": "SINTAXE"
+    }
+  ],
+  "auditoria_cegueira": {"log_prompt_contem_saida_escritor": false, "violacao": false},
+  "travas_duras_recalculadas_orquestrador": {
+    "taxa": 1.0,
+    "acima_de_80_pct": true,
+    "contraditos": 0,
+    "nao_encontrados_pct": 0.0,
+    "abaixo_de_30_pct": true,
+    "aprovado": true
+  },
+  "timestamp": "2026-07-27T23:30:00Z"
+}
+
+
+==========================================
+Conteúdo de _saida_escritor.md (caminho: skills_book_3/generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_02/_saida_escritor.md) [enc: utf-8]:
+
+==========================================
+Conteúdo de _saida_escritor.md (caminho: skills_book_3/generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_02/_saida_escritor.md) [enc: utf-8]:

@@ -1,0 +1,13 @@
+[
+  {"id": "CONT-001", "categoria": "VOZ_NARRATIVA", "afirmacao": "A cena usa 2ª pessoa (você) e tom técnico impessoal", "pergunta": "Bible define POV = 2ª pessoa + tom técnico impessoal. A cena está coerente? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
+  {"id": "CONT-002", "categoria": "CONCEITO_DEFINICAO", "afirmacao": "Python é definido como linguagem de alto nível de propósito geral", "pergunta": "Bible define Python como 'linguagem de programação de alto nível, propósito geral'. A cena bate com essa definição? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
+  {"id": "CONT-003", "categoria": "TIMELINE_CRONOLOGIA", "afirmacao": "A cena declara que o manual é sequencial com pré-requisitos", "pergunta": "Bible declara 'cada capítulo constrói sobre o anterior'. A cena reforça isso? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
+  {"id": "CONT-004", "categoria": "REFERENCIA_FACTUAL", "afirmacao": "A cena cita a sintaxe print(\"mensagem\")", "pergunta": "A sintaxe `print(\"mensagem\")` está corretamente descrita conforme o corpus (documentação oficial Python)? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."}
+]
+
+
+==========================================
+Conteúdo de _resultado_continuidade.json (caminho: skills_book_3/generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01/_resultado_continuidade.json) [enc: utf-8]:
+
+==========================================
+Conteúdo de _resultado_continuidade.json (caminho: skills_book_3/generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01/_resultado_continuidade.json) [enc: utf-8]:
