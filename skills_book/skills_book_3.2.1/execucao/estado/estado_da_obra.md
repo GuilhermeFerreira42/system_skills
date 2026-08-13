@@ -1,31 +1,24 @@
-# Estado da Obra: O Poder Fisiológico da Água
+# Estado da Obra: [Título]
 
 ## Metadados
 
-- **ultima_atualizacao:** 2026-08-11T18:04:55+00:00
-- **status_geral:** CONCLUIDO (obra integral — 1 capítulo, 6 cenas)
-- **tipo_de_obra:** não-ficção (divulgação científica técnico-popular)
-- **foco_usuario:** 1 capítulo único, cenas sequenciais que esgotam o tema do corpus;
-  conhecimento técnico como revelação iminente; leitor como cúmplice intelectual;
-  DNA da Referência Ouro (execucao/dna_referencia_ouro.md)
-- **perfil_editorial_fonte:** usuario
-- **capitulos_planejados:** 1
-- **capitulos_concluidos:** 1
-- **cena_atual:** — (todas concluídas)
-- **bible_versao:** v1.8
-- **bible_checksum:** v1.0:05b125b1
-- **controle_status:** CONCLUIDO
+- **ultima_atualizacao:** ISO-8601
+- **status_geral:** EM_ANDAMENTO | CONCLUIDO | INTERROMPIDO
+- **tipo_de_obra:** [tipo]
+- **foco_usuario:** [texto]
+- **perfil_editorial_fonte:** usuario | perfil_existente | padrao_confirmado
+- **capitulos_planejados:** [quantidade ou descrição]
+- **capitulos_concluidos:** 0
+- **cena_atual:** [capítulo/cena]
+- **bible_versao:** v1.0
+- **bible_checksum:** v1.0:xxxxxxxx
+- **controle_status:** EM_PRODUCAO
 
 ## Plano de cenas
 
 | ID | Cap | Cena | Título | Objetivo | Status | Retries | MARCH | Continuidade | Revisor | Checksum |
-|---|---:|---:|---|---|---:|---|---|---|---:|
-| cap_01_cena_01 | 1 | 1 | O nutriente que ninguém estuda | — | CONCLUIDO | 3 | APROVADO | APROVADO | APROVADO | v1.0:fa5220f4 |
-| cap_01_cena_02 | 1 | 2 | A sede que não avisa | — | CONCLUIDO | 1 | APROVADO | APROVADO | APROVADO | v1.0:2f4dc9b7 |
-| cap_01_cena_03 | 1 | 3 | As assinaturas da verdade | — | CONCLUIDO | 1 | APROVADO | APROVADO | APROVADO | v1.0:56efa5ec |
-| cap_01_cena_04 | 1 | 4 | O que o corpo pede da água | — | CONCLUIDO | 1 | APROVADO | APROVADO | APROVADO | v1.0:cbb402ea |
-| cap_01_cena_05 | 1 | 5 | O parceiro esquecido: o sal integral | — | CONCLUIDO | 1 | APROVADO | APROVADO | APROVADO | v1.0:43e0df8e |
-| cap_01_cena_06 | 1 | 6 | A decisão de trinta segundos | — | CONCLUIDO | 1 | APROVADO | APROVADO | APROVADO | v1.0:999dbfd1 |
+|---|---:|---:|---|---|---|---:|---|---|---|---|
+| cap_01_cena_01 | 1 | 1 | [título] | [objetivo] | PENDENTE | 0 | — | — | — | — |
 
 ## Status possíveis
 
@@ -34,20 +27,16 @@
 ## Histórico de retries
 
 | Cena | Tentativa | Origem | Falha | Ação |
-|---|---|---:|---|
-| cap_01_cena_01 | 1 | pipeline | — (aprovado) | preservada em historico_v1/ (v1.0:59ff17f7) |
-| cap_01_cena_01 | 2 | usuario | reescrita cirúrgica (Referência Ouro) | preservada em historico_v2/ (v1.0:f1773c34) |
-| cap_01_cena_01 | 3 | usuario | afinação DNA (Referência Ouro) | definitiva: v1.0:fa5220f4 |
+|---|---:|---|---|---|
 
 ## Checkpoint de retomada
 
-- **Cena:** — (obra concluída)
-- **Status:** CONCLUIDO
-- **Próxima ação:** nenhuma — livro consolidado em livro_final.md
-- **Versão da Bible:** v1.8
-- **Checksum do Estado:** v1.0:2d07055a
+- **Cena:**
+- **Status:**
+- **Próxima ação:**
+- **Versão da Bible:**
+- **Checksum do Estado:**
 
 ## Regras de retomada
 
-O Estado não deve afirmar `CONCLUIDO` sem o manifesto e o relatório do Vigia correspondentes
-ao arquivo físico atual. Em caso de divergência, preserve o arquivo e marque revalidação.
+O Estado não deve afirmar `CONCLUIDO` sem o manifesto e o relatório do Vigia correspondentes ao arquivo físico atual. Em caso de divergência, preserve o arquivo e marque revalidação.
