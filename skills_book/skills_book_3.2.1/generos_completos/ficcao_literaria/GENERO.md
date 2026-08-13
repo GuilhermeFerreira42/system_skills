@@ -138,4 +138,3 @@
 - Sensorialidade constrói o mundo. Cenas sem cheiro/som/luz/textura parecem planas.
 - O arco do personagem é o coração da ficção. A cena sem mudança interna é cena morta.
 - Referências factuais (datas, eventos, locais reais) são permitidas mas devem ser validadas se quantitativas.
-

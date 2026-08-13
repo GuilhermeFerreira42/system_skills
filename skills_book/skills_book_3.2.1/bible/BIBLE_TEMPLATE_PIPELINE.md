@@ -80,4 +80,3 @@ Registre somente decisões humanas ou derivadas explicitamente do nivelamento. N
 - [ ] Mapa do corpus atualizado
 - [ ] Backup realizado antes da alteração
 - [ ] Checksum registrado no Estado
-

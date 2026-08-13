@@ -1,0 +1,20 @@
+{
+  "tipo": "resultado_revisor_cego",
+  "cena": "cap_01_cena_02",
+  "tentativa": 1,
+  "input_checksum": "v1.0:2f4dc9b7",
+  "status_geral": "APROVADO",
+  "rubrica": {
+    "emocao_antes_de_explicacao": "OK — abertura habitada pelo leitor",
+    "analogia_gemea": "OK — imagem dominante sustenta a cena (fecho: o prédio/silêncio dos apartamentos + anúncio das assinaturas)",
+    "detalhe_especifico": "OK — números imperfeitos preservados",
+    "variacao_de_tessitura": "OK — densidade alternada com cortes de impacto",
+    "filtro_verdadeiro_falso": "OK — nada soa maior que a evidência",
+    "revelacao_vs_relatorio": "OK — soa como descoberta, não como relatório",
+    "critica_estrutural": "OK — falhas como estruturas, nunca conspiração",
+    "sem_repeticao_de_cenas_anteriores": "OK — ecos, não re-ensino",
+    "sem_antecipacao_de_cenas_futuras": "OK",
+    "lei6_sem_metadados": "OK"
+  },
+  "parecer": "APROVADO. A cena 2 sustenta uma única analogia-gêmea (o prédio, o hidrante, os apartamentos) do gancho ao fecho, converte a hierarquia 66/26/8 em imagem viva e apresenta a histamina como alarme interno sem tom de manual. Soa como revelação, não como relatório; ponte limpa para as assinaturas."
+}

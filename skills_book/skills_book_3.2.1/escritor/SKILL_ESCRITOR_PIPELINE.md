@@ -94,4 +94,3 @@ Se uma cena sair abaixo da faixa, o Escritor deve perguntar a si mesmo: *o objet
 ```
 
 Metadados são para o Orquestrador. Nunca os inclua no texto destinado ao leitor.
-

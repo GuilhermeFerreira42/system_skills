@@ -6,4 +6,3 @@
 - `reconciliar_controle.py`: compara o Controle da Obra com o filesystem sem corrigir conteúdo.
 
 Não existe `medir_ritmo.py` no caminho crítico da Skill 3. A fluidez é avaliada qualitativamente pelo Escritor, Editor e Revisor.
-

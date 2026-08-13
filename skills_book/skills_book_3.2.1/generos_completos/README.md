@@ -15,4 +15,3 @@ Nenhum perfil desta pasta pode impor ao Escritor:
 - proibição estatística de ritmo.
 
 Quando um perfil antigo contiver esse tipo de instrução, ela é histórica e não faz parte do contrato Skill 3.
-

@@ -33,4 +33,3 @@ Antes de ir para a próxima cena, você precisa ter feito ou decidido:
 ---
 
 **Próxima cena:** "A meta de validação: R$ 10 mil, 100 pedidos, 90 dias" — porque a história da Carla é o caminho, mas a régua é o que mede se você está no caminho certo.
-

@@ -1,0 +1,49 @@
+{
+  "tipo": "perguntas_continuidade",
+  "cena": "cap_01_cena_01",
+  "tentativa": 3,
+  "input_checksum": "v1.0:fa5220f4",
+  "instrucao": "Responda APENAS com base na Bible (v1.3), no Estado e no DNA da Referência (execucao/dna_referencia_ouro.md). NÃO leia a prosa. Vereditos: OK | PROBLEMA.",
+  "perguntas": [
+    {
+      "id": "C01",
+      "pergunta": "A cena cumpre o objetivo (abertura 2ª pessoa com frustração de expectativa; Carrel; hidrólise; aquaporinas; primeiras assinaturas; 4 pressupostos; fecho-eco)?"
+    },
+    {
+      "id": "C02",
+      "pergunta": "A hidrólise segue a definição canônica da Bible (quebra de ligações por reação com a água) com etimologia hidro+lise?"
+    },
+    {
+      "id": "C03",
+      "pergunta": "A cena introduz o fio 'A água é nutriente, não solvente' (palco vs peça)?"
+    },
+    {
+      "id": "C04",
+      "pergunta": "A cena evita antecipar a cena 02 (66/26/8, histamina, doenças crônicas)?"
+    },
+    {
+      "id": "C05",
+      "pergunta": "A cena evita antecipar a cena 03 (Jhon, Pollack, Dr. Batman, adventistas 2002)? Carrel e aquaporinas pertencem à cena 01."
+    },
+    {
+      "id": "C06",
+      "pergunta": "Voz DNA: começa com o leitor (emoção antes de explicação), analogia-gêmea (aquário) presente, crítica estrutural (nunca conspiração)?"
+    },
+    {
+      "id": "C07",
+      "pergunta": "Detalhe específico como assinatura da verdade: números imperfeitos preservados (28 anos e meio, 40%, 32 copos, pH 2,5)?"
+    },
+    {
+      "id": "C08",
+      "pergunta": "O fecho ecoa a abertura (a aula que faltou / setenta por cento) em vez de concluir com tese declarada?"
+    },
+    {
+      "id": "C09",
+      "pergunta": "As assinaturas (Carrel como história, aquaporinas como portas, etimologia) estão integradas à prosa, não em lista escolar?"
+    },
+    {
+      "id": "C10",
+      "pergunta": "A cena respeita a Lei 6 (zero marketing) e não usa 'importante' para declarar importância?"
+    }
+  ]
+}

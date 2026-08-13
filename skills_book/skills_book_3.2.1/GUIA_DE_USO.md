@@ -65,4 +65,3 @@ A reconciliação não corrige arquivos. Ela produz um relatório de divergênci
 ## 7. O que não fazer
 
 Não copie resultados de uma tentativa anterior para uma nova versão. Não rode o Vigia para aprovar estilo. Não use o checksum como motivo para apagar uma edição humana. Não declare livro concluído com cenas bloqueadas.
-

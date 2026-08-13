@@ -33,4 +33,3 @@ Não use tolerância de contagem de palavras como prova de integridade. O checks
 - relatório de fronteira.
 
 O Consolidador não corrige uma cena. Se uma cena estiver errada, devolva ao Orquestrador com seu ID e motivo.
-

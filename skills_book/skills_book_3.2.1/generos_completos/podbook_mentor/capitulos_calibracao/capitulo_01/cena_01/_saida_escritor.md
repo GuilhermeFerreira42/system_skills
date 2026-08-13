@@ -44,4 +44,3 @@ Te vejo no próximo capítulo, onde a gente vai olhar para o mercado de e-commer
   "beat_emocional": "Curiosidade → Reconhecimento da dor → Comprometimento com método → Determinação"
 }
 ```
-

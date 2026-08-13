@@ -40,4 +40,3 @@
 ## Regras de retomada
 
 O Estado não deve afirmar `CONCLUIDO` sem o manifesto e o relatório do Vigia correspondentes ao arquivo físico atual. Em caso de divergência, preserve o arquivo e marque revalidação.
-

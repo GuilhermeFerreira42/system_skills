@@ -18,4 +18,3 @@ execucao/controle/
 ```
 
 Uma divergência não é corrigida pelo Controle. Ela vira `MODIFICADO_MANUALMENTE`, `DRIFT_DE_CHECKPOINT` ou `REVALIDACAO_NECESSARIA`.
-

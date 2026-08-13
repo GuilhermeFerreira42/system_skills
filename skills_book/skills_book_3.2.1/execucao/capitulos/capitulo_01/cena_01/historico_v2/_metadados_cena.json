@@ -1,0 +1,44 @@
+{
+  "cena": "cap_01_cena_01",
+  "titulo": "O nutriente que ninguém estuda",
+  "capitulo": 1,
+  "tentativa": 2,
+  "origem_reescrita": "reescrita_cirurgica_autorizada_usuario (Referência Ouro)",
+  "versao_anterior_preservada": {
+    "checksum": "v1.0:59ff17f7",
+    "pasta": "historico_v1/"
+  },
+  "objetivo": "Abertura hipotética em 2ª pessoa (6 anos de medicina); Carrel como assinatura (mostrar, não explicar); hidrólise como nutriente; aquaporinas (Nobel 2003); primeiras assinaturas bioquímicas (pH logarítmico, redox, tensão superficial); desmontar os 4 pressupostos; fecho ecoa a pergunta temática.",
+  "contexto_anterior": "Boot concluído; obra recém-iniciada; tentativa 1 (v1.0:59ff17f7) aprovada e superada por reescrita autorizada.",
+  "fatos_obrigatorios": [
+    "6 anos de formação médica sem fisiologia profunda da água",
+    "corpo ~70% água (média)",
+    "Carrel: Nobel Medicina 1912 (microsutura vascular); coração de embrião de galinha 28,5 anos; troca diária do fluido; longevidade celular determinada pelo meio",
+    "hidrólise: hidro (água) + lise (quebra); água quebra ligações químicas",
+    "hidrólise torna a água nutriente — o mais abundante",
+    "Aquaporinas: Peter Agre, Nobel Química 2003; canais exclusivos de transporte de água",
+    "pH do sangue 7.35–7.45; escala de pH logarítmica",
+    "ORP/redox negativo = ação antioxidante, doadora de elétrons",
+    "baixa tensão superficial = molhabilidade e penetração celular",
+    "40% dos brasileiros cronicamente desidratados sem sede",
+    "percepção da sede diminui com a idade",
+    "café diurético; refrigerante pH ~2,5; 32 copos de água pH 10 para neutralizar 1 copo (40L)",
+    "frase de Sócrates: 'Saúde não é tudo, mas tudo é nada sem saúde'"
+  ],
+  "foco_usuario": "revelação iminente; leitor cúmplice intelectual; abertura hipotética; mostrar, não explicar; falha estrutural, nunca conspiração",
+  "extensao_orientadora": "~900-1100 palavras",
+  "historico_status": [
+    {
+      "status": "ESCREVENDO",
+      "momento": "2026-08-11T14:35:18+00:00",
+      "origem": "orquestrador",
+      "nota": "reescrita autorizada"
+    },
+    {
+      "status": "EDITOR",
+      "momento": "2026-08-11T14:35:18+00:00",
+      "origem": "editor"
+    }
+  ],
+  "input_checksum": "v1.0:f1773c34"
+}

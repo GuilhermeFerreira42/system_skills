@@ -1,0 +1,20 @@
+{
+  "tipo": "resultado_revisor_cego",
+  "cena": "cap_01_cena_01",
+  "tentativa": 3,
+  "input_checksum": "v1.0:fa5220f4",
+  "status_geral": "APROVADO",
+  "rubrica": {
+    "abertura_hipotetica": "OK — 2ª pessoa; expectativa frustrada (coração? cérebro? → água)",
+    "emocao_antes_de_explicacao": "OK — a cena abre habitada pelo leitor, não por dado",
+    "analogia_gemea": "OK — aquário (células = peixes) como imagem dominante, costurada a Carrel",
+    "detalhe_especifico": "OK — 28 anos e meio, 40%, 32 copos, pH 2,5; sem números redondos inventados",
+    "variacao_de_tessitura": "OK — densidade bioquímica (pH logarítmico, redox) com cortes de impacto",
+    "filtro_verdadeiro_falso": "OK — nada soa maior que a evidência; sem clichês de autoajuda",
+    "revelacao_vs_relatorio": "OK — lê como descoberta compartilhada, não como relatório",
+    "fecho_eco": "OK — volta à abertura (aula que faltou; setenta por cento) transformada",
+    "critica_estrutural": "OK — lacuna da formação como falha estrutural, nunca conspiração",
+    "lei6_sem_metadados": "OK — nenhum elemento promocional"
+  },
+  "parecer": "APROVADO. A tentativa 3 fecha o alinhamento com a Referência Ouro: abertura que frustra a expectativa antes de revelar a água; aquário como gêmeo físico dominante; assinaturas integradas (Carrel como história, aquaporinas como portas); fecho-eco que devolve o leitor à abertura com mais profundidade. Soa como revelação, não como relatório."
+}

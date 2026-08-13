@@ -1,0 +1,37 @@
+{
+  "cena": "cap_01_cena_03",
+  "titulo": "As assinaturas da verdade",
+  "capitulo": 1,
+  "tentativa": 1,
+  "objetivo": "Lastro factual pelas assinaturas: Dr. Batman (31 meses, 3.000 presos, água e sal, 6 livros), Mu Shik Jhon (300+ artigos, 272 referências, -40°C hexagonal), Gerald Pollack (653 páginas, EZ), estudo adventista 2002 (-52% coronariano), Kurzweil; fecho-ponte para a especificação.",
+  "contexto_anterior": "Cenas anteriores concluídas; DNA da Referência Ouro aplicado.",
+  "fatos_obrigatorios": [
+    "Dr. Fereydoon Batmanghelidj (Dr. Batman), médico iraniano, ficou preso 31 meses por questões ideológicas.",
+    "Durante a prisão, tratou mais de 3.000 prisioneiros apenas com água e sal.",
+    "Ele pediu para ficar mais 4 meses preso para concluir suas pesquisas.",
+    "É autor de 6 livros sobre cura com água, incluindo 'Your Body's Many Cries for Water' e 'Water & Salt'.",
+    "Dr. Mu Shik Jhon, pesquisador sul-coreano, publicou mais de 300 artigos sobre água.",
+    "O livro dele sobre Água Hexagonal contém 272 referências científicas das quais é autor ou coautor.",
+    "A -40°C, 100% da água adquire estrutura hexagonal.",
+    "Dr. Gerald Pollack é autor de 'The Fourth Phase of Water' (653 páginas), que demonstra a fase de zona de exclusão (EZ) entre líquido e gelo.",
+    "Estudo do American Journal of Epidemiology (2002), com mais de 20.000 adventistas, mostrou redução de 52% no risco de morte por doença coronariana entre quem bebia 5+ copos de água por dia vs 2 copos ou menos.",
+    "Ray Kurzweil, especialista em inteligência artificial, defende a água ionizada/alcalina como uma das maiores descobertas do século XX."
+  ],
+  "dna_aplicado": [
+    "emoção antes de explicação",
+    "analogia-gêmea",
+    "detalhe específico",
+    "crítica estrutural",
+    "fecho-eco",
+    "negrito de conceitos"
+  ],
+  "extensao_orientadora": "~800-1000 palavras",
+  "historico_status": [
+    {
+      "status": "ESCREVENDO",
+      "momento": "2026-08-11T18:03:47+00:00",
+      "origem": "orquestrador"
+    }
+  ],
+  "input_checksum": "v1.0:56efa5ec"
+}

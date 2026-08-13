@@ -17,4 +17,3 @@
 ## Política
 
 O Controle observa e registra. Não modifica conteúdo sem ordem explícita do Orquestrador e do usuário.
-

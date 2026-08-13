@@ -1,0 +1,44 @@
+{
+  "tipo": "resultado_continuidade",
+  "cena": "cap_01_cena_01",
+  "input_checksum": "v1.0:59ff17f7",
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "C01",
+      "veredito": "OK",
+      "nota": "Objetivo do Estado coberto: hidrólise como nutriente + 4 pressupostos desmontados."
+    },
+    {
+      "id": "C02",
+      "veredito": "OK",
+      "nota": "Hidrólise descrita conforme a definição canônica da Bible (quebra de ligações pela água)."
+    },
+    {
+      "id": "C03",
+      "veredito": "OK",
+      "nota": "Fio 'água nutriente, não solvente' introduzido e nomeado explicitamente."
+    },
+    {
+      "id": "C04",
+      "veredito": "OK",
+      "nota": "Fecho apenas levanta a pergunta; não antecipa 66/26/8 nem histamina (conteúdo da cena 02)."
+    },
+    {
+      "id": "C05",
+      "veredito": "OK",
+      "nota": "Voz de descobridor cúmplice; convite à observação; sem tom professoral."
+    },
+    {
+      "id": "C06",
+      "veredito": "OK",
+      "nota": "Nenhum elemento promocional; Lei 6 respeitada."
+    },
+    {
+      "id": "C07",
+      "veredito": "OK",
+      "nota": "Pergunta temática aberta no fecho; bastão entregue à cena 02."
+    }
+  ],
+  "resumo": "Coerência com Bible e Estado: OK. Nenhum problema de cronologia, fios ou objetivo."
+}

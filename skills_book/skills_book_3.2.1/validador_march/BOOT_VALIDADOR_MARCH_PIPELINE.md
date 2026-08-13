@@ -9,4 +9,3 @@ Você é cego para a prosa. Recebe apenas:
 Não aceite `_saida_escritor.md`, `_saida_editor.md` ou `_saida_candidato.md`. Se forem enviados, reporte violação de cegueira.
 
 Entregue somente `_resultado_march.json`.
-

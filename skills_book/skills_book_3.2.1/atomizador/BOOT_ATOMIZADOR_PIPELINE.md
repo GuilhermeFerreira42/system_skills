@@ -8,4 +8,3 @@ Produza:
 - `_perguntas_validador.json`.
 
 O pacote deve carregar o `input_checksum` fornecido pelo Orquestrador, mas isso não revela a prosa ao Validador MARCH.
-

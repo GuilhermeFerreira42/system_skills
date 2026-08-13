@@ -1,0 +1,32 @@
+{
+  "cena": "cap_01_cena_01",
+  "titulo": "O nutriente que ninguém estuda",
+  "capitulo": 1,
+  "objetivo": "Estabelecer que a água é um nutriente ativo (hidrólise), não um solvente passivo; desmontar os 4 pressupostos errados sobre hidratação; abrir o fio da revelação iminente.",
+  "contexto_anterior": "Boot concluído (nivelamento A/A/A/A); obra recém-iniciada; sem cenas anteriores.",
+  "fatos_obrigatorios": [
+    "corpo ~70% água (média)",
+    "hidrólise: água quebra ligações químicas -> nutriente",
+    "água é o nutriente mais abundante",
+    "médicos: 6 anos de formação sem fisiologia profunda da água",
+    "40% dos brasileiros em desidratação crônica sem sede",
+    "percepção de sede diminui com a idade",
+    "café diurético; refrigerante pH ~2,5; 32 copos de água pH 10 para neutralizar 1 copo (40L)",
+    "frase de Sócrates: 'Saúde não é tudo, mas tudo é nada sem saúde'"
+  ],
+  "foco_usuario": "revelação iminente; leitor como cúmplice intelectual; nunca explicar — mostrar em tamanho natural",
+  "extensao_orientadora": "~600-800 palavras",
+  "historico_status": [
+    {
+      "status": "ESCREVENDO",
+      "momento": "2026-08-11T13:36:34+00:00",
+      "origem": "orquestrador"
+    },
+    {
+      "status": "EDITOR",
+      "momento": "2026-08-11T13:36:34+00:00",
+      "origem": "editor"
+    }
+  ],
+  "input_checksum": "v1.0:59ff17f7"
+}

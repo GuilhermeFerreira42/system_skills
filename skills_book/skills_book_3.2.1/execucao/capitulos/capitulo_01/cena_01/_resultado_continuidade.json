@@ -1,0 +1,60 @@
+{
+  "tipo": "resultado_continuidade",
+  "cena": "cap_01_cena_01",
+  "tentativa": 3,
+  "input_checksum": "v1.0:fa5220f4",
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "C01",
+      "veredito": "OK",
+      "nota": "Objetivo coberto; frustração de expectativa explícita (coração? cérebro? → água)."
+    },
+    {
+      "id": "C02",
+      "veredito": "OK",
+      "nota": "Hidrólise canônica + etimologia hidro/lise + H₂O."
+    },
+    {
+      "id": "C03",
+      "veredito": "OK",
+      "nota": "Fio 'palco vs peça' nomeado."
+    },
+    {
+      "id": "C04",
+      "veredito": "OK",
+      "nota": "66/26/8 e histamina não aparecem; reservados à cena 02."
+    },
+    {
+      "id": "C05",
+      "veredito": "OK",
+      "nota": "Jhon, Pollack, Batman e adventistas ausentes; reservados à cena 03."
+    },
+    {
+      "id": "C06",
+      "veredito": "OK",
+      "nota": "Abertura pelo leitor; aquário como analogia-gêmea; crítica estrutural ('Não há conspiração aqui')."
+    },
+    {
+      "id": "C07",
+      "veredito": "OK",
+      "nota": "Números imperfeitos preservados (28 anos e meio; 40%; 32 copos; pH 2,5)."
+    },
+    {
+      "id": "C08",
+      "veredito": "OK",
+      "nota": "Fecho-eco: 'a aula que faltou' + 'setenta por cento de você já sabe o caminho'."
+    },
+    {
+      "id": "C09",
+      "veredito": "OK",
+      "nota": "Carrel como história; aquaporinas como portas dedicadas; integrados."
+    },
+    {
+      "id": "C10",
+      "veredito": "OK",
+      "nota": "Sem marketing; sem 'importante' declarando importância."
+    }
+  ],
+  "resumo": "Coerência com Bible v1.3, Estado e DNA: OK."
+}

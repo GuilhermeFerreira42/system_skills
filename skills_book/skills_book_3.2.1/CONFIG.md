@@ -48,4 +48,3 @@ Os campos acima descrevem o projeto. Eles não são um contrato estético numér
 O contrato de voz nasce das respostas do nivelamento e é salvo na Bible.
 O piso de densidade acima é uma rede de segurança operacional (evita cena
 subdesenvolvida), não uma fórmula de parágrafo nem uma meta de enchimento artificial.
-

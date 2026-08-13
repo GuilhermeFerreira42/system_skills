@@ -4,4 +4,3 @@
   {"id": "CONT-003", "categoria": "TIMELINE_CRONOLOGIA", "afirmacao": "A cena declara que o manual é sequencial com pré-requisitos", "pergunta": "Bible declara 'cada capítulo constrói sobre o anterior'. A cena reforça isso? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
   {"id": "CONT-004", "categoria": "REFERENCIA_FACTUAL", "afirmacao": "A cena cita a sintaxe print(\"mensagem\")", "pergunta": "A sintaxe `print(\"mensagem\")` está corretamente descrita conforme o corpus (documentação oficial Python)? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."}
 ]
-

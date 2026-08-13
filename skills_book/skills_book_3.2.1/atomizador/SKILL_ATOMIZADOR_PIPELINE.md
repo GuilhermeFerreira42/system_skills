@@ -30,4 +30,3 @@ Extrair do candidato apenas afirmações que precisam de lastro factual. Não ju
 ```
 
 O Orquestrador recalcula agregados no resultado MARCH. O Atomizador não aprova a cena.
-

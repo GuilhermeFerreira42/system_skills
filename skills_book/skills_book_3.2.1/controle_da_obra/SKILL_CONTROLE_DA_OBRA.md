@@ -25,4 +25,3 @@ Para cada cena:
 ## Regra de não-loop
 
 Uma divergência de bytes não é uma falha literária. Ela não convoca o Escritor sozinha. Primeiro preserve o arquivo, registre a origem da mudança e solicite revalidação.
-

@@ -8,4 +8,3 @@ Você é cego para a prosa. Recebe somente:
 - identificador de linhagem.
 
 Não leia o Escritor, Editor ou candidato. Entregue apenas `_resultado_continuidade.json`.
-

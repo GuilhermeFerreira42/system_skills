@@ -1,0 +1,38 @@
+{
+  "cena": "cap_01_cena_02",
+  "titulo": "A sede que não avisa",
+  "capitulo": 1,
+  "tentativa": 1,
+  "objetivo": "Escala da desidratação crônica: hierarquia 66/26/8; proteção da volemia a todo custo; histamina e doenças crônicas (asma, dor, fibromialgia, depressão, insônia); anti-histamínico natural; referência ao 40% estabelecido na cena 1; fecho-ponte para as assinaturas.",
+  "contexto_anterior": "Cenas anteriores concluídas; DNA da Referência Ouro aplicado.",
+  "fatos_obrigatorios": [
+    "Na desidratação, cerca de 66% da água perdida sai de dentro das células (desidratação intracelular).",
+    "Cerca de 26% da desidratação ocorre no espaço intersticial, entre as células.",
+    "Apenas cerca de 8% da desidratação ocorre no sangue.",
+    "O corpo protege o volume sanguíneo a todo custo, retirando água da célula e do interstício.",
+    "A desidratação intracelular estimula a liberação de histamina.",
+    "Na desidratação, os mastócitos liberam histamina como regulador de fluxo hídrico.",
+    "A histamina alta provoca broncoconstrição, desencadeando crises de asma.",
+    "A histamina alta causa dores crônicas, incluindo fibromialgia, angina e artrite.",
+    "A histamina alta suprime a síntese de serotonina (depressão) e de melatonina (insônia).",
+    "A desidratação crônica pode causar enxaqueca e diminuição de serotonina e melatonina.",
+    "O tratamento básico da desidratação crônica com água e sal integral atua como anti-histamínico natural."
+  ],
+  "dna_aplicado": [
+    "emoção antes de explicação",
+    "analogia-gêmea",
+    "detalhe específico",
+    "crítica estrutural",
+    "fecho-eco",
+    "negrito de conceitos"
+  ],
+  "extensao_orientadora": "~800-1000 palavras",
+  "historico_status": [
+    {
+      "status": "ESCREVENDO",
+      "momento": "2026-08-11T18:03:47+00:00",
+      "origem": "orquestrador"
+    }
+  ],
+  "input_checksum": "v1.0:2f4dc9b7"
+}

@@ -178,4 +178,3 @@
 - [x] Fios narrativos definidos
 - [x] Decisões travadas
 - [x] Versão 1.0
-

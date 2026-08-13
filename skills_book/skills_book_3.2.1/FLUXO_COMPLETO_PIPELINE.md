@@ -168,4 +168,3 @@ O Consolidador inclui apenas cenas com pacote fechado. Ele verifica:
 - inexistência de cenas bloqueadas quando o status final for `CONCLUIDO`.
 
 Se alguma cena estiver pendente, gere `livro_parcial.md` com aviso explícito ou pare a consolidação, conforme o CONFIG.
-

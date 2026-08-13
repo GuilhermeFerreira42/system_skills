@@ -1,0 +1,41 @@
+{
+  "tipo": "perguntas_continuidade",
+  "cena": "cap_01_cena_04",
+  "tentativa": 1,
+  "input_checksum": "v1.0:cbb402ea",
+  "instrucao": "Responda APENAS com base na Bible, no Estado e no DNA da Referência (execucao/dna_referencia_ouro.md). NÃO leia a prosa. Vereditos: OK | PROBLEMA.",
+  "perguntas": [
+    {
+      "id": "C01",
+      "pergunta": "A cena cumpre o objetivo (bicarbonato/tamponamento, especificação de 6 linhas, Warburg)?"
+    },
+    {
+      "id": "C02",
+      "pergunta": "Redox e tensão superficial (já vistos na cena 1) aparecem como retomada pontual, não re-ensino?"
+    },
+    {
+      "id": "C03",
+      "pergunta": "A cena evita antecipar a cena 5 (sal integral como parceiro)?"
+    },
+    {
+      "id": "C04",
+      "pergunta": "A analogia-gêmea (aço/ponte + portão/bateria) sustenta a cena?"
+    },
+    {
+      "id": "C05",
+      "pergunta": "Detalhe específico (pH 2,0; 7,35-7,45; 40 anos; NaHCO3; OH-) preservado?"
+    },
+    {
+      "id": "C06",
+      "pergunta": "Voz de descobridor cúmplice; crítica estrutural quando toca a oncologia (sem promessa de cura)?"
+    },
+    {
+      "id": "C07",
+      "pergunta": "Lei 6 — zero marketing?"
+    },
+    {
+      "id": "C08",
+      "pergunta": "Fecho-eco + ponte para o sal?"
+    }
+  ]
+}

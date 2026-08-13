@@ -1,0 +1,160 @@
+# Bible da Obra — O Poder Fisiológico da Água
+
+## Metadados Gerais
+
+- **Título:** O Poder Fisiológico da Água
+- **Subtítulo:** O nutriente mais abundante do corpo humano — uma revelação em cenas
+- **Tipo de obra:** não-ficção (divulgação científica técnico-popular)
+- **Público:** leitor adulto de língua portuguesa, sem formação técnica obrigatória
+- **Idioma:** pt-BR
+- **Versão:** v1.7
+- **Atualização:** 2026-08-11
+
+## Perfil Editorial — nivelamento
+
+```yaml
+perfil_editorial:
+  estilo_abertura: A          # Revelação Iminente
+  profundidade: A             # Camadas Progressivas e Respiração Orgânica
+  uso_analogias: A            # Ponte Invisível em Três Movimentos
+  voz_autor: A                # Descobridor Cúmplice e Rigoroso
+  foco_livre: "Obra de 1 capítulo único em cenas sequenciais que esgotam o tema do
+               corpus (poder fisiológico da água). Conhecimento técnico como revelação
+               iminente; leitor tratado como cúmplice intelectual."
+  fonte: usuario
+  preenchido_em: 2026-08-11
+```
+
+**Contrato de voz qualitativo (Elegância Orgânica v3.2):**
+Cumplicidade natural e autoridade acessível. O narrador é um descobridor cúmplice:
+investiga junto, compartilha o espanto da descoberta e nunca assume tom professoral.
+**Nunca explique — mostre o objeto em tamanho natural:** coloque as peças sobre a mesa,
+deixe a tese emergir das evidências, respeite a escala do real. Densidade em ondas
+orgânicas (adensamento quando há nuances; frase curta e límpida no ponto de impacto).
+Analogias como ponte invisível em três movimentos (o familiar → a dobra/atrito → o
+encaixe), sem legendar o recurso. Convicção ativa: falar do fenômeno, não do documento
+que o registrou. Proibido: voz de memorando, performatividade de erudição, paternalismo,
+metáforas artificiais. Extensão é orientação operacional, nunca molde de enchimento.
+
+## Premissa e estrutura
+
+- **Logline:** O nutriente mais abundante do corpo humano — a água — é também o mais
+  negligenciado. A obra mostra sua fisiologia em tamanho natural: do erro de tratá-la
+  como solvente passivo à mecânica da hidrólise, da desidratação silenciosa às
+  propriedades da água que o corpo pede, do sal integral ao gesto cotidiano que devolve
+  ao leitor o domínio sobre o próprio corpo.
+- **Tema central:** A água é um nutriente ativo — e a hidratação correta (água + sal
+  integral) é a intervenção fisiológica mais acessível que existe.
+- **Pergunta temática:** Por que o nutriente mais abundante do corpo humano é tratado
+  como um simples solvente — e o que muda quando o olhamos em tamanho natural?
+- **Estrutura:** 1 capítulo único (cap_01), 6 cenas sequenciais que esgotam o corpus.
+- **Plano de capítulos:** cap_01 — "O Nutriente Mais Abundante" → cenas 01 a 06.
+
+## Conceitos e regras
+
+| Termo | Definição canônica | Fonte | Regra rígida? |
+|---|---|---|---|
+| Água como nutriente | Corpo ~70% água; realiza hidrólise (quebra de ligações por reação com água) | corpus | SIM |
+| Hidrólise | Reação em que a água quebra ligações químicas, agindo como nutriente ativo | corpus | SIM |
+| 4 pressupostos errados | (1) boca seca como único sinal de desidratação; (2) água é só solvente; (3) sede constante na vida; (4) outros líquidos substituem a água | corpus | SIM |
+| Desidratação crônica | 40% dos brasileiros vivem cronicamente desidratados sem sentir sede | corpus | SIM |
+| Perda da percepção de sede | A sensação de sede diminui com a idade | corpus | SIM |
+| Distribuição da desidratação | 66% intracelular; 26% interstício; 8% sangue (volemia protegida a todo custo) | corpus | SIM |
+| Histamina | Liberada na desidratação como reguladora de fluxo hídrico; alta → dor crônica, asma, enxaqueca, fibromialgia, queda de serotonina/melatonina | corpus | SIM |
+| Aquaporinas | Canais específicos de transporte de água na membrana celular; Prêmio Nobel de Química 2003 (Peter Agre) | corpus | SIM |
+| Água hexagonal | A -40°C, 100% da água adquire estrutura hexagonal (Mu Shik Jhon; 300+ artigos; livro com 272 referências) | corpus | SIM |
+| Zona de exclusão (EZ) | Quarta fase da água entre líquido e gelo (Gerald Pollack, "The Fourth Phase of Water") | corpus | SIM |
+| Caso Carrel | Coração de embrião de galinha batendo 28 anos e meio com troca diária do fluido; longevidade celular determinada pelo meio (Nobel 1912) | corpus | SIM |
+| Caso Dr. Batman | Batmanghelidj tratou 3.000 prisioneiros com água e sal; 6 livros sobre cura com água | corpus | SIM |
+| Estudo adventista 2002 | American Journal of Epidemiology; 20.000+ adventistas; 5+ copos/dia → -52% risco de morte por doença coronariana vs 2 copos ou menos | corpus | SIM |
+| pH do sangue | Mantido estritamente entre 7.35 e 7.45 | corpus | SIM |
+| Estômago e bicarbonato | Estômago ~pH 2 (HCl); ingestão de água alcalina gera bicarbonato de sódio que alcaliniza tecidos | corpus | SIM |
+| Tamponamento aos 40 | Queda natural da capacidade de tamponamento de bicarbonato por volta dos 40 anos (Dra. Frassetto, UC San Francisco) | corpus | SIM |
+| ORP / redox | Potencial de oxidação-redução; negativo = ação antioxidante (doador de elétrons) | corpus | SIM |
+| Hidroxila (OH-) | Carrega oxigênio; água alcalina tem mais OH- que H+ | corpus | SIM |
+| Efeito Warburg | Células cancerígenas vivem em ambiente hipóxico e ácido (glicólise anaeróbica, ácido lático); ambientes alcalinos/oxigenados inibem desenvolvimento tumoral | corpus | SIM |
+| Propriedades da água ideal | Pureza; pH alcalino; ORP negativo; condutividade adequada (minerais); baixa tensão superficial; estrutura molecular (clusters menores) | corpus | SIM |
+| Sal refinado vs integral | Refinado: apenas Na+ e Cl- (processos químicos); integral: 80+ minerais (magnésio, potássio, selênio, zinco) | corpus | SIM |
+| Experimentos Brownstein (pH) | Sal de mesa reduziu pH 6.4→6.0; sal integral elevou 6.4→6.8 (~800% de diferença em hidroxilas na escala logarítmica) | corpus | SIM |
+| Dosagem prática | 8–10 copos/dia ou 30–40 mL/kg; ~1 g (meia colher de café) de sal integral por litro; previne hiponatremia | corpus | SIM |
+| Sinais de hidratação | Urina límpida/cor de água = boa hidratação; amarelada = desidratação em andamento | corpus | SIM |
+| Magnésio | No sal integral: regula pressão arterial e retenção de cálcio nos ossos | corpus | SIM |
+
+## Personagens, casos ou entidades
+
+- **Dr. Peter Agre** — aquaporinas; Nobel de Química 2003.
+- **Dr. Mu Shik Jhon** — água hexagonal; 300+ artigos; livro com 272 referências.
+- **Dr. Gerald Pollack** — quarta fase da água / zona de exclusão (EZ).
+- **Dr. Fereydoon Batmanghelidj (Dr. Batman)** — 3.000 presos tratados com água e sal; 6 livros.
+- **Dr. Alexis Carrel** — Nobel de Medicina 1912; coração de galinha batendo 28,5 anos.
+- **Dr. David Brownstein** — efeito do sal integral no pH; experimento da filha de 12 anos.
+- **Dra. Frassetto** (UC San Francisco) — queda de tamponamento de bicarbonato aos 40 anos.
+- **Estudo American Journal of Epidemiology (2002)** — 20.000+ adventistas; -52% risco coronariano.
+- **Dr. Lair Ribeiro** — fonte das palestras/estudos que compõem o corpus.
+
+## Locais e contexto
+
+- O contexto é o corpo humano (fisiologia) e o laboratório/pesquisa; sem ambientação fictícia.
+- Referência demográfica: Brasil (40% em desidratação crônica).
+
+## Cronologia e dependências
+
+| Cena | Evento | Pré-requisito | Consequência |
+|---|---|---|---|
+| cap_01_cena_01 | Água como nutriente (hidrólise) + 4 pressupostos errados | — | estabelece o erro central; abre o fio da revelação |
+| cap_01_cena_02 | Desidratação silenciosa (66/26/8); histamina; doenças crônicas | cena 01 | dimensão do problema; pede prova |
+| cap_01_cena_03 | Assinaturas da verdade (Agre, Jhon, Pollack, Carrel, Batman, adventistas) | cena 02 | lastro factual; o paradigma muda |
+| cap_01_cena_04 | Propriedades da água ideal; pH/bicarbonato/tamponamento | cena 03 | mecânica do que o corpo pede; pede o sal |
+| cap_01_cena_05 | Sal integral vs refinado; o par água+sal | cena 04 | fecho conceitual do sistema |
+| cap_01_cena_06 | Prática: sinais, dosagem, hábito; fecho ecoa a abertura | cena 05 | revelação vira decisão cotidiana |
+
+## Fios narrativos e perguntas abertas
+
+| Fio | Introduzido em | Próximo uso | Status |
+|---|---|---|---|
+| "A água é nutriente, não solvente" | cena 01 | cena 02 | ABERTO |
+| "Desidratação silenciosa" | cena 02 | cenas 03 e 06 | ABERTO |
+| "O par água + sal integral" | cena 04 | cenas 05 e 06 | ABERTO |
+| Pergunta temática (por que o nutriente mais abundante é negligenciado?) | cena 01 | fecho da cena 06 | ABERTO |
+
+## Mapa do corpus
+
+```yaml
+modulos:
+  - id: modulo_agua
+    caminho: execucao/corpus/
+    arquivos:
+      - corpus_novo.md                      # digest estruturado (Partes 1 e 2)
+      - Poder Fisiológico da àgua.txt       # transcrição da palestra (fonte 1)
+      - Poder fisiologico da água DVD1.txt  # transcrição do DVD 1 (fonte 2)
+    temas: [hidrólise, desidratação, histamina, água hexagonal, aquaporinas,
+            pH, ORP, sal integral, casos científicos, prática de hidratação]
+    cenas: [cap_01_cena_01, cap_01_cena_02, cap_01_cena_03, cap_01_cena_04,
+            cap_01_cena_05, cap_01_cena_06]
+```
+
+## Decisões editoriais travadas
+
+- **AFINACAO_DNA_CENA_1.1 (tentativa 3, 2026-08-11):** prosa calibrada pela Referência Ouro (ver execucao/dna_referencia_ouro.md): pergunta-gatilho com frustração de expectativa (coração? cérebro? → água); analogia-gêmea dominante (aquário: células = peixes); negrito de conceitos (nutriente ativo, hidrólise, aquaporinas, redox, tensão superficial); fórmulas químicas leves (H₂O, OH⁻, H⁺); fecho-eco que volta à abertura (a aula que faltou / setenta por cento). Tentativas 1 e 2 preservadas em historico_v1/ e historico_v2/.
+
+- **REESCRITA DEFINITIVA Cena 1.1** (autorizada pelo usuário, 2026-08-11): abertura hipotética em 2ª pessoa; Carrel e aquaporinas movidos para a cena 01; crítica à lacuna da formação médica como **falha estrutural**, nunca conspiração; extensão orientadora ampliada (~1.000 palavras). Versão anterior preservada em `historico_v1/` (checksum v1.0:59ff17f7).
+
+- **Lei 6 (zero marketing):** trechos promocionais do corpus (patrocínio, ofertas,
+  CTAs, preços, canais de venda, frases de venda) são **excluídos da prosa**; registrados
+  aqui como decisão, não como perda de fato.
+- Fatos do corpus servem de lastro para o MARCH; nenhuma afirmação fora do corpus entra.
+- Não fabricar citações, nomes ou números; ambiguidades preservam a redação da fonte.
+- Extensão das cenas: orientação operacional do plano; sem gates estéticos numéricos.
+
+## Integridade
+
+- [x] Perfil editorial registrado (A/A/A/A, fonte: usuario)
+- [x] Fontes identificadas (3 arquivos copiados para execucao/corpus/)
+- [x] Conceitos canônicos definidos (regras rígidas SIM)
+- [x] Regras rígidas separadas de preferências
+- [x] Mapa do corpus atualizado
+- [x] Backup realizado antes da alteração (.bak)
+- [x] Checksum registrado no Estado
+- [x] Cena cap_01_cena_01 AFINADA pelo DNA (tentativa 3) — definitiva; histórico completo preservado
+- [x] Cena cap_01_cena_01 REESCRITA (tentativa 2) — versão definitiva; versão anterior preservada em historico_v1/
+- [x] Cena cap_01_cena_01 CONCLUIDA em 2026-08-11 (MARCH/Continuidade/Revisor APROVADO; Vigia APROVADO; checksum v1.0:59ff17f7)

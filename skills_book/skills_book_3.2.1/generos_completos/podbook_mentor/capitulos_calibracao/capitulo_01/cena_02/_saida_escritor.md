@@ -46,4 +46,3 @@ No próximo capítulo, você vai entender o que esperar do curso, qual é a noss
   "beat_emocional": "Reflexão → Reconhecimento da dor alheia (caso Carla) → Compromisso com a versão atual → Determinação"
 }
 ```
-

@@ -21,4 +21,3 @@ Você é o agente que observa o filesystem e registra a situação física de ca
 ## Saída
 
 Atualize o relatório de controle atomically e comunique o status ao Orquestrador. Em caso de drift, a ação é `REVALIDACAO_NECESSARIA` e a decisão de aceitar a edição é humana.
-

@@ -38,4 +38,3 @@ Exemplos:
 - `generos_completos/ficcao_literaria/capitulos_calibracao/capitulo_01/cena_01/_saida_escritor.md`
 
 Essas calibrações são mais úteis porque mostram à IA produtora como o pipeline funciona NO CONTEXTO de cada gênero.
-

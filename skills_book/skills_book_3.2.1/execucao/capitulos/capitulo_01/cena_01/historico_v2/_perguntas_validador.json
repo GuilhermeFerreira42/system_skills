@@ -1,0 +1,73 @@
+{
+  "tipo": "perguntas_march",
+  "cena": "cap_01_cena_01",
+  "tentativa": 2,
+  "input_checksum": "v1.0:f1773c34",
+  "instrucao": "Responda APENAS com base no corpus em execucao/corpus/ (corpus_novo.md e transcrições). NÃO leia a prosa da cena. Vereditos: CONFIRMADO | CONTRADITO | NAO_ENCONTRADO. Indique a localização no corpus para cada veredito.",
+  "perguntas": [
+    {
+      "id": "Q01",
+      "pergunta": "O corpus afirma que os médicos passam 6 anos sem estudar a fisiologia profunda da água e que essa deveria ser a primeira aula de todas?"
+    },
+    {
+      "id": "Q02",
+      "pergunta": "O corpus afirma que o corpo humano é composto, em média, por cerca de 70% de água?"
+    },
+    {
+      "id": "Q03",
+      "pergunta": "O corpus afirma que Alexis Carrel recebeu o Prêmio Nobel de Medicina em 1912 pela microsutura vascular?"
+    },
+    {
+      "id": "Q04",
+      "pergunta": "O corpus afirma que Carrel manteve um coração de embrião de galinha batendo por 28 anos e meio apenas trocando diariamente o fluido fisiológico?"
+    },
+    {
+      "id": "Q05",
+      "pergunta": "O corpus afirma que o experimento de Carrel provou que a longevidade celular é determinada pelo meio em que a célula vive?"
+    },
+    {
+      "id": "Q06",
+      "pergunta": "O corpus afirma que a água realiza hidrólise (quebra de ligações químicas por reação com a água)?"
+    },
+    {
+      "id": "Q07",
+      "pergunta": "O corpus afirma que, ao realizar hidrólise, a água atua como nutriente — o mais abundante do corpo humano?"
+    },
+    {
+      "id": "Q08",
+      "pergunta": "O corpus afirma que Peter Agre ganhou o Prêmio Nobel de Química em 2003 pela descoberta das aquaporinas, canais específicos na membrana celular exclusivos para transporte de água?"
+    },
+    {
+      "id": "Q09",
+      "pergunta": "O corpus afirma que o pH do sangue humano é mantido estritamente entre 7,35 e 7,45?"
+    },
+    {
+      "id": "Q10",
+      "pergunta": "O corpus menciona a escala logarítmica do pH?"
+    },
+    {
+      "id": "Q11",
+      "pergunta": "O corpus afirma que potencial redox (ORP) negativo significa ação antioxidante e capacidade doadora de elétrons?"
+    },
+    {
+      "id": "Q12",
+      "pergunta": "O corpus afirma que baixa tensão superficial é fator de molhabilidade e penetração celular?"
+    },
+    {
+      "id": "Q13",
+      "pergunta": "O corpus afirma que 40% dos brasileiros vivem cronicamente desidratados sem sentir sede?"
+    },
+    {
+      "id": "Q14",
+      "pergunta": "O corpus afirma que a percepção da sensação de sede diminui com a idade?"
+    },
+    {
+      "id": "Q15",
+      "pergunta": "O corpus afirma que o café é diurético e que o refrigerante tem pH ~2,5, exigindo cerca de 32 copos de água de pH 10 para neutralizar 1 copo em ~40L de fluido?"
+    },
+    {
+      "id": "Q16",
+      "pergunta": "O corpus atribui a Sócrates a frase 'Saúde não é tudo, mas tudo é nada sem saúde'?"
+    }
+  ]
+}

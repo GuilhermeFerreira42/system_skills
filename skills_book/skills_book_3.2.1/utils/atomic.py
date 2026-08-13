@@ -46,4 +46,3 @@ def backup(path: str | Path) -> Path | None:
     target = source.with_name(source.name + ".bak")
     shutil.copy2(source, target)
     return target
-

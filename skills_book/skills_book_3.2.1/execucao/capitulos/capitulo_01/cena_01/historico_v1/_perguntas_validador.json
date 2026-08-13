@@ -1,0 +1,52 @@
+{
+  "tipo": "perguntas_march",
+  "cena": "cap_01_cena_01",
+  "input_checksum": "v1.0:59ff17f7",
+  "instrucao": "Responda APENAS com base no corpus em execucao/corpus/ (corpus_novo.md e transcrições). NÃO leia a prosa da cena. Vereditos: CONFIRMADO | CONTRADITO | NAO_ENCONTRADO. Indique a localização no corpus para cada veredito.",
+  "perguntas": [
+    {
+      "id": "Q01",
+      "pergunta": "O corpus afirma que o corpo humano é composto, em média, por cerca de 70% de água?"
+    },
+    {
+      "id": "Q02",
+      "pergunta": "O corpus afirma que a água realiza hidrólise (quebra de ligações químicas por reação com a água)?"
+    },
+    {
+      "id": "Q03",
+      "pergunta": "O corpus afirma que, ao realizar hidrólise, a água atua como nutriente — o mais abundante do corpo humano?"
+    },
+    {
+      "id": "Q04",
+      "pergunta": "O corpus afirma que a fisiologia profunda da água não é estudada nos primeiros anos de medicina e que médicos passam 6 anos sem estudá-la?"
+    },
+    {
+      "id": "Q05",
+      "pergunta": "O corpus afirma que cerca de 40% dos brasileiros vivem cronicamente desidratados sem sentir sede?"
+    },
+    {
+      "id": "Q06",
+      "pergunta": "O corpus afirma que a percepção da sensação de sede diminui com a idade?"
+    },
+    {
+      "id": "Q07",
+      "pergunta": "O corpus afirma que o café é diurético/desidratante e não substitui a água?"
+    },
+    {
+      "id": "Q08",
+      "pergunta": "O corpus afirma que o refrigerante tem pH em torno de 2,5 (extremamente ácido)?"
+    },
+    {
+      "id": "Q09",
+      "pergunta": "O corpus afirma que neutralizar a acidez de 1 copo de refrigerante exigiria cerca de 32 copos de água de pH 10, considerando ~40 litros de fluido corporal?"
+    },
+    {
+      "id": "Q10",
+      "pergunta": "O corpus atribui a Sócrates a frase 'Saúde não é tudo, mas tudo é nada sem saúde'?"
+    },
+    {
+      "id": "Q11",
+      "pergunta": "O corpus afirma que o foco da abordagem é prevenção de saúde, não apenas tratar doenças isoladas?"
+    }
+  ]
+}

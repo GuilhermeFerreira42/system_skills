@@ -39,4 +39,3 @@ Verificar se as afirmações de continuidade extraídas pelo Orquestrador são c
 ```
 
 Um `CONTRADITO` reprova a cena. Não use métricas de ritmo, tamanho ou estilo.
-

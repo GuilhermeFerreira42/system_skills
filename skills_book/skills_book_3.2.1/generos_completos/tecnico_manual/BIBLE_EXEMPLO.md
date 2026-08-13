@@ -173,4 +173,3 @@ O corpus inclui tutoriais oficiais, exemplos validados, e referências a bibliot
 - [x] Dependências entre capítulos claras
 - [x] Decisões travadas
 - [x] Sem material de marketing
-

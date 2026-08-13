@@ -103,4 +103,3 @@ Se a resposta a alguma dessas perguntas for "não", o texto está performando. E
 Durante o boot, apresente ao Escritor dois ou três exemplos curtos de calibração — um que soa verdadeiro, um que soa falso — e peça que ele leia e perceba o que faz a diferença. Não pergunte "qual é a técnica". Pergunte "o que faz esse soar verdadeiro e esse soar falso?". A resposta dele aí sim é a calibração que você quer.
 
 O importante não é o domínio dos exemplos. É a sensação. Se o Escritor conseguir identificar a diferença entre performar e revelar em um exemplo de finanças, ele conseguirá aplicar a mesma intuição em qualquer outro domínio.
-

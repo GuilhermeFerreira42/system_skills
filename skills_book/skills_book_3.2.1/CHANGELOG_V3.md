@@ -1,5 +1,31 @@
 # CHANGELOG — Skill 3
 
+## v3.2.2 — Ciclo de Abertura e Fechamento (2026-08-12)
+
+### Diagnóstico
+Mesmo com o piso de densidade (v3.2.1) garantindo que as cenas tivessem
+desenvolvimento suficiente, uma análise comparativa entre um texto de referência
+e a produção da v3.2 mostrou uma segunda lacuna, independente da primeira: cenas
+tecnicamente completas ainda soavam "relatório técnico" em vez de "descoberta
+compartilhada". A causa era estrutural, não de tom — faltavam quatro técnicas
+concretas de arquitetura de obra que o DNA já pedia em espírito, mas não
+detalhava em prática: gancho de abertura como pergunta, metáfora central que
+persiste do início ao fim, dado estatístico vestido como cena, e fechamento de
+cena que cristaliza em vez de recapitular.
+
+### Mudanças
+- **`escritor/DNA_REVELACAO_RESPEITOSA.md`:** nova seção 7, "Estrutura de
+  Abertura e Fechamento: O Ciclo que Prende o Leitor" (4 subseções). Seções
+  seguintes renumeradas (Exemplos → 8, O que Evitar → 9); dois novos sinais de
+  alerta adicionados a "O que Evitar".
+- **`revisor_cego_editorial/RUBRICA_QUALITATIVA_V3.md`:** critério 3.7, "Ciclo
+  de Abertura e Fechamento" — opera no nível da obra, não só da cena.
+
+Nenhum exemplo do corpus de nenhuma obra específica entrou nesses arquivos —
+seguem 100% genéricos.
+
+---
+
 ## v3.2.1 — Piso de Densidade (2026-08-11)
 
 ### Diagnóstico
@@ -63,4 +89,3 @@ Esta versão refatora a Skill 3 para ser um framework genérico, livre de refer�
 ---
 
 **Skill 3 v3.2 — Elegância Orgânica — Framework genérico de escrita com intencionalidade.**
-

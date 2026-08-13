@@ -1,0 +1,28 @@
+{
+  "tipo": "afirmacoes_atomizador",
+  "cena": "cap_01_cena_06",
+  "tentativa": 1,
+  "input_checksum": "v1.0:999dbfd1",
+  "afirmacoes": [
+    {
+      "id": "A01",
+      "afirmacao": "Urina transparente/límpida (cor de água) no vaso sanitário indica boa hidratação."
+    },
+    {
+      "id": "A02",
+      "afirmacao": "Urina amarelada indica desidratação em andamento."
+    },
+    {
+      "id": "A03",
+      "afirmacao": "A recomendação de consumo é de 8 a 10 copos por dia, ou 30 a 40 mL por kg de peso corporal."
+    },
+    {
+      "id": "A04",
+      "afirmacao": "A água deve ser dividida ao longo do dia."
+    },
+    {
+      "id": "A05",
+      "afirmacao": "Idealmente, a água deve vir acompanhada de uma pitada de sal integral em 1 litro."
+    }
+  ]
+}

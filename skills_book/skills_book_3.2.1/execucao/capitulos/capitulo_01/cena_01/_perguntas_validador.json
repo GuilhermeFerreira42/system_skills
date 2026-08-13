@@ -1,0 +1,73 @@
+{
+  "tipo": "perguntas_march",
+  "cena": "cap_01_cena_01",
+  "tentativa": 3,
+  "input_checksum": "v1.0:fa5220f4",
+  "instrucao": "Responda APENAS com base no corpus em execucao/corpus/. NÃO leia a prosa. Vereditos: CONFIRMADO | CONTRADITO | NAO_ENCONTRADO, com localização no corpus.",
+  "perguntas": [
+    {
+      "id": "Q01",
+      "pergunta": "A formação médica dura cerca de 6 anos sem se aprofundar na fisiologia da água. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q02",
+      "pergunta": "O corpo humano é composto, em média, por cerca de 70% de água. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q03",
+      "pergunta": "A frase 'Saúde não é tudo, mas tudo é nada sem saúde' é atribuída a Sócrates. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q04",
+      "pergunta": "Alexis Carrel recebeu o Prêmio Nobel de Medicina em 1912 pela microsutura vascular. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q05",
+      "pergunta": "Carrel manteve um coração de embrião de galinha batendo por 28 anos e meio, trocando diariamente o fluido fisiológico. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q06",
+      "pergunta": "O experimento de Carrel provou que a longevidade celular é determinada pelo meio em que a célula vive. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q07",
+      "pergunta": "Hidrólise é a quebra de ligações químicas por reação com a água. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q08",
+      "pergunta": "Ao realizar hidrólise, a água atua como nutriente — o mais abundante do corpo humano. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q09",
+      "pergunta": "Peter Agre recebeu o Prêmio Nobel de Química em 2003 pela descoberta das aquaporinas, canais específicos na membrana celular exclusivos para o transporte de água. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q10",
+      "pergunta": "O pH do sangue humano é mantido estritamente entre 7,35 e 7,45. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q11",
+      "pergunta": "A escala de pH é logarítmica. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q12",
+      "pergunta": "Potencial redox (ORP) negativo confere ação antioxidante, com capacidade de doar elétrons. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q13",
+      "pergunta": "Baixa tensão superficial é fator de molhabilidade e penetração celular. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q14",
+      "pergunta": "Cerca de 40% dos brasileiros vivem cronicamente desidratados sem sentir sede. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q15",
+      "pergunta": "A percepção da sensação de sede diminui com a idade. Isso está afirmado no corpus?"
+    },
+    {
+      "id": "Q16",
+      "pergunta": "O café é diurético; o refrigerante tem pH em torno de 2,5 e exigiria cerca de 32 copos de água de pH 10 para ser neutralizado em ~40 litros de fluido corporal. Isso está afirmado no corpus?"
+    }
+  ]
+}

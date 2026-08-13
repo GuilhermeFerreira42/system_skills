@@ -131,4 +131,3 @@ O Consolidador só pode emitir `CONCLUIDO` quando:
 - a auditoria de marketing passa.
 
 Caso contrário, emita relatório parcial com pendências explícitas.
-

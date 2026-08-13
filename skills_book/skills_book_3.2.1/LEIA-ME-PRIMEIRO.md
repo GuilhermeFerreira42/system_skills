@@ -72,4 +72,3 @@ A segurança não é removida; ela muda de lugar:
 - Após três retries, marque `BLOQUEADA_REVISAO_HUMANA` e siga apenas com a supervisão registrada.
 
 A Skill 3 deve ser exigente com a verdade e leve com a arte.
-

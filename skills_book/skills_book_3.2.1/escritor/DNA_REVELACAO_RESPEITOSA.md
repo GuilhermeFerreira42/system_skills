@@ -91,7 +91,44 @@ Quando recorrer a episódios históricos, experimentos cruciais ou viradas de pa
 
 ---
 
-## 7. Exemplos Multidomínio (GitHub Ready)
+## 7. Estrutura de Abertura e Fechamento: O Ciclo que Prende o Leitor
+
+Um texto pode cumprir todos os princípios acima cena por cena e, ainda assim, soar como um relatório competente em vez de uma descoberta compartilhada — porque cumplicidade de frase não é o mesmo que arquitetura de ciclo. As quatro técnicas abaixo operam no nível da **obra**, não da frase.
+
+### 7.1 O Gancho é uma Pergunta, não uma Constatação
+
+A primeira frase de uma obra (e, sempre que fizer sentido, de um capítulo) deve convidar o leitor para dentro de uma pergunta real, não depositar uma informação na frente dele.
+
+- **Constatação (evitar como abertura):** apresenta o fato já resolvido — o leitor recebe, não participa.
+- **Pergunta genuína (buscar):** coloca o leitor na posição de formular uma hipótese antes de saber a resposta. Ela precisa ser uma pergunta que o leitor genuinamente não sabe responder — não uma pergunta retórica óbvia cuja resposta já está implícita nela mesma.
+
+> Teste rápido: se a pergunta de abertura pudesse ser substituída por "Você sabia que..." sem perda de força, ela é fraca demais. A pergunta forte cria uma lacuna real na cabeça do leitor.
+
+### 7.2 A Metáfora Central Persiste — Não é Descartável
+
+Diferente da "Analogia Invisível em Três Movimentos" (seção 4), que rege como *uma* analogia nasce dentro de *uma* cena, esta regra é sobre a **arquitetura da obra inteira**: escolha, ainda no planejamento ou na primeira cena, **uma única imagem-mãe** capaz de sustentar o tema do início ao fim — e **retome-a** no fechamento, para que o ciclo se feche.
+
+- **Erro comum:** usar uma imagem forte na abertura e depois introduzir duas ou três outras imagens novas e não relacionadas ao longo da obra, competindo pela atenção do leitor sem que nenhuma vire a "lente" principal.
+- **Correção:** se uma cena precisa de uma imagem nova, prefira estender ou reformular a imagem-mãe já estabelecida em vez de introduzir uma imagem concorrente. No fechamento, retome explicitamente a imagem-mãe, mostrando o quanto o leitor já entende dela agora que não entendia na abertura.
+
+### 7.3 Dado Vira Cena, Não Fica Número
+
+Uma estatística isolada é abstrata; o leitor não sente nada por um percentual. Sempre que um dado quantitativo for central ao argumento, vista-o com os elementos mínimos de uma cena:
+
+1. **Quem:** um grupo ou sujeito concreto (mesmo que coletivo e sem nome próprio) que viveu o que o número descreve.
+2. **Escala tangível:** traduza a proporção para algo que o leitor sinta na pele, não só compreenda intelectualmente.
+3. **Consequência com peso:** conecte o número a uma implicação que importa para a vida do leitor, não apenas para o argumento acadêmico.
+
+### 7.4 Cada Cena Fecha com uma Frase que Gruda
+
+O último parágrafo de uma cena não deve apenas resumir o que foi dito — deve cristalizar a ideia central numa frase curta o suficiente para ser lembrada fora de contexto, e com carga suficiente para funcionar como uma pequena revelação, não como uma recapitulação.
+
+- **Recapitulação (evitar):** repete em outras palavras o que a cena já mostrou.
+- **Cristalização (buscar):** nomeia, numa frase só, a implicação mais funda do que foi mostrado — o tipo de frase que o leitor citaria de memória depois de fechar o livro.
+
+---
+
+## 8. Exemplos Multidomínio (GitHub Ready)
 
 Observe o contraste entre a escrita burocrática/performática e a **Elegância Orgânica da v3.2**:
 
@@ -113,13 +150,14 @@ Observe o contraste entre a escrita burocrática/performática e a **Elegância 
 
 ---
 
-## 8. O que Evitar — Sinais de Perda de Alma
+## 9. O que Evitar — Sinais de Perda de Alma
 
 1. **Performance de erudição:** Usar palavras difíceis ou construções arcaicas para criar uma aura artificial de profundidade. A profundidade vem da clareza do insight.
 2. **Sobrecodificação métrica:** Escrever pensando em regras numéricas de frases ou checklists rígidos. A escrita deve soar como uma mente lúcida pensando em voz alta.
 3. **Tom escolar/condescendente:** Tratar o leitor como aluno primário ou usar preâmbulos didáticos desnecessários.
 4. **Voz de memorando/relatório:** Citar corpus, artigos ou autoridades genéricas sem incorporar a substância da descoberta.
 5. **Metáforas artificiais:** Inserir analogias que não nasceram da mecânica real do problema.
+6. **Abertura passiva:** Começar a obra ou o capítulo com uma constatação quando uma pergunta genuína teria mais força de convite (ver 7.1).
+7. **Metáfora descartável:** Usar uma imagem forte numa cena e nunca mais retomá-la — desperdiçando a familiaridade que o leitor já construiu com ela (ver 7.2).
 
 A meta da v3.2 é produzir páginas onde a técnica se torna absolutamente invisível e o leitor é conquistado pela força pura da verdade revelada.
-

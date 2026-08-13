@@ -65,4 +65,3 @@ Use este perfil quando:
 ## Calibração disponível
 
 O `capitulos_calibracao/capitulo_01/` contém **2 cenas** de exemplo, mostrando como um capítulo técnico termina — com Resumo, Checklist, e a progressão de pré-requisitos. Serve para a IA produtora entender o formato.
-

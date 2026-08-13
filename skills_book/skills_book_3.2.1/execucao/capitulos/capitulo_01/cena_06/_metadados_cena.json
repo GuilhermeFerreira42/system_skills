@@ -1,0 +1,32 @@
+{
+  "cena": "cap_01_cena_06",
+  "titulo": "A decisão de trinta segundos",
+  "capitulo": 1,
+  "tentativa": 1,
+  "objetivo": "Aplicação prática: cor da urina como medidor; 30-40 mL/kg ou 8-10 copos; divisão ao longo do dia; pitada de sal integral ~1g/L; fecho do livro ecoando a abertura (aula que faltou, setenta por cento, palco e peça).",
+  "contexto_anterior": "Cenas anteriores concluídas; DNA da Referência Ouro aplicado.",
+  "fatos_obrigatorios": [
+    "Urina transparente/límpida (cor de água) no vaso sanitário indica boa hidratação.",
+    "Urina amarelada indica desidratação em andamento.",
+    "A recomendação de consumo é de 8 a 10 copos por dia, ou 30 a 40 mL por kg de peso corporal.",
+    "A água deve ser dividida ao longo do dia.",
+    "Idealmente, a água deve vir acompanhada de uma pitada de sal integral em 1 litro."
+  ],
+  "dna_aplicado": [
+    "emoção antes de explicação",
+    "analogia-gêmea",
+    "detalhe específico",
+    "crítica estrutural",
+    "fecho-eco",
+    "negrito de conceitos"
+  ],
+  "extensao_orientadora": "~800-1000 palavras",
+  "historico_status": [
+    {
+      "status": "ESCREVENDO",
+      "momento": "2026-08-11T18:03:48+00:00",
+      "origem": "orquestrador"
+    }
+  ],
+  "input_checksum": "v1.0:999dbfd1"
+}

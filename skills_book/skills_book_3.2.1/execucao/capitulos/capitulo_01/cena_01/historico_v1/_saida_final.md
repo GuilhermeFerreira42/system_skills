@@ -1,0 +1,21 @@
+# Cena 1 — O nutriente que ninguém estuda
+
+Setenta por cento. O número não impressiona porque é dito depressa, como dado de curiosidade, e o corpo humano some atrás dele — mas é nele que a história começa. Setenta por cento de você é água. Não a água que você bebe, pensada como líquido que passa e umedece: a água que é tecido, que é meio, que é matéria-prima das reações que mantêm você vivo enquanto lê esta frase.
+
+Quando olhamos para o corpo de perto, o que encontramos não é um balde de líquido com órgãos boiando. É uma fábrica química em funcionamento permanente, e a água é a operária mais presente do chão de fábrica. Cada vez que o corpo precisa quebrar uma molécula — a comida virando energia, a reserva virando combustível, o composto virando matéria-prima — quem faz a quebra é a água. O nome técnico é hidrólise: lise, quebrar; hidro, pela água. A água não assiste à reação. Ela participa. Ela entra na ligação química e a parte ao meio.
+
+Isso muda o status do líquido mais comum do corpo. Um solvente é um cenário: dissolve, carrega, acomoda, mas não age. Um nutriente é um ator: participa, transforma, sustenta. Quando o corpo usa a água para quebrar ligações e transformar matéria, a água deixou de ser cenário. Pela definição mais seca da bioquímica, ela é um nutriente — e, de longe, o mais abundante.
+
+Aqui mora o absurdo que esta obra inteira vai perseguir: o nutriente mais abundante do corpo humano é o menos estudado. Nos currículos de medicina, a fisiologia da água deveria ser a primeira aula — a matéria-prima básica, o ponto de partida de tudo. Não é. Um médico pode atravessar seis anos de formação sem se aprofundar na fisiologia da água, como se o assunto fosse simples demais para merecer aula, óbvio demais para ser ensinado. Sobre o nutriente mais presente do corpo, a ciência oficial passa reto. E o senso comum, pior: repete quatro pressupostos que a fisiologia desmonta um por um. Vejamos cada um em tamanho natural.
+
+Primeiro: "sede é o sinal de que falta água". A boca seca é o último alarme, não o primeiro. Quarenta por cento dos brasileiros vivem cronicamente desidratados sem sentir sede nenhuma. O corpo deles está em déficit permanente de água, e o aviso que a maioria aprendeu a esperar — a garganta seca — simplesmente não toca. O alarme existe; o problema é que ele é o último, e os anteriores são silenciosos.
+
+Segundo: "água é só solvente". Acabamos de ver a hidrólise. O pressuposto morre no primeiro parágrafo.
+
+Terceiro: "a sensação de sede é constante na vida". A percepção da sede envelhece junto com o corpo. Aos vinte anos, o alarme é sensível; com o passar das décadas, ele se torna surdo. O organismo continua precisando da mesma água — só parou de pedir com a mesma urgência. É por isso que a desidratação crônica é tão comum justamente onde ninguém desconfia: entre pessoas idosas que "nunca sentem sede".
+
+Quarto: "outros líquidos substituem a água". Aqui a conta se paga em números. O café é diurético: cada xícara empurra água para fora antes que o corpo a aproveite. O refrigerante, por sua vez, tem pH em torno de 2,5 — da ordem do ácido do estômago. Para neutralizar a acidez de um único copo dentro dos quarenta litros de fluido do corpo, seriam necessários cerca de trinta e dois copos de água de pH 10. Trinta e dois. O que parece uma escolha de sabor é uma escolha de química, e o corpo paga a diferença.
+
+Há uma frase atribuída a Sócrates que a tradição preservou: "Saúde não é tudo, mas tudo é nada sem saúde". A frase soa como conselho; é, na verdade, uma descrição de hierarquia. Nenhum sucesso, nenhuma agenda, nenhuma conquista sustenta-se sobre um corpo em débito. E o débito mais comum não grita. Começa antes do alarme da sede, em silêncio, dentro da célula — onde a água faz falta primeiro e onde o corpo, para proteger o que é vital, começa a sacrificar o que julga secundário.
+
+O nutriente mais abundante do corpo é o mais negligenciado. A pergunta que fica aberta — e que as próximas cenas vão responder — é o que acontece, exatamente, quando esse nutriente falta. A resposta começa num lugar que a maioria nunca examinou: dentro da própria célula, antes de qualquer sede.

@@ -157,4 +157,3 @@ Antes de seguir para o próximo capítulo, confirme que você:
 - Quando uma versão específica de software/biblioteca é importante, cite a versão explicitamente.
 - Referências externas (documentação oficial, papers) são bem-vindas e incentivadas.
 - Se o manual cobrir uma tecnologia que muda rápido (ex: framework JS), mencione a data de referência.
-

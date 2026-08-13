@@ -34,4 +34,3 @@ Use ritmo, extensão, frases curtas, parágrafos desenvolvidos e transições co
 ## Retry
 
 Em uma reescrita cirúrgica, preserve tudo que não foi apontado. Corrija o trecho e a causa do problema. Nunca recomece o livro inteiro por uma falha local.
-

@@ -1,0 +1,41 @@
+{
+  "tipo": "perguntas_continuidade",
+  "cena": "cap_01_cena_03",
+  "tentativa": 1,
+  "input_checksum": "v1.0:56efa5ec",
+  "instrucao": "Responda APENAS com base na Bible, no Estado e no DNA da Referência (execucao/dna_referencia_ouro.md). NÃO leia a prosa. Vereditos: OK | PROBLEMA.",
+  "perguntas": [
+    {
+      "id": "C01",
+      "pergunta": "A cena cumpre o objetivo (assinaturas: Batman, Jhon, Pollack, adventistas 2002, Kurzweil)?"
+    },
+    {
+      "id": "C02",
+      "pergunta": "A cena referencia Carrel e Agre como já estabelecidos (cena 1) sem recontá-los?"
+    },
+    {
+      "id": "C03",
+      "pergunta": "A cena evita antecipar cenas 4-6 (especificação, sal, prática)?"
+    },
+    {
+      "id": "C04",
+      "pergunta": "A metáfora do tribunal/assinatura é a analogia-gêmea dominante e o fecho ecoa a abertura?"
+    },
+    {
+      "id": "C05",
+      "pergunta": "Detalhe específico como assinatura da verdade (31 meses, 272 referências, 653 páginas, 52%, 20.000)?"
+    },
+    {
+      "id": "C06",
+      "pergunta": "Voz de descobridor cúmplice; sem tom de lista escolar (as assinaturas viram narrativa)?"
+    },
+    {
+      "id": "C07",
+      "pergunta": "Lei 6 — zero marketing?"
+    },
+    {
+      "id": "C08",
+      "pergunta": "Fecho-ponte para a especificação do corpo?"
+    }
+  ]
+}

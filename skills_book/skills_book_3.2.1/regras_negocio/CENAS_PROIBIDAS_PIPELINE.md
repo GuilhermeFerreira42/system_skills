@@ -26,4 +26,3 @@
 - variação natural de ritmo;
 - edição manual autorizada;
 - cena parcial sinalizada para revisão humana.
-

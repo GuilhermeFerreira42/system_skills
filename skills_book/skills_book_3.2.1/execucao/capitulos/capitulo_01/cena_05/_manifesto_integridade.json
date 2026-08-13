@@ -1,0 +1,23 @@
+{
+  "cena": "cap_01_cena_05",
+  "tentativa": 2,
+  "origem_reescrita": "correcao_lei6_lexical (preco->custo)",
+  "candidate_checksum": "v1.0:43e0df8e",
+  "final_checksum": "v1.0:43e0df8e",
+  "status_fisico": "APROVADO",
+  "vigia": "APROVADO",
+  "versao_anterior_preservada": [
+    {
+      "tentativa": 1,
+      "checksum": "v1.0:302d577f",
+      "pasta": "historico_v1/"
+    }
+  ],
+  "resultados_validadores": {
+    "march": "APROVADO",
+    "continuidade": "APROVADO",
+    "revisor_cego": "APROVADO"
+  },
+  "origem_edicao": "editor_v2",
+  "timestamp": "2026-08-11T18:04:51+00:00"
+}

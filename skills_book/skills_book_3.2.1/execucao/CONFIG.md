@@ -1,28 +1,30 @@
 # Configuração do projeto — Skill 3
 
-Preencha este arquivo antes de iniciar o Orquestrador. O nivelamento editorial será feito no boot; não é necessário escolher um pacote de gênero pesado.
-
 ## Identidade
 
-- **Título:** [preencher]
-- **Subtítulo:** [opcional]
-- **Tipo de obra:** [ficção | não-ficção | técnico | memórias | personalizado]
-- **Público:** [preencher]
+- **Título:** O Poder Fisiológico da Água
+- **Subtítulo:** O nutriente mais abundante do corpo humano — uma revelação em cenas
+- **Tipo de obra:** não-ficção (divulgação científica técnico-popular)
+- **Público:** leitor adulto de língua portuguesa, sem formação técnica obrigatória
 - **Idioma:** pt-BR
 
 ## Fontes
 
-- **Corpus:** `execucao/corpus/`
-- **Organização:** [automática; o Orquestrador cria o mapa de módulos]
-- **Fontes excluídas:** [listar, se houver]
+- **Corpus:** `execucao/corpus/` (3 fontes; originais preservados em `Desktop/corpus/`)
+- **Organização:** automática; o Orquestrador cria o mapa de módulos na Bible
+- **Fontes excluídas:** nenhum arquivo excluído; trechos de marketing do corpus são
+  excluídos da prosa conforme a Lei 6 (zero marketing) e registrados como decisão editorial
 
 ## Foco do usuário
 
-> [Escreva aqui o que esta obra deve priorizar. Pode ser "nada além do nivelamento".]
+> Obra composta por **um único capítulo**, dividido em cenas sequenciais que **esgotem
+> o tema do corpus fornecido** (o poder fisiológico da água). Objetivo: transformar o
+> conhecimento técnico em uma **revelação iminente**, tratando o leitor como um
+> **cúmplice intelectual**. Nivelamento concluído no boot (A/A/A/A — fonte: usuario).
 
 ## Operação
 
-- **Nivelamento editorial:** `OBRIGATORIO_NO_BOOT`
+- **Nivelamento editorial:** `OBRIGATORIO_NO_BOOT` — concluído em 2026-08-11
 - **Editor:** `ATIVADO_POR_PADRAO`
 - **Validação MARCH:** `OBRIGATORIA_QUANDO_HOUVER_FATOS`
 - **Validação de Continuidade:** `OBRIGATORIA`
@@ -32,20 +34,16 @@ Preencha este arquivo antes de iniciar o Orquestrador. O nivelamento editorial s
 
 ## Piso de densidade desta obra
 
-- **Tipo de obra:** [copiar de "Tipo de obra" acima] → buscar a linha correspondente
-  na tabela genérica de `escritor/SKILL_ESCRITOR_PIPELINE.md` (seção "Piso de
-  densidade").
-- **Piso mínimo por cena:** [preencher com o piso da tabela genérica para este
-  tipo de obra]. Abaixo disso, a cena é tratada como incompleta e volta para
-  desenvolvimento — não é reprovação de estilo, é sinal de que um beat
-  (objetivo, obstáculo, evidência ou mudança de estado) foi cortado pela metade.
-- **Referência de calibração:** [preencher após a primeira cena aprovada desta
-  obra — ela vira o padrão de densidade a mirar nas demais cenas].
+- **Tipo:** não-ficção / divulgação científica → ver tabela genérica em `escritor/SKILL_ESCRITOR_PIPELINE.md`.
+- **Piso mínimo por cena:** 800 palavras. Abaixo disso, a cena é tratada como
+  incompleta e volta para desenvolvimento — não é reprovação de estilo, é sinal
+  de que um beat (objetivo, obstáculo, evidência ou mudança de estado) foi
+  cortado pela metade.
+- **Referência de calibração:** a Cena 1 desta obra (~1000 palavras, aprovada
+  após 3 tentativas) é o padrão de densidade a mirar nas demais cenas.
 
 ## Observação
 
-Os campos acima descrevem o projeto. Eles não são um contrato estético numérico.
-O contrato de voz nasce das respostas do nivelamento e é salvo na Bible.
-O piso de densidade acima é uma rede de segurança operacional (evita cena
-subdesenvolvida), não uma fórmula de parágrafo nem uma meta de enchimento artificial.
-
+O contrato de voz nasce das respostas do nivelamento e está salvo na Bible.
+O piso acima é uma rede de segurança operacional (evita cena subdesenvolvida),
+não uma fórmula de parágrafo nem uma meta de enchimento artificial.

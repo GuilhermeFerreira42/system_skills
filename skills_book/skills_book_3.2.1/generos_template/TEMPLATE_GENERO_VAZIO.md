@@ -33,4 +33,3 @@ Este arquivo é uma referência de domínio, não o contrato principal da escrit
 ## Calibração
 
 Inclua uma ou duas cenas de exemplo. Elas são referências de voz, não moldes de frases ou números.
-

@@ -29,4 +29,3 @@ O manifesto, o candidato, o final e os resultados devem apontar para a mesma ver
 ## 7. Qualidade sem gate estatístico
 
 A fluidez é responsabilidade do Escritor, Editor e Revisor Cego. Não executar teste de média de frase, porcentagem de parágrafos ou desvio-padrão.
-

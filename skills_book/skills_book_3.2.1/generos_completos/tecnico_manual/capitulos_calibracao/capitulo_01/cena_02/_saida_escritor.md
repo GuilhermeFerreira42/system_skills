@@ -112,4 +112,3 @@ Antes de seguir para o próximo capítulo, confirme que você:
 - [ ] `python --version` (ou `python3 --version`) retorna a versão correta
 - [ ] Sei abrir o terminal (cmd no Windows, Terminal no macOS/Linux)
 - [ ] Estou pronto para escrever meu primeiro "Olá, mundo!" em Python
-

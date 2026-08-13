@@ -1,0 +1,45 @@
+{
+  "tipo": "perguntas_continuidade",
+  "cena": "cap_01_cena_01",
+  "tentativa": 2,
+  "input_checksum": "v1.0:f1773c34",
+  "instrucao": "Responda APENAS com base na Bible (execucao/bible/bible_da_obra.md, v1.2) e no Estado (execucao/estado/estado_da_obra.md). NÃO leia a prosa da cena. Vereditos: OK | PROBLEMA.",
+  "perguntas": [
+    {
+      "id": "C01",
+      "pergunta": "A cena 01 cumpre o objetivo redefinido no Estado (abertura hipotética em 2ª pessoa; Carrel; hidrólise; aquaporinas; primeiras assinaturas bioquímicas; 4 pressupostos)?"
+    },
+    {
+      "id": "C02",
+      "pergunta": "A hidrólise na cena segue a definição canônica da Bible (quebra de ligações por reação com a água) e a etimologia hidro+lise?"
+    },
+    {
+      "id": "C03",
+      "pergunta": "A cena introduz o fio 'A água é nutriente, não solvente', previsto pela cronologia da Bible para a cena 01?"
+    },
+    {
+      "id": "C04",
+      "pergunta": "A cena evita antecipar o conteúdo da cena 02 (distribuição 66/26/8, histamina, doenças crônicas)?"
+    },
+    {
+      "id": "C05",
+      "pergunta": "A cena evita antecipar o conteúdo remanescente da cena 03 (Jhon, Pollack, Dr. Batman, estudo adventista 2002)? Carrel e aquaporinas foram movidos para a cena 01 pela decisão da Bible."
+    },
+    {
+      "id": "C06",
+      "pergunta": "A voz segue o contrato qualitativo da Bible (descobridor cúmplice, autoridade acessível, sem tom professoral) e critica a lacuna da formação médica como falha estrutural, nunca como conspiração?"
+    },
+    {
+      "id": "C07",
+      "pergunta": "A cena respeita a Lei 6 — zero marketing (sem patrocinadores, ofertas, CTAs, preços)?"
+    },
+    {
+      "id": "C08",
+      "pergunta": "O fecho da cena deixa a pergunta temática em aberto para as cenas seguintes, conforme o plano?"
+    },
+    {
+      "id": "C09",
+      "pergunta": "As assinaturas da verdade (Carrel, aquaporinas, etimologia da hidrólise) aparecem integradas à prosa, conforme a decisão editorial da Bible (não como lista escolar)?"
+    }
+  ]
+}

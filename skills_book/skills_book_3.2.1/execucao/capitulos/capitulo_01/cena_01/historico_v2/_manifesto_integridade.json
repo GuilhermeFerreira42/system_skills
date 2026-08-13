@@ -1,0 +1,20 @@
+{
+  "cena": "cap_01_cena_01",
+  "tentativa": 2,
+  "origem_reescrita": "reescrita_cirurgica_autorizada_usuario",
+  "candidate_checksum": "v1.0:f1773c34",
+  "final_checksum": "v1.0:f1773c34",
+  "status_fisico": "APROVADO",
+  "vigia": "APROVADO",
+  "versao_anterior_preservada": {
+    "checksum": "v1.0:59ff17f7",
+    "pasta": "historico_v1/"
+  },
+  "resultados_validadores": {
+    "march": "APROVADO",
+    "continuidade": "APROVADO",
+    "revisor_cego": "APROVADO"
+  },
+  "origem_edicao": "reescrita_definitiva_v2",
+  "timestamp": "2026-08-11T14:35:18+00:00"
+}

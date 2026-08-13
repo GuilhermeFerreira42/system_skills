@@ -1,0 +1,20 @@
+{
+  "tipo": "resultado_revisor_cego",
+  "cena": "cap_01_cena_04",
+  "tentativa": 1,
+  "input_checksum": "v1.0:cbb402ea",
+  "status_geral": "APROVADO",
+  "rubrica": {
+    "emocao_antes_de_explicacao": "OK — abertura habitada pelo leitor",
+    "analogia_gemea": "OK — imagem dominante sustenta a cena (fecho: ponte/aço sem tratamento + o parceiro que a indústria arrancou)",
+    "detalhe_especifico": "OK — números imperfeitos preservados",
+    "variacao_de_tessitura": "OK — densidade alternada com cortes de impacto",
+    "filtro_verdadeiro_falso": "OK — nada soa maior que a evidência",
+    "revelacao_vs_relatorio": "OK — soa como descoberta, não como relatório",
+    "critica_estrutural": "OK — falhas como estruturas, nunca conspiração",
+    "sem_repeticao_de_cenas_anteriores": "OK — ecos, não re-ensino",
+    "sem_antecipacao_de_cenas_futuras": "OK",
+    "lei6_sem_metadados": "OK"
+  },
+  "parecer": "APROVADO. A cena 4 transforma uma lista de propriedades em especificação de engenharia (o aço da ponte), abre pelo portão do estômago com a bateria que se carrega na passagem, e fecha convocando o parceiro esquecido sem antecipá-lo. Revelação, não relatório."
+}

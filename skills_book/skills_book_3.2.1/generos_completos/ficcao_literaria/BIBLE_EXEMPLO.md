@@ -140,4 +140,3 @@ Esta obra é Ficção pura, sem corpus de referência. O Atomizador e o Validado
 - [x] Decisões editoriais travadas
 - [x] POV 3ª limitada alternando
 - [x] Sem corpus factual (Ficção pura)
-

@@ -86,4 +86,3 @@ Ao final da sessão de boot, o Orquestrador consolida as escolhas no arquivo de 
   "notas_de_calibracao_voz": "Cumplicidade Natural e Autoridade Acessível: Prosa limpa, sofisticada pelo vocabulário preciso e pela clareza límpida, livre de jargões ocos e fórmulas mecânicas de parágrafo. O narrador mostra o objeto em tamanho natural e convida o leitor a pensar junto, construindo convicção ativa a partir de evidências reais."
 }
 ```
-

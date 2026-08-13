@@ -1,0 +1,48 @@
+{
+  "tipo": "afirmacoes_atomizador",
+  "cena": "cap_01_cena_03",
+  "tentativa": 1,
+  "input_checksum": "v1.0:56efa5ec",
+  "afirmacoes": [
+    {
+      "id": "A01",
+      "afirmacao": "Dr. Fereydoon Batmanghelidj (Dr. Batman), médico iraniano, ficou preso 31 meses por questões ideológicas."
+    },
+    {
+      "id": "A02",
+      "afirmacao": "Durante a prisão, tratou mais de 3.000 prisioneiros apenas com água e sal."
+    },
+    {
+      "id": "A03",
+      "afirmacao": "Ele pediu para ficar mais 4 meses preso para concluir suas pesquisas."
+    },
+    {
+      "id": "A04",
+      "afirmacao": "É autor de 6 livros sobre cura com água, incluindo 'Your Body's Many Cries for Water' e 'Water & Salt'."
+    },
+    {
+      "id": "A05",
+      "afirmacao": "Dr. Mu Shik Jhon, pesquisador sul-coreano, publicou mais de 300 artigos sobre água."
+    },
+    {
+      "id": "A06",
+      "afirmacao": "O livro dele sobre Água Hexagonal contém 272 referências científicas das quais é autor ou coautor."
+    },
+    {
+      "id": "A07",
+      "afirmacao": "A -40°C, 100% da água adquire estrutura hexagonal."
+    },
+    {
+      "id": "A08",
+      "afirmacao": "Dr. Gerald Pollack é autor de 'The Fourth Phase of Water' (653 páginas), que demonstra a fase de zona de exclusão (EZ) entre líquido e gelo."
+    },
+    {
+      "id": "A09",
+      "afirmacao": "Estudo do American Journal of Epidemiology (2002), com mais de 20.000 adventistas, mostrou redução de 52% no risco de morte por doença coronariana entre quem bebia 5+ copos de água por dia vs 2 copos ou menos."
+    },
+    {
+      "id": "A10",
+      "afirmacao": "Ray Kurzweil, especialista em inteligência artificial, defende a água ionizada/alcalina como uma das maiores descobertas do século XX."
+    }
+  ]
+}

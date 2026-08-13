@@ -203,4 +203,3 @@ Este framework é fornecido como está, sem garantias de qualquer kind. O usuár
 ---
 
 **Skill 3 — Onde a tecnologia é o palco invisível, e o Escritor é o bailarino de elite.**
-

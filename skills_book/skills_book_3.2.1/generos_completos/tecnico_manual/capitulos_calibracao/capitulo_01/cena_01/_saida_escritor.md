@@ -68,4 +68,3 @@ Antes de seguir para o próximo capítulo, confirme que você:
 - [ ] Sei pelo menos três áreas onde Python é usado
 - [ ] Entendi que este manual é sequencial e que pular capítulos não é recomendado
 - [ ] Estou pronto para instalar Python e escrever o primeiro código
-

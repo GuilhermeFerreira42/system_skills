@@ -48,4 +48,3 @@ No próximo capítulo, a gente vai olhar para o mercado de e-commerce como ele �
   "beat_emocional": "Vulnerabilidade (Bruno no quarto sozinho) → Reconhecimento (você não está sozinho) → Apresentação da rede (equipe) → Caso concreto (Renata) → Compromisso de contribuição → Pertencimento"
 }
 ```
-

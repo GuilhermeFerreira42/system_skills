@@ -10,4 +10,3 @@ As respostas não são métricas nem metas de produção. Elas são vetores qual
 - como o narrador se posiciona.
 
 O resultado é salvo em `Bible > Perfil Editorial` e espelhado no Estado.
-

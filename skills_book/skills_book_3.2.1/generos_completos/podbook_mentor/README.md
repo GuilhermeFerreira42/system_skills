@@ -44,4 +44,3 @@ Use este perfil quando:
 ## Calibração disponível
 
 O `capitulos_calibracao/capitulo_01/` contém o **Capítulo 1 completo do Ecommerce do Zero** (3 cenas), usado como referência de calibração de tom, formato, e granularidade. Serve para a IA produtora entender exatamente como o pipeline funciona nesse gênero.
-

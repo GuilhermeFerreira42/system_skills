@@ -157,4 +157,3 @@ Antes de ir para a próxima cena, você precisa ter feito ou decidido:
 - O método PROGRIDE — cada cena prepara a próxima, sem pular degraus
 - Se o corpus tiver mistura de transcrições e material de marketing, use SÓ as transcrições
 - O checklist no fim é concreto e executável HOJE (não "compreender o conceito")
-

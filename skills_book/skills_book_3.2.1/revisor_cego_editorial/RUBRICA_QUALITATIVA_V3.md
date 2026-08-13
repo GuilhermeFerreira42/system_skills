@@ -73,6 +73,17 @@ Na v3.1, o rigor contra a mediocridade gerou, em alguns casos, uma rejeição in
 
 ---
 
+### 3.7 Ciclo de Abertura e Fechamento (ver DNA seção 7)
+Este critério opera no nível da obra, não só da cena — releia a cena de abertura e a de fechamento antes de decidir.
+
+- **Gancho de abertura:** a primeira cena (e, quando aplicável, cada capítulo) começa com uma pergunta que gera lacuna real na cabeça do leitor, ou com uma constatação que já entrega a informação? **Reprova** abertura puramente informativa quando uma pergunta teria mais força de convite.
+- **Persistência da metáfora central:** a imagem estabelecida como âncora nas primeiras cenas é retomada no fechamento, ou foi abandonada em favor de imagens novas e desconectadas ao longo da obra? **Reprova** metáfora forte que nunca mais reaparece.
+- **Dado sem cena:** alguma estatística central do argumento aparece como número isolado, sem sujeito concreto, escala tangível ou consequência que pese para o leitor? **Reprova** dado puramente decorativo.
+- **Fechamento de cena:** o último parágrafo de cada cena cristaliza a ideia numa frase memorável, ou apenas recapitula o que a cena já mostrou? **Reprova** fechamento puramente recapitulativo quando a cena tinha material para uma frase de maior carga.
+- **Pergunta orientadora:** *Se eu tirasse a metáfora de abertura e reaparecesse ela no fechamento, o ciclo faria sentido — ou a obra já esqueceu dela há capítulos?*
+
+---
+
 ## 4. Matriz de Decisão Operacional
 
 O Revisor Cego deve registrar seu parecer estruturado no formato padronizado:
@@ -105,4 +116,3 @@ Ao apontar um problema, o Revisor Cego **nunca reescreve a cena**. Ele atua como
 - **Desvio de Paternalismo:** *"O início da cena explica o óbvio como se o leitor fosse um iniciante. Corte a introdução didática e comece direto no ponto de tensão do caso."*
 - **Desvio de Falsa Analogia:** *"A metáfora da engrenagem no meio do texto soou forçada e legendada ('imagine uma engrenagem...'). Remova a legenda e mostre o atrito do sistema em tamanho natural."*
 - **Desvio de Relato Burocrático:** *"O texto usa 'conforme demonstrado no documento X'. Elimine a postura de relator e afirme a descoberta com convicção ativa."*
-

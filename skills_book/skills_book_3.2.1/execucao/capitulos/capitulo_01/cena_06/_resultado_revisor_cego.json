@@ -1,0 +1,20 @@
+{
+  "tipo": "resultado_revisor_cego",
+  "cena": "cap_01_cena_06",
+  "tentativa": 1,
+  "input_checksum": "v1.0:999dbfd1",
+  "status_geral": "APROVADO",
+  "rubrica": {
+    "emocao_antes_de_explicacao": "OK — abertura habitada pelo leitor",
+    "analogia_gemea": "OK — imagem dominante sustenta a cena (fecho: aula que faltou + setenta por cento + gesto do leitor)",
+    "detalhe_especifico": "OK — números imperfeitos preservados",
+    "variacao_de_tessitura": "OK — densidade alternada com cortes de impacto",
+    "filtro_verdadeiro_falso": "OK — nada soa maior que a evidência",
+    "revelacao_vs_relatorio": "OK — soa como descoberta, não como relatório",
+    "critica_estrutural": "OK — falhas como estruturas, nunca conspiração",
+    "sem_repeticao_de_cenas_anteriores": "OK — ecos, não re-ensino",
+    "sem_antecipacao_de_cenas_futuras": "OK",
+    "lei6_sem_metadados": "OK"
+  },
+  "parecer": "APROVADO. A cena 6 fecha o livro como deve fechar uma revelação: o medidor gratuito (a cor da urina), o ritual de trinta segundos, e o eco final que devolve o leitor à primeira cena — a aula que faltou, os setenta por cento, o gesto. Soa como descoberta compartilhada, não como manual."
+}

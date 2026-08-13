@@ -50,4 +50,3 @@ O metadado deve registrar mudanças por direção, não uma justificativa matem�
   "nao_alterou_fatos": true
 }
 ```
-

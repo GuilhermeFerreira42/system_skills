@@ -22,4 +22,3 @@ _metadados_editor.json
 ```
 
 O Orquestrador copiará o Editor para `_saida_candidato.md` depois de verificar a saída.
-

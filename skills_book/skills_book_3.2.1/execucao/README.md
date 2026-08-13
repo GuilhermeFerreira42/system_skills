@@ -13,4 +13,3 @@ execucao/
 ```
 
 O perfil editorial é criado no boot e salvo na Bible/Estado. Não é necessário copiar um `GENERO.md` para iniciar.
-
