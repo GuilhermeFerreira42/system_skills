@@ -1,0 +1,123 @@
+{
+  "cena_id": "cap_01_cena_01",
+  "capitulo": 1,
+  "cena": 1,
+  "total_afirmacoes_extraidas": 12,
+  "total_apos_filtro": 7,
+  "afirmacoes_filtradas": [
+    {
+      "id": "AFC-001",
+      "segmento": "cena_01",
+      "afirmacao": "O método de validação é composto por 6 etapas: Planejamento, Estrutura, Audiência, Vendas, Atendimento, Impulsão.",
+      "tipo": "PROTOCOLO",
+      "contexto": "Parágrafo da apresentação do método.",
+      "speaker_origem": "Narrador (Mentor)",
+      "pergunta_para_validador": "O método do Bruno é composto por 6 etapas (Planejamento, Estrutura, Audiência, Vendas, Atendimento, Impulsão) nesta ordem? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original (transcrições das aulas do Ecommerce do Zero 3.0)."
+    },
+    {
+      "id": "AFC-002",
+      "segmento": "cena_01",
+      "afirmacao": "Validação significa 3 coisas acontecendo ao mesmo tempo: R$ 10 mil em vendas, 100 pedidos, em 90 dias.",
+      "tipo": "PROTOCOLO",
+      "contexto": "Definição do marco de validação.",
+      "speaker_origem": "Narrador (Mentor)",
+      "pergunta_para_validador": "No método do Bruno, 'validação' significa especificamente R$ 10 mil em vendas + 100 pedidos em 90 dias? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-003",
+      "segmento": "cena_01",
+      "afirmacao": "A Zappos fez validação mínima vendendo sapatos via internet, comprando em lojas locais e enviando ao cliente, antes de montar a estrutura pesada.",
+      "tipo": "HISTORICO_GEOGRAFICO",
+      "contexto": "Analogia do food truck aplicada a caso real.",
+      "speaker_origem": "Narrador (Mentor)",
+      "pergunta_para_validador": "A Zappos realizou validação mínima comprando sapatos em lojas locais e enviando ao cliente, antes de escalar? O corpus menciona a Zappos? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-004",
+      "segmento": "cena_01",
+      "afirmacao": "Bruno iniciou seu negócio de cristais (Patacori) dentro do próprio quarto, no Rio de Janeiro, comprando diretamente com lojistas.",
+      "tipo": "HISTORICO_GEOGRAFICO",
+      "contexto": "Caso pessoal do mentor.",
+      "speaker_origem": "Narrador (Mentor - 1ª pessoa)",
+      "pergunta_para_validador": "O Bruno de Oliveira menciona ter começado seu negócio de cristais/pedras dentro do próprio quarto, no Rio de Janeiro, comprando com lojistas? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-005",
+      "segmento": "cena_01",
+      "afirmacao": "A maioria dos negócios de e-commerce fracassa por pular etapas, especialmente indo direto para 'como vender' sem definir 'o que' e 'para quem'.",
+      "tipo": "CAUSALIDADE",
+      "contexto": "Diagnóstico do fracasso.",
+      "speaker_origem": "Narrador (Mentor)",
+      "pergunta_para_validador": "O Bruno afirma que a maioria dos negócios de e-commerce fracassa por pular etapas (ir direto para 'como vender' sem definir 'o que' e 'para quem')? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-006",
+      "segmento": "cena_01",
+      "afirmacao": "Antes de começar a vender, o empreendedor precisa ter 5 coisas claras: nicho definido, persona conhecida, produto com fornecedor homologado, CNPJ e ERP para nota fiscal, e entendimento de que audiência é mais importante que venda isolada.",
+      "tipo": "PROTOCOLO",
+      "contexto": "Checklist pré-venda.",
+      "speaker_origem": "Narrador (Mentor)",
+      "pergunta_para_validador": "O Bruno recomenda, antes de começar a vender, ter clareza sobre: (1) nicho definido, (2) persona conhecida, (3) produto com fornecedor homologado, (4) CNPJ e ERP para nota fiscal, (5) audiência mais importante que venda isolada? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-007",
+      "segmento": "cena_01",
+      "afirmacao": "Após a validação, o empreendedor pode expandir para outros marketplaces, abrir loja virtual própria, contratar e investir mais — antes, ele está testando.",
+      "tipo": "PROTOCOLO",
+      "contexto": "Significado prático de romper a barreira da validação.",
+      "speaker_origem": "Narrador (Mentor)",
+      "pergunta_para_validador": "O Bruno afirma que, ao romper a validação, o empreendedor pode expandir para outros marketplaces, abrir loja virtual própria, contratar e investir mais, porque antes disso ele está testando? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    }
+  ],
+  "perguntas": [
+    {
+      "id": "AFC-001",
+      "segmento": "cena_01",
+      "afirmacao": "O método de validação é composto por 6 etapas: Planejamento, Estrutura, Audiência, Vendas, Atendimento, Impulsão.",
+      "tipo": "PROTOCOLO",
+      "pergunta_para_validador": "O método do Bruno é composto por 6 etapas (Planejamento, Estrutura, Audiência, Vendas, Atendimento, Impulsão) nesta ordem? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-002",
+      "segmento": "cena_01",
+      "afirmacao": "Validação significa 3 coisas acontecendo ao mesmo tempo: R$ 10 mil em vendas, 100 pedidos, em 90 dias.",
+      "tipo": "PROTOCOLO",
+      "pergunta_para_validador": "No método do Bruno, 'validação' significa especificamente R$ 10 mil em vendas + 100 pedidos em 90 dias? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-003",
+      "segmento": "cena_01",
+      "afirmacao": "A Zappos fez validação mínima vendendo sapatos via internet, comprando em lojas locais e enviando ao cliente.",
+      "tipo": "HISTORICO_GEOGRAFICO",
+      "pergunta_para_validador": "A Zappos realizou validação mínima comprando sapatos em lojas locais e enviando ao cliente, antes de escalar? O corpus menciona a Zappos? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-004",
+      "segmento": "cena_01",
+      "afirmacao": "Bruno iniciou seu negócio de cristais (Patacori) dentro do próprio quarto, no Rio de Janeiro.",
+      "tipo": "HISTORICO_GEOGRAFICO",
+      "pergunta_para_validador": "O Bruno de Oliveira menciona ter começado seu negócio de cristais/pedras dentro do próprio quarto, no Rio de Janeiro, comprando com lojistas? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-005",
+      "segmento": "cena_01",
+      "afirmacao": "A maioria dos negócios de e-commerce fracassa por pular etapas.",
+      "tipo": "CAUSALIDADE",
+      "pergunta_para_validador": "O Bruno afirma que a maioria dos negócios de e-commerce fracassa por pular etapas (ir direto para 'como vender' sem definir 'o que' e 'para quem')? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-006",
+      "segmento": "cena_01",
+      "afirmacao": "Checklist de 5 itens antes de começar a vender.",
+      "tipo": "PROTOCOLO",
+      "pergunta_para_validador": "O Bruno recomenda, antes de começar a vender, ter clareza sobre: (1) nicho definido, (2) persona conhecida, (3) produto com fornecedor homologado, (4) CNPJ e ERP para nota fiscal, (5) audiência mais importante que venda isolada? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    },
+    {
+      "id": "AFC-007",
+      "segmento": "cena_01",
+      "afirmacao": "Pós-validação: expansão para múltiplos canais.",
+      "tipo": "PROTOCOLO",
+      "pergunta_para_validador": "O Bruno afirma que, ao romper a validação, o empreendedor pode expandir para outros marketplaces, abrir loja virtual própria, contratar e investir mais? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO baseado APENAS no corpus original."
+    }
+  ]
+}

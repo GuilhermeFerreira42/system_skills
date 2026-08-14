@@ -1,0 +1,12 @@
+{
+  "cena_id": "cap_NN_cena_MM",
+  "input_checksum": "v1.0:xxxxxxxx",
+  "total_afirmacoes": 0,
+  "confirmados": 0,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "taxa_confirmados": 0.0,
+  "status_geral": "PENDENTE",
+  "resultados": [],
+  "timestamp": "ISO-8601"
+}

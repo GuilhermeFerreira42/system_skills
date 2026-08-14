@@ -1,0 +1,39 @@
+{
+  "cena_id": "cap_01_cena_05",
+  "total_afirmacoes": 3,
+  "confirmados": 3,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "taxa_confirmados": 1.0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {
+      "id": "AFC-001",
+      "status": "CONFIRMADO",
+      "evidencia": "Cena 1.2 do corpus (A versão 3.0): 'eu refiz o plano dela com a lógica nova. Marketplace, sem loja própria. Sem anúncio no início. Só audiência orgânica no Instagram. Em quatro meses, ela estava faturando cinco mil por mês com lucro. Em oito meses, quinze mil.'",
+      "tipo": "CITACAO_CASE"
+    },
+    {
+      "id": "AFC-002",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus (Módulo 03, Aula 1): 'MVP — Estrutura Mínima Viável de Validação. Simples, eficiente, barato.' E (Módulo 04, Aula 1): 'A gente vai focar numa metodologia que eu aprendi no vale do silício, que é a metodologia do MVP. A gente vai construir um produto mínimo viável.' O princípio de testar antes de investir está explícito no método.",
+      "tipo": "CONCEITO_REGRA"
+    },
+    {
+      "id": "AFC-003",
+      "status": "CONFIRMADO",
+      "evidencia": "Corpus (Módulo 04, Aula 1 — 'Sua Estrutura de Trabalho'): 'a gente vai construir uma estrutura mínima viável... Você vai precisar de uma marca, você vai precisar de um registro, um CNPJ... vai precisar de canais venda/audiência, de canais de pagamento, meio de envio, sistema de gestão, uma loja virtual... ERP (Bling).' O protocolo pós-validação está documentado no método.",
+      "tipo": "PROTOCOLO"
+    }
+  ],
+  "auditoria_cegueira": {"log_prompt_contem_saida_escritor": false, "violacao": false},
+  "travas_duras_recalculadas_orquestrador": {
+    "taxa": 1.0,
+    "acima_de_80_pct": true,
+    "contraditos": 0,
+    "nao_encontrados_pct": 0.0,
+    "abaixo_de_30_pct": true,
+    "aprovado": true
+  },
+  "timestamp": "2026-07-27T23:00:00Z"
+}

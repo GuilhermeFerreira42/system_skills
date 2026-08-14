@@ -1,0 +1,12 @@
+{
+  "cena_id": "cap_01_cena_01",
+  "total_afirmacoes": 0,
+  "confirmados": 0,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "taxa_confirmados": 0.0,
+  "status_geral": "APROVADO",
+  "resultados": [],
+  "observacao": "Ficção pura sem corpus factual. Atomizador produziu array vazio. Validador MARCH não tem o que validar. Status APROVADO por ausência de afirmações.",
+  "timestamp": "2026-07-27T23:10:00Z"
+}

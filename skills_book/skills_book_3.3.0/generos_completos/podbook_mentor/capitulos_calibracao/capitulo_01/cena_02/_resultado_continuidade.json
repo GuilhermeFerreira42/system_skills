@@ -1,0 +1,19 @@
+{
+  "cena_id": "cap_01_cena_02",
+  "total_verificacoes": 6,
+  "confirmados": 6,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {"id": "CONT-001", "status": "CONFIRMADO", "evidencia": "Cena alterna consistentemente: 1ª ('eu achava', 'eu vivi', 'uma aluna, vou chamar de Carla, começou comigo', 'eu recomendo') com transições para 2ª ('como você está chegando agora', 'você não vai ter que reaprender', 'você ainda vai precisar').", "categoria": "PERSONAGEM_ACAO"},
+    {"id": "CONT-002", "status": "CONFIRMADO", "evidencia": "Cena 1.2: 'audiência deixou de ser consequência e virou pilar central... Na 3.0, audiência é a terceira etapa do método'. Bible declara a 3ª posição. Coerente.", "categoria": "CONCEITO_REGRA"},
+    {"id": "CONT-003", "status": "CONFIRMADO", "evidencia": "Cena 1.2 inteiramente no presente, tom pragmático ('ensinar do jeito antigo seria te sabotar'), encorajador ('essa é a melhor versão'), com estrutura modular — diagnóstico (mudança do mercado) → analogia cronológica (2018/2021/2024) → campo de batalha (caso Carla).", "categoria": "VOZ_NARRATIVA"},
+    {"id": "CONT-004", "status": "CONFIRMADO", "evidencia": "Bible, Fios: 'Audiência > Conteúdo' — Tema Central, Mudança de Paradigma do Cap. 5 com payoff no Cap. 8. Cena 1.2 antecipa o princípio: 'audiência deixou de ser consequência e virou pilar central... é a fundação invisível de todas as outras'. Setup coerente.", "categoria": "FIO_NARRATIVO_SETUP"},
+    {"id": "CONT-005", "status": "CONFIRMADO", "evidencia": "Bible, Fios: 'Impulsão Seletiva — Anunciar SÓ o que já está funcionando organicamente'. Cena 1.2: 'Você só anuncia o que já está vendendo organicamente... se algo não vende orgânico, não é o anúncio que vai resolver'. Antecipação legítima e coerente com a estrutura progressiva do livro.", "categoria": "FIO_NARRATIVO_SETUP"},
+    {"id": "CONT-006", "status": "CONFIRMADO", "evidencia": "Cena 1.2 cumpre o objetivo da Bible: apresenta as 3 mudanças (audiência como pilar, MVP enxuto, impulsão por dados), usa caso real (Carla) como ancoragem, fecha com provocação ('Bora comigo'). Mudança de estado documentada nos metadados.", "categoria": "OBJETIVO_CENA"}
+  ],
+  "erros": [],
+  "auditoria_cegueira": {"validador_viu_saida_escritor": false, "violacao": false},
+  "timestamp": "2026-07-27T22:32:00Z"
+}
