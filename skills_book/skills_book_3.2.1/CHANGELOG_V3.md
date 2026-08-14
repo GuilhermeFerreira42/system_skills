@@ -1,5 +1,41 @@
 # CHANGELOG — Skill 3
 
+## v3.3.0 — Gênero Não-Ficção Prática (2026-08-13)
+
+### Motivação
+Comparação entre duas produções do mesmo corpus mostrou que o modo padrão do
+DNA ("Elegância Orgânica") produz um registro contemplativo/literário, que
+não é o único registro válido de não-ficção. Um segundo texto de referência,
+mais antigo, usava um registro diferente — direto, urgente, focado em ação —
+e conseguia um nível de imersão que o autor considerou superior para esse
+propósito. Em vez de misturar os dois registros dentro do mesmo DNA global
+(o que forçaria todo livro futuro, inclusive ficção e memórias, a herdar
+convenções de autoajuda), foi criado um gênero novo, seguindo o mesmo padrão
+dos já existentes (`ficcao_literaria`, `podbook_mentor`, `tecnico_manual`).
+
+### Mudança
+- **`generos_completos/nao_ficcao_pratica/GENERO.md`** (novo arquivo, 11
+  seções + figuras de retórica): gênero opcional para não-ficção voltada a
+  mudança de comportamento do leitor. Regras principais:
+  - Voz em 2ª pessoa exclusiva ("você"), nunca "a gente"/impessoal.
+  - Beats obrigatórios por cena: gancho de paradoxo + dado bruto, metáfora
+    doméstica/mecânica (nunca épica), **hipotipose/enargia** (mecanismo
+    encenado com concretude sensorial, não só explicado), abismo de
+    consequência honesto, fechamento com ação mensurável.
+  - Figuras de retórica nomeadas e obrigatórias: interpelação direta,
+    prolepse (antecipação da objeção do leitor).
+  - Listas permitidas até 5 itens, só categóricas — nunca processuais
+    (evita reintroduzir o problema de sobrecodificação da v3.1).
+  - Fechamento de cena **substitui** a seção 7.4 do DNA (cristalização
+    poética) por ordem de ação com verbo imperativo + número + critério de
+    sucesso — os dois fechamentos continuam válidos, cada um no seu gênero.
+
+Este gênero é **opcional e aditivo**: não altera `DNA_REVELACAO_RESPEITOSA.md`
+nem o comportamento padrão de nenhum outro gênero. Um livro só usa este modo
+se explicitamente selecionado.
+
+---
+
 ## v3.2.2 — Ciclo de Abertura e Fechamento (2026-08-12)
 
 ### Diagnóstico
