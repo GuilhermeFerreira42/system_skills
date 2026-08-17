@@ -1,0 +1,16 @@
+{
+  "cena_id": "cap_01_cena_02",
+  "total_verificacoes": 4,
+  "confirmados": 4,
+  "contraditos": 0,
+  "nao_encontrados": 0,
+  "status_geral": "APROVADO",
+  "resultados": [
+    {"id": "CONT-001", "status": "CONFIRMADO", "evidencia": "Cena usa 2ª pessoa ('você pode pular', 'você vai precisar') e tom técnico procedural. Coerente.", "categoria": "VOZ_NARRATIVA"},
+    {"id": "CONT-002", "status": "CONFIRMADO", "evidencia": "Cena cobre Windows (passos 1-6), macOS (Homebrew + brew install), Linux (apt, dnf, pacman). Os 3 sistemas estão presentes.", "categoria": "PROTOCOLO"},
+    {"id": "CONT-003", "status": "CONFIRMADO", "evidencia": "Cena mostra `python --version` e `python3 --version` com explicação de quando usar cada um. Coerente.", "categoria": "CONCEITO_DEFINICAO"},
+    {"id": "CONT-004", "status": "CONFIRMADO", "evidencia": "Cena termina com: 'No próximo capítulo, você vai escrever e executar seu primeiro programa em Python.' Coerente com Bible (Cap 2 = Hello World).", "categoria": "TIMELINE_CRONOLOGIA"}
+  ],
+  "erros": [],
+  "timestamp": "2026-07-27T23:35:00Z"
+}
