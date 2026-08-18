@@ -51,11 +51,15 @@ Os 5 movimentos abaixo são a **espinha dorsal da experiência de leitura**, tra
 | 4 | **Desmonte do mito** | lista categórica numerada desmontada com evidência | reviravolta que desmonta a crença da trama | erro comum desmontado |
 | 5 | **Fechamento** | chamado tátil de 30s (verbo + medida + critério ≤24h) | frase que cristaliza + eco da imagem condutora | aplicação imediata com critério de sucesso |
 
-**Regras de presença:** cena 1 e cena final executam a arquitetura completa (5 movimentos ou o que o gênero exigir); cenas do meio executam pelo menos 3. Toda cena fecha com uma **frase que gruda** (cristalização — DNA §7.4), independentemente do gênero.
+**Regras de presença:** cena 1 e cena final executam a arquitetura completa (5 movimentos ou o que o gênero exigir); cenas do meio executam pelo menos 3. **Flexibilidade (v3.6.2):** os movimentos 2 (herói) e 3 (mecanismo com metáfora) são **adaptáveis** — se a fonte não tem personagem nem metáfora natural, esses movimentos não se aplicam; nada é forçado.
+
+**FECHAMENTO EM TODA CENA (obrigatório):** TODA cena termina com um fechamento próprio que conclui o que ela abriu — parágrafo de cristalização (1 a 3 frases que nomeiam a implicação mais funda, amarram o fio aberto e ecoam a imagem condutora) nas cenas do meio. Nenhuma cena pode simplesmente "terminar"; ela precisa concluir. A última cena da obra, além da cristalização, recebe o **Chamado Tátil de 30 segundos** (verbo imperativo + medida exata + critério conferível em ≤24h).
 
 ## DECISÕES UNIVERSAIS (valem para qualquer gênero — não pergunte, assuma)
 
-- **Uma única imagem condutora** (metáfora, símbolo ou objeto central) persiste do início ao fim; instalada na primeira cena, ecoada no meio, retomada na última. Proibida imagem concorrente.
+- **Metáfora — OPcional (v3.6.2):** use UMA imagem para a obra inteira, OU uma imagem por capítulo/módulo, OU nenhuma — o que o material pedir. Se usar, seja consistente dentro do escopo (um capítulo não troca de imagem à toa). NUNCA force uma metáfora que a fonte não sugere: prosa direta e fiel à fonte vale mais que imagem forçada.
+- **Personagem — opcional (v3.6.2):** se o corpus traz pessoas reais (cientistas, casos, figuras), apresente-as com data/lugar/obstáculo. Se o material não tem personagens, escreva sem — NUNCA invente um personagem para preencher. Fidelidade à fonte é lei.
+- **Cálculo do número de cenas (v3.6.2):** você DEVE calcular quantas cenas o livro inteiro exige, a partir do corpus — cada mecanismo, personagem ou mito relevante da fonte merece uma cena própria. Referência: não-ficção prática típica = 6 a 9 cenas (material rico → mais; enxuto → menos). Antes de escrever, apresente o cálculo ao usuário e justifique: quantas cenas por capítulo/módulo e por quê. A IA pode e deve conversar com o usuário sobre isso.
 - **Extensão operacional de cada cena:** a faixa média histórica da skill é de 800 a 1.500 palavras por cena. Este não é um piso duro — é um **sinal de desenvolvimento**: se a cena saiu com menos de 600 palavras, muito provavelmente faltou um movimento retórico inteiro. Antes de entregar, verifique se todos os movimentos previstos para aquela cena foram executados. Se o seu gênero (GENERO.md) definir outra faixa, siga a dele.
 - **Instinto primeiro, auditoria depois.** Escreva a cena inteira de uma vez, sem checar regras durante a escrita. A auditoria (lint + validador) vem só depois.
 - **Nenhum conteúdo do referência na obra. Nenhuma contradição do corpus.**
@@ -100,6 +104,6 @@ Leia o [CORPUS] e extraia: números exatos, nomes com data/lugar/obstáculo, mec
 - **[PALAVRAS POR CENA]:** [800–1.500 — veja o GENERO.md do gênero]
 - **[PÚBLICO]:** [ex: leigo, leitor de romance, profissional]
 
-**NÚMERO DE CENAS — VOCÊ DECIDE:** defina a quantidade de cenas por conta própria, conforme o que o [CORPUS] exige. Não fixe um número arbitrário: cada mecanismo, personagem ou mito relevante do material merece uma cena própria com 800 a 1.500 palavras. Se o corpus for rico (vários mecanismos, cientistas e mitos), use mais cenas (8 a 10); se for enxuto, use menos. O livro deve ter a profundidade que o material pede — não uma quantidade pré-definida. A estrutura de capítulos segue GENERO §6 (variável, conforme o tema).
+**CÁLCULO DE CENAS — VOCÊ CALCULA E JUSTIFICA:** calcule o número de cenas do livro inteiro a partir do [CORPUS] — cada mecanismo, personagem ou mito relevante merece uma cena própria de 800 a 1.500 palavras. Referência da skill: não-ficção prática típica = **6 a 9 cenas** (material rico → 8–10; enxuto → 4–5). Não entregue menos do que o material exige: se um corpus rico render 3 cenas, você provavelmente comprimiu demais e deixou mecanismos sem desenvolvimento. **Antes de escrever, apresente o cálculo ao usuário** (quantas cenas por capítulo/módulo e por quê) e converse com ele se houver dúvida — a IA tem liberdade para justificar e ajustar.
 
 **Pode começar. As decisões universais já estão tomadas; as decisões de forma você tira do GENERO.md do seu gênero. Não me faça perguntas sobre o que já está definido aqui.**

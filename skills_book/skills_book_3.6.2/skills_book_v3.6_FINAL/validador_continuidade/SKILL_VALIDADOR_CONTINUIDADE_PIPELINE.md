@@ -42,7 +42,11 @@ Um `CONTRADITO` reprova a cena. Não use métricas de ritmo, tamanho ou estilo.
 
 ---
 
-## Adendo v3.6 — Checagem de cadência da metáfora-mestra (mantido da v3.5)
+## Adendo v3.6 — Checagem de cadência da metáfora-mestra (v3.6.2: condicional)
+
+Aplica-se **somente quando a Bible registra uma metáfora**. Se a obra não tem
+imagem declarada (livro sem metáfora é válido desde a v3.6.2), esta checagem é
+ignorada e a continuidade não reprova por ausência de imagem.
 
 Além de terminologia e fatos entre cenas, este validador passa a verificar, na
 consolidação da obra:

@@ -109,7 +109,7 @@ Registre somente decisões humanas ou derivadas explicitamente do nivelamento. N
 
 ---
 
-## Registro da Metáfora-Mestra (obrigatório em v3.6 para `nao_ficcao_pratica`)
+## Registro da Metáfora-Mestra (opcional em v3.6.2 — preencha SÓ se a obra adotar imagem)
 
 - **Imagem-mãe:** [ex: O Aquário Celular]
 - **Domínio:** [doméstico | mecânico | animal | construção]  ← épico/cósmico é proibido neste gênero

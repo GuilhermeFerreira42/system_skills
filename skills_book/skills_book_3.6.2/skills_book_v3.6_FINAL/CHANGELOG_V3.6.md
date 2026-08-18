@@ -76,3 +76,50 @@ Gera `PONTOS_DE_ACAO.md`: manifesto externo dos **Chamados Táteis** (fechamento
 
 - O lint v3.6 é **genérico**: pode rodar em qualquer obra de qualquer tema sem lista de cientistas fixa. Para obras com elenco próprio, use `--nomes "Personagem1,Personagem2"`.
 - A fidelidade à fonte tornou-se o princípio transversal: o texto reproduz o conteúdo como a fonte apresenta; fontes e ressalvas formais vivem no Aparato e no script externo de atribuição.
+
+---
+
+# CHANGELOG v3.6.1 — Fechamento em TODA cena (2026-08-18)
+
+## Decisão
+
+Toda cena deve terminar com um **fechamento próprio** que conclui o que abriu — não apenas a última cena da obra. A diferença está no tipo:
+
+- **Cenas do meio:** parágrafo de cristalização (1 a 3 frases que nomeiam a implicação mais funda, amarram o fio aberto e ecoam a metáfora-mestra).
+- **Última cena da obra:** além da cristalização, recebe o Chamado Tátil de 30 segundos (verbo + medida + critério).
+
+## Arquivos alterados
+
+- `generos_completos/nao_ficcao_pratica/GENERO.md` — §4 reescrito: "TODA cena termina com um fechamento próprio"; cenas do meio fecham com parágrafo de cristalização.
+- `revisor_cego_editorial/RUBRICA_QUALITATIVA_V3.md` — §6 Movimento 5: "Fechamento de Cena" exige PASS em TODAS as cenas (cristalização nas do meio; chamado tátil na última).
+- `utils/lint_conviccao.py` — Vetor 6 verifica que toda cena tem fechamento (heurística: último bloco contido, termina em pontuação de fechamento, sem nota vazada no corpo; chamado tátil na última cena). Cabeçalhos internos colados são tratados corretamente.
+- `COMANDO_PADRAO_INICIALIZACAO.md` — regra de fechamento em toda cena explicitada.
+
+## Validação
+
+- Livro v3.5 (9 cenas, fechamento em todas): Vetor 6 = 10/10, média 10.0.
+- Livro v3.6 teste 2 (6 cenas): Vetor 6 = 10/10, média 10.0.
+
+---
+
+# CHANGELOG v3.6.2 — Metáfora e Personagem Opcionais + Cálculo de Cenas (2026-08-18)
+
+## Decisões
+
+1. **Metáfora NÃO é obrigatória.** O livro pode ter UMA imagem central, OU várias (uma por capítulo/módulo), OU nenhuma. Nada é forçado: prosa direta e fiel à fonte vale mais que metáfora fabricada.
+2. **Personagem NÃO é obrigatório.** Se a fonte traz pessoas reais, apresente-as com data/lugar/obstáculo; se não traz, escreva sem — **nunca inventar personagem** para preencher.
+3. **Cálculo de cenas baseado no corpus.** A IA deve calcular quantas cenas o livro inteiro exige (cada mecanismo/personagem/mito relevante = uma cena), com referência de 6 a 9 cenas para não-ficção prática, e **apresentar o cálculo ao usuário, justificando e conversando** antes de escrever.
+4. **Liberdade de conversa.** A IA pode e deve discutir com o usuário as escolhas estruturais (gênero, número de cenas, metáfora) — nada de decisões silenciosas.
+
+## Arquivos alterados
+
+- `generos_completos/nao_ficcao_pratica/GENERO.md` — §1 (metáfora flexível por capítulo; personagem opcional, nunca inventar), §8 (metáfora doméstica quando usada), §11 (cálculo de cenas + justificativa).
+- `revisor_cego_editorial/RUBRICA_QUALITATIVA_V3.md` — §6 Movimento 2 (Herói com Atrito = NA quando não há personagem; FAIL só por personagem inventado ou vazio) e Movimento 3 (Mecanismo Concreto sem metáfora obrigatória).
+- `utils/lint_conviccao.py` — Vetor 2 (personagem opcional; com `--nomes`, reprova personagem fora da lista = possível invenção) e Vetor 3 (sem `--metafora` = 10 automático; com `--metafora` = consistência no escopo, com regra especial para obras de 1 capítulo).
+- `COMANDO_PADRAO_INICIALIZACAO.md` — regras de metáfora/personagem opcionais + cálculo de cenas com justificativa + liberdade de conversa.
+
+## Validação
+
+- Livro v3.5 (9 cenas, metáfora aquário, personagens): **10/10 APROVADO**.
+- Livro v3.6 teste 2 (6 cenas, 1 capítulo, metáfora aquário): **10/10 APROVADO**.
+- Livro sintético SEM metáfora e SEM personagem: Vetor 2 = 10, Vetor 3 = 10 (sem `--metafora`), reprovação apenas onde o fechamento/chamado tátil realmente falta — confirmando que ausência de imagem e de personagem não penaliza mais.

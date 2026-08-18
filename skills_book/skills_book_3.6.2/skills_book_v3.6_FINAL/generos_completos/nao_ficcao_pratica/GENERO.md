@@ -47,14 +47,15 @@ como roteiro de escrita.
   - **EVITE:** ressalva genérica de rodapé por hábito editorial (*"os resultados podem variar"*, *"este livro não substitui..."* soltos, sem função).
   - **PERMITIDO (v3.6):** ressalva específica e pertinente quando a alegação envolver risco real (dosagem, condição clínica, substituição de tratamento) — mantendo a forma como a fonte apresenta. A atribuição de fontes e a verificação de conteúdo são responsabilidade de camadas externas (script de fontes + revisão humana especializada), não do corpo do texto. O narrador mantém autoridade de descobridor sem abrir mão da fidelidade à fonte.
 - **Distância Narrativa:** Próxima, de diagnóstico imediato — o autor fala como quem identificou a cegueira do leitor antes dele.
-- **Metáfora Âncora Persistente:** O gênero exige **UMA metáfora central e doméstica** (definida na Bible, ex: O Aquário Celular). Essa imagem deve ser marretada e retomada no início, meio e fechamento da obra. Proibido criar metáforas descartáveis que se dissolvem a cada parágrafo.
-  - **Cadência obrigatória (novo em v2.0):** a imagem-mãe aparece **na primeira cena** (instalada por inteiro), **em pelo menos uma cena de cada capítulo seguinte** (eco curto, uma ou duas frases, sem reintroduzir do zero) e **na última cena** (retomada explícita, mostrando o quanto o leitor entende dela agora que não entendia na abertura).
-  - **Proibido introduzir uma segunda imagem estrutural concorrente.** Se uma cena precisa de imagem nova, ela deve ser um cômodo da mesma casa: o aquário ganha um filtro, um termômetro, um peixe doente — não vira "casa hidráulica", "painel de carro" e "caixa d'água" em três cenas diferentes.
-  - **Diagnóstico que originou esta regra (v3.4):** a obra gerada trocou de imagem a cada cena (casa hidráulica → painel → caixa) e nenhuma delas reapareceu no fechamento. O leitor terminou o livro sem uma única lente para pensar o tema.
+- **Metáfora (v3.6.2 — flexível, não obrigatória):** a metáfora é uma **ferramenta**, não um requisito. O livro pode ter UMA metáfora central (quando uma imagem única serve a obra inteira), ou **várias metáforas, uma por capítulo/módulo** (quando cada módulo pede uma imagem própria), ou **nenhuma** (quando a fidelidade à fonte não comporta imagem — nunca force uma metáfora que a fonte não sugere).
+  - **Regra de coerência (quando usar):** uma metáfora escolhida deve ser consistente **dentro do seu escopo** — se um capítulo usa uma imagem, ela persiste nesse capítulo e não é trocada à toa; entre capítulos diferentes, imagens diferentes são permitidas. Se o livro adota uma metáfora única, ela pode ser retomada no fechamento.
+  - **Nunca inventar para preencher:** se nenhuma imagem natural surge do material, escreva sem metáfora — prosa direta e fiel à fonte vale mais que metáfora forçada.
+  - **Diagnóstico histórico (v3.4):** a obra gerada trocou de imagem a cada cena sem propósito (casa hidráulica → painel → caixa) e nenhuma reapareceu. O erro não foi "usar várias imagens" — foi usá-las **sem função**. Imagem com função e consistência no seu escopo é boa; imagem decorativa e trocada à toa é ruído.
 - **Listas de Memória Numeradas:** Quando o conteúdo apresentar mitos, propriedades, leis ou etapas, é **OBRIGATÓRIO usar numeração explícita e ancorada** ("Primeiro mito:", "Segundo mito:", "1. Pureza", "2. pH Alcalino"). A lista numerada é a alça de memória inesquecível do leitor.
-- **Storytelling Heroico (Personagens em Cena) — PISO OBRIGATÓRIO:** Cientistas, médicos e figuras históricas (ex: Carrel, Batmanghelidj, Agre) NUNCA entram como citações bibliográficas frias. Devem entrar como **heróis de uma cena dramática com atrito real** (o laboratório em silêncio, a cela de prisão no Irã sem remédios, os 28 anos e meio).
-  - **Piso mensurável (novo em v2.0):** **no mínimo 1 personagem científico nomeado por cena**, e cada aparição precisa trazer pelo menos **dois dos três âncoras de realidade**: (a) data ou período exato, (b) lugar/instituição, (c) o obstáculo concreto que ele enfrentou. Um nome sem atrito é citação; um nome com atrito é cena.
-  - **Diagnóstico que originou esta regra (v3.4):** a obra gerada não nomeou um único cientista em 6 cenas — o corpus tinha Carrel, Batmanghelidj, Agre, Brownstein, Coandă e Mu Shik Jhon disponíveis, e o texto saiu como ensaio anônimo. Ausência de personagem é o sintoma nº 1 de prosa de relator.
+- **Storytelling (Personagens em Cena — v3.6.2, recomendado, NÃO obrigatório):** quando o corpus traz pessoas reais (cientistas, médicos, figuras históricas — ex: Carrel, Batmanghelidj, Agre), elas **nunca** entram como citações bibliográficas frias: entram como **heróis de uma cena dramática com atrito real** (o laboratório em silêncio, a cela de prisão sem remédios, os 28 anos e meio).
+  - **Se o personagem existe na fonte** (e a cena o usa), cada aparição deve trazer pelo menos **dois dos três âncoras de realidade**: (a) data ou período exato, (b) lugar/instituição, (c) o obstáculo concreto que ele enfrentou. Um nome sem atrito é citação; um nome com atrito é cena.
+  - **NUNCA inventar personagem** para preencher a cena. Se o material não tem pessoas nomeadas, escreva sem personagem — a fidelidade à fonte vale mais que um herói fabricado.
+  - **Diagnóstico histórico (v3.4):** a obra gerada não nomeou um único cientista em 6 cenas — mas o corpus **tinha** Carrel, Batmanghelidj, Agre e outros disponíveis; o erro foi ignorar personagens que a fonte oferecia, não a ausência deles.
 - **Vocabulário:** Acessível; termo técnico só entra com tradução imediata via metáfora doméstica (ver seção 3). Quando a explicação for científica/bioquímica, é **totalmente liberado o uso de notação LaTeX simples** ($\text{H}_2\text{O}$, $\text{OH}^-$, $\text{H}^+$, $\text{NaCl}$) e percentuais estatísticos exatos do corpus.
   - **Piso mensurável (novo em v2.0):** **pelo menos um mecanismo por capítulo escrito em notação explícita** e **todo número central do argumento reproduzido com a precisão do corpus** (66%/26%/8%, pH 2,5, 28 anos e meio, 52%). Arredondar para "cerca de dois terços" quando o corpus diz 66% é perda de autoridade, não elegância.
 - **Ritmo:**
@@ -122,21 +123,30 @@ como roteiro de escrita.
 
 ## 4. Formato do Final de Cada Cena
 
-### Cenas do meio (todas, exceto a última do capítulo/obra)
+**Regra geral (v3.6): TODA cena termina com um fechamento próprio.** Não existe cena que "apenas termina" — cada cena precisa concluir o que abriu, com um parágrafo de fechamento explícito. A diferença está no tipo de fechamento:
 
-Fecham com **frase que cristaliza** — mesma regra da seção 7.4 do DNA global:
-uma frase curta o suficiente pra ser lembrada fora de contexto, que nomeia a
-implicação mais funda do que a cena mostrou. Não é recapitulação, não é
-tarefa, não é pergunta aberta.
+### Cenas do meio (todas, exceto a última da obra)
+
+Fecham com **parágrafo de cristalização** — a mesma regra da seção 7.4 do DNA
+global, elevada a parágrafo: 1 a 3 frases curtas que nomeiam a implicação mais
+funda do que a cena mostrou, amarram o fio aberto na abertura e ecoam a
+metáfora-mestra. Não é recapitulação, não é tarefa, não é pergunta aberta.
+O fechamento deve ser reconhecível como o momento em que a cena se conclui:
+o leitor sente que aquele arco terminou antes de virar a página.
 
 **PROIBIDO nas cenas do meio:**
+- Terminar a cena sem fechamento (cortar no meio do desenvolvimento).
 - Instrução de registro/tarefa ("anote", "registre por 24h", "faça 3
-  observações"). Isso pertence só à última cena do capítulo — ver abaixo.
+  observações"). Isso pertence só à última cena da obra — ver abaixo.
 - JSON de metadados ou campos técnicos visíveis.
 
-### Regra posicional (esclarecida em v2.0)
+### Regra posicional (esclarecida em v2.0, mantida na v3.6)
 
-O fechamento por ação mensurável pertence **à última cena da OBRA**. Fins de capítulo intermediário usam **cristalização** — porque três fechamentos-com-tarefa em três capítulos reintroduzem exatamente a sensação de apostila que este gênero existe para evitar. Uma obra tem **um** gesto final, não um gesto por capítulo.
+O fechamento por ação mensurável pertence **à última cena da OBRA**. Fins de
+capítulo intermediário usam **cristalização** — porque três fechamentos-com-tarefa
+em três capítulos reintroduzem exatamente a sensação de apostila que este gênero
+existe para evitar. Uma obra tem **um** gesto final, não um gesto por capítulo.
+Mas TODAS as cenas — incluindo as do meio — fecham com cristalização.
 
 ### Última cena da obra (e só ela)
 
@@ -212,13 +222,14 @@ o livro numa sequência de tarefas.
 
 ## 8. Regras de Polimento do Editor
 
-- **Metáfora Doméstica (Tradução Tangível):** a metáfora central deve vir de
-  algo que o leitor manuseia ou vê quebrar no cotidiano (casa, carro,
-  ferramenta, animal doméstico, construção). **Proibido** metáfora de domínio
-  épico/cósmico (mar, universo, tempestade) como imagem central — isso
-  pertence ao modo padrão do DNA, não a este gênero. Teste: se a metáfora não
-  permite ao leitor fazer uma pergunta de diagnóstico prático sobre a própria
-  vida, ela é poética demais para este modo.
+- **Metáfora Doméstica (Tradução Tangível — v3.6.2, quando usada):** a metáfora
+  deve vir de algo que o leitor manuseia ou vê quebrar no cotidiano (casa,
+  carro, ferramenta, animal doméstico, construção) — **quando** uma imagem for
+  usada. Evite domínio épico/cósmico (mar, universo, tempestade) como imagem
+  central. Teste: se a metáfora não permite ao leitor fazer uma pergunta de
+  diagnóstico prático sobre a própria vida, ela é poética demais para este
+  modo — ou é desnecessária: prosa direta e fiel à fonte sempre vence metáfora
+  forçada.
 - **Listas de Impacto (Esqueleto Contável):** listas são permitidas e
   encorajadas, **fiéis à fonte** — se a fonte lista 10 itens, mantenha 10;
   não capar em 5 itens por convenção. A única limitação é categórica: listas
@@ -274,10 +285,16 @@ o livro numa sequência de tarefas.
 
 ## 11. Notas de Produção para a IA
 
-- Escolha UMA metáfora mestra doméstica/mecânica/animal antes de escrever a
-  Cena 1, registre na Bible, e repita-a no início, meio e fim da obra —
-  mesma regra de persistência da seção 7.2 do DNA, só que restringindo o
-  domínio da imagem.
+- A metáfora é decidida **pelo material**, nunca por obrigação: se o corpus
+  sugere naturalmente uma imagem (única ou por capítulo), use-a com
+  consistência no seu escopo; se não sugere, escreva sem. Registre na Bible
+  as imagens escolhidas e justifique cada uma — nada de metáfora forçada.
+- O número de cenas por capítulo/módulo é **calculado a partir do corpus**,
+  não arbitrado: cada mecanismo, personagem ou mito relevante da fonte merece
+  uma cena própria. Uma obra de não-ficção prática típica tem entre 6 e 9
+  cenas (menos para material enxuto, mais para material rico). Justifique o
+  cálculo ao usuário antes de escrever — a IA deve poder conversar e
+  explicar por que escolheu aquele número.
 - O gancho de abertura (seção 7.1 do DNA) ganha aqui um segundo passo
   obrigatório: a frase seguinte à pergunta precisa trazer um dado bruto que
   agrava o paradoxo, não uma reflexão.

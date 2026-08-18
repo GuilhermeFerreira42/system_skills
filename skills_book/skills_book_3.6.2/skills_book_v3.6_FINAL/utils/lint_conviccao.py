@@ -130,34 +130,61 @@ def auditar(texto_bruto: str, metafora: str | None, nomes: list[str] | None) -> 
     v["notacao_tecnica"] = {"nota": nota1, "latex": len(latex), "percentuais": len(percentuais),
                             "obs": "v3.6: sem exigência de notação em 100% dos capítulos"}
 
-    # -- Vetor 2: storytelling heroico (genérico na v3.6) ----------------------
-    cenas_sem_personagem = [nome for nome, c in cenas if not cena_tem_nome_proprio(c, nomes)]
-    nota2 = 10 if not cenas_sem_personagem else max(0, 10 - 3 * len(cenas_sem_personagem))
-    for nome in cenas_sem_personagem:
-        problemas.append(f"[V2] cena sem nome próprio detectado: {nome} — adicione um personagem/"
-                         f"autoridade concreta com data, lugar ou obstáculo (ou passe --nomes)")
-    v["storytelling_heroico"] = {"nota": nota2, "cenas_sem_personagem": cenas_sem_personagem,
-                                 "detecao": "genérica (título+nome ou sobrenome duplo)"}
+    # -- Vetor 2: storytelling (v3.6.2 — opcional, sem penalizar ausência) -----
+    # Personagem NUNCA é obrigatório: se a fonte não tem pessoas, a cena segue sem.
+    # O lint apenas INFORMA quais cenas têm/podem ter personagem, e reprova apenas
+    # o caso de inventar: cena com nome próprio que NÃO veio da lista --nomes do
+    # projeto (quando a lista é fornecida). Sem --nomes, é puramente informativo.
+    cenas_com_nome = [nome for nome, c in cenas if cena_tem_nome_proprio(c, nomes)]
+    cenas_sem_personagem = [nome for nome, _ in cenas if nome not in cenas_com_nome]
+    nota2 = 10  # ausência não penaliza (fidelidade à fonte)
+    if nomes:
+        # Se o projeto declarou personagens, toda cena com nome próprio deve vir da lista
+        inventados = []
+        for nome, c in cenas:
+            achados = set(PADRAO_NOME_TITULO.findall(c)) | set(PADRAO_NOME_SOBRENOME.findall(c))
+            if achados:
+                na_lista = any(n.lower() in c.lower() for n in nomes if n.strip())
+                if not na_lista:
+                    inventados.append(nome)
+        if inventados:
+            nota2 = max(0, 10 - 3 * len(inventados))
+            problemas.append(f"[V2] personagem(s) fora da lista --nomes em: "
+                             f"{', '.join(inventados[:5])} — verifique se não foi inventado.")
+    v["storytelling_heroico"] = {"nota": nota2,
+                                 "cenas_com_personagem": len(cenas_com_nome),
+                                 "cenas_sem_personagem": cenas_sem_personagem,
+                                 "obs": "v3.6.2: personagem opcional; nunca inventar; fidelidade à fonte"}
 
-    # -- Vetor 3: metáfora âncora persistente ---------------------------------
+    # -- Vetor 3: metáfora (v3.6.2 — opcional, consistente no escopo) ----------
+    # Metáfora NÃO é obrigatória: livro sem imagem passa 10. Quando --metafora é
+    # fornecido, verifica-se apenas a consistência da imagem declarada (presente
+    # em ≥2 pontos da obra, idealmente capítulos diferentes) — não a presença em
+    # toda cena, nem a retomada obrigatória no fechamento.
     alvo = metafora
     if not alvo:
-        candidatos = ("aquário", "aquario", "casa", "carro", "motor", "caixa", "jardim", "forno")
-        alvo = max(candidatos, key=lambda c: sem_acento(texto).lower().count(sem_acento(c)))
-    alvo_n = sem_acento(alvo).lower()
-    na_primeira = alvo_n in sem_acento(cenas[0][1]).lower()
-    na_ultima = alvo_n in sem_acento(cenas[-1][1]).lower()
-    caps_com_eco = [nome for nome, c in capitulos if alvo_n in sem_acento(c).lower()]
-    total_eco = sem_acento(texto).lower().count(alvo_n)
-    nota3 = 10 if (na_primeira and na_ultima and len(caps_com_eco) == len(capitulos)) else \
-            6 if (na_primeira and na_ultima) else 3 if total_eco >= 2 else 0
-    if not na_primeira:
-        problemas.append(f"[V3] metáfora-mestra ('{alvo}') ausente da cena de abertura.")
-    if not na_ultima:
-        problemas.append(f"[V3] metáfora-mestra ('{alvo}') não retomada no fechamento — METAFORA_DESCARTAVEL.")
-    v["metafora_ancora"] = {"nota": nota3, "imagem": alvo, "ocorrencias": total_eco,
-                            "abertura": na_primeira, "fechamento": na_ultima,
-                            "capitulos_com_eco": f"{len(caps_com_eco)}/{len(capitulos)}"}
+        nota3 = 10  # sem metáfora declarada → não exigível
+        v["metafora_ancora"] = {"nota": nota3, "imagem": None, "ocorrencias": 0,
+                                "obs": "v3.6.2: sem --metafora, imagem não é exigida"}
+    else:
+        alvo_n = sem_acento(alvo).lower()
+        caps_com_eco = [nome for nome, c in capitulos if alvo_n in sem_acento(c).lower()]
+        total_eco = sem_acento(texto).lower().count(alvo_n)
+        na_primeira = alvo_n in sem_acento(cenas[0][1]).lower()
+        # obra com 1 capítulo: consistência = presença em ≥2 pontos do corpo;
+        # obra com 2+ capítulos: presença em ≥2 capítulos + ≥3 ocorrências.
+        um_capitulo = len(capitulos) <= 1
+        consistente = (total_eco >= 3) if not um_capitulo else (total_eco >= 2)
+        caps_ok = True if um_capitulo else (len(caps_com_eco) >= 2)
+        nota3 = 10 if (consistente and caps_ok) else \
+                7 if total_eco >= 2 else 5 if total_eco >= 1 else 0
+        if total_eco < 2:
+            problemas.append(f"[V3] metáfora declarada ('{alvo}') quase ausente ({total_eco} ocorrência(s)) — "
+                             f"ou a use com consistência ou não declare.")
+        v["metafora_ancora"] = {"nota": nota3, "imagem": alvo, "ocorrencias": total_eco,
+                                "abertura": na_primeira,
+                                "capitulos_com_eco": f"{len(caps_com_eco)}/{len(capitulos)}",
+                                "obs": "v3.6.2: metáfora opcional; consistência no escopo, não obrigatoriedade"}
 
     # -- Vetor 4: listas de memória (afrouxado na v3.6) ------------------------
     numeradas = len(re.findall(r"^\s*\d\.\s+\*?\*?\w", texto, re.MULTILINE))
@@ -185,23 +212,94 @@ def auditar(texto_bruto: str, metafora: str | None, nomes: list[str] | None) -> 
     v["conviccao_ativa"] = {"nota": nota5, "infracoes": infracoes_duras, "detalhes": detalhes,
                             "obs": "v3.6: F1/F2/F3/F5 não são mais infrações (fontes e cautela são camadas externas)"}
 
-    # -- Vetor 6: fechamento de 30 segundos ------------------------------------
-    blocos = [b.strip() for b in cenas[-1][1].strip().split("\n\n")
-              if b.strip() and set(b.strip()) != {"-"}]
-    ultimo = blocos[-1]
+    # -- Vetor 6: fechamento (toda cena) + chamado tátil de 30s (última) -------
+    # v3.6: TODA cena deve terminar com um fechamento próprio (GENERO §4).
+    # Cenas do meio: parágrafo de cristalização (curto, conclusivo).
+    # Última cena: verbo + medida + critério (chamado tátil).
+
+    def _blocos(cena: str) -> list[str]:
+        """Blocos de prosa da cena, ignorando cabeçalhos (#) e linhas de corte.
+
+        Um cabeçalho pode aparecer colado no fim de um bloco (ex.: capítulo que
+        começa sem linha em branco após o fechamento da cena) — nesse caso o
+        bloco é cortado na linha do cabeçalho."""
+        blocos = []
+        for b in cena.strip().split("\n\n"):
+            b = b.strip()
+            if not b or set(b) == {"-"}:
+                continue
+            # corta no primeiro cabeçalho interno (## / ### / ####)
+            linhas = b.split("\n")
+            parte = []
+            for linha in linhas:
+                if linha.lstrip().startswith("#"):
+                    break
+                parte.append(linha)
+            b = "\n".join(parte).strip()
+            if b:
+                blocos.append(b)
+        return blocos
+
+    def _limpar_markdown(b: str) -> str:
+        """Remove marcação leve de markdown para inspecionar o texto puro."""
+        b = re.sub(r"[*_`#]", "", b)
+        b = b.replace("$\text{", "").replace("}", "").replace("$", "")
+        return b
+
+    def _e_fechamento(bloco: str, e_ultima_cena: bool = False) -> bool:
+        """Fechamento = último bloco de prosa que conclui a cena.
+        - Remove markdown (negrito no fim quebrava a detecção).
+        - Termina em pontuação de fechamento (. ! ? …).
+        - Não é pergunta retórica aberta.
+        - Não é bloco de 'nota' vazado no corpo.
+        - Cenas do meio: bloco contido (até 120 palavras).
+        - Última cena: o chamado tátil vale como fechamento mesmo se longo."""
+        limpo = _limpar_markdown(bloco)
+        plano = sem_acento(limpo).rstrip()
+        palavras = len(plano.split())
+        if re.search(r"\b(nota|obs|observa[cç][aã]o|epist[eê]mica|seguran[cç]a)\b", plano.lower()):
+            return False
+        if plano.endswith("?") and plano.count(".") == 0:
+            return False
+        if not re.search(r"[.!?…]\s*$", plano):
+            return False
+        if not e_ultima_cena and palavras > 120:
+            return False
+        return True
+
+    cenas_sem_fechamento = []
+    for i, (nome, conteudo) in enumerate(cenas):
+        e_ultima = (i == len(cenas) - 1)
+        blocos = _blocos(conteudo)
+        if not blocos or not _e_fechamento(blocos[-1], e_ultima):
+            cenas_sem_fechamento.append(nome)
+
+    # Chamado tátil — verificação na última cena
+    blocos_ultima = _blocos(cenas[-1][1])
+    ultimo = blocos_ultima[-1] if blocos_ultima else ""
     plano = sem_acento(ultimo).lower()
     tem_verbo = any(sem_acento(x) in plano for x in VERBOS_IMPERATIVOS)
     tem_medida = bool(re.search(r"\b\d+\s*(ml|g|grama|copo|segundo|minuto|hora|litro)", plano))
     tem_criterio = bool(re.search(r"crit[eé]rio|transparente|voc[eê] confere|conferir|deve continuar", plano))
     tem_tarefa = bool(re.search(r"registre|anote|marque|por (7|sete) dias|di[aá]rio", plano))
-    nota6 = 10 if (tem_verbo and tem_medida and tem_criterio and not tem_tarefa) else \
-            6 if (tem_verbo and (tem_medida or tem_criterio) and not tem_tarefa) else 2
-    if tem_tarefa:
-        problemas.append("[V6] fechamento usa léxico de dever de casa (GENERO §4).")
-    if not tem_criterio:
-        problemas.append("[V6] fechamento sem critério de sucesso conferível pelo leitor.")
-    v["fechamento_30s"] = {"nota": nota6, "verbo_imperativo": tem_verbo, "medida_exata": tem_medida,
-                           "criterio_visivel": tem_criterio, "tarefa_burocratica": tem_tarefa}
+
+    nota6 = 10
+    if cenas_sem_fechamento:
+        nota6 -= 3 * len(cenas_sem_fechamento)
+        problemas.append(f"[V6] {len(cenas_sem_fechamento)} cena(s) sem fechamento próprio: "
+                         f"{', '.join(cenas_sem_fechamento[:5])} — TODA cena deve concluir com "
+                         f"cristalização (GENERO §4).")
+    if not (tem_verbo and tem_medida and tem_criterio and not tem_tarefa):
+        nota6 -= 2
+        problemas.append("[V6] última cena sem chamado tátil completo (verbo + medida + critério, "
+                         "sem tarefa burocrática — GENERO §4).")
+    nota6 = max(0, min(10, nota6))
+
+    v["fechamento_30s"] = {"nota": nota6,
+                           "cenas_sem_fechamento": cenas_sem_fechamento,
+                           "verbo_imperativo": tem_verbo, "medida_exata": tem_medida,
+                           "criterio_visivel": tem_criterio, "tarefa_burocratica": tem_tarefa,
+                           "obs": "v3.6: fechamento exigido em TODAS as cenas; chamado tátil na última"}
 
     notas = [x["nota"] for x in v.values()]
     media = round(sum(notas) / len(notas), 2)
