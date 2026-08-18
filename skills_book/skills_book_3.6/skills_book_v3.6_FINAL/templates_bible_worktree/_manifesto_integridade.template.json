@@ -1,0 +1,15 @@
+{
+  "cena_id": "cap_NN_cena_MM",
+  "tentativa": 0,
+  "candidate_checksum": "v1.0:xxxxxxxx",
+  "final_checksum": "v1.0:xxxxxxxx",
+  "status_fisico": "FECHAMENTO_EM_VERIFICACAO",
+  "validacoes": {
+    "march": "APROVADO",
+    "continuidade": "APROVADO",
+    "revisor": "APROVADO",
+    "vigia": "PENDENTE"
+  },
+  "origem_edicao": "escritor_editor",
+  "criado_em": "ISO-8601"
+}
