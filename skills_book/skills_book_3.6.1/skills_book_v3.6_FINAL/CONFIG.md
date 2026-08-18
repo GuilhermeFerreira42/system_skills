@@ -44,6 +44,9 @@ independente disso e é lida obrigatoriamente pelo Orquestrador (ver
 
 ## Criterio de Completude e Extensao
 
+A faixa operacional de palavras por cena e definida pelo GENERO.md do genero escolhido (ex: 800-1500 para nao_ficcao_pratica). Este nao e um piso duro, mas um sinal de desenvolvimento.
+
+
 A faixa operacional de palavras por cena e definida pelo GENERO.md do genero escolhido (ex: 800-1.500 para nao_ficcao_pratica). Este nao e um piso duro, mas um sinal de desenvolvimento: se a cena sair muito abaixo da faixa, verifique se faltou um movimento retorico.
 
 A completude da cena e avaliada pelo Revisor Cego (Validador de Ressonancia — RUBRICA §6) atraves das 3 perguntas:

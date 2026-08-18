@@ -42,7 +42,7 @@ Um `CONTRADITO` reprova a cena. Não use métricas de ritmo, tamanho ou estilo.
 
 ---
 
-## Adendo v3.5 — Checagem de cadência da metáfora-mestra
+## Adendo v3.6 — Checagem de cadência da metáfora-mestra (mantido da v3.5)
 
 Além de terminologia e fatos entre cenas, este validador passa a verificar, na
 consolidação da obra:

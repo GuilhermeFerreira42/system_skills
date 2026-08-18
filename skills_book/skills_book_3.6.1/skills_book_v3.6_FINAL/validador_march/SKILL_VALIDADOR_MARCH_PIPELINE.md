@@ -39,7 +39,7 @@ Essas travas existem para fatos, não para ritmo, comprimento ou estética.
 
 ---
 
-## Adendo v3.5 — Destino obrigatório das ressalvas
+## Adendo v3.6 — Destino obrigatório das ressalvas (mantido da v3.5)
 
 Um veredito `APROVADO_COM_RESSALVAS` **não autoriza** o Escritor a diluir a
 prosa. Toda ressalva emitida por este validador precisa ser devolvida com um

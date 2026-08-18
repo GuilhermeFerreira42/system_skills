@@ -1,4 +1,4 @@
-# PERGUNTAS_NIVELAMENTO.md — Boot da Skill 3 (v3.3.0)
+# PERGUNTAS_NIVELAMENTO.md — Boot da Skill 3 (v3.6)
 
 ## Instrução Geral
 

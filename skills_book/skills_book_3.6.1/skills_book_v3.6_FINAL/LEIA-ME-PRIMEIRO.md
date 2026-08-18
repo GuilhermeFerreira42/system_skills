@@ -38,9 +38,9 @@ O Escritor **não recebe e não precisa satisfazer**:
 
 A extensão é uma orientação operacional do plano, nunca um molde que force enchimento artificial.
 
-**Nota:** isso não contradiz o piso de densidade descrito em `escritor/SKILL_ESCRITOR_PIPELINE.md`.
+**Nota:** a extensão operacional de cada cena está descrita em `escritor/SKILL_ESCRITOR_PIPELINE.md` (seção Critério de Completude e Extensão).
 Métrica de ritmo (proibida) é regra sobre a *forma* das frases — desvio-padrão de parágrafo,
-alternância obrigatória de frase curta/longa. Piso de densidade (permitido) é regra sobre
+alternância obrigatória de frase curta/longa. A extensão por cena (permitida como guia) é regra sobre
 *completude* — sinaliza quando uma cena provavelmente cortou um beat pela metade. Um governa
 como a frase soa; o outro checa se a cena terminou o que começou.
 

@@ -1,6 +1,6 @@
 # GENERO: NAO_FICCAO_PRATICA
 
-**Versão:** 2.0 (calibrada contra o Padrão Ouro `otimo_livro_final.md` — ciclo v3.5)
+**Versão:** 2.0 (calibrada contra o Padrão Ouro `PADRAO_OURO_livro_de_referencia.md` — ciclos v3.5 e v3.6)
 **Base:** NAO_FICCAO
 **Tipo:** PRATICA (Não-ficção voltada a mudança de comportamento do leitor)
 **Arquétipo Global:** RISCO_RESGATE
@@ -310,7 +310,7 @@ real e nenhuma ferramenta**: parte do corpus é alegação clínica de um autor,
 não consenso — e a única saída que ele conhecia era escrever "o corpus sugere,
 mas requer cautela". Isso mata a obra e nem sequer informa o leitor.
 
-**A partir da v3.5 há três ferramentas legítimas, e o hedge deixa de ter desculpa:**
+**A partir da v3.6 há três ferramentas legítimas, e o hedge deixa de ter desculpa:**
 
 1. **Atribuição dentro do drama (padrão).** A alegação forte entra colada ao
    nome, ao lugar e ao atrito de quem a produziu. *"Nas anotações que ele
