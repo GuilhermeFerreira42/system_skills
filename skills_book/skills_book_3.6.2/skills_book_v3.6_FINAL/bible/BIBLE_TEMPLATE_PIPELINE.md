@@ -57,7 +57,19 @@ Este perfil é qualitativo. Não contém metas de palavras, percentuais de pará
 - **Tema central:**
 - **Pergunta temática:**
 - **Estrutura:**
+- **Critério de sequência dos capítulos:** [pedagógico / dramático / cronológico / definido pelo usuário]
+- **Blocos temáticos (quando aplicável):**
+
+  | Bloco | Nome do Bloco | Capítulos | Lógica de transição |
+  |:---:|---|:---:|---|
+  | 1 | [nome] | [caps] | [por que vem antes do próximo bloco] |
+
 - **Plano de capítulos:**
+
+  | # | Título / Módulo | Cenas | Mecanismos/focos principais |
+  |:---:|---|:---:|---|
+  | 1 | [título] | [n] | [focos] |
+
 
 ## Conceitos e regras
 

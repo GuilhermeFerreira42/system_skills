@@ -1,4 +1,4 @@
-# COMANDO PADRÃO DE INICIALIZAÇÃO DA SKILL 3 v3.5.2 (GENÉRICO — QUALQUER GÊNERO)
+# COMANDO PADRÃO DE INICIALIZAÇÃO DA SKILL 3 v3.6.3 (GENÉRICO — QUALQUER GÊNERO)
 
 > Copie todo este bloco e cole no chat da IA, junto com:
 > 1. A pasta `skills_book_v3.5_FINAL/`
@@ -60,6 +60,13 @@ Os 5 movimentos abaixo são a **espinha dorsal da experiência de leitura**, tra
 - **Metáfora — OPcional (v3.6.2):** use UMA imagem para a obra inteira, OU uma imagem por capítulo/módulo, OU nenhuma — o que o material pedir. Se usar, seja consistente dentro do escopo (um capítulo não troca de imagem à toa). NUNCA force uma metáfora que a fonte não sugere: prosa direta e fiel à fonte vale mais que imagem forçada.
 - **Personagem — opcional (v3.6.2):** se o corpus traz pessoas reais (cientistas, casos, figuras), apresente-as com data/lugar/obstáculo. Se o material não tem personagens, escreva sem — NUNCA invente um personagem para preencher. Fidelidade à fonte é lei.
 - **Cálculo do número de cenas (v3.6.2):** você DEVE calcular quantas cenas o livro inteiro exige, a partir do corpus — cada mecanismo, personagem ou mito relevante da fonte merece uma cena própria. Referência: não-ficção prática típica = 6 a 9 cenas (material rico → mais; enxuto → menos). Antes de escrever, apresente o cálculo ao usuário e justifique: quantas cenas por capítulo/módulo e por quê. A IA pode e deve conversar com o usuário sobre isso.
+- **Sequência lógica dos capítulos (v3.6.3):** quando o corpus tiver múltiplos módulos, capítulos ou temas independentes, você DEVE propor uma **ordem de leitura pedagogicamente coerente** — não necessariamente a ordem original do corpus. A sequência deve partir do mais geral para o mais específico, do fundamento para a aplicação, do diagnóstico para a solução. O critério de sequência varia por gênero:
+  - *Não-ficção prática / saúde:* fundamentos fisiológicos → diagnóstico → intervenções nutricionais → patologias específicas → estilo de vida e longevidade.
+  - *Não-ficção prática / negócios / desenvolvimento humano:* mentalidade e contexto → ferramentas e diagnóstico → estratégias → casos e aplicações → integração e legado.
+  - *Técnico / manual:* teoria → componentes → montagem → operação → manutenção e troubleshooting.
+  - *Ficção literária:* a sequência de capítulos obedece à lógica dramática da obra (inciting incident → desenvolvimento → clímax → resolução) — não à lógica pedagógica. Ignore este critério neste gênero.
+  - *Podbook / mentor:* abertura de crença (o porquê) → fundamentos (o quê) → método (o como) → histórias de aplicação → chamado à ação.
+  - **Regra universal:** a sequência não é obrigatória se o usuário já definiu uma ordem. Apresente a proposta, justifique, e aguarde aprovação antes de começar a escrever. O usuário tem autoridade final sobre a ordem dos capítulos.
 - **Extensão operacional de cada cena:** a faixa média histórica da skill é de 800 a 1.500 palavras por cena. Este não é um piso duro — é um **sinal de desenvolvimento**: se a cena saiu com menos de 600 palavras, muito provavelmente faltou um movimento retórico inteiro. Antes de entregar, verifique se todos os movimentos previstos para aquela cena foram executados. Se o seu gênero (GENERO.md) definir outra faixa, siga a dele.
 - **Instinto primeiro, auditoria depois.** Escreva a cena inteira de uma vez, sem checar regras durante a escrita. A auditoria (lint + validador) vem só depois.
 - **Nenhum conteúdo do referência na obra. Nenhuma contradição do corpus.**
@@ -82,6 +89,9 @@ Registre essas respostas como a **Constituição da Voz** — elas guiam TUDO o 
 
 **ETAPA 3 — Domine o corpus.**
 Leia o [CORPUS] e extraia: números exatos, nomes com data/lugar/obstáculo, mecanismos, casos, personagens, cenários, mitos a desmontar, regras do mundo. Esta é a ÚNICA fonte de conteúdo.
+
+**ETAPA 3-B — Proponha a sequência lógica dos capítulos (quando o corpus for multi-módulo).**
+Se o corpus tiver múltiplos módulos, temas ou capítulos independentes: (1) liste todos os módulos identificados, (2) agrupe-os em blocos temáticos conforme o critério do gênero (ver DECISÕES UNIVERSAIS), (3) proponha a ordem de leitura com justificativa de transição entre blocos, (4) apresente ao usuário e aguarde aprovação antes de continuar. Não pule para a escrita sem essa aprovação quando o corpus for multi-módulo.
 
 **ETAPA 4 — Escolha a imagem condutora** para ESTE material (doméstica para não-ficção prática; símbolo/objeto/paisagem para ficção; análogo concreto para técnico). Ela deve permitir ao leitor "segurar" a obra com uma lente única.
 
