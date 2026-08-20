@@ -355,4 +355,3 @@ inteira — não fica meio dita.
 com ressalvas pelo MARCH e o Escritor "resolveu" todas do mesmo jeito —
 transferindo a ressalva para dentro da prosa. O resultado tinha rigor e nenhuma
 alma: um livro que passa o tempo inteiro se protegendo do próprio assunto.
-

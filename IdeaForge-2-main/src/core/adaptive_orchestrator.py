@@ -206,4 +206,3 @@ class AdaptiveOrchestrator:
         self._spawned_categories.add(category)
         self._current_agent_count += 1
         logger.info(f"[Orchestrator] Registro de spawn: {category}. Total agentes: {self._current_agent_count}")
-

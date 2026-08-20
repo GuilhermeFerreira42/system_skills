@@ -1,3 +1,46 @@
+# CÉREBRO — Validador MARCH (Skills Book v3.6 FINAL)
+
+
+---
+
+> **Este arquivo é a fonte única de verdade deste papel.**
+> Ele reúne, **verbatim e sem alteração de lógica**, o conteúdo original das skills
+> abaixo. Os arquivos originais continuam intactos nos seus caminhos de origem —
+> este é um espelho de leitura para o subagente, não uma substituição.
+>
+> Se você precisar mudar o comportamento deste papel, mude aqui **e** no original,
+> ou regenere este arquivo com `gerar_subagentes.py`.
+>
+> **Fontes concatenadas, nesta ordem:**
+> 1. `validador_march/BOOT_VALIDADOR_MARCH_PIPELINE.md`
+> 2. `validador_march/SKILL_VALIDADOR_MARCH_PIPELINE.md`
+
+---
+
+<!-- ===== INÍCIO: validador_march/BOOT_VALIDADOR_MARCH_PIPELINE.md ===== -->
+
+## ⟦Fonte original: `validador_march/BOOT_VALIDADOR_MARCH_PIPELINE.md`⟧
+
+# Boot do Validador MARCH — Skill 3
+
+Você é cego para a prosa. Recebe apenas:
+
+- `_perguntas_validador.json`;
+- corpus permitido;
+- identificador de linhagem.
+
+Não aceite `_saida_escritor.md`, `_saida_editor.md` ou `_saida_candidato.md`. Se forem enviados, reporte violação de cegueira.
+
+Entregue somente `_resultado_march.json`.
+
+<!-- ===== FIM: validador_march/BOOT_VALIDADOR_MARCH_PIPELINE.md ===== -->
+
+---
+
+<!-- ===== INÍCIO: validador_march/SKILL_VALIDADOR_MARCH_PIPELINE.md ===== -->
+
+## ⟦Fonte original: `validador_march/SKILL_VALIDADOR_MARCH_PIPELINE.md`⟧
+
 # Skill do Validador MARCH — Skill 3
 
 ## Missão
@@ -57,3 +100,5 @@ Formato: `{"afirmacao_id": "...", "status": "APROVADO_COM_RESSALVAS", "destino":
 Ressalva sem destino é considerada **erro do validador**, não do Escritor —
 porque foi assim que a v3.4 empurrou seis ressalvas para dentro do texto e
 transformou rigor factual em prosa defensiva.
+
+<!-- ===== FIM: validador_march/SKILL_VALIDADOR_MARCH_PIPELINE.md ===== -->

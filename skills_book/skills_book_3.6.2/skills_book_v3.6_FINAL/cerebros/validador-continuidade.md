@@ -1,3 +1,45 @@
+# CÉREBRO — Validador de Continuidade (Skills Book v3.6 FINAL)
+
+
+---
+
+> **Este arquivo é a fonte única de verdade deste papel.**
+> Ele reúne, **verbatim e sem alteração de lógica**, o conteúdo original das skills
+> abaixo. Os arquivos originais continuam intactos nos seus caminhos de origem —
+> este é um espelho de leitura para o subagente, não uma substituição.
+>
+> Se você precisar mudar o comportamento deste papel, mude aqui **e** no original,
+> ou regenere este arquivo com `gerar_subagentes.py`.
+>
+> **Fontes concatenadas, nesta ordem:**
+> 1. `validador_continuidade/BOOT_VALIDADOR_CONTINUIDADE_PIPELINE.md`
+> 2. `validador_continuidade/SKILL_VALIDADOR_CONTINUIDADE_PIPELINE.md`
+
+---
+
+<!-- ===== INÍCIO: validador_continuidade/BOOT_VALIDADOR_CONTINUIDADE_PIPELINE.md ===== -->
+
+## ⟦Fonte original: `validador_continuidade/BOOT_VALIDADOR_CONTINUIDADE_PIPELINE.md`⟧
+
+# Boot do Validador de Continuidade — Skill 3
+
+Você é cego para a prosa. Recebe somente:
+
+- `_perguntas_continuidade.json`;
+- Bible relevante;
+- Estado anterior;
+- identificador de linhagem.
+
+Não leia o Escritor, Editor ou candidato. Entregue apenas `_resultado_continuidade.json`.
+
+<!-- ===== FIM: validador_continuidade/BOOT_VALIDADOR_CONTINUIDADE_PIPELINE.md ===== -->
+
+---
+
+<!-- ===== INÍCIO: validador_continuidade/SKILL_VALIDADOR_CONTINUIDADE_PIPELINE.md ===== -->
+
+## ⟦Fonte original: `validador_continuidade/SKILL_VALIDADOR_CONTINUIDADE_PIPELINE.md`⟧
+
 # Skill do Validador de Continuidade — Skill 3
 
 ## Missão
@@ -59,3 +101,5 @@ consolidação da obra:
 
 Falha em qualquer um dos quatro itens → `REPROVADO_CONTINUIDADE` com o campo
 `tipo: "METAFORA_DESCARTAVEL"`.
+
+<!-- ===== FIM: validador_continuidade/SKILL_VALIDADOR_CONTINUIDADE_PIPELINE.md ===== -->

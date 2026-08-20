@@ -131,4 +131,3 @@ Registre somente decisões humanas ou derivadas explicitamente do nivelamento. N
 - **Cena de retomada explícita:** [última cena da obra]
 - **Extensões permitidas (cômodos da mesma casa):** [ex: filtro, termômetro, peixe doente]
 - **Imagens concorrentes proibidas nesta obra:** [ex: casa hidráulica, painel de carro como imagem estrutural]
-
