@@ -12,6 +12,7 @@ Cada arquivo aqui é a **fonte única de verdade** de um papel. Os adaptadores e
 | `book-validador-march` | Validador MARCH | `cerebros/validador-march.md` |
 | `book-validador-continuidade` | Validador de Continuidade | `cerebros/validador-continuidade.md` |
 | `book-consolidador` | Consolidador | `cerebros/consolidador.md` |
+| `book-auditor-de-pipeline` | Auditor de Pipeline (Fiscal) | `cerebros/auditor-de-pipeline.md` |
 | `book-controle-da-obra` | Controle da Obra | `cerebros/controle-da-obra.md` |
 
 

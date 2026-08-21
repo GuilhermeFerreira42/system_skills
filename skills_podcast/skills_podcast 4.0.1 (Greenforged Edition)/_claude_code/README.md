@@ -15,18 +15,35 @@
 
 ## Instalação
 
-Os adaptadores precisam ficar na **raiz do sistema**, ao lado de `cerebros/`, porque o
-corpo de cada agente referencia o cérebro por caminho relativo (`cerebros/<papel>.md`).
+> **Já vem instalado.** `.claude/agents/` existe na raiz deste sistema com os
+> 5 adaptadores prontos. Rode o instalador só para **reinstalar**,
+> **verificar** ou depois de mexer nos arquivos.
 
 ```bash
 cd "<...>/skills_podcast 4.0.1 (Greenforged Edition)"
-./_claude_code/instalar.sh
+python3 _claude_code/instalar.py             # instala e verifica
+python3 _claude_code/instalar.py --verificar # só confere, não copia
 ```
 
-Isso cria `.claude/agents/` na raiz do sistema e copia os 5 adaptadores.
-Nada em `_claude_code/` é apagado e **nenhum arquivo original de skill é tocado**.
+**Use a versão Python, não o `.sh`.** Motivo concreto: o bit de execução **não
+sobrevive** ao ciclo compactar → `.txt` → restaurar (o restaurador grava tudo em modo
+644), então `./_claude_code/instalar.sh` falha com `Permission denied` na sua máquina. E no
+Windows sem Git Bash/WSL o `.sh` não roda de jeito nenhum. O `instalar.sh` continua
+disponível para quem estiver no Unix, mas chame assim:
 
-Depois, rode o Claude Code **com o diretório de trabalho na raiz do sistema**:
+```bash
+bash _claude_code/instalar.sh
+```
+
+O `instalar.py` faz o que o `.sh` não faz: confere que todo adaptador tem frontmatter
+válido, que os nomes são únicos, que nenhum campo está na ferramenta errada
+(`maxSteps` é do OpenClaude, não do Claude Code),
+e que **todo cérebro referenciado existe**. Ele também remove adaptadores órfãos de
+papéis renomeados ou removidos, e avisa antes de sobrescrever arquivos com conteúdo
+diferente. Sai com código 1 se achar qualquer problema.
+
+Depois, rode o Claude Code **com o diretório de trabalho na raiz do sistema** — os
+adaptadores referenciam os cérebros por caminho relativo (`cerebros/<papel>.md`):
 
 ```bash
 cd "<...>/skills_podcast 4.0.1 (Greenforged Edition)"

@@ -1,0 +1,159 @@
+{
+  "projeto": "/home/user/projeto_restaurado/system_skills/skills_book/skills_book_3.6.2/skills_book_v3.6_FINAL",
+  "executado_em": "2026-08-21T11:48:06.085013+00:00",
+  "cenas_auditadas": 1,
+  "incluiu_calibracao": false,
+  "veredito": "NAO_CONFORME",
+  "contagem": {
+    "BLOQUEIO": 13,
+    "ALERTA": 1,
+    "INFO": 1
+  },
+  "achados": [
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "A1.artefato_obrigatorio",
+      "mensagem": "artefato ausente: _saida_candidato.md (exigido por vigia_integridade.py)"
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "A1.artefato_obrigatorio",
+      "mensagem": "artefato ausente: _saida_final.md (exigido por vigia_integridade.py)"
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "A1.artefato_obrigatorio",
+      "mensagem": "artefato ausente: _resultado_revisor_cego.json (exigido por vigia_integridade.py)"
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "A1.artefato_obrigatorio",
+      "mensagem": "artefato ausente: _manifesto_integridade.json (exigido por vigia_integridade.py)"
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "A2.artefato_nao_coberto_pelo_vigia",
+      "mensagem": "artefato ausente: _log_prompt_checker.md — o vigia NÃO reprova essa ausência (só confere o log se ele existir), então sem este arquivo a cegueira fica NÃO AUDITÁVEL"
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "A2.artefato_nao_coberto_pelo_vigia",
+      "mensagem": "artefato ausente: _log_prompt_continuidade.md — o vigia NÃO reprova essa ausência (só confere o log se ele existir), então sem este arquivo a cegueira fica NÃO AUDITÁVEL"
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "B2.lint_reprova",
+      "mensagem": "lint_conviccao.py REPROVA o candidato (média 6.83, 0 infração(ões) F6). Problemas: [V6] 1 cena(s) sem fechamento próprio: Cena 1: O que é Python e por que aprender — TODA cena deve concluir com cristalização (GENERO §4). | [V6] última cena sem chamado tátil completo (verbo + medida + critério, sem tarefa burocrática — GENERO §4)."
+    },
+    {
+      "severidade": "ALERTA",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "B4.lint_sem_prova_de_execucao",
+      "mensagem": "não há prova em disco de que o Estágio 1 (lint) foi executado pelo Orquestrador: lint_conviccao.py só escreve em stdout. Recomendação: o Orquestrador deve persistir a saída `--json` em `_log_lint_conviccao.json` na cena. Este fiscal reexecutou o lint para suprir a lacuna."
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "B7.vigia_falha",
+      "mensagem": "arquivo ausente: _saida_candidato.md"
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "B7.vigia_falha",
+      "mensagem": "arquivo ausente: _saida_final.md"
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "B7.vigia_falha",
+      "mensagem": "arquivo ausente: _resultado_revisor_cego.json"
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "B7.vigia_falha",
+      "mensagem": "arquivo ausente: _manifesto_integridade.json"
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "regra": "B8.vigia_nao_executado",
+      "mensagem": "não existe `_log_vigia.md` na cena: o Orquestrador NÃO executou o Vigia (ou não o executou nesta versão). O pipeline exige o Vigia antes de declarar CONCLUIDO."
+    },
+    {
+      "severidade": "BLOQUEIO",
+      "escopo": "obra",
+      "regra": "B12.controle_divergente",
+      "mensagem": "cena cap_01_cena_01: arquivo_final_ausente"
+    },
+    {
+      "severidade": "INFO",
+      "escopo": "obra",
+      "regra": "C0.sem_livro",
+      "mensagem": "obra consolidada não encontrada; testes §1-§5 da autoauditoria pulados"
+    }
+  ],
+  "detalhe_cenas": [
+    {
+      "cena": "generos_completos/tecnico_manual/capitulos_calibracao/capitulo_01/cena_01",
+      "artefatos": {
+        "faltando_vigia": [
+          "_saida_candidato.md",
+          "_saida_final.md",
+          "_resultado_revisor_cego.json",
+          "_manifesto_integridade.json"
+        ],
+        "faltando_extra": [
+          "_log_prompt_checker.md",
+          "_log_prompt_continuidade.md"
+        ]
+      },
+      "lint": {
+        "executado": true,
+        "exit": 1,
+        "status_geral": "REPROVADO",
+        "media": 6.83,
+        "infracoes_f6": 0,
+        "problemas": [
+          "[V6] 1 cena(s) sem fechamento próprio: Cena 1: O que é Python e por que aprender — TODA cena deve concluir com cristalização (GENERO §4).",
+          "[V6] última cena sem chamado tátil completo (verbo + medida + critério, sem tarefa burocrática — GENERO §4)."
+        ]
+      },
+      "vigia": {
+        "executado": true,
+        "exit": 1,
+        "falhas": [
+          "[FALHA] arquivo ausente: _saida_candidato.md",
+          "[FALHA] arquivo ausente: _saida_final.md",
+          "[FALHA] arquivo ausente: _resultado_revisor_cego.json",
+          "[FALHA] arquivo ausente: _manifesto_integridade.json"
+        ],
+        "log_presente": false
+      }
+    }
+  ],
+  "reconciliacao": {
+    "executado": true,
+    "exit": 1,
+    "status": "REVALIDACAO_NECESSARIA",
+    "diferencas": [
+      {
+        "id": "cap_01_cena_01",
+        "tipo": "arquivo_final_ausente",
+        "caminho": "/home/user/projeto_restaurado/system_skills/skills_book/skills_book_3.6.2/skills_book_v3.6_FINAL/execucao/capitulos/capitulo_01/cena_01/_saida_final.md"
+      }
+    ],
+    "nota": "reconciliacao_ultima.json foi regravado (é o relatório derivado do script)"
+  },
+  "obra": {
+    "livro": null
+  }
+}

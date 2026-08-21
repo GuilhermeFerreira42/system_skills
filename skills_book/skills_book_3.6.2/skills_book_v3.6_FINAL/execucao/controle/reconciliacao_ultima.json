@@ -1,0 +1,13 @@
+{
+  "projeto": "/home/user/projeto_restaurado/system_skills/skills_book/skills_book_3.6.2/skills_book_v3.6_FINAL",
+  "controle": "/home/user/projeto_restaurado/system_skills/skills_book/skills_book_3.6.2/skills_book_v3.6_FINAL/execucao/controle/controle_da_obra.json",
+  "reconciliado_em": "2026-08-21T11:48:06.077467+00:00",
+  "status": "REVALIDACAO_NECESSARIA",
+  "diferencas": [
+    {
+      "id": "cap_01_cena_01",
+      "tipo": "arquivo_final_ausente",
+      "caminho": "/home/user/projeto_restaurado/system_skills/skills_book/skills_book_3.6.2/skills_book_v3.6_FINAL/execucao/capitulos/capitulo_01/cena_01/_saida_final.md"
+    }
+  ]
+}
