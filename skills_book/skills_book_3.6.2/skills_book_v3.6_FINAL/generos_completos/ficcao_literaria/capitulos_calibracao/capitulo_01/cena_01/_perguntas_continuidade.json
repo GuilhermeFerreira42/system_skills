@@ -1,6 +1,0 @@
-[
-  {"id": "CONT-001", "categoria": "VOZ_NARRATIVA", "afirmacao": "A cena usa 3ª pessoa limitada focada em Helena", "pergunta": "Bible define POV_padrao = 3ª pessoa limitada alternando Helena e Miguel. A cena está em 3ª focada em Helena? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
-  {"id": "CONT-002", "categoria": "FIO_NARRATIVO_SETUP", "afirmacao": "A cena introduz o fio 'A briga com a avó' (referência aos 20 anos de afastamento)", "pergunta": "Bible declara o fio 'A briga com a avó' como Arco Helena, introduzido no Cap 1. A cena referencia o fio coerentemente? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
-  {"id": "CONT-003", "categoria": "PERSONAGEM_ESTADO", "afirmacao": "Helena está em estado emocional de medo/regresso (não se move por um longo tempo)", "pergunta": "Bible descreve Helena no início do arco como 'fugindo do passado'. A cena mostra esse estado? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
-  {"id": "CONT-004", "categoria": "FIO_NARRATIVO_SETUP", "afirmacao": "A cena introduz o fio 'A carta no sótão' (carta endereçada a Helena)", "pergunta": "Bible declara o fio 'A carta no sótão' como Mistério, introduzido no Cap 4. A cena antecipa o fio? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."}
-]

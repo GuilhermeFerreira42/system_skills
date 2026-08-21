@@ -1,5 +1,0 @@
-[
-  {"id": "CONT-001", "categoria": "VOZ_NARRATIVA", "afirmacao": "A cena usa 1ª pessoa do mentor como base, com 2ª pessoa pontual", "pergunta": "Bible define POV_padrao = 1ª pessoa do mentor como base, 2ª pessoa pontual. A cena está coerente? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
-  {"id": "CONT-002", "categoria": "CONCEITO_REGRA", "afirmacao": "A validação é apresentada como caminho antes de investir", "pergunta": "Bible define validação como 'testar antes de investir'. A cena está coerente? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."},
-  {"id": "CONT-003", "categoria": "FIO_NARRATIVO_SETUP", "afirmacao": "A cena prepara a próxima (régua de validação)", "pergunta": "Bible declara o fio 'A Validação (R$ 10K/100 pedidos/90 dias)' como Tema Central. A cena referencia o fio coerentemente? Responda CONFIRMADO/CONTRADITO/NAO_ENCONTRADO."}
-]
