@@ -1,0 +1,175 @@
+GUIA PRÁTICO — ANÁLISE E INTERPRETAÇÃO DE VÍDEOS POR IAs DA ARENA
+Versão: 1.0 — 2026-10-11
+
+OBJETIVO
+Este documento ensina uma IA da Arena a analisar um vídeo mesmo quando ela não recebe vídeo diretamente como modalidade. O método separa o arquivo em dois canais sincronizados:
+1. áudio convertido em transcrição com timestamps;
+2. imagem convertida em frames periódicos e frames de mudança de cena.
+A IA deve cruzar fala e imagem antes de concluir qualquer coisa.
+
+PRINCÍPIO CENTRAL
+Não trate um vídeo renomeado como texto. Se o upload chegar com nome como “video.mp4.txt” porque a interface alterou a extensão, não use read_file, cat, sed, head ou outro leitor textual no arquivo original. Primeiro renomeie-o para .mp4 e confirme o tipo real com `file`. Ler bytes de MP4 como texto não ajuda e pode produzir lixo.
+
+FLUXO RECOMENDADO
+
+1. Confirmar a intenção do usuário
+Descubra o objetivo: resumo, homologação, levantamento de bugs, comparação visual, requisitos, documentação ou transcrição. Respeite ordens como “apenas conversar” e “não altere código”. Não implemente mudanças só porque o vídeo revelou problemas.
+
+2. Localizar e renomear com segurança
+Exemplo:
+  mv -- "/home/user/uploads/video.mp4.txt" "/home/user/uploads/video.mp4"
+  file --brief "/home/user/uploads/video.mp4"
+  stat -c '%s bytes' "/home/user/uploads/video.mp4"
+O resultado deve indicar contêiner de mídia, como ISO Media/MP4. Renomear não converte o arquivo; apenas corrige a extensão.
+
+3. Inspecionar metadados sem reproduzir o vídeo
+Use FFprobe:
+  ffprobe -v error \
+    -show_entries format=duration:stream=index,codec_type,codec_name,width,height,r_frame_rate \
+    -of json video.mp4
+Registre duração, resolução, codecs e presença de áudio. Não presuma que todo MP4 tenha áudio.
+
+4. Preparar ferramentas
+Verifique:
+  command -v ffmpeg
+  command -v ffprobe
+  python3 -c "import importlib.util; print(importlib.util.find_spec('faster_whisper'))"
+Se permitido pelo ambiente, instale FFmpeg e faster-whisper. Instalações são dependentes do ambiente e podem não persistir entre conversas.
+
+5. Extrair áudio em formato adequado
+  ffmpeg -y -v error -i video.mp4 -vn -ar 16000 -ac 1 -c:a pcm_s16le audio.wav
+Isso cria WAV mono de 16 kHz, adequado ao Whisper.
+
+6. Transcrever com modelo maior que Tiny
+Para português técnico, prefira `small`, `medium` ou modelo equivalente, conforme RAM, espaço e tempo disponíveis. `small` em CPU/int8 oferece bom equilíbrio e é substancialmente melhor que `tiny`. Use:
+- idioma `pt` quando conhecido;
+- `beam_size=5`;
+- `vad_filter=True`;
+- timestamps de palavras quando disponíveis;
+- texto anterior como contexto.
+
+Exemplo com faster-whisper:
+  from faster_whisper import WhisperModel
+  model = WhisperModel('small', device='cpu', compute_type='int8')
+  segments, info = model.transcribe(
+      'audio.wav', language='pt', beam_size=5,
+      vad_filter=True, word_timestamps=True,
+      condition_on_previous_text=True)
+  for s in segments:
+      print(f'[{s.start:07.2f}s -> {s.end:07.2f}s] {s.text.strip()}')
+
+CUIDADO COM PYAV
+Em alguns ambientes, `faster-whisper` e PyAV podem ser incompatíveis e gerar:
+  TypeError: open() got an unexpected keyword argument 'metadata_errors'
+Não abandone a análise. Carregue o WAV como array NumPy e passe o array ao transcribe:
+  import wave, numpy as np
+  with wave.open('audio.wav', 'rb') as wav:
+      audio = np.frombuffer(wav.readframes(wav.getnframes()), dtype=np.int16)
+      audio = audio.astype(np.float32) / 32768.0
+  segments, info = model.transcribe(audio, language='pt', beam_size=5,
+      vad_filter=True, word_timestamps=True)
+
+7. Extrair frames periódicos
+Não dependa apenas de mudanças de cena: gravações de tela podem mudar pouco e ainda conter ações importantes. Para vídeo curto, um frame a cada 10–15 segundos costuma funcionar:
+  mkdir -p frames_periodic
+  ffmpeg -y -v error -i video.mp4 \
+    -vf 'fps=1/15,scale=1280:-2' -q:v 2 \
+    frames_periodic/frame_%03d.jpg
+Aproximação do tempo: com intervalo de 15 s, frame_001 fica perto do início, frame_005 perto de 60 s, frame_009 perto de 120 s etc. Para precisão forense, extraia pelo timestamp explícito.
+
+8. Extrair frames por mudança de cena
+Use como canal complementar:
+  mkdir -p frames_scene
+  ffmpeg -y -v error -i video.mp4 \
+    -vf "select='gt(scene,0.18)',scale=1280:-2" \
+    -vsync vfr -q:v 2 frames_scene/scene_%03d.jpg
+Em gravações de desktop, limiares entre 0.12 e 0.25 podem ser testados. Poucos frames de cena não significam que o vídeo tenha pouco conteúdo.
+
+9. Extrair frames direcionados após ler a transcrição
+A estratégia mais eficiente é em duas passagens:
+- primeira passagem: transcrição + frames periódicos;
+- segunda passagem: novos frames exatamente nos timestamps onde a fala menciona clique, menu, erro, comparação, antes/depois ou mudança de tela.
+Exemplo:
+  ffmpeg -y -v error -ss 00:03:12 -i video.mp4 -frames:v 1 -q:v 2 frame_03m12s.jpg
+Busque alguns segundos antes e depois quando a ação visual não coincide exatamente com a fala.
+
+10. Inspecionar as imagens
+Use a ferramenta visual disponível na Arena para abrir os frames. Não conclua apenas pela transcrição. A fala pode dizer “isso aqui” sem nomear o elemento; o frame revela a interface apontada. Veja frames representativos do começo, meio, fim e dos trechos críticos.
+
+11. Cruzar os dois canais
+Para cada achado, registre:
+- timestamp ou faixa aproximada;
+- o que foi falado;
+- o que apareceu na tela;
+- interpretação;
+- grau de certeza;
+- se é fato observado, pedido do usuário ou inferência da IA.
+Exemplo:
+  02:41–03:17 — fala: Provedores não abre sem conversa.
+  Visual: tela abre em coluna estreita ao lado do chat/editor.
+  Conclusão: navegação depende do estado da conversa e usa a região errada.
+
+12. Responder de forma verificável
+Uma boa resposta contém:
+- confirmação técnica de que o arquivo era vídeo;
+- método usado;
+- duração/resolução, quando útil;
+- resumo cronológico;
+- achados por timestamp;
+- gaps entre referência e implementação;
+- incertezas e possíveis erros da transcrição;
+- confirmação de que nenhuma alteração foi feita, se o usuário pediu apenas análise.
+
+CONTROLES DE QUALIDADE
+- Nunca diga que Whisper capturou “todas as palavras” com perfeição.
+- Modelos podem confundir nomes de produto, caminhos, termos técnicos e palavras curtas.
+- Corrija pelo contexto somente quando houver evidência visual; preserve incerteza quando não houver.
+- Verifique se a transcrição cobre quase toda a duração falada.
+- Compare idioma detectado e probabilidade.
+- Use mais de um tipo de amostragem visual.
+- Não trate frame periódico como timestamp exato sem calcular ou extrair pelo tempo.
+- Não confunda o sistema original, o clone e ferramentas de referência mostradas no mesmo vídeo.
+- Não exponha chaves, tokens, nomes pessoais ou arquivos sensíveis visíveis na gravação.
+- Não guarde vídeo, áudio ou frames dentro do repositório sem autorização. Prefira `/home/user/video_analysis/` ou pasta temporária fora do projeto.
+- Não faça commit de mídia ou transcrição automaticamente.
+- Não modifique o código apenas por ter identificado requisitos.
+
+MODELO E DESEMPENHO
+- tiny: rápido, menor precisão; evite para decisões técnicas importantes.
+- small: opção padrão equilibrada em CPU.
+- medium/large: use quando o áudio for ruim, houver muitos termos técnicos ou a precisão justificar maior download/RAM/tempo.
+- CPU: `compute_type='int8'` costuma ser apropriado.
+- GPU: use configuração compatível se o ambiente realmente oferecer GPU.
+O nome e a disponibilidade dos modelos podem variar. Documente sempre qual modelo foi usado.
+
+ESTRUTURA SUGERIDA DE SAÍDA
+  video_analysis/
+    audio.wav
+    transcricao.txt
+    metadata.txt
+    frames_periodic/
+    frames_scene/
+    frames_targeted/
+O vídeo original permanece em uploads. Esses artefatos são auxiliares e podem ser apagados depois da entrega, se não forem necessários.
+
+CHECKLIST RÁPIDO PARA OUTRA IA
+[ ] Entendi o objetivo e as restrições do usuário.
+[ ] Não tentei ler MP4 disfarçado como TXT.
+[ ] Corrigi a extensão e confirmei o tipo com `file`.
+[ ] Medi duração, streams e resolução com FFprobe.
+[ ] Extraí áudio mono 16 kHz.
+[ ] Usei Whisper small/medium/large, não Tiny por padrão.
+[ ] Salvei transcrição com timestamps.
+[ ] Extraí frames periódicos.
+[ ] Extraí frames por mudança de cena.
+[ ] Extraí frames dirigidos nos trechos importantes.
+[ ] Cruzei fala e imagem.
+[ ] Marquei incertezas e não exagerei a precisão.
+[ ] Respeitei “apenas conversar” ou outras limitações.
+[ ] Não coloquei mídia no repositório sem autorização.
+
+APRENDIZADO DO CASO VALIDADO
+O método foi validado em um MP4 de aproximadamente 4min02s, 1904×1076, H.264 com áudio AAC. Foram extraídos áudio WAV, 16 frames periódicos e 4 frames de cena. O Whisper `small`, CPU/int8, beam 5 e VAD detectou português com probabilidade 1.0 e gerou 25 segmentos. A combinação permitiu distinguir diferentes aplicações mostradas no mesmo vídeo, relacionar pedidos falados às telas correspondentes e identificar gaps funcionais. A primeira tentativa falhou por incompatibilidade PyAV; passar o áudio como array NumPy resolveu.
+
+REGRA FINAL
+“Analisar vídeo” neste fluxo não significa apenas transcrever. Significa sincronizar evidência auditiva e visual, verificar o contexto e responder com timestamps, limites de confiança e respeito absoluto ao escopo pedido pelo usuário.

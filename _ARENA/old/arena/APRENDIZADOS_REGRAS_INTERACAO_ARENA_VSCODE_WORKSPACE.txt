@@ -1,0 +1,180 @@
+APRENDIZADOS E REGRAS DE INTERAÇÃO — ARENA + VS CODE + WORKSPACE
+Versão: 2026-09-08
+Objetivo: este arquivo deve ser enviado junto com o pacote do projeto e com o script .sh para contextualizar a IA sobre como trabalhar no workspace, como manter o VS Code utilizável e como interagir com o usuário sem criar atrito operacional.
+
+1) REGRA PRINCIPAL
+A IA deve tratar o workspace como a fonte de verdade do projeto atual.
+Ela deve preservar o ambiente, manter a experiência do usuário estável e evitar ações destrutivas ou automáticas que o usuário não pediu.
+
+2) SOBRE O PACOTE ENVIADO PELO USUÁRIO
+- O usuário pode enviar um arquivo compactado do projeto e um script .sh para restaurar/montar o ambiente.
+- Se um arquivo aparentemente ".txt" for na verdade um tarball compactado renomeado, NÃO ler esse arquivo como texto.
+- Não tentar interpretar arquivo compactado como documentação.
+- Se houver instrução operacional no .sh, seguir o fluxo do script em vez de improvisar.
+- Depois da restauração, confirmar a estrutura real do workspace antes de começar qualquer implementação.
+
+3) SOBRE O VS CODE / CODE-SERVER
+- Se houver um VS Code no navegador funcionando, não desligar voluntariamente.
+- Não derrubar o preview do VS Code sem necessidade real.
+- Se a view do VS Code cair, priorizar remontar o ambiente antes de continuar outras tarefas.
+- Se existir um script de restauração, usá-lo como caminho preferencial para remontar o VS Code.
+- Se precisar subir um servidor para preview, garantir que ele aceite acesso pelo host de preview da Arena e, quando aplicável, escute em 0.0.0.0.
+- Só encerrar servidores se isso for realmente necessário para liberar memória ou corrigir conflito, e deixar isso claro para o usuário.
+- Se derrubar algum servidor por necessidade técnica, remontar ao final quando isso fizer parte do fluxo esperado pelo usuário.
+
+4) SOBRE O WORKSPACE
+- Nunca resetar a sessão sem ordem explícita do usuário.
+- Nunca apagar arquivos enviados pelo usuário sem autorização explícita.
+- Nunca presumir que um caminho está ausente sem reinspecionar o workspace.
+- Se um repositório canônico for informado pelo usuário, usar apenas esse caminho para implementação e para documentação viva.
+- Evitar citar caminhos antigos, auxiliares, temporários ou incorretos na documentação do projeto.
+- Antes de editar, localizar o repositório certo e validar a árvore real de arquivos.
+
+5) COMO INTERPRETAR PEDIDOS DO USUÁRIO
+5.1) "Atualize o workspace"
+Interpretar como:
+- reinspecionar o estado atual dos arquivos relevantes;
+- verificar quais arquivos mudaram;
+- informar no chat o que foi alterado, criado, validado ou encontrado;
+- não gerar zip automaticamente;
+- não gerar relatório novo no workspace por padrão.
+
+5.2) "Atualize a visão do workspace"
+Interpretar como:
+- revisar novamente a árvore/estado atual dos arquivos relevantes;
+- apresentar no chat um resumo objetivo das mudanças visíveis;
+- só criar manifesto, pacote ou arquivo auxiliar se o usuário pedir explicitamente.
+
+5.3) "Monte o VS Code novamente" / "A view caiu"
+Interpretar como:
+- restaurar o VS Code / code-server;
+- confirmar que voltou a subir;
+- informar a porta, o status e o que foi feito;
+- não tratar isso como motivo para resetar o projeto.
+
+5.4) "Atualize" sem mais contexto
+Assumir por padrão:
+- atualizar a leitura do estado do projeto;
+- revisar mudanças no workspace;
+- responder no chat;
+- sem compactar nada automaticamente.
+
+6) O QUE A IA NÃO DEVE FAZER POR PADRÃO
+- Não gerar arquivo compactado automaticamente.
+- Não gerar .zip, .tar.gz ou pacote de download sem pedido explícito.
+- Não criar relatório em Markdown no workspace só para dizer o que mudou.
+- Não inventar sucesso de build, teste ou validação.
+- Não marcar fase como concluída sem evidência real.
+- Não desligar VS Code ou terminais por conveniência.
+- Não reescrever documentação com narrativa operacional desnecessária se o usuário pediu continuidade limpa.
+
+7) COMO REPORTAR RESULTADOS
+- O padrão é reportar no chat, não em arquivo extra.
+- Informar de modo objetivo:
+  - o que foi verificado;
+  - o que mudou;
+  - o que passou;
+  - o que falhou;
+  - o que falta.
+- Se houver logs importantes, resumir no chat e citar os arquivos relevantes.
+- Só criar arquivo de relatório se o usuário pedir explicitamente um arquivo.
+
+8) VALIDAÇÃO TÉCNICA: COMO AGIR
+- Não precisa buildar toda vez.
+- Durante desenvolvimento, preferir:
+  - typecheck;
+  - testes focados;
+  - validações específicas do que foi alterado.
+- Build completo é mais indicado quando:
+  - uma fase vai ser fechada;
+  - houve mudança estrutural importante;
+  - há suspeita de problema de bundling/produção;
+  - o usuário pediu prova final.
+- Se a infraestrutura do ambiente atual não suportar build ou testes pesados, dizer isso claramente e preparar instruções para execução local.
+- Nunca tratar falha de infraestrutura como se fosse bug confirmado do código sem evidência.
+
+9) SOBRE MEMÓRIA, PERFORMANCE E SERVIDORES
+- Se o ambiente estiver com pouca RAM, a IA pode considerar encerrar temporariamente servidores não essenciais para tentar liberar memória.
+- Mas isso deve ser feito com critério, porque nem sempre resolve o problema de build.
+- Se o build continuar falhando por limitação do ambiente, registrar honestamente o bloqueio e orientar validação local.
+- Se o usuário tiver um agente local mais forte, ele pode executar build/testes finais e devolver o workspace atualizado.
+
+10) DOCUMENTAÇÃO VIVA
+- Se o projeto usar documentação viva, ela deve ser atualizada apenas com base em evidência real.
+- KANBAN, current state, decision log e phase summary precisam refletir o estado verdadeiro do código e dos testes.
+- Não mover item para CONCLUÍDO sem validação real.
+- Se a documentação e o código divergirem, a IA deve verificar antes de afirmar qualquer status.
+
+11) BOAS PRÁTICAS OPERACIONAIS
+- Sempre confirmar se dependências essenciais existem antes de assumir que o ambiente está pronto.
+- Sempre verificar se servidores críticos realmente subiram.
+- Sempre diferenciar:
+  - validação local do usuário;
+  - validação no ambiente atual da Arena.
+- Sempre preferir o repositório e os arquivos atuais do workspace a memórias antigas ou suposições.
+- Se algo parecer faltando, reinspecionar antes de concluir que o usuário enviou incompleto.
+
+12) CONDUTA ESPERADA DA IA
+A IA deve agir como um operador cuidadoso do workspace:
+- preserva o ambiente;
+- não gera artefatos desnecessários;
+- não compacta por conta própria;
+- mantém o VS Code utilizável;
+- responde em linguagem objetiva no chat;
+- valida antes de afirmar;
+- e deixa o workspace pronto para o usuário baixar, testar localmente e reenviar quando quiser.
+
+13) REGRA FINAL
+Se houver dúvida entre:
+- criar artefato extra ou não criar,
+- derrubar um serviço ou preservar,
+- assumir algo ou reinspecionar,
+a preferência correta é:
+- não criar artefato extra;
+- preservar o serviço;
+- reinspecionar o workspace;
+- e perguntar ao usuário antes de tomar uma ação irreversível.
+
+---
+
+14) DESCOBERTA CRÍTICA 2026-09-14 — LIMPEZA AUTOMÁTICA DO WORKSPACE ARENA (SNAPSHOT EXCLUSIONS)
+Data: 2026-09-14
+Descoberto por: Usuário + Arena Agent durante restauração VS Code Server
+Problema observado: Quando VS Code cai ou workspace reinicia, arquivos modificados são limpos, voltando ao estado anterior.
+
+Causa raiz:
+O workspace da Arena salva snapshot mas EXCLUI de propósito estas pastas para não estourar limite de 128MB:
+- .arena, .cache, .local, .mypy_cache, .next, .nox, .npm, .nuxt, .output, .parcel-cache, .pytest_cache, .ruff_cache, .svelte-kit, .tox, .turbo, .venv, .vite, __pycache__, build, coverage, dist, node_modules, out, target
+- .git/config, .git/credentials, .git-credentials, .netrc
+- /tmp é tmpfs 993M separado, limpa a cada reinício e enche rápido com builds
+
+Consequências:
+- /home/user/.cache/code-server-runtime (118M node + vscode) é apagado a cada snapshot → precisa baixar de novo (~235MB) via restore-code-server.sh
+- code-server-main/out/ é apagado → precisa tsc de novo
+- agente_window/node_modules é apagado → precisa npm install + npm rebuild node-pty
+- /tmp fica 100% cheio com builds vite/monaco → causa "No space left on device" e derruba VS Code
+
+Solução adotada (Estratégia ZIP V3):
+- Manter código completo do VS Code Server dentro de um ZIP (codigo_completo.txt 229M → projeto_restaurado.zip ~30-40M) em vez de solto
+- ZIP conta como 1 arquivo no snapshot, não 10k arquivos, economiza espaço e evita limite 2048 arquivos soltos
+- Leitura direta do ZIP com zipfile.ZipFile().read() sem extrair tudo (para auditorias)
+- Scripts: Restore-To-Zip.py (restauração inteligente para ZIP), restore_codefilecopier.py (clássica), compactar_projeto.py
+- Manter links salvos em /home/user/PROJETO_LINKS.md e /home/user/.cache/PROJETO_LINKS_BACKUP.md e /home/user/agente_window/docs/LINKS_PROJETO.md
+- Sempre limpar /tmp antes de restaurar: rm -rf /tmp/*
+- Sempre verificar servidores com curl localhost:8080 e 5173 após restore
+- Nunca usar pkill -f vite (mata code-server junto), usar start_process com nome fixo
+
+Regras adicionais para IA:
+- Antes de qualquer operação que possa derrubar VS Code, avisar usuário e garantir restore-code-server.sh pronto
+- Se VS Code cair, prioridade máxima é remontar com restore-code-server.sh + start_process code-server 8080
+- Se /tmp estiver 100%, limpar imediatamente antes de qualquer build/download
+- Se usuário subir arquivo grande (>100M), verificar se é gzip renomeado para .txt (magic 1f8b) e não tentar ler como texto
+- Manter CodeFileCopier.zip (39M) e codigo_completo.txt (229M) dentro de /home/user/A/ e extrair para ZIP estratégico, não solto no workspace
+- Atualizar este arquivo de aprendizados sempre que descobrir novo comportamento do snapshot Arena
+
+Comando mestre V3 ZIP Strategy (ordem obrigatória):
+1. Salvar os 3 scripts no workspace (restore_codefilecopier.py, compactar_projeto.py, Restore-To-Zip.py)
+2. Executar restauração INTELIGENTE: python3 Restore-To-Zip.py codigo_completo.txt projeto_restaurado.zip (sempre funciona mesmo com 10k arquivos)
+3. Para auditorias, NUNCA extrair tudo, ler direto do ZIP com zipfile
+
+Status: Validado 2026-09-14 com VS Code 8080 e frontend 5173 ambos 200 OK após restore

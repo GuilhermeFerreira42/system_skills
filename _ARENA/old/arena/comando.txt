@@ -1,0 +1,2 @@
+nao leia code-server-workspace.tar.gz.txt No formato de TXT, monte para mim o VS Code para eu poder interagir com ele.
+Leia os outros arquivos txt

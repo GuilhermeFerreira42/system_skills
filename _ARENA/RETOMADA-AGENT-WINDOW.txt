@@ -1,0 +1,36 @@
+RETOMADA DO AGENT WINDOW EM OUTRO COMPUTADOR
+
+O QUE TRANSFERIR
+
+1. Copie a pasta agente_window de dentro da Arena, incluindo a pasta oculta .git.
+2. Se quiser consultar as provas, leve ao lado uma pasta arena-operacional com a
+   subpasta lateral-direita-1.135. O essencial ali é RELATORIO.md, comparacao.html,
+   as imagens referenciadas pelo comparativo e os resultados de teste citados.
+3. Leve este TXT. Prepare dependências e runtime pelos procedimentos do projeto.
+
+PONTO DE RETOMADA
+
+A branch local arena está no commit 3a18790, que contém a entrega da barra lateral
+direita. Ao escrever este arquivo, o GitHub ainda estava no commit anterior.
+A homologação humana continua pendente.
+
+COMO RETOMAR NO CODEX
+
+Abra a pasta agente_window como projeto e anexe este TXT. Leia AGENTS.md e siga
+a ordem indicada para a documentação canônica, começando por Comece Aqui, Visão
+Geral e Estado Atual. Consulte a decisão D140 e use planejamento, homologação e
+testes conforme a tarefa. Confira no Git a branch, o último commit e as mudanças
+locais. Antes de editar, informe onde o trabalho parou, o que foi validado e a
+próxima ação. Se a pasta operacional existir ao lado, consulte o relatório da
+barra lateral direita. Use os registros operacionais antigos como histórico.
+
+O QUE PODE FICAR NA MÁQUINA ANTIGA
+
+A pasta .agente_window contém o banco e os dados locais do aplicativo. Ela só é
+necessária se você quiser preservar suas sessões e outros dados locais. Guarde
+uma cópia se esse histórico tiver valor para você. Para migrá-lo, use um
+procedimento próprio com o aplicativo fechado.
+
+A pasta recuperacao-2026-11-06 é um backup antigo. As pastas de configuração,
+habilidades, uploads e os scripts avulsos são opcionais para retomar o código.
+Guarde as cópias originais que ainda tenham valor antes de decidir excluí-las.

@@ -1,0 +1,71 @@
+REGRAS PARA META AI NAO TRAVAR - GUIA GENERICO PARA QUALQUER PROJETO
+====================================================================
+Use este arquivo no inicio de qualquer conversa para evitar lentidao e timeouts.
+
+1. ENTENDENDO O AMBIENTE DA META AI
+------------------------------------
+- Nao tem acesso a internet direta e nao tem git instalado.
+- O container trava quando tenta zipar, ler ou processar mais de ~15-20MB ou mais de ~60 arquivos de uma vez.
+- Operacoes pesadas como varredura recursiva completa, compactacao de pasta docs inteira, leitura de videos grandes ou geracao de imagens causam timeout.
+- Multi-agentes (varios agentes trabalhando em paralelo) aumenta muito o tempo e o risco de travar.
+
+2. O QUE CAUSA TRAVAMENTO (NAO FAZER)
+-------------------------------------
+[1] Nao pecar para "zipar tudo", "compactar o projeto inteiro", "mandar a docs completa".
+[2] Nao pecar para "clonar do GitHub", "baixar repositorio", "pegar na internet".
+[3] Nao pecar para "analise todos os arquivos" ou "leia a pasta inteira".
+[4] Nao pecar para gerar imagens, prints ou videos se o que voce precisa e so organizar texto/codigo.
+[5] Nao enviar zip maior que 15MB. Se for grande, quebre em partes.
+[6] Nao pedir multiplas tarefas grandes na mesma mensagem. Quebre em 1 tarefa por vez.
+
+3. REGRAS DE OURO (O QUE FAZER)
+-------------------------------
+[REGRA 1] TRABALHO FATIADO: Sempre divida o projeto em fatias pequenas. Ex: "Trabalhe APENAS na pasta X".
+[REGRA 2] ESCOPO MINIMO: Diga exatamente quais pastas/arquivos a IA deve mexer. Ex: "Meche apenas em /fatia04/".
+[REGRA 3] ENTRADA PEQUENA: Envie apenas o essencial. Se precisar atualizar 1 fatia, mande so o zip daquela fatia, nao o projeto todo.
+[REGRA 4] SAIDA PEQUENA: Peca para a IA devolver apenas o que mudou, nao recompactar tudo. Ex: "Gere um zip so com a pasta fatia04/".
+[REGRA 5] SEM RECARGA: Se voce ja mandou o zip uma vez, nao peca para a IA "reler tudo de novo". Diga "continue de onde parou, usando o que ja tem em /mnt/data".
+[REGRA 6] SEM GERACAO DESNECESSARIA: Deixe explicito: "Nao gere imagens novas, apenas reorganize os arquivos existentes".
+[REGRA 7] UM PASSO DE CADA VEZ: Em vez de "faca A, B, C e D", faca 4 mensagens: "faca A" -> "agora faca B" -> etc.
+[REGRA 8] NOMES EXPLICITOS: Sempre informe os caminhos exatos de origem e destino. Ex: "Extraia referencias_visuais/29.png para docs/referencias_visuais/".
+[REGRA 9] EVITAR PYTHON PESADO: Nao peca para rodar scripts que percorrem 200+ arquivos. Prefira: "Atualize apenas o arquivo CATALOGO.md".
+[REGRA 10] CACHE LOCAL: Quando algo ja esta certo, diga "Nao mexa em X, apenas em Y" para a IA nao reprocessar o que ja funciona.
+
+4. COMO PEDIR PARA A META (TEMPLATE PRONTO)
+-------------------------------------------
+Copie e cole este modelo em qualquer conversa:
+
+"Meta, regras anti-travamento ativas:
+1. Trabalhe APENAS na pasta [NOME_DA_PASTA]
+2. Nao tente clonar, baixar da internet ou zipar o projeto inteiro
+3. Nao gere imagens novas
+4. Me devolva apenas um zip pequeno com o que mudou
+5. Se o arquivo for maior que 10MB, quebre em partes
+
+Tarefa: [DESCREVA AQUI EM 1 FRASE CURTA]"
+
+5. WORKFLOW RECOMENDADO PARA QUALQUER PROJETO GRANDE
+-----------------------------------------------------
+PASSO 1: Voce envia zip pequeno (<15MB) com apenas 1 fatia/modulo.
+PASSO 2: Meta organiza e devolve zip pequeno com apenas essa fatia.
+PASSO 3: Voce extrai na sua maquina (no seu PC a extracao e instantanea).
+PASSO 4: Repete para a proxima fatia.
+NUNCA: Voce envia projeto de 50MB -> Meta tenta re-zipar tudo -> timeout.
+
+6. EXEMPLOS: PEDIDO RUIM vs PEDIDO BOM
+--------------------------------------
+RUIM: "Pega meu projeto inteiro no GitHub e atualiza a documentacao toda e me manda o zip"
+-> Vai travar, demora 10min e da timeout.
+
+BOM: "Atualize apenas docs/fatia04/ com base nesses 15 prints que estao em /fatia04_video/. Nao mexa no resto. Me devolva so a pasta fatia04/"
+-> Rapido, 30 segundos, nao trava.
+
+RUIM: "Gere as imagens que faltam"
+BOM: "Nao gere imagens, apenas copie os arquivos existentes de A para B"
+
+7. PARA USAR EM OUTROS PROJETOS
+-------------------------------
+Este guia serve para: projetos de codigo, docs, engenharia reversa, sites, apps, TCC, etc.
+Basta trocar o nome da pasta. A logica e sempre a mesma: FATIAR > ESCOPO MINIMO > ZIP PEQUENO.
+
+FIM

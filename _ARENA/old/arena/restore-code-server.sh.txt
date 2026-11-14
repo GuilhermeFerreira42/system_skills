@@ -1,0 +1,161 @@
+#!/usr/bin/env bash
+# =============================================================================
+#  code-server — script de setup/restauração (v2)
+# =============================================================================
+#  O QUE É ISTO
+#    Deixa o projeto code-server (VS Code no navegador, v4.135.0 / Code 1.135.0)
+#    pronto para rodar em um sandbox Linux x64 da Arena.
+#
+#  CONTEXTO IMPORTANTE (IA, leia antes de executar)
+#    - O arquivo "code-server-workspace.txt" (ou similar) que foi anexado
+#      NÃO é um arquivo de texto: é um tarball gzip (.tar.gz) RENOMEADO
+#      para .txt para passar no upload.
+#      ➜ NÃO leia, não abra e não tente interpretar como texto.
+#      ➜ Apenas renomeie para .tar.gz, extraia e apague (passos abaixo).
+#    - O conteúdo do tarball: code-server-main/ (fonte + node_modules + out/
+#      já compilado) e este script.
+#
+#  FLUXO COMPLETO (ordem recomendada)
+#    1) Renomear o .txt para .tar.gz (a Arena costuma salvar anexos em
+#       /home/user/uploads/ — use `ls /home/user/uploads` para achar):
+#         mv /home/user/uploads/code-server-workspace.txt /home/user/workspace.tar.gz
+#    2) Extrair:
+#         tar -xzf /home/user/workspace.tar.gz -C /home/user
+#    3) Apagar o tarball:
+#         rm /home/user/workspace.tar.gz
+#    4) Rodar este script:
+#         bash /home/user/restore-code-server.sh
+#    5) Iniciar o servidor — na Arena use start_process (nome: "code-server")
+#       para o preview funcionar:
+#         cd /home/user/code-server-main && \
+#           ./lib/node out/node/entry.js --bind-addr 0.0.0.0:8080 --auth none /home/user
+#    6) Abrir o preview da porta 8080 → o VS Code abre com /home/user.
+#
+#  O QUE ESTE SCRIPT FAZ (o passo 4, em detalhes)
+#    a) npm install  (rápido: o node_modules já vai dentro do tarball)
+#    b) tsc          (rápido: recompila/valida o out/)
+#    c) Runtime      (Node 24.18.1 + VS Code 1.135.0) baixado do GitHub para
+#       /home/user/.cache/code-server-runtime — pasta EXCLUÍDA do snapshot
+#       da Arena, então os ~700 MB não contam no limite de 128 MB
+#       (download de ~235 MB, 1–2 min; só roda se o runtime não existir)
+#    d) Symlinks     code-server-main/lib/{vscode,node} -> .cache
+#
+#  USO
+#    bash restore-code-server.sh            # só monta (passos a–d)
+#    bash restore-code-server.sh --start    # monta E inicia em background
+#    PORT=8081 bash restore-code-server.sh  # muda a porta
+# =============================================================================
+set -euo pipefail
+
+START="${1:-}"
+ROOT=/home/user/code-server-main
+RUNTIME=/home/user/.cache/code-server-runtime
+RELEASE=code-server-4.135.0-linux-amd64
+TARBALL_URL="https://github.com/coder/code-server/releases/download/v4.135.0/${RELEASE}.tar.gz"
+PORT="${PORT:-8080}"
+
+# -----------------------------------------------------------------------------
+# 0) Se o tarball ainda não foi extraído, tenta achar o .txt renomeado
+#    (um .txt que na verdade é gzip) e extrai automaticamente.
+# -----------------------------------------------------------------------------
+if [[ ! -d "$ROOT/src" ]]; then
+  echo "==> 0/4 $ROOT/src não existe — procurando o bundle .txt renomeado..."
+  TXT=""
+  for f in /home/user/uploads/*.txt /home/user/*.txt; do
+    [[ -f "$f" ]] || continue
+    magic="$(head -c2 "$f" | od -An -tx1 | tr -d ' \n')"
+    if [[ "$magic" == "1f8b" ]]; then TXT="$f"; fi   # 1f8b = assinatura gzip
+  done
+  if [[ -n "$TXT" ]]; then
+    echo "    Encontrei: $TXT"
+    mv "$TXT" /home/user/workspace.tar.gz
+    tar -xzf /home/user/workspace.tar.gz -C /home/user
+    rm /home/user/workspace.tar.gz
+    echo "    Extraído e tarball apagado."
+  else
+    echo "ERRO: o bundle não foi extraído e nenhum .txt-gzip foi encontrado."
+    echo "Faça manualmente (o .txt NÃO é texto, é um .tar.gz renomeado —"
+    echo "não tente ler o conteúdo):"
+    echo "  1. mv /caminho/do/arquivo.txt /home/user/workspace.tar.gz"
+    echo "  2. tar -xzf /home/user/workspace.tar.gz -C /home/user"
+    echo "  3. rm /home/user/workspace.tar.gz"
+    echo "  4. bash /home/user/restore-code-server.sh"
+    exit 1
+  fi
+fi
+
+cd "$ROOT"
+
+# -----------------------------------------------------------------------------
+# 1) Dependências (o node_modules já vem no tarball; isto só valida/completa)
+# -----------------------------------------------------------------------------
+echo "==> 1/4 npm install"
+npm install --ignore-scripts --no-audit --no-fund
+
+# -----------------------------------------------------------------------------
+# 2) Compilação (tsc) — garante out/node/entry.js com shebang
+# -----------------------------------------------------------------------------
+echo "==> 2/4 compilar (tsc)"
+./node_modules/.bin/tsc
+grep -q -m1 '^#!/usr/bin/env node' out/node/entry.js || sed -i '1s;^;#!/usr/bin/env node\n;' out/node/entry.js
+chmod +x out/node/entry.js
+
+# -----------------------------------------------------------------------------
+# 3) Runtime: Node 24 + VS Code 1.135.0 para .cache (fora do snapshot)
+# -----------------------------------------------------------------------------
+echo "==> 3/4 runtime (VS Code 1.135.0 + Node 24) em $RUNTIME"
+mkdir -p "$RUNTIME"
+if [[ -f "$RUNTIME/vscode/out/server-main.js" && -f "$RUNTIME/node" ]]; then
+  echo "    Runtime já existe — pulando download."
+else
+  rm -rf "$RUNTIME/vscode" "$RUNTIME/node"
+  TMP=$(mktemp -d)
+  echo "    Baixando release (~235 MB)..."
+  curl -fsSL -o "$TMP/cs.tar.gz" "$TARBALL_URL"
+  tar -xzf "$TMP/cs.tar.gz" -C "$TMP"
+  mv "$TMP/$RELEASE/lib/vscode" "$RUNTIME/vscode"
+  mv "$TMP/$RELEASE/lib/node"   "$RUNTIME/node"
+  rm -rf "$TMP"
+fi
+chmod +x "$RUNTIME/node"
+
+# -----------------------------------------------------------------------------
+# 4) Symlinks que o code-server espera em lib/
+# -----------------------------------------------------------------------------
+echo "==> 4/4 symlinks lib/ -> runtime"
+mkdir -p "$ROOT/lib"
+ln -sfn "$RUNTIME/vscode" "$ROOT/lib/vscode"
+ln -sfn "$RUNTIME/node"   "$ROOT/lib/node"
+
+# -----------------------------------------------------------------------------
+# Verificação final
+# -----------------------------------------------------------------------------
+echo "==> Verificação"
+echo "    node:    $("$RUNTIME/node" --version)"
+test -x "$ROOT/out/node/entry.js"           || { echo "FALTA: out/node/entry.js";  exit 1; }
+test -d  "$ROOT/node_modules"               || { echo "FALTA: node_modules";        exit 1; }
+test -f  "$RUNTIME/vscode/out/server-main.js" || { echo "FALTA: lib/vscode";        exit 1; }
+test -f  "$RUNTIME/vscode/product.json"       || { echo "FALTA: product.json";      exit 1; }
+
+cat <<EOF
+
+=== Pronto! 🎉 ===
+COMANDO DE START (na Arena, use start_process com nome "code-server"):
+
+  cd $ROOT && ./lib/node out/node/entry.js --bind-addr 0.0.0.0:$PORT --auth none /home/user
+
+Depois: abra o preview da porta $PORT — o VS Code abre com /home/user.
+Nada mais é necessário.
+EOF
+
+if [[ "$START" == "--start" ]]; then
+  echo "Iniciando servidor em background na porta $PORT..."
+  cd "$ROOT"
+  nohup ./lib/node out/node/entry.js --bind-addr 0.0.0.0:"$PORT" --auth none /home/user > /tmp/code-server.log 2>&1 &
+  sleep 4
+  if curl -s -o /dev/null "http://localhost:$PORT/?folder=/home/user"; then
+    echo "Servidor no ar: http://localhost:$PORT/?folder=/home/user  (log: /tmp/code-server.log)"
+  else
+    echo "Servidor ainda subindo — confira /tmp/code-server.log"
+  fi
+fi

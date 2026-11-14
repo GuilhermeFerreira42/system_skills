@@ -1,0 +1,50 @@
+Você é uma IA Engenheira Sênior em modo Agente Autônomo de Loop Fechado (Closed-Loop) para a FATIA 06.1 - Persistência Híbrida.
+
+SUA MISSÃO: Não apenas escrever código, mas VALIDAR que a persistência bateu no disco de verdade e sobrevive ao F5.
+
+### ETAPA 1: RECONHECIMENTO & GOVERNANÇA (Obrigatório antes de qualquer código)
+1. Leia:
+   - docs/03 - ESTADO ATUAL.md
+   - docs/04 - ARQUITETURA E REGRAS DURAS.md
+   - docs/SESSION_PICKER.md (diferença + GLOBAL vs + DENTRO DO PROJETO)
+   - docs/PERSISTENCIA_OPENCLAUDE.md
+   - docs/WORKSPACE_VAZIO.md
+   - docs/12-DOCUMENTACAO-VIVA.md (topo)
+2. Confirme: Node do ambiente v20.20.2 sem node:sqlite. Decisão já autorizada: usar better-sqlite3 (Plano B) ou Node 22 se possível. Não re-perguntar sobre SQLite.
+
+### ETAPA 2: INSPEÇÃO DO CÓDIGO DE REFERÊNCIA (Zero Adivinhação)
+1. Não invente persistência. Inspecione:
+   - src/data.ts (remover initialSessions)
+   - src/server/session-persistence/ (database.ts, transcripts.ts, paths.ts, worktrees.ts)
+   - getProjectsDir(), _allProjectDirs(), sanitizePath()
+   - Reaproveitar SessionLanding.tsx 768px já existente, não criar tela nova.
+2. Respeite intocáveis: src/modules/explorer-search/server/, vite-plugin-pty.ts, singlePort.ts, platform/services/pty-server
+
+### ETAPA 3: MODIFICAÇÃO CIRÚRGICA
+1. Código funcional novo APENAS em:
+   - src/server/session-persistence/
+   - src/services/sessions/sessionsClient.ts
+2. Wiring mínimo permitido: vite.config.ts (import { sessionPersistencePlugin })
+3. Implementar: SQLite em ~/.agente_window/agente_window.db + JSONL em ~/.agente_window/projects/<slug>/<sessionId>.jsonl + remoção botões legados rodapé esquerdo.
+
+### ETAPA 4: LOOP DE VALIDAÇÃO FUNCIONAL (O Segredo - NÃO encerre sem provar no terminal)
+Prove com comandos reais no terminal, não com screenshot do React:
+1. Subir ambiente: npm run dev (5174)
+2. Criar sessão via + GLOBAL e mandar uma mensagem
+3. Validar no terminal:
+   - ls ~/.agente_window/agente_window.db && sqlite3 ~/.agente_window/agente_window.db "SELECT * FROM sessions;"
+   - ls ~/.agente_window/projects/*/*.jsonl
+   - cat ~/.agente_window/projects/<slug>/<id>.jsonl
+4. F5 no navegador - a sessão volta?
+5. git worktree list (ainda vazio na 6.1, ok, mas paths.ts tem que existir)
+6. Se falhar, autocorrija e teste de novo. NÃO pergunte ao usuário.
+
+### ETAPA 5: DOCUMENTAÇÃO & ENTREGA
+Quando tudo provado:
+1. git diff --name-only (não pode listar áreas intocáveis)
+2. npm run typecheck + bateria §9
+3. Commit atômico: feat(06.1): persistência híbrida SQLite+JSONL
+4. Atualizar topo do docs/03 - ESTADO ATUAL.md e docs/12-DOCUMENTACAO-VIVA.md com: o que foi feito, causa-raiz do bug Node sqlite, validações de disco executadas.
+5. PARAR e aguardar homologação manual no Windows na 5174 real antes da 06.2.
+
+Regra de parada: Se faltar info, cite o doc bloqueante e pare. Não improvise.
