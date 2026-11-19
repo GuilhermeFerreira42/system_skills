@@ -1,0 +1,111 @@
+GUIA PRÁTICO — TRANSFERÊNCIA DE ARQUIVOS VIA BASE64
+Bash (Linux) • PowerShell (Windows) • Python
+
+OBJETIVO
+Converter qualquer arquivo binário (ZIP, TAR.GZ, imagem, PDF etc.) em um TXT Base64 e restaurá-lo sem alterar seus bytes.
+
+EXEMPLO USADO
+Arquivo original: agente_window.tar.gz
+Texto Base64:    arquivo.txt
+Arquivo restaurado: agente_window_restaurado.tar.gz
+
+ATENÇÃO
+- Base64 não compacta: aumenta o tamanho em aproximadamente 33%.
+- As quebras de linha do Base64 são permitidas e não alteram o arquivo restaurado.
+- Use -w 76 no Bash para evitar uma linha gigantesca no editor.
+- Para arquivos muito grandes, prefira os comandos Python com leitura em blocos ou Bash com base64, evitando carregar todo o arquivo na memória.
+- Se copiar Base64 por um chat/editor, não acrescente explicações, marcações de código, aspas ou outros caracteres ao conteúdo.
+- Arquivos TXT gigantes ainda podem superar limites de editores, navegadores ou plataformas.
+
+============================================================
+1) BASH (LINUX) — BINÁRIO PARA TXT BASE64
+============================================================
+
+base64 -w 76 agente_window.tar.gz > arquivo.txt
+
+(Alternativa: sem quebras de linha; NÃO recomendada para arquivos grandes)
+base64 -w 0 agente_window.tar.gz > arquivo.txt
+
+BASH — TXT BASE64 PARA BINÁRIO
+
+base64 -d arquivo.txt > agente_window_restaurado.tar.gz
+
+BASH — CONFERIR SHA-256 DOS DOIS ARQUIVOS
+
+sha256sum agente_window.tar.gz agente_window_restaurado.tar.gz
+
+Se os dois hashes forem iguais, os bytes são idênticos.
+
+============================================================
+2) POWERSHELL (WINDOWS) — TXT BASE64 PARA BINÁRIO
+============================================================
+
+Opção simples com certutil (pode não ser adequada para arquivos muito grandes):
+
+certutil -decode arquivo.txt agente_window_restaurado.tar.gz
+
+RECOMENDADO PARA ARQUIVOS GRANDES — Python chamado pelo PowerShell:
+
+python -c "import base64; base64.decode(open('arquivo.txt', 'rb'), open('agente_window_restaurado.tar.gz', 'wb'))"
+
+Atenção: o método com Python acima é uma decodificação em fluxo por linhas. Funciona com o Base64 gerado por `base64 -w 76`, sem precisar carregar tudo na memória.
+
+POWERSHELL — CONFERIR SHA-256
+
+Get-FileHash .\agente_window.tar.gz -Algorithm SHA256
+Get-FileHash .\agente_window_restaurado.tar.gz -Algorithm SHA256
+
+POWERSHELL — EXTRAIR O TAR.GZ APÓS RESTAURAR
+
+tar -xzf .\agente_window_restaurado.tar.gz
+
+============================================================
+3) PYTHON — BINÁRIO PARA TXT BASE64 (BASH OU POWERSHELL)
+============================================================
+
+O Python pode ser executado tanto no terminal Bash quanto no PowerShell, desde que esteja instalado.
+
+Codificação eficiente em fluxo (76 caracteres por linha, com LF):
+
+python -c "import base64; base64.encode(open('agente_window.tar.gz', 'rb'), open('arquivo.txt', 'wb'))"
+
+O comando `base64.encode` divide a saída em linhas de 76 caracteres, evitando a linha gigantesca.
+
+PYTHON — TXT BASE64 PARA BINÁRIO (BASH OU POWERSHELL)
+
+python -c "import base64; base64.decode(open('arquivo.txt', 'rb'), open('agente_window_restaurado.tar.gz', 'wb'))"
+
+PYTHON — CONFERIR SHA-256 DOS DOIS ARQUIVOS
+
+python -c "import hashlib; from pathlib import Path; a=Path('agente_window.tar.gz'); b=Path('agente_window_restaurado.tar.gz'); h=lambda p: hashlib.file_digest(p.open('rb'), 'sha256').hexdigest(); x=h(a); y=h(b); print(a, x, sep=': '); print(b, y, sep=': '); print('IDÊNTICOS' if x==y else 'DIFERENTES')"
+
+Observação: a função hashlib.file_digest requer Python 3.11 ou superior.
+
+============================================================
+4) POWERSHELL PURO — BINÁRIO PARA TXT (ARQUIVOS PEQUENOS)
+============================================================
+
+Este método carrega todo o arquivo na memória; evite usá-lo em arquivos grandes.
+
+[Convert]::ToBase64String([IO.File]::ReadAllBytes((Resolve-Path '.\agente_window.tar.gz'))) | Set-Content -Path '.\arquivo.txt' -Encoding ascii
+
+Ele cria uma linha longa. Para seu caso de projetos grandes, prefira Bash `base64 -w 76` ou Python `base64.encode`.
+
+============================================================
+5) RESUMO DO FLUXO MAIS INDICADO
+============================================================
+
+Na Arena / Linux:
+base64 -w 76 agente_window.tar.gz > arquivo.txt
+sha256sum agente_window.tar.gz
+
+Copie/transfira o arquivo.txt sem editar o conteúdo.
+
+No Windows / PowerShell:
+python -c "import base64; base64.decode(open('arquivo.txt', 'rb'), open('agente_window_restaurado.tar.gz', 'wb'))"
+Get-FileHash .\agente_window_restaurado.tar.gz -Algorithm SHA256
+tar -xzf .\agente_window_restaurado.tar.gz
+
+Compare o hash mostrado na Arena com o mostrado no Windows. Eles devem ser iguais.
+
+FIM DO GUIA
